@@ -10,3 +10,11 @@
 /m5  /modul/5/  301
 /m6  /modul/6/  301
 /m7  /modul/7/  301
+
+# Handout-Seiten Shortcuts
+/notfall/      /handouts/notfall/      301
+/notfall       /handouts/notfall/      301
+/impressum/    /handouts/impressum/    301
+/impressum     /handouts/impressum/    301
+/ressourcen/   /handouts/ressourcen/   301
+/ressourcen    /handouts/ressourcen/   301
