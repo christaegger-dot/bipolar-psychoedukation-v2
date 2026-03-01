@@ -1,0 +1,27 @@
+{
+  "name": "Bipolare Störung — Psychoedukation für Angehörige",
+  "short_name": "Bipolar PUK",
+  "description": "Evidenzbasierte Psychoedukation für Angehörige von Menschen mit bipolarer Störung. PUK Zürich.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5f2",
+  "theme_color": "#4a7fa5",
+  "lang": "de-CH",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "health",
+    "education",
+    "medical"
+  ]
+}

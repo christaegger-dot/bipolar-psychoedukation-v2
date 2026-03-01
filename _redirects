@@ -1,0 +1,12 @@
+# Old single-page anchors → module pages
+# Note: Netlify can't redirect hash fragments server-side
+# But we can redirect these paths if they come without hash
+
+# Module shortcuts
+/m1  /modul/1/  301
+/m2  /modul/2/  301
+/m3  /modul/3/  301
+/m4  /modul/4/  301
+/m5  /modul/5/  301
+/m6  /modul/6/  301
+/m7  /modul/7/  301
