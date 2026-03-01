@@ -36,7 +36,7 @@
 <button aria-controls="notfall-banner" aria-expanded="false" id="notfall-trigger" onclick="toggleNotfall(this)" title="Notfall-Informationen ein-/ausblenden">
   🆘   Ich brauche jetzt sofort Hilfe   ▼
 </button>
-<div id="notfall-banner">
+<div id="notfall-banner" role="region" aria-label="Notfall-Informationen">
 <div class="notfall-inner">
 <div class="notfall-top">
       🚨 <strong>Akute Gefahr</strong> — Ihr Partner gefährdet sich oder andere  
@@ -171,7 +171,7 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <div style="line-height:1.8;">
 <strong>Beratung & Begleitung</strong><br>
 <a href="https://www.projuventute.ch" target="_blank" rel="noopener" class="text-m5">Pro Juventute</a> — Beratung für Kinder und Jugendliche (<a href="tel:147" class="text-danger">147</a>, 24/7)<br>
-<a href="https://www.kinderangehoerige.ch" target="_blank" rel="noopener" class="text-m5">Verein Postpartale Depression / Kinder psychisch kranker Eltern</a><br>
+<a href="https://www.postpartale-depression.ch" target="_blank" rel="noopener" class="text-m5">Verein Postpartale Depression / Kinder psychisch kranker Eltern</a><br>
 <a href="https://www.kinderseele.ch" target="_blank" rel="noopener" class="text-m5">Kinderseele Schweiz (iks)</a> — Unterstützung für Kinder psychisch belasteter Eltern<br>
 <a href="https://www.kjz.zh.ch" target="_blank" rel="noopener" class="text-m5">Kinder- und Jugendhilfezentren (kjz)</a> — Kanton Zürich, kostenlos<br>
 <br>
@@ -205,7 +205,7 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <h3 class="section-title">Vorsorge & Rechtliches</h3>
 <p class="lh-relaxed">Zwei Dokumente sind zentral:</p>
 <div style="margin:0.5rem 0;line-height:1.8;">
-<strong>Patientenverfügung</strong> — Legt fest, welche Behandlung die Person wünscht/ablehnt, wenn sie nicht urteilsfähig ist. Vorlage: <a href="https://www.fmh.ch/themen/patientenverfuegung.cfm" target="_blank" rel="noopener" class="text-m5">FMH</a> (kostenlos).<br>
+<strong>Patientenverfügung</strong> — Legt fest, welche Behandlung die Person wünscht/ablehnt, wenn sie nicht urteilsfähig ist. Vorlage: <a href="https://www.fmh.ch/dienstleistungen/recht/patientenverfuegung.cfm" target="_blank" rel="noopener" class="text-m5">FMH</a> (kostenlos).<br>
 <strong>Vorsorgeauftrag</strong> — Bestimmt, wer bei Urteilsunfähigkeit über Finanzen, Wohnort, Gesundheit entscheidet. Muss handschriftlich oder notariell verfasst sein. Wird bei der KESB hinterlegt.
 </div>
 <p style="line-height:1.6;margin-top:0.5rem;">Beides sollte in einer stabilen Phase erstellt werden — nicht während einer Episode.</p>
@@ -214,7 +214,7 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem;">
 <h3 class="section-title">Wichtige Anlaufstellen (Schweiz)</h3>
 <div style="line-height:1.8;">
-<a href="https://www.iv.zh.ch" target="_blank" rel="noopener" class="text-m5">IV-Stelle Kanton Zürich</a> — Früherfassung, berufliche Eingliederung<br>
+<a href="https://www.svazurich.ch" target="_blank" rel="noopener" class="text-m5">SVA Zürich (IV-Stelle)</a> — Früherfassung, berufliche Eingliederung<br>
 <a href="https://www.proinfirmis.ch" target="_blank" rel="noopener" class="text-m5">Pro Infirmis</a> — Sozialberatung bei Behinderung/Krankheit (kostenlos)<br>
 <a href="https://www.kesb-zh.ch" target="_blank" rel="noopener" class="text-m5">KESB Kanton Zürich</a> — Kindes-/Erwachsenenschutz, Vorsorgeauftrag<br>
 <a href="https://www.beobachter.ch/rechtsberatung" target="_blank" rel="noopener" class="text-m5">Beobachter Rechtsberatung</a> — Arbeitsrecht, Sozialversicherung<br>
@@ -291,8 +291,6 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 
 </div>
 
-</div>
-
 <h2 style="margin-top:3rem;">❓ Häufige Fragen</h2>
 <div class="faq-list">
 
@@ -345,7 +343,6 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 
 </div>
 
-</div>
 </div>
 </main>
 <footer>

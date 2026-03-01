@@ -235,7 +235,7 @@ function showScResult() {
   } else if (yesCount <= 3) {
     msg = '<div class="sc-result-title" style="color:var(--m4)">Sie befinden sich in der Mitte</div>Einige Warnsignale sind vorhanden. <a href="/modul/5/">Modul 5 (Selbstfürsorge und Handeln)</a> ist besonders relevant für Sie — und <a href="/modul/7/">Modul 7</a> zeigt Ihnen, wo Sie Unterstützung finden.';
   } else {
-    msg = '<div class="sc-result-title" style="color:var(--danger)">Handlungsbedarf erkennbar</div>Mehrere Warnsignale deuten darauf hin, dass Sie sich stark verausgaben. Bitte nehmen Sie sich <a href="/modul/5/">Modul 5</a> zu Herzen und überlegen Sie, ob eine Beratung bei der <a href="/modul/7/">Fachstelle Angehörigenarbeit</a> hilfreich wäre.';
+    msg = '<div class="sc-result-title" style="color:var(--danger)">Handlungsbedarf erkennbar</div>Mehrere Warnsignale deuten darauf hin, dass Sie sich stark verausgaben. Bitte nehmen Sie sich <a href="/modul/5/">Modul 5</a> zu Herzen und überlegen Sie, ob eine Beratung bei der <a href="/modul/7/">Fachstelle Angehörigenarbeit</a> hilfreich wäre.<br><strong>Psychiatrischer Notfalldienst ZH:</strong> <a href="tel:0800336655" style="color:var(--danger);font-weight:700;">0800 33 66 55</a> (24/7, kostenlos)';
   }
   result.innerHTML = msg;
   result.classList.add('show');
