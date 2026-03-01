@@ -401,6 +401,52 @@ function toggleLoyalty(el) {
   el.classList.toggle('active');
 }
 
+// ═══════════════════════════════════════════════════════
+// HANDOUT LIGHTBOX
+// ═══════════════════════════════════════════════════════
+
+function openHandoutLightbox(href, title) {
+  var filename = href.split('/').pop().replace('.pdf', '.webp');
+  var thumbSrc = '/images/thumbs/' + filename;
+  var overlay = document.createElement('div');
+  overlay.className = 'handout-lightbox';
+  overlay.onclick = function(e) { if (e.target === overlay) closeHandoutLightbox(); };
+  overlay.innerHTML =
+    '<div class="handout-lb-inner">' +
+    '<button class="handout-lb-close" aria-label="Schliessen">✕</button>' +
+    '<img class="handout-lb-img" src="' + thumbSrc + '" alt="' + title + '">' +
+    '<div class="handout-lb-title">' + title + '</div>' +
+    '<a class="handout-lb-download" href="' + href + '" download>⬇ PDF herunterladen</a>' +
+    '</div>';
+  overlay.querySelector('.handout-lb-close').onclick = closeHandoutLightbox;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(function() { overlay.classList.add('open'); });
+  document.body.style.overflow = 'hidden';
+}
+
+function closeHandoutLightbox() {
+  var lb = document.querySelector('.handout-lightbox');
+  if (!lb) return;
+  lb.classList.remove('open');
+  setTimeout(function() { lb.remove(); }, 250);
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('click', function(e) {
+  var item = e.target.closest('.handout-item');
+  if (!item) return;
+  e.preventDefault();
+  var label = item.querySelector('.handout-label');
+  var title = label ? label.textContent : 'Handout';
+  openHandoutLightbox(item.getAttribute('href'), title);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.querySelector('.handout-lightbox')) {
+    closeHandoutLightbox();
+  }
+});
+
 var eeData = {
   1: {
     title: 'Schuldgefühle',
