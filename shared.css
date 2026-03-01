@@ -427,6 +427,7 @@ nav {
 
 .module-body {
   padding: var(--sp-lg) 2rem 2.5rem;
+  /* OPTIONAL: max-width auf 680px reduzieren für bessere Lesbarkeit (aktuell ~740px via Container) */
 }
 
 /* Platzhalter-Stil */
@@ -4624,6 +4625,7 @@ details.inline-mg ul li {
   body { color-scheme: dark; }
   img { opacity: 0.92; }
   /* SVG diagram dark mode protection — keep light background for hardcoded colors */
+  /* OPTIONAL: svg-dark-wrapper für native Dark-Mode-Farbanpassung innerhalb der SVGs. Aktuell über Container-Background geschützt. */
   .viz-svg,
   .wave-chart,
   .burden-accumulation-svg,
