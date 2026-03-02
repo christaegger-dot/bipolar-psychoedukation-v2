@@ -655,7 +655,7 @@ footer {
 .symptom-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 .symptom-card {
@@ -813,7 +813,7 @@ footer {
 .erosion-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .erosion-card {
@@ -865,7 +865,7 @@ footer {
 .erosion-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .erosion-card {
@@ -977,7 +977,7 @@ footer {
 .silent-mechs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .silent-mech-card {
@@ -1231,7 +1231,7 @@ footer {
 .stigma-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.2rem;
 }
 .stigma-card {
@@ -1304,7 +1304,7 @@ footer {
 .selfcare-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 .selfcare-col {
@@ -1423,7 +1423,7 @@ footer {
 .coping-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .coping-col {
@@ -2089,7 +2089,7 @@ footer {
 .resources-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 .resource-card {
@@ -2449,8 +2449,8 @@ footer {
 .children-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 .children-col {
   background: var(--white);
