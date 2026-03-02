@@ -712,17 +712,12 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* Mobile: horizontal scroll for dense diagrams on very small screens */
+/* Mobile: dense diagrams — viewBox handles scaling, no forced overflow */
 @media (max-width: 400px) {
-  .wave-chart-wrap,
-  .burden-accumulation-wrap,
-  .ee-svg-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
   .wave-chart-wrap svg,
-  .burden-accumulation-wrap svg {
-    min-width: 420px;
+  .burden-accumulation-wrap svg,
+  .ee-svg-wrap svg {
+    width: 100%;
   }
 }
 

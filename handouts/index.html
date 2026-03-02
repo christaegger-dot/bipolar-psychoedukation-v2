@@ -730,15 +730,24 @@
       dl=document.getElementById('ho-lb-dl');
   if(!lb)return;
   document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
+    var pdfHref=card.getAttribute('href');
+    card.setAttribute('data-pdf',pdfHref);
+    card.removeAttribute('href');
+    card.style.cursor='pointer';
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
     card.addEventListener('click',function(e){
       e.preventDefault();
       var thumb=card.querySelector('.card-thumb img');
       if(!thumb)return;
       img.src=thumb.src;
       img.alt=thumb.alt;
-      dl.href=card.getAttribute('href');
+      dl.href=pdfHref;
       lb.classList.add('active');
       document.body.style.overflow='hidden';
+    });
+    card.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
     });
   });
   function closeLb(){lb.classList.remove('active');document.body.style.overflow=''}
