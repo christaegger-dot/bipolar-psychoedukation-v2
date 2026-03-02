@@ -3400,7 +3400,7 @@ body.readmode .slide-wrap { display: block !important; margin-bottom: 1rem; }
   .page-dots, .pd-track { display: none !important; }
   a { color: black !important; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #666; }
-  a[href^="/"]::after { content: " (bipolar-angehoerige01.netlify.app" attr(href) ")"; }
+  a[href^="/"]::after { content: " (bipolare-erkrankung-angehoerige.netlify.app" attr(href) ")"; }
   a[href^="#"]::after { content: ""; }
   .footer-crisis { border: 2px solid black; break-inside: avoid; }
   .komm-vergleich { grid-template-columns: 1fr !important; }
