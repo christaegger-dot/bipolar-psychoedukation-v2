@@ -1733,11 +1733,17 @@ footer {
   position: relative;
   z-index: 1;
 }
-.exp-body-single {
+.exp-body-single,
+.exp-body:not(:has(.exp-phase)) {
   display: block;
   padding: 1.6rem 1.6rem 1.2rem;
   position: relative;
   z-index: 1;
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  color: var(--text);
+  font-family: 'Lora', serif;
+  font-style: italic;
 }
 @media (max-width: 640px) {
   .exp-body {
@@ -4570,7 +4576,7 @@ details.inline-mg ul li {
 .lernziele li { margin-bottom:0.25rem; font-size:var(--fs-base); line-height:1.5; }
 
 /* Eyebrow */
-.eyebrow { display:block; font-size:var(--fs-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--module-color,var(--m1)); margin-bottom:0.4rem; opacity:0.85; }
+.eyebrow { display:block; font-size:var(--fs-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--module-color,var(--m1)); margin:1.5rem 0 0.75rem; opacity:0.85; }
 
 /* Module Top H1 */
 .module-top-title {
@@ -4718,7 +4724,7 @@ details.inline-mg ul li {
 .module-toc {
   background: var(--bg2, #eeeae3);
   border-radius: var(--radius, 10px);
-  padding: 0.9rem 1.2rem;
+  padding: 1.1rem 1.2rem;
   margin: 0 0 1.5rem;
   border-left: 3px solid var(--module-color, var(--m1));
 }
@@ -4728,7 +4734,7 @@ details.inline-mg ul li {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--module-color, var(--m1));
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.6rem;
 }
 .module-toc ol {
   margin: 0;
@@ -4737,7 +4743,7 @@ details.inline-mg ul li {
 .module-toc li {
   font-size: var(--fs-sm);
   line-height: 1.6;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.3rem;
 }
 .module-toc li a {
   color: var(--text);
@@ -4752,7 +4758,7 @@ details.inline-mg ul li {
 .kurzfassung {
   background: var(--bg2, #eeeae3);
   border-radius: var(--radius, 10px);
-  padding: 1.1rem 1.4rem;
+  padding: 1.2rem 1.4rem;
   margin: 0 0 1.5rem;
   border-left: 4px solid var(--module-color, var(--m1));
 }
@@ -4762,7 +4768,7 @@ details.inline-mg ul li {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--module-color, var(--m1));
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 .kurzfassung ul {
   margin: 0;
