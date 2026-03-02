@@ -3899,7 +3899,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
     .handout-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.6rem;
+      gap: 1rem;
     }
     .handout-item {
       display: flex;
