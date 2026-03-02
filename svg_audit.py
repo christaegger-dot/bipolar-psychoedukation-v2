@@ -264,6 +264,24 @@ def analyze_svg(svg_data, filepath):
 
         if best_container:
             c = best_container
+            c_width = c['endX'] - c['startX']
+            c_height = c['endY'] - c['startY']
+
+            # Skip false positives: text much wider than container
+            # (e.g. axis hint text crossing through a circle)
+            if text_width > 3 * c_width:
+                best_container = None
+            # Skip false positives: text clearly below an ellipse/circle
+            # (label text whose y baseline is below the container bottom)
+            elif c['type'] in ('ellipse', 'circle') and t_botY > c['endY']:
+                best_container = None
+            # Skip false positives: single decorative chars (arrows, etc.)
+            # that are positioned between containers
+            elif len(t['text'].strip()) <= 1:
+                best_container = None
+
+        if best_container:
+            c = best_container
             pad_left = t_startX - c['startX']
             pad_right = c['endX'] - t_endX
             pad_top = t_topY - c['startY']
