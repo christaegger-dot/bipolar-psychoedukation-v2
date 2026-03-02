@@ -550,8 +550,12 @@ function toggleFaq(btn) {
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i) {
     i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) item.classList.add('open');
+  if (!wasOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
 // Glossar-Akkordeon
@@ -560,8 +564,12 @@ function toggleGlossar(btn) {
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.glossar-item.open').forEach(function(i) {
     i.classList.remove('open');
+    i.querySelector('.glossar-term').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) item.classList.add('open');
+  if (!wasOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
 // Notfall Mini-Guide Akkordeon
@@ -570,8 +578,12 @@ function toggleMG(btn) {
   var wasOpen = guide.classList.contains('open');
   guide.parentElement.querySelectorAll('.mini-guide.open').forEach(function(g) {
     g.classList.remove('open');
+    g.querySelector('.mg-header').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) guide.classList.add('open');
+  if (!wasOpen) {
+    guide.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
 // Progressive Disclosure

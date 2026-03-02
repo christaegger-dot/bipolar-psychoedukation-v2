@@ -6,19 +6,19 @@
 <title>Notfall – Bipolare Störung | PUK Zürich</title>
 <meta name="description" content="Sofort-Hilfe für Angehörige: Notfallnummern, Kurzanleitungen für Manie, Depression, Psychose und Suizidgedanken. PUK Zürich.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://bipolar-psychoedukation-puk.netlify.app/notfall/">
+<link rel="canonical" href="https://bipolar-angehoerige01.netlify.app/handouts/notfall/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Notfall – Bipolare Störung">
 <meta property="og:description" content="Sofort-Hilfe für Angehörige: Notfallnummern, Kurzanleitungen für Manie, Depression, Psychose und Suizidgedanken.">
-<meta property="og:url" content="https://bipolar-psychoedukation-puk.netlify.app/notfall/">
+<meta property="og:url" content="https://bipolar-angehoerige01.netlify.app/handouts/notfall/">
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="PUK Zürich – Angehörigenarbeit">
 <!-- DESIGN: Eigenes OG-Image (og-notfall.png) für diese Seite erstellen. Aktuell Fallback auf og-index.png. -->
-<meta property="og:image" content="https://bipolar-psychoedukation-puk.netlify.app/images/og-index.png">
+<meta property="og:image" content="https://bipolar-angehoerige01.netlify.app/images/og-index.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bipolar-psychoedukation-puk.netlify.app/images/og-index.png">
+<meta name="twitter:image" content="https://bipolar-angehoerige01.netlify.app/images/og-index.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <style>
 @font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lora-v37-latin-regular.woff2') format('woff2');}
@@ -45,7 +45,7 @@
 <a class="nav-btn" href="/modul/2/"><span class="nb-dot d2"></span>Beziehung</a>
 <a class="nav-btn" href="/modul/3/"><span class="nb-dot d3"></span>Erschöpfung</a>
 <a class="nav-btn" href="/modul/4/"><span class="nb-dot d4"></span>Loyalität</a>
-<a class="nav-btn text-danger" href="/notfall/"><span class="nb-dot d-danger"></span>Notfall</a>
+<a class="nav-btn text-danger fw-bold" href="/notfall/" aria-current="page"><span class="nb-dot d-danger"></span>Notfall</a>
 <a class="nav-btn" href="/modul/5/"><span class="nb-dot d5"></span>Handeln</a>
 <a class="nav-btn" href="/modul/6/"><span class="nb-dot d6"></span>Resilienz</a>
 <a class="nav-btn" href="/modul/7/"><span class="nb-dot d7"></span>Ressourcen</a>
@@ -100,7 +100,7 @@
 
 <!-- MANIE -->
 <div class="mini-guide open">
-<button class="mg-header" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="true" onclick="toggleMG(this)">
 <span class="mg-icon">⚡</span>
 <span>Manie — Ihr*e Partner*in ist euphorisch, schläft nicht, ist überaktiv</span>
 <span class="mg-arrow">›</span>
@@ -126,7 +126,7 @@
 
 <!-- DEPRESSION -->
 <div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
 <span class="mg-icon">🌧</span>
 <span>Depression — Rückzug, Antriebslosigkeit, Hoffnungslosigkeit</span>
 <span class="mg-arrow">›</span>
@@ -135,7 +135,7 @@
 <ul>
 <li data-icon="👁">Achten Sie auf: anhaltende Traurigkeit, Rückzug, Schlafveränderungen, Appetitlosigkeit, Aussagen wie «Es hat keinen Sinn».</li>
 <li data-icon="🤝">Anwesenheit ist wichtiger als Worte. Sitzen Sie daneben. Fragen Sie: «Was brauchst du gerade?»</li>
-<li data-icon="🚫">Vermeiden Sie Aufmunterungsversuche wie «Reiß dich zusammen» oder «Anderen geht es schlechter». Das verstärkt Scham.</li>
+<li data-icon="🚫">Vermeiden Sie Aufmunterungsversuche wie «Reiss dich zusammen» oder «Anderen geht es schlechter». Das verstärkt Scham.</li>
 <li data-icon="🏥">Ermutigen Sie zur Kontaktaufnahme mit dem Behandlungsteam — bieten Sie an, gemeinsam anzurufen.</li>
 <li data-icon="💊">Medikamenten-Einnahme sanft begleiten: «Ich erinnere dich gern» statt «Hast du schon wieder vergessen?»</li>
 <li data-icon="🛡">Schützen Sie sich selbst: Depressive Phasen sind für Angehörige oft belastender als Manien — Ihre eigene Stimmung kann mitsinken.</li>
@@ -151,7 +151,7 @@
 
 <!-- PSYCHOSE -->
 <div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
 <span class="mg-icon">🌀</span>
 <span>Psychose / Wahn — Die Person glaubt Dinge, die nicht real sind</span>
 <span class="mg-arrow">›</span>
@@ -176,7 +176,7 @@
 
 <!-- SUIZIDGEDANKEN -->
 <div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
 <span class="mg-icon">🆘</span>
 <span>Suizidgedanken — Die Person spricht davon, sich etwas anzutun</span>
 <span class="mg-arrow">›</span>
