@@ -1,40 +1,111 @@
-<!-- REDAKTIONELL: Diese Datei ist identisch mit handouts/notfall/index.html (Notfall-Inhalt statt Handouts-Übersicht). Inhalt prüfen und ggf. durch eigentliche Handouts-Seite ersetzen. PDFs sollten auf @page A4 portrait optimiert und Druckformat geprüft werden. -->
 <!DOCTYPE html>
+
 <html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notfall – Bipolare Störung | PUK Zürich</title>
-<meta name="description" content="Sofort-Hilfe für Angehörige: Notfallnummern, Kurzanleitungen für Manie, Depression, Psychose und Suizidgedanken. PUK Zürich.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://bipolar-psychoedukation-puk.netlify.app/notfall/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Notfall – Bipolare Störung">
-<meta property="og:description" content="Sofort-Hilfe für Angehörige: Notfallnummern, Kurzanleitungen für Manie, Depression, Psychose und Suizidgedanken.">
-<meta property="og:url" content="https://bipolar-psychoedukation-puk.netlify.app/notfall/">
-<meta property="og:locale" content="de_CH">
-<meta property="og:site_name" content="PUK Zürich – Angehörigenarbeit">
-<!-- DESIGN: Eigenes OG-Image (og-handouts.png) für diese Seite erstellen. Aktuell Fallback auf og-index.png. -->
-<meta property="og:image" content="https://bipolar-psychoedukation-puk.netlify.app/images/og-index.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bipolar-psychoedukation-puk.netlify.app/images/og-index.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Handouts &amp; Downloads – Bipolare Störung | PUK Zürich</title>
+<meta content="Alle Handouts und Vorlagen zur Psychoedukation für Angehörige von Menschen mit bipolarer Störung. PUK Zürich." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://bipolar-angehoerige01.netlify.app/handouts/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Handouts &amp; Downloads – Bipolare Störung" property="og:title"/>
+<meta content="Alle Handouts und Vorlagen zur Psychoedukation für Angehörige von Menschen mit bipolarer Störung. PUK Zürich." property="og:description"/>
+<meta content="https://bipolar-angehoerige01.netlify.app/handouts/" property="og:url"/>
+<meta content="de_CH" property="og:locale"/>
+<meta content="PUK Zürich – Angehörigenarbeit" property="og:site_name"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🤝&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+
+<link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/shared.css">
+<meta content="https://bipolar-angehoerige01.netlify.app/images/og-handouts.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://bipolar-angehoerige01.netlify.app/images/og-handouts.png" name="twitter:image"/>
 <style>
 @font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lora-v37-latin-regular.woff2') format('woff2');}
 @font-face{font-family:'Lora';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/lora-v37-latin-600.woff2') format('woff2');}
 @font-face{font-family:'Source Sans 3';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/source-sans-3-v19-latin-regular.woff2') format('woff2');}
 @font-face{font-family:'Source Sans 3';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/source-sans-3-v19-latin-600.woff2') format('woff2');}
 </style>
-<link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css">
-
 <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-<a class="skip-link" href="#main">Direkt zum Inhalt</a>
+<a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
+<button aria-controls="notfall-banner" aria-expanded="false" id="notfall-trigger" onclick="toggleNotfall(this)" title="Notfall-Informationen ein-/ausblenden">
+<span class="nt-icon">🆘</span>
+  Ich brauche jetzt sofort Hilfe
+  <span class="nt-chevron">▼</span>
+</button>
+<div aria-label="Notfall-Informationen" id="notfall-banner" role="region">
+<div class="notfall-content">
+<!-- Situation 1: Fremdgefährdung -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">🚨 Akute Gefahr — Ihr Partner gefährdet sich oder andere</div>
+<div class="notfall-nums">
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Polizei</span>
+<a href="tel:117">117</a>
+<span class="notfall-num-sub">Bei Fremdgefährdung oder wenn Sie sich selbst nicht mehr sicher fühlen</span>
+</div>
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Sanität / Notfall</span>
+<a href="tel:144">144</a>
+<span class="notfall-num-sub">Bei akuter Suizidgefahr oder medizinischem Notfall — koordiniert alle weiteren Schritte</span>
+</div>
+</div>
+</div>
+<!-- Situation 2: Psychiatrische Krise -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">⚠️ Psychiatrische Krise — Suizidgedanken oder schwere Episode</div>
+<div class="notfall-nums">
+<div class="notfall-num-card">
+<span class="notfall-num-label">Psychiatrischer Notfalldienst ZH</span>
+<a href="tel:0800336655">0800 33 66 55</a>
+<span class="notfall-num-sub">24/7 · kostenlos · Kanton Zürich<br/>Vermittelt Notfallpsychiater*in nach Hause oder in die Klinik</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">KIZ — PUK Zürich</span>
+<a href="tel:+41583846500">058 384 65 00</a>
+<span class="notfall-num-sub">24/7 · Durchwahl 4 · Militärstrasse 8<br/>Krisenintervention: telefonisch, ambulant oder stationär (bis 7 Tage)</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">KIZ — IPW Winterthur</span>
+<a href="tel:0522643700">052 264 37 00</a>
+<span class="notfall-num-sub">24/7 · Region Winterthur-Unterland<br/>Krisenintervention ambulant und stationär</span>
+</div>
+</div>
+</div>
+<!-- Situation 3: Sie selbst brauchen Unterstützung -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">💬 Sie selbst sind am Limit — Gespräch und Orientierung</div>
+<div class="notfall-nums">
+<div class="notfall-num-card">
+<span class="notfall-num-label">Dargebotene Hand</span>
+<a href="tel:143">143</a>
+<span class="notfall-num-sub">24/7 · anonym · kostenlos<br/>Zuhören, Entlasten, Weiterverweisen — auch für Angehörige</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">Fachstelle Angehörige PUK</span>
+<a href="tel:+41583843800">058 384 38 00</a>
+<span class="notfall-num-sub">Mo–Fr · kostenlos · vertraulich<br/>Spezialisierte Beratung für Angehörige</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">Pro Mente Sana</span>
+<a href="tel:0848800858">0848 800 858</a>
+<!-- REDAKTIONELL: Öffnungszeiten Pro Mente Sana periodisch prüfen → promentesana.ch/beratung -->
+<span class="notfall-num-sub">Mo/Di/Do 9–12 Uhr, Do 14–17 Uhr, Di/Mi 16:30–19:30 Uhr<br/>Psychosoziale und rechtliche Beratung für Angehörige</span>
+</div>
+</div>
+</div>
+<div class="notfall-hinweis">
+<strong>Hinweis für Angehörige:</strong> Bei konkreten Suizidgedanken Ihres Partners ist die Dargebotene Hand <a href="tel:143">143</a> ein erster Schritt — aber nicht das einzige Mittel. Der psychiatrische Notfalldienst (<a href="tel:0800336655">0800 33 66 55</a>) oder das KIZ können psychiatrische Fachpersonen direkt einbeziehen und eine Einschätzung vor Ort ermöglichen.
+    </div>
+<button class="notfall-close" aria-label="Notfall-Banner schliessen" onclick="toggleNotfall(document.getElementById('notfall-trigger'))">Schliessen</button>
+</div>
+</div>
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -64,169 +135,615 @@
 <span></span><span></span><span></span>
 </button>
 </nav>
-<main id="main">
-<div class="notfall-hero">
-<h1>🚨 Notfall — Was tun Sie jetzt?</h1>
-<p class="lead">Diese Seite hilft Ihnen, in einer akuten Situation schnell und richtig zu handeln. Lesen Sie den passenden Mini-Guide und rufen Sie im Zweifel sofort die Notfallnummer an.</p>
+<main id="main-content">
+<div class="subpage-hero" data-accent="handouts"><div class="sh-deco"></div>
+<h1>Handouts &amp; Downloads</h1>
+<p class="lead">Alle Informationsblätter und Vorlagen zum Herunterladen — evidenzbasiert, zum Ausdrucken und Mitnehmen.</p>
+</div>
+<div class="subpage-content">
+<div class="breadcrumb"><a href="/">← Zurück zur Startseite</a></div>
+<div class="text-version-note">
+<p>📝 <strong>Barrierefreie Textversionen</strong> — Alle Infografiken sind auch als <a href="#text-versions">reine Textversion (PDF)</a> verfügbar.</p>
 </div>
 
-<div class="notfall-content">
-
-<h2>Notfallnummern</h2>
-<div class="notfall-numbers">
-<div class="nn-card">
-<h3>Psychiatrischer Notfalldienst Zürich</h3>
-<a href="tel:0800336655">0800 33 66 55</a>
-<div class="nn-info">24/7, kostenlos</div>
-</div>
-<div class="nn-card">
-<h3>Sanität / Rettungsdienst</h3>
-<a href="tel:144">144</a>
-<div class="nn-info">Bei akuter Gefahr für Leib und Leben</div>
-</div>
-<div class="nn-card">
-<h3>Polizei</h3>
-<a href="tel:117">117</a>
-<div class="nn-info">Bei Gewalt oder unmittelbarer Bedrohung</div>
-</div>
-<div class="nn-card">
-<h3>Dargebotene Hand</h3>
-<a href="tel:143">143</a>
-<div class="nn-info">24/7 — auch für Angehörige</div>
-</div>
+<div class="filter-bar" style="margin:1rem 0 1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
+<span class="subtext">Filtern:</span>
+<button class="filter-chip active" data-filter="alle" onclick="filterHandouts('alle')">Alle</button>
+<button class="filter-chip" data-filter="krise" onclick="filterHandouts('krise')">🆘 Krise & Notfall</button>
+<button class="filter-chip" data-filter="kommunikation" onclick="filterHandouts('kommunikation')">🗣 Kommunikation</button>
+<button class="filter-chip" data-filter="selbstfuersorge" onclick="filterHandouts('selbstfuersorge')">🛡 Selbstfürsorge</button>
+<button class="filter-chip" data-filter="belastung" onclick="filterHandouts('belastung')">📊 Belastung verstehen</button>
 </div>
 
-<h2>Was passiert gerade? — Mini-Guides</h2>
-<p class="text-sm-muted-mb">Klicken Sie auf die Situation, die am ehesten zutrifft. Sie erhalten konkrete Handlungsschritte.</p>
-
-<!-- MANIE -->
-<div class="mini-guide open">
-<button class="mg-header" onclick="toggleMG(this)">
-<span class="mg-icon">⚡</span>
-<span>Manie — Ihr*e Partner*in ist euphorisch, schläft nicht, ist überaktiv</span>
-<span class="mg-arrow">›</span>
-</button>
-<div class="mg-body"><div class="mg-body-inner">
-<ul>
-<li data-icon="👁">Beobachten Sie: Schläft die Person seit 2+ Nächten kaum? Gibt sie unkontrolliert Geld aus? Ist sie ungewöhnlich reizbar oder grandios?</li>
-<li data-icon="🗣">Sprechen Sie ruhig und kurz: «Mir fällt auf, dass du seit drei Nächten kaum schläfst. Ich mache mir Sorgen.»</li>
-<li data-icon="📋">Krisenplan aktivieren — wenn vorhanden. Wenn nicht: Behandlungsteam informieren.</li>
-<li data-icon="🔒">Schützen Sie Finanzen: Konten, Kreditkarten, Vollmachten prüfen.</li>
-<li data-icon="🚗">Fahren lassen? Nur wenn die Person sicher fahren kann. Im Zweifel: Nein.</li>
-<li data-icon="📞">Rufen Sie das Behandlungsteam an — auch ohne Einwilligung der Person. Sie informieren, Sie entscheiden nicht.</li>
-</ul>
-<div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Ruhig bleiben. Kurze Sätze. Nicht argumentieren. Sicherheit priorisieren.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>«Du bist manisch!» Diskutieren. Ultimaten stellen. Allein lösen wollen.</div>
+<div class="section-group" data-module="download">
+<h2>📥 Vorlagen &amp; Hilfsmittel</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="download" href="/downloads/krisenplan-vorlage-bipolare-stoerung-puk-zuerich.pdf">
+<div class="card-thumb"><img alt="Vorschau: Krisenplan-Vorlage" loading="lazy" src="/images/thumbs/krisenplan-vorlage-bipolare-stoerung-puk-zuerich.webp" width="280" height="395"/></div>
+<div class="card-body">
+<h3>Krisenplan-Vorlage</h3>
+<p>Ausfüllbare Vorlage · Frühwarnzeichen · Kontakte · Medikamente</p>
+<span class="card-badge">PDF · 2 Seiten</span>
 </div>
-<div class="mg-important">⚠️ Bei akuter Selbst- oder Fremdgefährdung: <a href="tel:144" class="text-danger-dk">144</a> oder <a href="tel:117" class="text-danger-dk">117</a> rufen.</div>
-<!-- REDAKTIONELL: Infografik-PDFs sind 797×1429pt (nicht A4 595×842pt). Für Druckbarkeit konvertieren. Betrifft alle 24 PDFs in /handouts/. -->
-<a class="mg-handout" href="/handouts/c4_manie.pdf" download>📄 Handout: Umgang mit Manie (PDF)</a>
-</div></div>
+</a>
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="download" href="/downloads/kurzblatt-was-stabilisiert-was-schadet-puk-zuerich.pdf">
+<div class="card-thumb"><img alt="Vorschau: «Was stabilisiert — was schadet»" loading="lazy" src="/images/thumbs/kurzblatt-was-stabilisiert-was-schadet-puk-zuerich.webp" width="280" height="395"/></div>
+<div class="card-body">
+<h3>«Was stabilisiert — was schadet»</h3>
+<p>Kurzblatt für den Alltag · Kommunikation · Selbstfürsorge</p>
+<span class="card-badge">PDF · 2 Seiten</span>
 </div>
-
-<!-- DEPRESSION -->
-<div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
-<span class="mg-icon">🌧</span>
-<span>Depression — Rückzug, Antriebslosigkeit, Hoffnungslosigkeit</span>
-<span class="mg-arrow">›</span>
-</button>
-<div class="mg-body"><div class="mg-body-inner">
-<ul>
-<li data-icon="👁">Achten Sie auf: anhaltende Traurigkeit, Rückzug, Schlafveränderungen, Appetitlosigkeit, Aussagen wie «Es hat keinen Sinn».</li>
-<li data-icon="🤝">Anwesenheit ist wichtiger als Worte. Sitzen Sie daneben. Fragen Sie: «Was brauchst du gerade?»</li>
-<li data-icon="🚫">Vermeiden Sie Aufmunterungsversuche wie «Reiß dich zusammen» oder «Anderen geht es schlechter». Das verstärkt Scham.</li>
-<li data-icon="🏥">Ermutigen Sie zur Kontaktaufnahme mit dem Behandlungsteam — bieten Sie an, gemeinsam anzurufen.</li>
-<li data-icon="💊">Medikamenten-Einnahme sanft begleiten: «Ich erinnere dich gern» statt «Hast du schon wieder vergessen?»</li>
-<li data-icon="🛡">Schützen Sie sich selbst: Depressive Phasen sind für Angehörige oft belastender als Manien — Ihre eigene Stimmung kann mitsinken.</li>
-</ul>
-<div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Da sein. Geduld. Alltag aufrechterhalten. Eigene Grenzen wahren.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>Ratschläge. Vergleiche. «Ich weiss wie du dich fühlst.» Schuldgefühle machen.</div>
+</a>
+<a class="pdf-card has-thumb" data-category="krise" data-module="download" href="/downloads/notfallkarte-kanton-zuerich-puk.pdf">
+<div class="card-thumb"><img alt="Vorschau: Notfallkarte Kanton Zürich" loading="lazy" src="/images/thumbs/notfallkarte-kanton-zuerich-puk.webp" width="280" height="395"/></div>
+<div class="card-body">
+<h3>Notfallkarte Kanton Zürich</h3>
+<p>Situationsdifferenziert: Akute Gefahr · Psychiatrische Krise · Beratung</p>
+<span class="card-badge">PDF · 1 Seite</span>
 </div>
-<div class="mg-important">⚠️ Bei Suizidgedanken: direkt fragen (siehe nächster Guide) + <a href="tel:0800336655" class="text-danger-dk">0800 33 66 55</a></div>
-<a class="mg-handout" href="/handouts/c5_depression.pdf" download>📄 Handout: Umgang mit Depression (PDF)</a>
-</div></div>
+</a>
 </div>
-
-<!-- PSYCHOSE -->
-<div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
-<span class="mg-icon">🌀</span>
-<span>Psychose / Wahn — Die Person glaubt Dinge, die nicht real sind</span>
-<span class="mg-arrow">›</span>
-</button>
-<div class="mg-body"><div class="mg-body-inner">
-<ul>
-<li data-icon="🧠">Verstehen Sie: Wahnideen fühlen sich für die Person absolut real an. Argumentieren hilft nicht — es verstärkt den Konflikt.</li>
-<li data-icon="🗣">Sprechen Sie ruhig, langsam, in kurzen Sätzen. Nicht widersprechen, aber auch nicht bestätigen: «Ich verstehe, dass du das so siehst. Ich sehe es anders.»</li>
-<li data-icon="🏠">Sorgen Sie für eine reizarme Umgebung: wenig Licht, wenig Lärm, wenig Besucher.</li>
-<li data-icon="⛔">Nicht provozieren, nicht konfrontieren, nicht ironisch sein. Das kann Angst oder Aggression auslösen.</li>
-<li data-icon="📞">Behandlungsteam sofort informieren. Psychotische Episoden erfordern fast immer professionelle Intervention.</li>
-<li data-icon="🚪">Sichern Sie sich selbst ab: Fluchtweg offenhalten, nicht einschliessen lassen, Kinder in Sicherheit bringen.</li>
-</ul>
-<div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Ruhe. Einfache Sprache. Sicherheit. Professionelle Hilfe holen.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>«Das bildest du dir ein!» Diskutieren. Allein managen. Panik.</div>
 </div>
-<div class="mg-important">⚠️ Bei Bedrohung oder Gewalt: sofort <a href="tel:117" class="text-danger-dk">117</a> (Polizei) rufen. Ihre Sicherheit geht vor.</div>
-<a class="mg-handout" href="/handouts/c3_psychose_wahn.pdf" download>📄 Handout: Umgang mit Psychose und Wahn (PDF)</a>
-</div></div>
+<div class="section-group" data-module="m1">
+<h2>Modul 1 – Die bipolare Störung verstehen</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m1" href="/handouts/a8_warnsignale.pdf">
+<div class="card-thumb"><img alt="Vorschau: Warnsignale — Ampelsystem" loading="lazy" src="/images/thumbs/a8_warnsignale.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Warnsignale — Ampelsystem</h3>
+<p>Frühwarnzeichen für Manie und Depression erkennen</p>
+<span class="card-badge">PDF · 1 Seite</span>
 </div>
-
-<!-- SUIZIDGEDANKEN -->
-<div class="mini-guide">
-<button class="mg-header" onclick="toggleMG(this)">
-<span class="mg-icon">🆘</span>
-<span>Suizidgedanken — Die Person spricht davon, sich etwas anzutun</span>
-<span class="mg-arrow">›</span>
-</button>
-<div class="mg-body"><div class="mg-body-inner">
-<ul>
-<li data-icon="❗">Nehmen Sie jede Äusserung ernst. Auch indirekte Hinweise: «Es wäre besser, wenn ich nicht mehr da wäre», «Ihr wärt ohne mich besser dran.»</li>
-<li data-icon="🗣">Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» — Diese Frage löst Suizidgedanken nicht aus. Sie gibt Raum.</li>
-<li data-icon="👂">Hören Sie zu. Nicht bewerten. Nicht bagatellisieren. Nicht sagen: «Das wird schon.»</li>
-<li data-icon="📞">Rufen Sie jetzt an: <a href="tel:0800336655" style="color:var(--danger);font-weight:700;">0800 33 66 55</a> (Psychiatrischer Notfalldienst, 24/7, kostenlos)</li>
-<li data-icon="🔒">Sichern Sie die Umgebung: Medikamente, scharfe Gegenstände, Alkohol wenn möglich ausser Reichweite bringen.</li>
-<li data-icon="🤝">Bleiben Sie bei der Person, bis professionelle Hilfe eintrifft. Lassen Sie sie nicht allein.</li>
-</ul>
-<div class="mg-important">⚠️ Bei akuter Suizidgefahr (konkreter Plan, Mittel vorhanden): sofort <a href="tel:144" class="text-danger-dk">144</a> (Sanität) rufen. Nicht allein bewältigen.</div>
-<a class="mg-handout" href="/handouts/c2_suizidgedanken.pdf" download>📄 Handout: Umgang mit Suizidgedanken (PDF)</a>
-</div></div>
+</a>
+<a class="text-version-link" href="/handouts-text/a8_warnsignale.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
 </div>
-
-<div style="margin-top:2.5rem;padding:1.2rem;background:var(--bg2);border-radius:var(--radius);font-size:var(--fs-sm);line-height:1.6;color:var(--muted)">
-<strong>Wichtig:</strong> Diese Kurzanleitungen ersetzen keine professionelle Beratung. Sie geben Orientierung für die ersten Minuten einer akuten Situation. Wenn Sie unsicher sind, rufen Sie immer den Notfalldienst an — lieber einmal zu viel als einmal zu wenig.
-<br><br>
-<a href="/handouts/" class="text-m5">→ Alle Handouts & Downloads</a> · 
-<a href="/ressourcen/" class="text-m7">→ Beratungsstellen & Ressourcen</a> · 
-<a href="/" class="text-m1">→ Module (Psychoedukation)</a>
 </div>
-
+</div>
+</div>
+<div class="section-group" data-module="m2">
+<h2>Modul 2 – Wie Beziehungen unter Druck geraten</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m2" href="/handouts/b1_18_belastungen.pdf">
+<div class="card-thumb"><img alt="Vorschau: 18 Belastungen von Angehörigen" loading="lazy" src="/images/thumbs/b1_18_belastungen.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>18 Belastungen von Angehörigen</h3>
+<p>Systematische Übersicht der häufigsten Belastungsbereiche</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b1_18_belastungen.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m2" href="/handouts/a4_ambiguous_loss.pdf">
+<div class="card-thumb"><img alt="Vorschau: Ambiguous Loss" loading="lazy" src="/images/thumbs/a4_ambiguous_loss.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Ambiguous Loss</h3>
+<p>Wenn der Partner da ist — und doch unerreichbar</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/a4_ambiguous_loss.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m2" href="/handouts/a5_affiliate_stigma.pdf">
+<div class="card-thumb"><img alt="Vorschau: Stigma der Angehörigen" loading="lazy" src="/images/thumbs/a5_affiliate_stigma.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Stigma der Angehörigen</h3>
+<p>Wenn Vorurteile auf Sie abfärben</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/a5_affiliate_stigma.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m2" href="/handouts/b9_depression_partner.pdf">
+<div class="card-thumb"><img alt="Vorschau: Belastung der eigenen Psyche" loading="lazy" src="/images/thumbs/b9_depression_partner.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Belastung der eigenen Psyche</h3>
+<p>Wenn die Belastung auf die eigene Psyche schlägt</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b9_depression_partner.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+</div>
+</div>
+<div class="section-group" data-module="m3">
+<h2>Modul 3 – Wenn die Kraft nachlässt</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m3" href="/handouts/b2_erosion_solidaritaet.pdf">
+<div class="card-thumb"><img alt="Vorschau: Zeitliche Erosion der Solidarität" loading="lazy" src="/images/thumbs/b2_erosion_solidaritaet.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Zeitliche Erosion der Solidarität</h3>
+<p>Wie sich Unterstützung über die Zeit verändert</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b2_erosion_solidaritaet.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m3" href="/handouts/b3_kritische_zeitpunkte.pdf">
+<div class="card-thumb"><img alt="Vorschau: Kritische Zeitpunkte" loading="lazy" src="/images/thumbs/b3_kritische_zeitpunkte.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Kritische Zeitpunkte</h3>
+<p>Wann die Belastung besonders hoch ist</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b3_kritische_zeitpunkte.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m3" href="/handouts/b4_mechanismen_erosion.pdf">
+<div class="card-thumb"><img alt="Vorschau: Mechanismen der Erosion" loading="lazy" src="/images/thumbs/b4_mechanismen_erosion.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Mechanismen der Erosion</h3>
+<p>Was die Kraft aufzehrt — Muster erkennen</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b4_mechanismen_erosion.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="belastung" data-module="m3" href="/handouts/b6_geschlechtsspezifisch.pdf">
+<div class="card-thumb"><img alt="Vorschau: Geschlechtsspezifische Nuancen" loading="lazy" src="/images/thumbs/b6_geschlechtsspezifisch.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Geschlechtsspezifische Nuancen</h3>
+<p>Unterschiedliche Belastungsprofile</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b6_geschlechtsspezifisch.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+</div>
+</div>
+<div class="section-group" data-module="m4">
+<h2>Modul 4 – Loyalitätskonflikte und Expressed Emotion</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m4" href="/handouts/a3_ambivalente_loyalitaet.pdf">
+<div class="card-thumb"><img alt="Vorschau: Ambivalente Loyalität" loading="lazy" src="/images/thumbs/a3_ambivalente_loyalitaet.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Ambivalente Loyalität</h3>
+<p>Das innere Spannungsfeld zwischen Fürsorge und Selbstschutz</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/a3_ambivalente_loyalitaet.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m4" href="/handouts/b5_loyalitaetskonflikte.pdf">
+<div class="card-thumb"><img alt="Vorschau: Loyalitätskonflikte" loading="lazy" src="/images/thumbs/b5_loyalitaetskonflikte.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Loyalitätskonflikte</h3>
+<p>Zwischen eigenem Bedürfnis und Verantwortung</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b5_loyalitaetskonflikte.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m4" href="/handouts/expressed_emotions.pdf">
+<div class="card-thumb"><img alt="Vorschau: Expressed Emotions" loading="lazy" src="/images/thumbs/expressed_emotions.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Expressed Emotions</h3>
+<p>Familiäre Kommunikationsmuster und ihr Einfluss</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/expressed_emotions.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m4" href="/handouts/b7_behandlung_ambivalenz.pdf">
+<div class="card-thumb"><img alt="Vorschau: Behandlung &amp; Ambivalenz" loading="lazy" src="/images/thumbs/b7_behandlung_ambivalenz.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Behandlung &amp; Ambivalenz</h3>
+<p>Umgang mit der Behandlungsunsicherheit</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b7_behandlung_ambivalenz.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+</div>
+</div>
+<div class="section-group" data-module="m5">
+<h2>Modul 5 – Was hilft: Selbstfürsorge und Handeln</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m5" href="/handouts/c1_krisenplan.pdf">
+<div class="card-thumb"><img alt="Vorschau: Krisenplan erstellen" loading="lazy" src="/images/thumbs/c1_krisenplan.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Krisenplan erstellen</h3>
+<p>Schritt für Schritt vorbereitet sein</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c1_krisenplan.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m5" href="/handouts/c2_suizidgedanken.pdf">
+<div class="card-thumb"><img alt="Vorschau: Umgang mit Suizidgedanken" loading="lazy" src="/images/thumbs/c2_suizidgedanken.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Umgang mit Suizidgedanken</h3>
+<p>Was tun, wenn ein Angehöriger Suizidgedanken äussert</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c2_suizidgedanken.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m5" href="/handouts/c3_psychose_wahn.pdf">
+<div class="card-thumb"><img alt="Vorschau: Umgang mit Psychose/Wahn" loading="lazy" src="/images/thumbs/c3_psychose_wahn.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Umgang mit Psychose/Wahn</h3>
+<p>Orientierung in einer verunsichernden Situation</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c3_psychose_wahn.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m5" href="/handouts/c4_manie.pdf">
+<div class="card-thumb"><img alt="Vorschau: Umgang mit Manie" loading="lazy" src="/images/thumbs/c4_manie.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Umgang mit Manie</h3>
+<p>Konkrete Handlungsschritte in der Akutphase</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c4_manie.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="krise" data-module="m5" href="/handouts/c5_depression.pdf">
+<div class="card-thumb"><img alt="Vorschau: Umgang mit Depression" loading="lazy" src="/images/thumbs/c5_depression.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Umgang mit Depression</h3>
+<p>Begleitung in der depressiven Episode</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c5_depression.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m5" href="/handouts/c6_selbstfuersorge.pdf">
+<div class="card-thumb"><img alt="Vorschau: Selbstfürsorge-Plan" loading="lazy" src="/images/thumbs/c6_selbstfuersorge.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Selbstfürsorge-Plan</h3>
+<p>Ihre eigene Stabilität sichern</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/c6_selbstfuersorge.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m5" href="/handouts/grenzsetzung.pdf">
+<div class="card-thumb"><img alt="Vorschau: Grenzsetzung" loading="lazy" src="/images/thumbs/grenzsetzung.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Grenzsetzung</h3>
+<p>Grenzen setzen ohne Schuldgefühle</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/grenzsetzung.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+</div>
+</div>
+<div class="section-group" data-module="m6">
+<h2>Modul 6 – Zusammen stark: Resilienz und Paardynamik</h2>
+<div class="card-grid">
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m6" href="/handouts/d4_solidaritaet_wellen.pdf">
+<div class="card-thumb"><img alt="Vorschau: Solidarität — Wellen statt Linie" loading="lazy" src="/images/thumbs/d4_solidaritaet_wellen.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Solidarität — Wellen statt Linie</h3>
+<p>Dass Unterstützung schwankt, ist normal</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/d4_solidaritaet_wellen.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m6" href="/handouts/b10_trennung_scheidung.pdf">
+<div class="card-thumb"><img alt="Vorschau: Gehen oder Bleiben" loading="lazy" src="/images/thumbs/b10_trennung_scheidung.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Gehen oder Bleiben</h3>
+<p>Eine bewusste Entscheidung — keine Schuldfrage</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/b10_trennung_scheidung.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m6" href="/handouts/transformationsreise.pdf">
+<div class="card-thumb"><img alt="Vorschau: Transformationsreise" loading="lazy" src="/images/thumbs/transformationsreise.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Transformationsreise</h3>
+<p>Persönliches Wachstum durch die Erfahrung</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/transformationsreise.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="pdf-card has-thumb" data-category="kommunikation" data-module="m6" href="/handouts/trialog.pdf">
+<div class="card-thumb"><img alt="Vorschau: Trialog" loading="lazy" src="/images/thumbs/trialog.webp" width="280" height="502"/></div>
+<div class="card-body">
+<h3>Trialog</h3>
+<p>Gemeinsam statt übereinander reden</p>
+<span class="card-badge">PDF · 1 Seite</span>
+</div>
+</a>
+<a class="text-version-link" href="/handouts-text/trialog.pdf" download="" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+</div>
+</div>
+</div>
+<div class="source-box">
+<strong>Hinweis:</strong> Diese Materialien ersetzen keine professionelle Beratung oder Therapie. 
+    Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-bold">Notfalldienst: 0800 33 66 55</a>.
+  </div>
+</div>
+<div id="text-versions" class="section-group" style="margin-top:2.5rem">
+<h2 class="section-intro">📝 Barrierefreie Textversionen</h2>
+<p class="text-sm-muted-mb">Alle Infografiken als reine Text-PDFs — optimiert für Screen-Reader und langsame Verbindungen.</p>
+<div class="card-grid">
+<a class="pdf-card" href="/handouts-text/a3_ambivalente_loyalitaet.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Ambivalente Loyalität</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/a4_ambiguous_loss.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Ambiguous Loss</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/a5_affiliate_stigma.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Affiliate Stigma</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/a8_warnsignale.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Warnsignale erkennen</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b10_trennung_scheidung.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Trennung & Scheidung</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b1_18_belastungen.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>18 Belastungen</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b2_erosion_solidaritaet.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Erosion der Solidarität</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b3_kritische_zeitpunkte.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Kritische Zeitpunkte</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b4_mechanismen_erosion.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Mechanismen der Erosion</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b5_loyalitaetskonflikte.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Loyalitätskonflikte</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b6_geschlechtsspezifisch.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Geschlechtsspezifisch</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b7_behandlung_ambivalenz.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Behandlungsambivalenz</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/b9_depression_partner.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Depression beim Partner</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c1_krisenplan.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Krisenplan</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c2_suizidgedanken.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Suizidgedanken</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c3_psychose_wahn.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Psychose & Wahn</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c4_manie.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Manie</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c5_depression.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Depression</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/c6_selbstfuersorge.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Selbstfürsorge</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/d4_solidaritaet_wellen.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Solidarität in Wellen</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/expressed_emotions.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Expressed Emotions</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/grenzsetzung.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Grenzsetzung</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/transformationsreise.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Transformationsreise</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+<a class="pdf-card" href="/handouts-text/trialog.pdf" target="_blank" rel="noopener">
+<span class="card-icon">📝</span>
+<div class="card-body">
+<h3>Trialog</h3>
+<p>Textversion · barrierefrei</p>
+</div>
+</a>
+</div>
 </div>
 </main>
-
-<footer style="text-align:center;padding:2rem 1rem;font-size:var(--fs-xs);color:var(--muted);background:var(--bg2)">
-  Psychiatrische Universitätsklinik Zürich · Fachstelle Angehörigenarbeit · <a href="/impressum/" class="text-muted">Impressum & Datenschutz</a>
+<footer>
+<div class="footer-inner">
+<div class="footer-block">
+<strong>Psychiatrische Universitätsklinik Zürich</strong><br/>
+      Fachstelle Angehörigenarbeit<br/>
+      Lenggstrasse 31, 8032 Zürich<br/>
+<a href="tel:+41583843800">+41 58 384 38 00</a>
+</div>
+<div class="footer-block footer-meta">
+      Inhaltliche Verantwortung: Ch. Egger<br/>
+      Stand: Februar 2026<br/>
+      Evidenzbasierte Informationen<br/>
+      für Angehörige und Partner*innen
+    </div>
+<div class="footer-notfall">
+      Psychiatrischer Notfall: <a href="tel:0800336655">0800 33 66 55</a> Notfalldienst ZH (24/7) ·
+      <a href="tel:+41583846500">058 384 65 00</a> KIZ PUK (Durchwahl 4) ·
+      <a href="tel:144">144</a> Sanität ·
+      <a href="tel:117">117</a> Polizei (Fremdgefährdung) ·
+      <a href="tel:143">143</a> Dargebotene Hand
+    </div>
+<div class="footer-copy">© 2026 Psychiatrische Universitätsklinik Zürich. Alle Rechte vorbehalten. <a href="/impressum/">Impressum</a></div>
+</div>
 </footer>
-
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
-<div class="search-box">
-<div class="search-input-wrap">
-<span class="section-num">🔎</span>
-<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
-</div>
-<div class="search-results" id="search-results">
-<div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
-</div>
-</div>
-</div>
 
 <script src="/search-index.js" defer></script>
 <script src="/main.js" defer></script>
 <script src="/search.js" defer></script>
+<div class="search-overlay" id="search-overlay">
+<div class="search-modal">
+<div class="search-header">
+<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
+<button class="search-close" onclick="closeSearch()">✕</button>
+</div>
+<div id="search-results">
+<div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
+</div>
+</div>
+</div>
+<!-- Handout Preview Lightbox -->
+<div class="ho-lightbox" id="ho-lightbox" role="dialog" aria-modal="true" aria-label="Infografik-Vorschau">
+<div class="ho-lb-backdrop"></div>
+<div class="ho-lb-content">
+<button class="ho-lb-close" aria-label="Schliessen">✕</button>
+<img class="ho-lb-img" id="ho-lb-img" alt="" />
+<a class="ho-lb-download" id="ho-lb-dl" download="">⬇ PDF herunterladen</a>
+</div>
+</div>
+<style>
+.ho-lightbox{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center}
+.ho-lightbox.active{display:flex}
+.ho-lb-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.82)}
+.ho-lb-content{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;max-width:92vw;max-height:92vh;z-index:1}
+.ho-lb-img{width:auto;height:min(78vh,750px);max-width:92vw;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.4);object-fit:contain;background:#fff}
+.ho-lb-download{display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.6rem;background:#fff;color:#2c2418;font-weight:600;font-size:1rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s}
+.ho-lb-download:hover{background:#f0ebe4;transform:translateY(-1px)}
+.ho-lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;padding:0.3rem 0.6rem;line-height:1;opacity:0.8;transition:opacity 0.2s}
+.ho-lb-close:hover{opacity:1}
+@media(max-width:600px){.ho-lb-close{top:-2rem;font-size:1.4rem}.ho-lb-download{font-size:0.9rem;padding:0.6rem 1.2rem}}
+</style>
+<script>
+(function(){
+  var lb=document.getElementById('ho-lightbox'),
+      img=document.getElementById('ho-lb-img'),
+      dl=document.getElementById('ho-lb-dl');
+  if(!lb)return;
+  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var thumb=card.querySelector('.card-thumb img');
+      if(!thumb)return;
+      img.src=thumb.src;
+      img.alt=thumb.alt;
+      dl.href=card.getAttribute('href');
+      lb.classList.add('active');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function closeLb(){lb.classList.remove('active');document.body.style.overflow=''}
+  lb.querySelector('.ho-lb-backdrop').addEventListener('click',closeLb);
+  lb.querySelector('.ho-lb-close').addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('active'))closeLb()});
+})();
+</script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
 </body>
 </html>
