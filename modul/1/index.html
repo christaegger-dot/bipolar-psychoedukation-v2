@@ -598,48 +598,244 @@
 </div>
 </div>
 </div>
-<!-- SVG: Hypervigilanz-Zyklus -->
+<!-- Hypervigilanz-Kreislauf: Interaktive Darstellung -->
 <div class="wave-chart-wrap mt-md">
-<svg aria-label="Kreislauf der Hypervigilanz: Beobachten, Anspannung, Erschöpfung, kurze Erholung — und wieder von vorn" class="viz-svg" role="img" viewBox="-10 -10 620 328" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#fafaf6" height="247.8" rx="8" width="600" x="0" y="0.0"></rect>
-<text fill="#5a5070" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="600" text-anchor="middle" x="300" y="23.6">Der Hypervigilanz-Kreislauf</text>
-<!-- Center circle -->
-<circle cx="300" cy="135.7" fill="#fde8e0" opacity="0.5" r="54" stroke="#c07030" stroke-width="1"></circle>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="16" font-weight="600" text-anchor="middle" x="300" y="131">Dauer-</text>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="16" font-weight="600" text-anchor="middle" x="300" y="152">anspannung</text>
-<!-- Phase 1: Beobachten (top) -->
-<rect fill="#ddeef8" height="43.5" rx="18" stroke="#4a7fa5" stroke-width="1.5" width="150" x="225" y="36.8"></rect>
-<text fill="#4a7fa5" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="300" y="56.6">🔍 Beobachten</text>
-<text fill="#4a7fa5" font-family="Source Sans 3, sans-serif" font-size="14" text-anchor="middle" x="300" y="92">Stimmung scannen</text>
-<!-- Phase 2: Anspannung (right) -->
-<rect fill="#fdf6e8" height="43.5" rx="18" stroke="#8a6a3a" stroke-width="1.5" width="150" x="385" y="113.5"></rect>
-<text fill="#8a6a3a" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="460" y="133.3">⚡ Anspannung</text>
-<text fill="#8a6a3a" font-family="Source Sans 3, sans-serif" font-size="13" text-anchor="middle" x="460" y="172">Körper in Alarmbereitschaft</text>
-<!-- Phase 3: Erschöpfung (bottom) -->
-<rect fill="#fde8e0" height="43.5" rx="18" stroke="#c07030" stroke-width="1.5" width="186" x="207" y="188"></rect>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="300" y="208">😮‍💨 Erschöpfung</text>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="13" text-anchor="middle" x="300" y="246">Schlaf, Konzentration ↓</text>
-<!-- Phase 4: Kurze Erholung (left) -->
-<rect fill="#e8f0e8" height="43.5" rx="18" stroke="#5a7a5a" stroke-width="1.5" width="150" x="65" y="113.5"></rect>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="140" y="133.3">🌿 Erholung</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="13" text-anchor="middle" x="140" y="172">Kurz — nie vollständig</text>
-<!-- Arrows connecting phases -->
-<path d="M370 64.9 Q405 75 385 114.5" fill="none" marker-end="url(#arr-hyp)" stroke="#94a3b8" stroke-width="1.5"></path>
-<path d="M460 157 Q440 180 370 200" fill="none" marker-end="url(#arr-hyp)" stroke="#94a3b8" stroke-width="1.5"></path>
-<path d="M230 200 Q195 192 215 157" fill="none" marker-end="url(#arr-hyp)" stroke="#94a3b8" stroke-width="1.5"></path>
-<path d="M140 114.5 Q155 80 225 59" fill="none" marker-end="url(#arr-hyp)" stroke="#94a3b8" stroke-width="1.5"></path>
-<defs>
-<marker id="arr-hyp" markerheight="8.4" markerwidth="7" orient="auto" refx="6" refy="4.1">
-<polygon fill="#94a3b8" points="0.0 0.0, 7.0 3.5, 0.0 7.1"></polygon>
-</marker>
-</defs>
-<!-- Annotation -->
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="15" font-style="italic" text-anchor="middle" x="530" y="44">Der Kreislauf</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="15" font-style="italic" text-anchor="middle" x="530" y="67">wiederholt sich</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="15" font-style="italic" text-anchor="middle" x="530" y="90">täglich — oft</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="15" font-style="italic" text-anchor="middle" x="530" y="113">unbewusst</text>
-</svg>
-<div class="wave-caption">Hypervigilanz ist ein <strong>automatisierter Schutzmechanismus</strong>: Sie haben gelernt, die Stimmung Ihres Partners ständig zu scannen, weil Krisen unberechenbar sind. Das Problem: Die Erholungsphase wird mit jeder Wiederholung kürzer. Dieser Kreislauf lässt sich unterbrechen — mit bewusster Entlastung und professioneller Hilfe.</div>
+<style>
+.hv-wrap{font-family:inherit;max-width:520px;margin:0 auto;padding:0 4px}
+.hv-title{text-align:center;margin-bottom:16px}
+.hv-title h3{font-size:1.18rem;font-weight:700;color:#3d3530;margin:0 0 6px;line-height:1.3}
+.hv-title p{font-size:.82rem;color:#8a7e76;margin:0;line-height:1.4}
+/* Cycle ring */
+.hv-ring{position:relative;width:100%;max-width:360px;margin:0 auto 12px;aspect-ratio:1}
+/* Stations */
+.hv-station{position:absolute;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s;z-index:2}
+.hv-station:hover,.hv-station:focus-visible{transform:scale(1.05)}
+.hv-station:focus-visible{outline:2px solid #3d3530;outline-offset:4px;border-radius:12px}
+.hv-pill{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:24px;border:2px solid;font-size:.875rem;font-weight:700;line-height:1.2;white-space:nowrap;transition:all .2s}
+.hv-station .hv-sub{font-size:.69rem;line-height:1.2;text-align:center;max-width:140px;transition:color .2s}
+/* Station positions — circular layout */
+.hv-station[data-pos="top"]{top:0;left:50%;transform:translateX(-50%)}
+.hv-station[data-pos="top"]:hover,.hv-station[data-pos="top"]:focus-visible{transform:translateX(-50%) scale(1.05)}
+.hv-station[data-pos="right"]{top:50%;right:0;transform:translateY(-50%)}
+.hv-station[data-pos="right"]:hover,.hv-station[data-pos="right"]:focus-visible{transform:translateY(-50%) scale(1.05)}
+.hv-station[data-pos="bottom"]{bottom:0;left:50%;transform:translateX(-50%)}
+.hv-station[data-pos="bottom"]:hover,.hv-station[data-pos="bottom"]:focus-visible{transform:translateX(-50%) scale(1.05)}
+.hv-station[data-pos="left"]{top:50%;left:0;transform:translateY(-50%)}
+.hv-station[data-pos="left"]:hover,.hv-station[data-pos="left"]:focus-visible{transform:translateY(-50%) scale(1.05)}
+/* Station colors */
+.hv-station[data-id="beobachten"] .hv-pill{background:#fef9ec;border-color:#d4a843;color:#8a6d00}
+.hv-station[data-id="beobachten"].active .hv-pill{background:#f5e6b8;border-color:#8a6d00}
+.hv-station[data-id="beobachten"] .hv-sub{color:#8a6d00}
+.hv-station[data-id="anspannung"] .hv-pill{background:#fff3e0;border-color:#e67e22;color:#bf5b00}
+.hv-station[data-id="anspannung"].active .hv-pill{background:#fddcb5;border-color:#bf5b00}
+.hv-station[data-id="anspannung"] .hv-sub{color:#bf5b00}
+.hv-station[data-id="erschoepfung"] .hv-pill{background:#fdf0ed;border-color:#c0392b;color:#a02015}
+.hv-station[data-id="erschoepfung"].active .hv-pill{background:#f5cdc5;border-color:#a02015}
+.hv-station[data-id="erschoepfung"] .hv-sub{color:#a02015}
+.hv-station[data-id="erholung"] .hv-pill{background:#edf5f0;border-color:#6b9e7e;color:#2d6a4f}
+.hv-station[data-id="erholung"].active .hv-pill{background:#d4edda;border-color:#2d6a4f}
+.hv-station[data-id="erholung"] .hv-sub{color:#2d6a4f}
+/* Center */
+.hv-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:1}
+.hv-center-circle{width:100px;height:100px;border-radius:50%;background:#f8f0e8;border:2px dashed #c4a882;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.hv-center-label{font-size:.75rem;font-weight:700;color:#8a6d3b;line-height:1.2}
+.hv-center-sub{font-size:.6rem;color:#a08a6e;line-height:1.2}
+/* Arrows SVG */
+.hv-arrows{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+/* Step indicator */
+.hv-steps{display:flex;justify-content:center;gap:6px;margin-bottom:14px}
+.hv-step-dot{width:10px;height:10px;border-radius:50%;border:2px solid #d4c8bc;background:#fff;transition:all .2s;cursor:pointer}
+.hv-step-dot.active-beobachten{background:#d4a843;border-color:#8a6d00}
+.hv-step-dot.active-anspannung{background:#e67e22;border-color:#bf5b00}
+.hv-step-dot.active-erschoepfung{background:#c0392b;border-color:#a02015}
+.hv-step-dot.active-erholung{background:#6b9e7e;border-color:#2d6a4f}
+/* Note */
+.hv-note{text-align:center;margin-bottom:14px;font-size:.75rem;color:#8a7e76;font-style:italic;line-height:1.4}
+/* Detail panel */
+.hv-detail{border-radius:14px;padding:16px 14px;transition:all .25s ease;min-height:100px;border:1.5px solid #e8e2dc;background:#f8f6f4}
+.hv-detail .hv-d-step{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+.hv-detail .hv-d-title{font-size:1rem;font-weight:700;margin:0 0 6px;line-height:1.3}
+.hv-detail .hv-d-body{font-size:.82rem;color:#5a504a;margin:0 0 8px;line-height:1.55}
+.hv-detail .hv-d-sign{font-size:.75rem;color:#8a7e76;margin:0;line-height:1.5;padding:8px 10px;background:rgba(255,255,255,.5);border-radius:8px;border-left:3px solid}
+.hv-detail .hv-d-sign strong{color:#5a504a}
+.hv-detail .hv-empty{text-align:center;padding:8px 0}
+.hv-detail .hv-empty p{margin:0 0 6px;line-height:1.5}
+.hv-detail .hv-empty p:last-child{margin:0}
+/* Takeaway */
+.hv-takeaway{margin-top:14px;padding:12px 14px;background:#edf5f0;border-radius:12px;border:1.5px solid #a8d5ba;text-align:center}
+.hv-takeaway p{font-size:.81rem;color:#2d6a4f;margin:0;line-height:1.6}
+</style>
+<div class="hv-wrap" role="region" aria-label="Der Hypervigilanz-Kreislauf">
+  <!-- Title -->
+  <div class="hv-title">
+    <h3>Der Hypervigilanz-Kreislauf</h3>
+    <p>Wie ständige Alarmbereitschaft sich selbst aufrechterhält — und warum Erholung nie ganz gelingt.</p>
+  </div>
+  <!-- Cycle visualization -->
+  <div class="hv-ring">
+    <!-- Arrow paths -->
+    <svg class="hv-arrows" viewBox="0 0 360 360" fill="none">
+      <!-- Top → Right -->
+      <path d="M220 60 Q310 60 310 140" stroke="#c4a882" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#hv-arrow)"/>
+      <!-- Right → Bottom -->
+      <path d="M310 220 Q310 300 220 300" stroke="#c4a882" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#hv-arrow)"/>
+      <!-- Bottom → Left -->
+      <path d="M140 300 Q50 300 50 220" stroke="#c4a882" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#hv-arrow)"/>
+      <!-- Left → Top -->
+      <path d="M50 140 Q50 60 140 60" stroke="#c4a882" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#hv-arrow)"/>
+      <defs>
+        <marker id="hv-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6" fill="#c4a882"/>
+        </marker>
+      </defs>
+    </svg>
+    <!-- Center -->
+    <div class="hv-center">
+      <div class="hv-center-circle">
+        <span class="hv-center-label">Dauer-<br>anspannung</span>
+        <span class="hv-center-sub">wird chronisch</span>
+      </div>
+    </div>
+    <!-- Station: Beobachten (top) -->
+    <div class="hv-station" data-id="beobachten" data-pos="top" tabindex="0" role="button" aria-expanded="false" aria-controls="hv-detail" onclick="hvToggle('beobachten')">
+      <span class="hv-pill">🔍 Beobachten</span>
+      <span class="hv-sub">Stimmung scannen</span>
+    </div>
+    <!-- Station: Anspannung (right) -->
+    <div class="hv-station" data-id="anspannung" data-pos="right" tabindex="0" role="button" aria-expanded="false" aria-controls="hv-detail" onclick="hvToggle('anspannung')">
+      <span class="hv-pill">⚡ Anspannung</span>
+      <span class="hv-sub">Körper in<br>Alarmbereitschaft</span>
+    </div>
+    <!-- Station: Erschöpfung (bottom) -->
+    <div class="hv-station" data-id="erschoepfung" data-pos="bottom" tabindex="0" role="button" aria-expanded="false" aria-controls="hv-detail" onclick="hvToggle('erschoepfung')">
+      <span class="hv-pill">😢 Erschöpfung</span>
+      <span class="hv-sub">Schlaf, Konzentration ↓</span>
+    </div>
+    <!-- Station: Erholung (left) -->
+    <div class="hv-station" data-id="erholung" data-pos="left" tabindex="0" role="button" aria-expanded="false" aria-controls="hv-detail" onclick="hvToggle('erholung')">
+      <span class="hv-pill">🌿 Erholung</span>
+      <span class="hv-sub">Kurz — nie<br>vollständig</span>
+    </div>
+  </div>
+  <!-- Step dots -->
+  <div class="hv-steps" aria-hidden="true">
+    <span class="hv-step-dot" onclick="hvToggle('beobachten')"></span>
+    <span class="hv-step-dot" onclick="hvToggle('anspannung')"></span>
+    <span class="hv-step-dot" onclick="hvToggle('erschoepfung')"></span>
+    <span class="hv-step-dot" onclick="hvToggle('erholung')"></span>
+  </div>
+  <!-- Note -->
+  <div class="hv-note">
+    Der Kreislauf wiederholt sich täglich — oft unbewusst.
+  </div>
+  <!-- Detail panel -->
+  <div class="hv-detail" id="hv-detail" aria-live="polite">
+    <div class="hv-empty">
+      <p style="font-size:.875rem;color:#5a504a">Klicken Sie auf eine Station im Kreislauf.</p>
+      <p style="font-size:.75rem;color:#8a7e76">Erkennen Sie sich? Das ist kein Versagen — es ist ein automatisierter Schutzmechanismus.</p>
+    </div>
+  </div>
+  <!-- Takeaway -->
+  <div class="hv-takeaway">
+    <p><strong>Die gute Nachricht:</strong><br>
+    Dieser Kreislauf lässt sich unterbrechen — mit bewusster Entlastung und professioneller Begleitung.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var data = {
+    beobachten: {
+      step: "Schritt 1",
+      stepColor: "#8a6d00", stepBg: "#fef9ec",
+      color: "#8a6d00", bg: "#fef9ec", border: "#d4a843",
+      signBorder: "#d4a843",
+      title: "🔍 Beobachten — Stimmung scannen",
+      body: "Sie haben gelernt, Ihren Partner ständig zu «lesen»: Wie ist die Stimme heute? Schläft er genug? Gibt sie zu viel aus? Diese Wachsamkeit war anfangs hilfreich — aber sie ist zum Dauerzustand geworden. Ihr Gehirn sucht permanent nach Warnsignalen, auch wenn es gerade ruhig ist.",
+      sign: "<strong>Kennen Sie das?</strong> Sie betreten einen Raum und checken als Erstes die Stimmung Ihres Partners — bevor Sie überhaupt «Hallo» sagen."
+    },
+    anspannung: {
+      step: "Schritt 2",
+      stepColor: "#bf5b00", stepBg: "#fff3e0",
+      color: "#bf5b00", bg: "#fff3e0", border: "#e67e22",
+      signBorder: "#e67e22",
+      title: "⚡ Anspannung — Körper in Alarmbereitschaft",
+      body: "Das ständige Beobachten aktiviert Ihr Stresssystem. Cortisol steigt, Muskeln spannen sich an, das Herz schlägt schneller. Ihr Körper reagiert, als wäre permanent Gefahr — auch wenn Ihr Partner gerade stabil ist. Das ist keine Einbildung, sondern Neurobiologie.",
+      sign: "<strong>Kennen Sie das?</strong> Ihr Partner lacht laut am Telefon — und Sie denken sofort: Ist das schon Manie? Ihr Körper reagiert mit einem Adrenalinstoss, bevor Ihr Verstand überhaupt einschätzen kann."
+    },
+    erschoepfung: {
+      step: "Schritt 3",
+      stepColor: "#a02015", stepBg: "#fdf0ed",
+      color: "#a02015", bg: "#fdf0ed", border: "#c0392b",
+      signBorder: "#c0392b",
+      title: "😢 Erschöpfung — Schlaf und Konzentration sinken",
+      body: "Die Daueranspannung fordert ihren Preis: Sie schlafen schlecht, können sich kaum konzentrieren, vergessen Dinge. Ihre eigenen Ressourcen schrumpfen — aber die Anforderungen bleiben gleich. Sie funktionieren auf Reserve.",
+      sign: "<strong>Kennen Sie das?</strong> Sie liegen nachts wach und hören, ob Ihr Partner noch atmet, ob er aufsteht, ob das Licht angeht. Am nächsten Morgen sind Sie erschöpfter als am Abend."
+    },
+    erholung: {
+      step: "Schritt 4",
+      stepColor: "#2d6a4f", stepBg: "#edf5f0",
+      color: "#2d6a4f", bg: "#edf5f0", border: "#6b9e7e",
+      signBorder: "#6b9e7e",
+      title: "🌿 Erholung — kurz und nie vollständig",
+      body: "Wenn eine Krise überstanden ist, erholen Sie sich — aber nicht ganz. Ein Rest Anspannung bleibt. Mit jeder Episode wird die Erholungsphase kürzer und unvollständiger. Wie eine Batterie, die nie mehr ganz auflädt.",
+      sign: "<strong>Kennen Sie das?</strong> Der Urlaub beginnt — und statt sich zu entspannen, warten Sie innerlich darauf, dass das Telefon klingelt. «Richtige» Erholung fühlt sich fast bedrohlich an."
+    }
+  };
+  var order = ['beobachten','anspannung','erschoepfung','erholung'];
+  var active = null;
+  var stations = document.querySelectorAll('.hv-station');
+  var dots = document.querySelectorAll('.hv-step-dot');
+  var panel = document.getElementById('hv-detail');
+  window.hvToggle = function(id) {
+    if (active === id) { active = null; } else { active = id; }
+    // Update stations
+    stations.forEach(function(s) {
+      var sId = s.getAttribute('data-id');
+      if (sId === active) {
+        s.classList.add('active');
+        s.setAttribute('aria-expanded', 'true');
+      } else {
+        s.classList.remove('active');
+        s.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Update dots
+    dots.forEach(function(d, i) {
+      d.className = 'hv-step-dot';
+      if (order[i] === active) {
+        d.classList.add('active-' + active);
+      }
+    });
+    // Update panel
+    if (!active) {
+      panel.style.background = '#f8f6f4';
+      panel.style.borderColor = '#e8e2dc';
+      panel.innerHTML =
+        '<div class="hv-empty">' +
+        '<p style="font-size:.875rem;color:#5a504a">Klicken Sie auf eine Station im Kreislauf.</p>' +
+        '<p style="font-size:.75rem;color:#8a7e76">Erkennen Sie sich? Das ist kein Versagen — es ist ein automatisierter Schutzmechanismus.</p></div>';
+      return;
+    }
+    var d = data[active];
+    panel.style.background = d.bg;
+    panel.style.borderColor = d.border;
+    panel.innerHTML =
+      '<span class="hv-d-step" style="color:' + d.stepColor + ';background:' + d.stepBg + '">' + d.step + '</span>' +
+      '<p class="hv-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
+      '<p class="hv-d-body">' + d.body + '</p>' +
+      '<div class="hv-d-sign" style="border-left-color:' + d.signBorder + '">' + d.sign + '</div>';
+  };
+  // Keyboard support
+  stations.forEach(function(s) {
+    s.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hvToggle(s.getAttribute('data-id'));
+      }
+    });
+  });
+})();
+</script>
 </div>
 <!-- ── Behandlung in Kürze ── -->
 <div class="behandlung-box" id="behandlung" style="margin:2rem 0;padding:1.5rem;background:var(--m1-light);border-radius:var(--radius);border-left:4px solid var(--m1);">
