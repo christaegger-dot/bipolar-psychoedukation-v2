@@ -727,6 +727,23 @@ footer {
   }
 }
 
+/* Mobile: horizontal scroll for dense multi-column SVGs (≥3 side-by-side elements) */
+@media (max-width: 600px) {
+  .svg-scroll-mobile {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+  .svg-scroll-mobile svg {
+    min-width: 500px;
+  }
+  .phase-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .wave-caption {
   font-size: var(--fs-sm);
   color: var(--muted);
