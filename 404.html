@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seite nicht gefunden – Bipolare Störung | PUK Zürich</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Seite nicht gefunden — Psychoedukation für Angehörige bipolarer Störungen. PUK Zürich.">
-<link rel="canonical" href="https://bipolare-erkrankung-angehoerige.netlify.app/404.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <style>
 @font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lora-v37-latin-regular.woff2') format('woff2');}
@@ -18,21 +17,51 @@
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/shared.css">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seite nicht gefunden – Bipolare Störung">
-<meta property="og:description" content="Seite nicht gefunden — Psychoedukation für Angehörige bipolarer Störungen. PUK Zürich.">
-<meta property="og:locale" content="de_CH">
-<meta property="og:site_name" content="PUK Zürich – Angehörigenarbeit">
-<!-- DESIGN: Eigenes OG-Image (og-index.png) für diese Seite erstellen. Aktuell Fallback auf og-index.png. -->
-<meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-index.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-index.png">
 <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
+
+<button id="notfall-trigger" aria-expanded="false" aria-controls="notfall-banner" onclick="toggleNotfall(this)">
+<span class="nt-icon">🆘</span>
+  Ich brauche jetzt sofort Hilfe
+  <span class="nt-chevron">▼</span>
+</button>
+
+<div id="notfall-banner" role="region" aria-label="Notfall-Informationen">
+<div class="notfall-content">
+<div class="notfall-situation">
+<div class="notfall-sit-label">🚨 Akute Gefahr — Ihr Partner gefährdet sich oder andere</div>
+<div class="notfall-nums">
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Polizei</span>
+<a href="tel:117">117</a>
+</div>
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Sanität / Notfall</span>
+<a href="tel:144">144</a>
+</div>
+</div>
+</div>
+<div class="notfall-situation">
+<div class="notfall-sit-label">💬 Sie brauchen Unterstützung</div>
+<div class="notfall-nums">
+<div class="notfall-num-card">
+<span class="notfall-num-label">Dargebotene Hand</span>
+<a href="tel:143">143</a>
+<span class="notfall-num-sub">24/7 · anonym · kostenlos</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">Psychiatrischer Notfalldienst ZH</span>
+<a href="tel:0800336655">0800 33 66 55</a>
+<span class="notfall-num-sub">24/7 · kostenlos · Kanton Zürich</span>
+</div>
+</div>
+</div>
+<button class="notfall-close" aria-label="Notfall-Banner schliessen" onclick="toggleNotfall(document.getElementById('notfall-trigger'))">Schliessen</button>
+</div>
+</div>
+
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -100,29 +129,15 @@
   <a href="/" class="error-back">← Zur Startseite</a>
 
   <div class="error-notfall">
-    <a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
+    <strong>In einer Krise?</strong> &nbsp;
+    <a href="tel:143">Dargebotene Hand 143</a> · 
+    <a href="tel:0800336655">Psych. Notfall 0800 33 66 55</a> · 
+    <a href="tel:144">Sanität 144</a>
   </div>
 </div>
 </main>
 
-<script src="/search-index.js" defer></script>
-<script src="/main.js" defer></script>
-<script src="/search.js" defer></script>
-<div class="search-overlay" id="search-overlay">
-<div class="search-modal">
-<div class="search-header">
-<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
-<button class="search-close" onclick="closeSearch()">✕</button>
-</div>
-<div id="search-results">
-<div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
-</div>
-</div>
-</div>
+<script src="/main.js"></script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
-<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
-  <span class="notfall-fab-icon">🆘</span>
-  <span class="notfall-fab-label">Hilfe</span>
-</a>
 </body>
 </html>

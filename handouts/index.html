@@ -1,31 +1,28 @@
-<!-- REDAKTIONELL: Infografik-PDFs sind 797×1429pt (nicht A4 595×842pt). Für Druckbarkeit konvertieren. Betrifft alle 24 PDFs in /handouts/. PDFs sollten auf @page A4 portrait optimiert und Druckformat geprüft werden. -->
 <!DOCTYPE html>
 
-<html lang="de-CH">
+<html lang="de">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Handouts &amp; Downloads – Bipolare Störung | PUK Zürich</title>
 <meta content="Alle Handouts und Vorlagen zur Psychoedukation für Angehörige von Menschen mit bipolarer Störung. PUK Zürich." name="description"/>
 <meta content="index, follow" name="robots"/>
-<link href="https://bipolare-erkrankung-angehoerige.netlify.app/handouts/" rel="canonical"/>
+<link href="https://bipolar-angehoerige01.netlify.app/handouts/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="Handouts &amp; Downloads – Bipolare Störung" property="og:title"/>
 <meta content="Alle Handouts und Vorlagen zur Psychoedukation für Angehörige von Menschen mit bipolarer Störung. PUK Zürich." property="og:description"/>
-<meta content="https://bipolare-erkrankung-angehoerige.netlify.app/handouts/" property="og:url"/>
+<meta content="https://bipolar-angehoerige01.netlify.app/handouts/" property="og:url"/>
 <meta content="de_CH" property="og:locale"/>
 <meta content="PUK Zürich – Angehörigenarbeit" property="og:site_name"/>
 <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🤝&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
-<link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css">
-<!-- DESIGN: Eigenes OG-Image (og-index.png) für diese Seite erstellen. Aktuell Fallback auf og-index.png. -->
-<meta content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-index.png" property="og:image"/>
+<link href="/shared.css" rel="stylesheet"/>
+
+<meta content="https://bipolar-angehoerige01.netlify.app/images/og-handouts.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-index.png" name="twitter:image"/>
+<meta content="https://bipolar-angehoerige01.netlify.app/images/og-handouts.png" name="twitter:image"/>
 <style>
 @font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lora-v37-latin-regular.woff2') format('woff2');}
 @font-face{font-family:'Lora';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/lora-v37-latin-600.woff2') format('woff2');}
@@ -36,6 +33,24 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
+<button aria-controls="notfall-banner" aria-expanded="false" id="notfall-trigger" onclick="document.getElementById('notfall-banner').classList.toggle('visible')">
+  🆘   Ich brauche jetzt sofort Hilfe   ▼
+</button>
+<div id="notfall-banner">
+<div class="notfall-inner">
+<div class="notfall-top">
+      🚨 <strong>Akute Gefahr</strong> — Ihr Partner gefährdet sich oder andere  
+      <a class="notfall-phone" href="tel:117">Polizei 117</a>
+</div>
+<div class="notfall-details">
+      Bei Fremdgefährdung → <a href="tel:117">117</a>  
+      Psychiatrischer Notfall → <a href="tel:0800336655">0800 33 66 55</a>  
+      KIZ PUK → <a href="tel:+41583846500">058 384 65 00</a> (Durchwahl 4)  
+      Sanität → <a href="tel:144">144</a>  
+      Dargebotene Hand → <a href="tel:143">143</a>
+</div>
+</div>
+</div>
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -412,10 +427,9 @@
 </div>
 <div class="source-box">
 <strong>Hinweis:</strong> Diese Materialien ersetzen keine professionelle Beratung oder Therapie. 
-    Bei akuten Krisen: <a href="/notfall/" class="danger-bold">Notfall &amp; Krisenhilfe</a>.
+    Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-bold">Notfalldienst: 0800 33 66 55</a>.
   </div>
 </div>
-<!-- REDAKTIONELL PRÜFEN: Textversions-PDFs in /handouts-text/ sind nur 3-4 KB gross. Stichprobenartig prüfen ob Inhalte vollständig sind oder nur Platzhalter. -->
 <div id="text-versions" class="section-group" style="margin-top:2.5rem">
 <h2 class="section-intro">📝 Barrierefreie Textversionen</h2>
 <p class="text-sm-muted-mb">Alle Infografiken als reine Text-PDFs — optimiert für Screen-Reader und langsame Verbindungen.</p>
@@ -606,8 +620,12 @@
       für Angehörige und Partner*innen
     </div>
 <div class="footer-notfall">
-<a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
-</div>
+      Psychiatrischer Notfall: <a href="tel:0800336655">0800 33 66 55</a> Notfalldienst ZH (24/7) ·
+      <a href="tel:+41583846500">058 384 65 00</a> KIZ PUK (Durchwahl 4) ·
+      <a href="tel:144">144</a> Sanität ·
+      <a href="tel:117">117</a> Polizei (Fremdgefährdung) ·
+      <a href="tel:143">143</a> Dargebotene Hand
+    </div>
 <div class="footer-copy">© 2026 Psychiatrische Universitätsklinik Zürich. Alle Rechte vorbehalten. <a href="/impressum/">Impressum</a></div>
 </div>
 </footer>
@@ -654,24 +672,15 @@
       dl=document.getElementById('ho-lb-dl');
   if(!lb)return;
   document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    var pdfHref=card.getAttribute('href');
-    card.setAttribute('data-pdf',pdfHref);
-    card.removeAttribute('href');
-    card.style.cursor='pointer';
-    card.setAttribute('role','button');
-    card.setAttribute('tabindex','0');
     card.addEventListener('click',function(e){
       e.preventDefault();
       var thumb=card.querySelector('.card-thumb img');
       if(!thumb)return;
       img.src=thumb.src;
       img.alt=thumb.alt;
-      dl.href=pdfHref;
+      dl.href=card.getAttribute('href');
       lb.classList.add('active');
       document.body.style.overflow='hidden';
-    });
-    card.addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
     });
   });
   function closeLb(){lb.classList.remove('active');document.body.style.overflow=''}
@@ -681,9 +690,5 @@
 })();
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
-<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
-  <span class="notfall-fab-icon">🆘</span>
-  <span class="notfall-fab-label">Hilfe</span>
-</a>
 </body>
 </html>

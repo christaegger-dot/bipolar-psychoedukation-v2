@@ -133,7 +133,6 @@ function toggleWhy(btn) {
   var why = row.querySelector('.boundary-why');
   if (!why) return;
   var open = why.classList.toggle('open');
-  btn.setAttribute('aria-expanded', String(open));
   btn.textContent = open ? '✕ Schliessen' : '💡 Warum ist das besser?';
 }
 
@@ -154,21 +153,18 @@ function toggleReadmode() {
 
 // #15 Nummer kopieren
 function copyNum(num, btn) {
-  function onCopied() {
-    btn.textContent = '✓ Kopiert';
-    btn.classList.add('copied');
-    setTimeout(function() {
-      btn.textContent = '📋 Kopieren';
-      btn.classList.remove('copied');
-    }, 2000);
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(num).then(onCopied).catch(function() {
-      fallbackCopy(num, onCopied);
-    });
-  } else {
-    fallbackCopy(num, onCopied);
-  }
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(num).then(function() {
+        btn.textContent = '✓ Kopiert';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = '📋 Kopieren';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  } catch(e) {}
 }
 
 // #16 Weiter-lesen — multi-page aware
@@ -239,7 +235,7 @@ function showScResult() {
   } else if (yesCount <= 3) {
     msg = '<div class="sc-result-title" style="color:var(--m4)">Sie befinden sich in der Mitte</div>Einige Warnsignale sind vorhanden. <a href="/modul/5/">Modul 5 (Selbstfürsorge und Handeln)</a> ist besonders relevant für Sie — und <a href="/modul/7/">Modul 7</a> zeigt Ihnen, wo Sie Unterstützung finden.';
   } else {
-    msg = '<div class="sc-result-title" style="color:var(--danger)">Handlungsbedarf erkennbar</div>Mehrere Warnsignale deuten darauf hin, dass Sie sich stark verausgaben. Bitte nehmen Sie sich <a href="/modul/5/">Modul 5</a> zu Herzen und überlegen Sie, ob eine Beratung bei der <a href="/modul/7/">Fachstelle Angehörigenarbeit</a> hilfreich wäre.<br><strong>Psychiatrischer Notfalldienst ZH:</strong> <a href="tel:0800336655" style="color:var(--danger);font-weight:700;">0800 33 66 55</a> (24/7, kostenlos)';
+    msg = '<div class="sc-result-title" style="color:var(--danger)">Handlungsbedarf erkennbar</div>Mehrere Warnsignale deuten darauf hin, dass Sie sich stark verausgaben. Bitte nehmen Sie sich <a href="/modul/5/">Modul 5</a> zu Herzen und überlegen Sie, ob eine Beratung bei der <a href="/modul/7/">Fachstelle Angehörigenarbeit</a> hilfreich wäre.';
   }
   result.innerHTML = msg;
   result.classList.add('show');
@@ -326,30 +322,16 @@ function giveFeedback(btn, module, val) {
 // #20 Teilen
 function shareSection(id, btn) {
   var url = window.location.href.split('#')[0] + '#' + id;
-  function onCopied() {
-    btn.textContent = '✓ Link kopiert';
-    btn.classList.add('copied');
-    setTimeout(function() {
-      btn.textContent = '🔗 Teilen';
-      btn.classList.remove('copied');
-    }, 2500);
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(url).then(onCopied).catch(function() {
-      fallbackCopy(url, onCopied);
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function() {
+      btn.textContent = '✓ Link kopiert';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = '🔗 Teilen';
+        btn.classList.remove('copied');
+      }, 2500);
     });
-  } else {
-    fallbackCopy(url, onCopied);
   }
-}
-function fallbackCopy(text, cb) {
-  var ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0';
-  document.body.appendChild(ta);
-  ta.select();
-  try { document.execCommand('copy'); cb(); } catch(e) {}
-  document.body.removeChild(ta);
 }
 
 // Nav toggle (hamburger)
@@ -380,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (fs) fs.textContent = 'A−';
     }
     // restore feedback states
-    ['m1','m2','m3','m4','m5','m6','m7'].forEach(function(m) {
+    ['m1','m2','m3','m4','m5','m6'].forEach(function(m) {
       var val = localStorage.getItem('bipolar-fb-' + m);
       if (val) {
         var thanks = document.getElementById('fb-' + m);
@@ -418,52 +400,6 @@ function showSlide(n) {
 function toggleLoyalty(el) {
   el.classList.toggle('active');
 }
-
-// ═══════════════════════════════════════════════════════
-// HANDOUT LIGHTBOX
-// ═══════════════════════════════════════════════════════
-
-function openHandoutLightbox(href, title) {
-  var filename = href.split('/').pop().replace('.pdf', '.webp');
-  var thumbSrc = '/images/thumbs/' + filename;
-  var overlay = document.createElement('div');
-  overlay.className = 'handout-lightbox';
-  overlay.onclick = function(e) { if (e.target === overlay) closeHandoutLightbox(); };
-  overlay.innerHTML =
-    '<div class="handout-lb-inner">' +
-    '<button class="handout-lb-close" aria-label="Schliessen">✕</button>' +
-    '<img class="handout-lb-img" src="' + thumbSrc + '" alt="' + title + '">' +
-    '<div class="handout-lb-title">' + title + '</div>' +
-    '<a class="handout-lb-download" href="' + href + '" download>⬇ PDF herunterladen</a>' +
-    '</div>';
-  overlay.querySelector('.handout-lb-close').onclick = closeHandoutLightbox;
-  document.body.appendChild(overlay);
-  requestAnimationFrame(function() { overlay.classList.add('open'); });
-  document.body.style.overflow = 'hidden';
-}
-
-function closeHandoutLightbox() {
-  var lb = document.querySelector('.handout-lightbox');
-  if (!lb) return;
-  lb.classList.remove('open');
-  setTimeout(function() { lb.remove(); }, 250);
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('click', function(e) {
-  var item = e.target.closest('.handout-item');
-  if (!item) return;
-  e.preventDefault();
-  var label = item.querySelector('.handout-label');
-  var title = label ? label.textContent : 'Handout';
-  openHandoutLightbox(item.getAttribute('href'), title);
-});
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && document.querySelector('.handout-lightbox')) {
-    closeHandoutLightbox();
-  }
-});
 
 var eeData = {
   1: {
@@ -537,12 +473,10 @@ function toggleAcc(btn) {
     if (s !== item) {
       s.classList.remove('open');
       s.querySelector('.acc-body').classList.remove('open');
-      s.querySelector('.acc-header').setAttribute('aria-expanded', 'false');
     }
   });
   item.classList.toggle('open', !isOpen);
   body.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', String(!isOpen));
   if (!isOpen) {
     setTimeout(function() {
       item.scrollIntoView({behavior: 'smooth', block: 'nearest'});
@@ -570,12 +504,8 @@ function toggleFaq(btn) {
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i) {
     i.classList.remove('open');
-    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) {
-    item.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-  }
+  if (!wasOpen) item.classList.add('open');
 }
 
 // Glossar-Akkordeon
@@ -584,12 +514,8 @@ function toggleGlossar(btn) {
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.glossar-item.open').forEach(function(i) {
     i.classList.remove('open');
-    i.querySelector('.glossar-term').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) {
-    item.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-  }
+  if (!wasOpen) item.classList.add('open');
 }
 
 // Notfall Mini-Guide Akkordeon
@@ -598,12 +524,8 @@ function toggleMG(btn) {
   var wasOpen = guide.classList.contains('open');
   guide.parentElement.querySelectorAll('.mini-guide.open').forEach(function(g) {
     g.classList.remove('open');
-    g.querySelector('.mg-header').setAttribute('aria-expanded', 'false');
   });
-  if (!wasOpen) {
-    guide.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-  }
+  if (!wasOpen) guide.classList.add('open');
 }
 
 // Progressive Disclosure
@@ -612,7 +534,6 @@ function togglePD(btn) {
   var isOpen = full.classList.contains('open');
   full.classList.toggle('open', !isOpen);
   btn.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', String(!isOpen));
   var chevron = btn.querySelector('.pd-chevron');
   if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
   if (!isOpen) {

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /handouts-legacy/
 Disallow: /reports/
 
-Sitemap: https://bipolare-erkrankung-angehoerige.netlify.app/sitemap.xml
+Sitemap: https://bipolar-angehoerige01.netlify.app/sitemap.xml

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modul 7: Unterstützung und Ressourcen | PUK Zürich</title>
 <meta name="description" content="Fachstellen, Selbsthilfegruppen, Notfallnummern — die wichtigsten Anlaufstellen im Überblick.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://bipolare-erkrankung-angehoerige.netlify.app/modul/7/">
+<link rel="canonical" href="https://bipolar-angehoerige01.netlify.app/modul/7/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Modul 7: Unterstützung und Ressourcen">
 <meta property="og:description" content="Fachstellen, Selbsthilfegruppen, Notfallnummern — die wichtigsten Anlaufstellen im Überblick.">
-<meta property="og:url" content="https://bipolare-erkrankung-angehoerige.netlify.app/modul/7/">
+<meta property="og:url" content="https://bipolar-angehoerige01.netlify.app/modul/7/">
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Bipolare Störung – Psychoedukation für Angehörige">
 <meta name="twitter:title" content="Modul 7: Unterstützung und Ressourcen">
@@ -25,23 +25,23 @@
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/shared.css">
-<meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m7.png">
+<meta property="og:image" content="https://bipolar-angehoerige01.netlify.app/images/og-m7.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m7.png">
+<meta name="twitter:image" content="https://bipolar-angehoerige01.netlify.app/images/og-m7.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Unterstützung und Ressourcen",
   "description": "Fachstellen, Selbsthilfegruppen, Notfallnummern — die wichtigsten Anlaufstellen in der Schweiz.",
-  "url": "https://bipolare-erkrankung-angehoerige.netlify.app/modul/7/",
+  "url": "https://bipolar-angehoerige01.netlify.app/modul/7/",
   "inLanguage": "de-CH",
   "isPartOf": {
     "@type": "MedicalWebPage",
     "name": "Bipolare Störung — Psychoedukation für Angehörige",
-    "url": "https://bipolare-erkrankung-angehoerige.netlify.app/"
+    "url": "https://bipolar-angehoerige01.netlify.app/"
   },
   "publisher": {
     "@type": "Hospital",
@@ -54,6 +54,77 @@
 <body>
 <a class="skip-link" href="#module-content">Direkt zum Inhalt</a>
 <div id="progress-bar"></div>
+<button aria-controls="notfall-banner" aria-expanded="false" id="notfall-trigger" onclick="toggleNotfall(this)" title="Notfall-Informationen ein-/ausblenden">
+<span class="nt-icon">🆘</span>
+  Ich brauche jetzt sofort Hilfe
+  <span class="nt-chevron">▼</span>
+</button>
+<div aria-label="Notfall-Informationen" id="notfall-banner" role="region">
+<div class="notfall-content">
+<!-- Situation 1: Fremdgefährdung -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">🚨 Akute Gefahr — Ihr Partner gefährdet sich oder andere</div>
+<div class="notfall-nums">
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Polizei</span>
+<a href="tel:117">117</a>
+<span class="notfall-num-sub">Bei Fremdgefährdung oder wenn Sie sich selbst nicht mehr sicher fühlen</span>
+</div>
+<div class="notfall-num-card notfall-priority">
+<span class="notfall-num-label">Sanität / Notfall</span>
+<a href="tel:144">144</a>
+<span class="notfall-num-sub">Bei akuter Suizidgefahr oder medizinischem Notfall — koordiniert alle weiteren Schritte</span>
+</div>
+</div>
+</div>
+<!-- Situation 2: Psychiatrische Krise -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">⚠️ Psychiatrische Krise — Suizidgedanken oder schwere Episode</div>
+<div class="notfall-nums">
+<div class="notfall-num-card">
+<span class="notfall-num-label">Psychiatrischer Notfalldienst ZH</span>
+<a href="tel:0800336655">0800 33 66 55</a>
+<span class="notfall-num-sub">24/7 · kostenlos · Kanton Zürich<br/>Vermittelt Notfallpsychiater*in nach Hause oder in die Klinik</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">KIZ — PUK Zürich</span>
+<a href="tel:+41583846500">058 384 65 00</a>
+<span class="notfall-num-sub">24/7 · Durchwahl 4 · Militärstrasse 8<br/>Krisenintervention: telefonisch, ambulant oder stationär (bis 7 Tage)</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">KIZ — IPW Winterthur</span>
+<a href="tel:0522643700">052 264 37 00</a>
+<span class="notfall-num-sub">24/7 · Region Winterthur-Unterland<br/>Krisenintervention ambulant und stationär</span>
+</div>
+</div>
+</div>
+<!-- Situation 3: Sie selbst brauchen Unterstützung -->
+<div class="notfall-situation">
+<div class="notfall-sit-label">💬 Sie selbst sind am Limit — Gespräch und Orientierung</div>
+<div class="notfall-nums">
+<div class="notfall-num-card">
+<span class="notfall-num-label">Dargebotene Hand</span>
+<a href="tel:143">143</a>
+<span class="notfall-num-sub">24/7 · anonym · kostenlos<br/>Zuhören, Entlasten, Weiterverweisen — auch für Angehörige</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">Fachstelle Angehörige PUK</span>
+<a href="tel:+41583843800">058 384 38 00</a>
+<span class="notfall-num-sub">Mo–Fr · kostenlos · vertraulich<br/>Spezialisierte Beratung für Angehörige</span>
+</div>
+<div class="notfall-num-card">
+<span class="notfall-num-label">Pro Mente Sana</span>
+<a href="tel:0848800858">0848 800 858</a>
+<span class="notfall-num-sub">Mo/Di/Do 9–12 Uhr, Do 14–17 Uhr, Di/Mi 16:30–19:30 Uhr<br/>Psychosoziale und rechtliche Beratung für Angehörige</span>
+</div>
+</div>
+</div>
+<div class="notfall-hinweis">
+<strong>Hinweis für Angehörige:</strong> Bei konkreten Suizidgedanken Ihres Partners ist die Dargebotene Hand 143 ein erster Schritt — aber nicht das einzige Mittel. Der psychiatrische Notfalldienst (0800 33 66 55) oder das KIZ können psychiatrische Fachpersonen direkt einbeziehen und eine Einschätzung vor Ort ermöglichen.
+    </div>
+<button class="notfall-close" aria-label="Notfall-Banner schliessen" onclick="toggleNotfall(document.getElementById('notfall-trigger'))">Schliessen</button>
+</div>
+</div>
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -144,6 +215,7 @@
 <section class="module" id="m7">
 <div class="module-card c7">
 <div class="module-header">
+<div class="module-number c7">07</div>
 <div class="module-header-text">
 <div class="module-h2-wrap"><h2>Unterstützung und Ressourcen</h2><button class="share-btn" onclick="shareSection('m7',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 <div class="module-subtitle">Wo Sie Hilfe finden — in der Schweiz und bei uns</div>
@@ -164,6 +236,7 @@
 </ul>
 </div>
 
+<span class="eyebrow" style="--module-color:var(--m7)">Modul 7 · Hilfe & Anlaufstellen</span>
 <nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m7)">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
@@ -183,7 +256,7 @@
 </div>
 <p class="m-intro">Sie sind nicht allein. Es gibt ein dichtes Netz an Unterstützung in der Schweiz — für Sie persönlich, für die Beziehung und für Ihren Partner. Nutzen Sie diese Angebote: Sie haben ein Recht darauf.</p>
 <!-- ── 7 Erkenntnisse ── -->
-<h3 class="section-title-sm">7 wichtigste Erkenntnisse zum Mitnehmen</h3>
+<div class="section-title-sm">7 wichtigste Erkenntnisse zum Mitnehmen</div>
 <div class="takeaways">
 <div class="takeaway-item">
 <div class="takeaway-num">1</div>
@@ -255,7 +328,7 @@
 </div>
 <!-- ── Was Sie konkret tun können ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
-<h3 class="section-title-sm">Was Sie als Nächstes tun können</h3>
+<div class="section-title-sm">Was Sie als Nächstes tun können</div>
 <div class="manie-komm-wrap">
 <div class="manie-komm-card">
 <div class="mk-num bg-m7">1</div>
@@ -294,7 +367,7 @@
 </div>
 </div>
 <div class="wissens-anker" style="--module-color:var(--m7)">
-<p class="wa-title">Wissens-Anker</p>
+<p class="wa-title">🎯 Wissens-Anker</p>
 <div class="wa-q" id="wa-7-0">
 <p>Was ist der wichtigste erste Schritt für Angehörige?</p>
 <div class="wa-opts">
@@ -307,7 +380,7 @@
 </div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
-<h3 class="section-title-sm">Merken Sie sich</h3>
+<div class="section-title-sm">Merken Sie sich</div>
 <div class="m-insight" style="background:var(--m7-light)">
 <div class="insight-icon">✓</div>
 <div>
@@ -319,7 +392,7 @@
         </div>
 </div>
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
-<h3 class="section-title-sm">Anlaufstellen in der Schweiz</h3>
+<div class="section-title-sm">Anlaufstellen in der Schweiz</div>
 <div class="resources-grid">
 <div class="resource-card primary">
 <div class="resource-org">Fachstelle Angehörigenarbeit</div>
@@ -334,14 +407,14 @@
 <div class="resource-card">
 <div class="resource-org">Die Dargebotene Hand</div>
 <div class="resource-hours always">🟢 24/7 erreichbar</div>
-<div class="resource-num"><a href="tel:143">143</a><button class="copy-btn" onclick="copyNum(\'143\',this)" aria-label="Nummer 143 kopieren">📋 Kopieren</button></div>
+<div class="resource-num">143<button class="copy-btn" onclick="copyNum(\'143\',this)" aria-label="Nummer 143 kopieren">📋 Kopieren</button></div>
 <div class="resource-desc">24/7 erreichbar — Telefon, Chat und E-Mail. Anonym und kostenlos. Erste Anlaufstelle für emotionale Entlastung, auch nachts.</div>
 <div class="resource-contact"><a href="https://www.143.ch" rel="noopener noreferrer" target="_blank">143.ch</a></div>
 </div>
 <div class="resource-card">
 <div class="resource-org">Pro Mente Sana</div>
 <div class="resource-hours">🕐 Mo–Fr, Online 24/7</div>
-<div class="resource-num"><a href="tel:0848800858">0848 800 858</a><button class="copy-btn" onclick="copyNum(\'0848800858\',this)" aria-label="Nummer 0848800858 kopieren">📋 Kopieren</button></div>
+<div class="resource-num">0848 800 858<button class="copy-btn" onclick="copyNum(\'0848800858\',this)" aria-label="Nummer 0848800858 kopieren">📋 Kopieren</button></div>
 <div class="resource-desc">Psychosoziale und juristische Beratung für Angehörige — auch zu FU, Patientenverfügung und Vorsorgeauftrag. Mo–Fr telefonisch, Online-Beratung rund um die Uhr.</div>
 <div class="resource-contact"><a href="https://www.promentesana.ch" rel="noopener noreferrer" target="_blank">promentesana.ch</a></div>
 </div>
@@ -353,14 +426,14 @@
 <div class="resource-card">
 <div class="resource-org">Selbsthilfe Zürich</div>
 <div class="resource-hours">🕐 Mo–Fr Bürozeiten</div>
-<div class="resource-num"><a href="tel:0432888888">043 288 88 88</a><button class="copy-btn" onclick="copyNum(\'0432888888\',this)" aria-label="Nummer 0432888888 kopieren">📋 Kopieren</button></div>
+<div class="resource-num">043 288 88 88<button class="copy-btn" onclick="copyNum(\'0432888888\',this)" aria-label="Nummer 0432888888 kopieren">📋 Kopieren</button></div>
 <div class="resource-desc">Vermittlung von Selbsthilfegruppen in der Region Zürich. Kostenlos und niederschwellig.</div>
 <div class="resource-contact"><a href="https://www.selbsthilfezuerich.ch" rel="noopener noreferrer" target="_blank">selbsthilfezuerich.ch</a></div>
 </div>
 </div>
 <!-- ── PDF Downloads ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
-<h3 class="section-title-sm">PDFs zum Mitnehmen</h3>
+<div class="section-title-sm">PDFs zum Mitnehmen</div>
 <p class="m-subtext">Beide Dokumente können Sie direkt herunterladen, ausdrucken oder auf Ihrem Gerät speichern — kein Login, keine E-Mail erforderlich.</p>
 <div class="pdf-download-wrap">
 <a class="pdf-download-btn" download="kurzblatt-was-stabilisiert-was-schadet-puk-zuerich.pdf" href="/downloads/kurzblatt-was-stabilisiert-was-schadet-puk-zuerich.pdf">
@@ -390,7 +463,7 @@
 </div>
 <div class="handout-section" style="border-left-color: var(--emerald, #2D6A5A);">
 <div class="handout-section-title" style="color: var(--emerald, #2D6A5A);">
-          Alle Handouts — Komplette Sammlung (24 PDFs)
+          📚 Alle Handouts — Komplette Sammlung (24 PDFs)
         </div>
 <p style="font-size:var(--fs-sm); color:var(--muted); margin:0 0 1rem;">
           Alle Handouts dieser Website zum Herunterladen — thematisch geordnet nach Modulen.
@@ -524,7 +597,7 @@
 <ul>
 <li>Sie sind nicht allein — es gibt spezialisierte Anlaufstellen für Angehörige.</li>
 <li>VASK Zürich, Pro Mente Sana und die Fachstelle Angehörigenarbeit PUK bieten konkrete Unterstützung.</li>
-<li>Die Dargebotene Hand ist rund um die Uhr erreichbar — auch für Angehörige. Alle Nummern finden Sie unter <a href="/notfall/">Notfall &amp; Krisenhilfe</a>.</li>
+<li>Die Dargebotene Hand (143) ist rund um die Uhr erreichbar — auch für Angehörige.</li>
 <li>Nutzen Sie die Handouts als Gedächtnisstütze und zum Weitergeben.</li>
 </ul>
 </div>
@@ -576,7 +649,7 @@
       für Angehörige und Partner*innen
     </div>
 <div class="footer-crisis">
-<a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
+<div><strong>Psychiatrischer Notfall:</strong> <span class="fc-num">0800 33 66 55</span> Notfalldienst ZH (24/7) · <span class="fc-num">058 384 65 00</span> KIZ PUK (Durchwahl 4) · <span class="fc-num">144</span> Sanität · <span class="fc-num">117</span> Polizei (Fremdgefährdung) · <span class="fc-num">143</span> Dargebotene Hand</div>
 </div>
 </div>
 <div class="footer-bottom">
@@ -602,9 +675,5 @@
 <script src="/main.js" defer></script>
 <script src="/search.js" defer></script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
-<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
-  <span class="notfall-fab-icon">🆘</span>
-  <span class="notfall-fab-label">Hilfe</span>
-</a>
 </body>
 </html>
