@@ -405,15 +405,14 @@ nav {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: 0 6px 36px rgba(40,36,32,0.07), 0 1px 4px rgba(40,36,32,0.04);
-  overflow: hidden;
 }
-
 .module-header {
   padding: var(--sp-lg) 2rem 1.5rem;
   border-bottom: 1px solid var(--bg2);
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .module-number {
   font-family: 'Lora', Georgia, serif;
@@ -929,7 +928,6 @@ footer {
   background: var(--bg);
   border-radius: 12px;
   border: 1px solid var(--bg3);
-  overflow: hidden;
   margin-bottom: 1rem;
 }
 .phase-tabs {
@@ -942,6 +940,7 @@ footer {
 }
 .phase-tab {
   flex: 1;
+  min-width: 0;
   padding: 0.75rem 0.5rem;
   border: none;
   background: var(--white);
@@ -961,7 +960,7 @@ footer {
 .slider-tab:focus-visible { outline: 2px solid var(--m6); outline-offset: 2px; }
 .phase-connector { width: 20px; height: 2px; background: var(--bg3); flex-shrink: 0; margin: 0 -2px; }
 .phase-tag { font-size: var(--fs-xs); font-weight: 600; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.05em; }
-.phase-name { font-size: var(--fs-base); font-weight: 600; }
+.phase-name { font-size: var(--fs-base); font-weight: 600; word-break: break-word; }
 .phase-mood { font-size: var(--fs-xs); opacity: 0.75; }
 
 .phase-content { padding: 1.4rem; }
