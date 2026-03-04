@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bipolar-puk-v7';
+const CACHE_NAME = 'bipolar-puk-v8';
 const CORE_ASSETS = [
   '/',
   '/shared.css',
@@ -23,6 +23,17 @@ const CORE_ASSETS = [
   '/404.html'
 ];
 
+// Netlify redirects these shortcut URLs (301) to /handouts/... paths.
+// Offline the redirect doesn't work, so we resolve them in the SW.
+const REDIRECT_MAP = {
+  '/notfall/':    '/handouts/notfall/',
+  '/notfall':     '/handouts/notfall/',
+  '/impressum/':  '/handouts/impressum/',
+  '/impressum':   '/handouts/impressum/',
+  '/ressourcen/': '/handouts/ressourcen/',
+  '/ressourcen':  '/handouts/ressourcen/'
+};
+
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME)
@@ -41,6 +52,27 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+
+  // Resolve shortcut URLs that Netlify normally redirects
+  const url = new URL(e.request.url);
+  const target = REDIRECT_MAP[url.pathname];
+  if (target) {
+    const redirected = new Request(new URL(target, url.origin));
+    e.respondWith(
+      caches.match(redirected).then(cached => {
+        const fetchPromise = fetch(e.request).then(response => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(redirected, clone));
+          }
+          return response;
+        }).catch(() => cached);
+        return cached || fetchPromise;
+      })
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then(cached => {
       const fetchPromise = fetch(e.request).then(response => {
