@@ -33,7 +33,7 @@
   --indigo:   #4338CA;   /* Akzentfarbe für Tooltips & Highlights */
   --m7-light: #dde8ee;
 
-  --radius:   14px;
+  --radius:   10px;
   --shadow:   0 4px 28px rgba(40,36,32,0.08);
 
   /* Typografie-Skala (5 Stufen) */
@@ -235,7 +235,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-base);
   font-weight: 600;
   color: var(--text);
@@ -287,7 +287,7 @@ nav {
   margin-bottom: 0.8rem;
 }
 .hero h1 {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: clamp(1.9rem, 5vw, 2.9rem);
   line-height: 1.15;
   margin-bottom: 1rem;
@@ -329,14 +329,14 @@ nav {
   font-size: var(--fs-base);
   margin-bottom: 0.2rem;
   color: var(--text);
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-style: italic;
 }
 
 /* Hoffnungsanker */
 .hope-banner {
   background: linear-gradient(135deg, var(--m6-light), var(--bg));
-  border-radius: 14px;
+  border-radius: var(--radius);
   border-left: 4px solid var(--m6);
   padding: 1.1rem 1.5rem;
   max-width: 640px;
@@ -411,7 +411,7 @@ nav {
   gap: 1.2rem;
 }
 .module-number {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 2.8rem;
   font-weight: 600;
   line-height: 1;
@@ -421,7 +421,7 @@ nav {
   letter-spacing: -0.02em;
 }
 .module-header-text h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h2);
   line-height: 1.2;
   margin-bottom: 0.3rem;
@@ -494,7 +494,7 @@ footer {
   align-items: start;
 }
 .footer-brand {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-md);
   font-weight: 600;
   color: white;
@@ -525,7 +525,7 @@ footer {
 }
 .footer-crisis strong { color: white; font-size: var(--fs-base); }
 .footer-crisis .fc-num {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h1);
   font-weight: 600;
   color: rgba(255,180,180,1);
@@ -555,7 +555,7 @@ footer {
   max-width: 640px;
 }
 .section-title-sm {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h3);
   font-weight: 600;
   color: var(--text);
@@ -648,7 +648,7 @@ footer {
 .pole-header.stabil { background: var(--m3-light); }
 .pole-header.depression { background: var(--m1-light); }
 .pole-title {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-lg);
   font-weight: 600;
   margin-bottom: 0.2rem;
@@ -857,7 +857,7 @@ footer {
   margin-bottom: 1.2rem;
 }
 .sep-stat { text-align: center; flex-shrink: 0; min-width: 100px; }
-.sep-number { font-family: 'Lora', serif; font-size: 2.4rem; font-weight: 600; line-height: 1; margin-bottom: 0.4rem; }
+.sep-number { font-family: 'Lora', Georgia, serif; font-size: 2.4rem; font-weight: 600; line-height: 1; margin-bottom: 0.4rem; }
 .sep-label { font-size: var(--fs-sm); color: var(--muted); line-height: 1.4; margin-bottom: 0.4rem; }
 .sep-source { font-size: var(--fs-xs); color: var(--muted); font-style: italic; }
 .sep-divider { width: 1px; background: var(--bg3); align-self: stretch; flex-shrink: 0; }
@@ -878,7 +878,8 @@ footer {
   color: var(--text);
   position: relative;
 }
-.quote-card::before { content: '«'; font-size: 3.5rem; opacity: 0.22; position: absolute; top: -0.3rem; left: 0.4rem; font-family: 'Lora', serif; line-height: 1; color: inherit; }
+.quote-card::before { content: '«'; font-size: 3.5rem; opacity: 0.22; position: absolute; top: -0.3rem; left: 0.4rem; font-family: 'Lora', Georgia, serif; line-height: 1; color: inherit; }
+.m1-quote { background: var(--m1-light); border-left: 3px solid var(--m1); padding-left: 2rem; }
 .m2-quote { background: var(--m2-light); border-left: 3px solid var(--m2); padding-left: 2rem; }
 
 .erosion-cards {
@@ -909,7 +910,7 @@ footer {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 .sep-stat { text-align: center; flex-shrink: 0; }
-.sep-number { font-family: 'Lora', serif; font-size: 3.4rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.sep-number { font-family: 'Lora', Georgia, serif; font-size: 3.4rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
 .sep-label { font-size: var(--fs-sm); color: var(--muted); max-width: 120px; line-height: 1.4; margin-top: 0.3rem; }
 .sep-source { font-size: var(--fs-xs); color: var(--muted); margin-top: 0.4rem; font-style: italic; }
 .sep-divider { width: 1px; background: var(--bg3); align-self: stretch; flex-shrink: 0; }
@@ -1123,7 +1124,7 @@ footer {
   gap: 0.6rem;
 }
 .loyalty-vs {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--muted);
@@ -1732,7 +1733,7 @@ footer {
   position: absolute;
   top: 3.8rem;
   left: 1rem;
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 6rem;
   line-height: 1;
   color: var(--m3);
@@ -1764,7 +1765,7 @@ footer {
 .exp-who {
   font-size: var(--fs-sm);
   opacity: 0.95;
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-style: italic;
 }
 .exp-body {
@@ -1785,7 +1786,7 @@ footer {
   font-size: var(--fs-base);
   line-height: 1.8;
   color: var(--text);
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-style: italic;
 }
 @media (max-width: 640px) {
@@ -1811,7 +1812,7 @@ footer {
   font-size: var(--fs-base);
   line-height: 1.8;
   color: var(--text);
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-style: italic;
 }
 .exp-arrow {
@@ -1907,7 +1908,7 @@ footer {
   margin-bottom: 1.2rem;
 }
 .ptg-quote {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h3);
   font-style: italic;
   color: var(--m6);
@@ -1951,7 +1952,7 @@ footer {
   text-align: center;
 }
 .res-title {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h3);
   font-weight: 600;
   margin-bottom: 1rem;
@@ -2013,7 +2014,7 @@ footer {
   padding: var(--sp-sm) 0.5rem;
 }
 .suicide-num {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h1);
   font-weight: 600;
   color: var(--m2);
@@ -2181,7 +2182,7 @@ footer {
 }
 .resource-name { font-weight: 600; font-size: var(--fs-md); }
 .resource-num {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 2.1rem;
   font-weight: 600;
   color: var(--m7);
@@ -2226,7 +2227,7 @@ footer {
   box-shadow: 0 8px 32px rgba(26,42,64,0.18);
 }
 .closing-title {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h2);
   font-weight: 600;
   color: white;
@@ -2241,7 +2242,7 @@ footer {
   margin-right: auto;
 }
 .closing-quote {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-lg);
   font-style: italic;
   color: rgba(255,255,255,0.95);
@@ -2262,7 +2263,7 @@ footer {
   border-left: 4px solid var(--m6);
 }
 .m1ch-title {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--m6);
@@ -2298,7 +2299,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 .schwei-anchor-title {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h3);
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -2728,7 +2729,7 @@ footer {
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 .bf-pct {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h1);
   font-weight: 600;
   color: var(--m6);
@@ -2755,7 +2756,7 @@ footer {
   justify-content: space-between;
 }
 .identity-quote {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-style: italic;
   font-size: var(--fs-base);
   line-height: 1.7;
@@ -3759,7 +3760,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   text-decoration: none;
   font-size: var(--fs-h3);
   font-weight: 700;
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   letter-spacing: 0.02em;
 }
 .notfall-num-card a:hover { text-decoration: underline; }
@@ -4371,7 +4372,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   justify-content: space-between;
   padding: 0.9rem 0.4rem;
   cursor: pointer;
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: var(--fs-md);
   color: var(--text);
@@ -4430,7 +4431,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   gap: 0.8rem;
   padding: 1rem var(--sp-md);
   cursor: pointer;
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: var(--fs-base);
   color: var(--text);
@@ -4614,7 +4615,7 @@ details.inline-mg ul li {
   text-transform: uppercase;
 }
 .pn-title {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-sm);
   color: var(--text);
   margin-top: 0.15rem;
@@ -4644,7 +4645,7 @@ details.inline-mg ul li {
 
 /* Vignette Quote */
 .vignette { background:var(--bg2,#F5F0EB); border-radius:var(--radius,10px); padding:1.25rem 1.5rem; margin:0 0 1.2rem; border-left:4px solid var(--module-color,var(--m1)); }
-.vignette-text { font-style:italic; font-size:var(--fs-lg); line-height:1.65; color:var(--text); margin:0 0 0.5rem 0.3rem; font-family:Lora,Georgia,serif; }
+.vignette-text { font-style:italic; font-size:var(--fs-lg); line-height:1.65; color:var(--text); margin:0 0 0.5rem 0.3rem; font-family: 'Lora', Georgia, serif; }
 .vignette-source { font-size:var(--fs-sm); color:var(--muted); margin:0 0 0 0.3rem; }
 
 /* Lernziele */
@@ -4658,7 +4659,7 @@ details.inline-mg ul li {
 
 /* Module Top H1 */
 .module-top-title {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h2);
   font-weight: 600;
   margin: 0.6rem 0 0;
@@ -4975,7 +4976,7 @@ details.inline-mg ul li {
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   transition: opacity 0.2s;
 }
 .handout-lb-download:hover { opacity: 0.85; }
@@ -4985,7 +4986,7 @@ details.inline-mg ul li {
   font-size: var(--fs-xs);
   color: var(--muted);
   margin: 0.3rem 0 0;
-  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 /* ═══════════ FIX #18: MODULE-END-NEXT ═══════════ */
@@ -5064,7 +5065,7 @@ details.inline-mg ul li {
   border-left: 4px solid var(--module-color, var(--m1));
 }
 .wa-title {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--module-color, var(--m1));
@@ -5103,7 +5104,7 @@ details.inline-mg ul li {
   color: #1a4a30;
 }
 .wa-opt.wrong {
-  background: #fde8e8;
+  background: #fceaea;
   border-color: #c1121f;
   color: #7a1a1a;
 }
@@ -5126,7 +5127,7 @@ details.inline-mg ul li {
   color: #1a4a30;
 }
 .wa-feedback.wrong {
-  background: #fde8e8;
+  background: #fceaea;
   color: #7a1a1a;
 }
 
@@ -5139,7 +5140,7 @@ details.inline-mg ul li {
    NAVIGATION: Fehlende Klassen (alle Seiten)
 ───────────────────────────────────────── */
 .nav-logo-text {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-base);
   font-weight: 600;
   color: inherit;
@@ -5155,7 +5156,7 @@ details.inline-mg ul li {
   line-height: 1.7;
 }
 .footer-block strong {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-md);
   font-weight: 600;
   color: white;
@@ -5188,7 +5189,7 @@ details.inline-mg ul li {
   color: rgba(255,180,180,1);
   font-weight: 600;
   text-decoration: none;
-  font-family: 'Lora', serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-lg);
 }
 .footer-notfall a:hover { color: white; }
@@ -5328,7 +5329,7 @@ details.inline-mg ul li {
   line-height: 1;
 }
 .pdf-card .card-body h3 {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-base);
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -5373,7 +5374,7 @@ details.inline-mg ul li {
   text-align: center;
 }
 .error-code {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 4rem;
   font-weight: 600;
   color: var(--border);
@@ -5381,7 +5382,7 @@ details.inline-mg ul li {
   margin-bottom: 0.5rem;
 }
 .error-page h1 {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h2);
   font-weight: 600;
   color: var(--text);
@@ -5438,7 +5439,7 @@ details.inline-mg ul li {
   border-bottom: 3px solid var(--danger);
 }
 .notfall-hero h1 {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h1);
   font-weight: 600;
   color: var(--danger-dark);
@@ -5465,7 +5466,7 @@ details.inline-mg ul li {
   border-left: 4px solid var(--danger);
 }
 .nn-card h3 {
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-base);
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -5501,7 +5502,7 @@ details.inline-mg ul li {
   border: none;
   width: 100%;
   text-align: left;
-  font-family: Lora, Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: var(--fs-lg);
   color: var(--text);
@@ -5849,10 +5850,10 @@ details.inline-mg ul li {
 .bc-danger { border-color: var(--danger); }
 .bl-danger { border-left: 4px solid var(--danger); }
 .module-overview { max-width: 680px; margin: 0 auto; padding: 0 1.2rem 3rem; }
-.module-overview-title { font-family: "Lora", Georgia, serif; font-size: var(--fs-h3); margin: 2rem 0 0.5rem; color: var(--text); text-align: center; }
+.module-overview-title { font-family: 'Lora', Georgia, serif; font-size: var(--fs-h3); margin: 2rem 0 0.5rem; color: var(--text); text-align: center; }
 .module-overview-sub { text-align: center; color: var(--muted); font-size: var(--fs-sm); margin-bottom: 1.5rem; }
 .module-grid { display: grid; gap: var(--sp-sm); }
-.section-intro { font-family: "Lora", Georgia, serif; font-size: var(--fs-lg); margin-bottom: 0.5rem; }
+.section-intro { font-family: 'Lora', Georgia, serif; font-size: var(--fs-lg); margin-bottom: 0.5rem; }
 .text-sm-muted-mb { font-size: var(--fs-sm); color: var(--muted); margin-bottom: 1rem; }
 
 /* ============================================================
@@ -5908,7 +5909,7 @@ details.inline-mg ul li {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #a02015;
-  font-size: 0.8rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   transition: all 0.2s;
   -webkit-tap-highlight-color: transparent;
@@ -5919,7 +5920,7 @@ details.inline-mg ul li {
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 .notfall-fab-icon {
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   line-height: 1;
 }
 .notfall-fab-label {
@@ -5939,7 +5940,7 @@ details.inline-mg ul li {
   color: #a02015;
   font-weight: 600;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: var(--fs-xs);
 }
 .footer-notfall-link:hover {
   text-decoration: underline;
