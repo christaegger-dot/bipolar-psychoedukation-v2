@@ -1,4 +1,11 @@
 
+/* Escape HTML to prevent XSS when inserting dynamic text via innerHTML */
+function escHtml(str) {
+  var d = document.createElement('div');
+  d.appendChild(document.createTextNode(str));
+  return d.innerHTML;
+}
+
 /* Tooltip keyboard accessibility: Escape to dismiss */
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
@@ -197,7 +204,7 @@ function initContinue() {
         var btn = document.getElementById('continue-reading');
         if (btn) {
           btn.style.display = 'block';
-          btn.innerHTML = '<span class="cr-label">Weiter lesen</span>→ ' + saved.title + '…';
+          btn.innerHTML = '<span class="cr-label">Weiter lesen</span>→ ' + escHtml(saved.title) + '…';
           btn.onclick = function() {
             window.scrollTo({ top: saved.scroll, behavior: 'smooth' });
             btn.style.display = 'none';
@@ -210,7 +217,7 @@ function initContinue() {
       var btn = document.getElementById('continue-reading');
       if (btn) {
         btn.style.display = 'block';
-        btn.innerHTML = '<span class="cr-label">Weiter lesen</span>→ ' + saved.title + '…';
+        btn.innerHTML = '<span class="cr-label">Weiter lesen</span>→ ' + escHtml(saved.title) + '…';
         btn.onclick = function() {
           window.location.href = saved.url;
         };
