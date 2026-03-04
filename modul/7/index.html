@@ -54,78 +54,6 @@
 <body>
 <a class="skip-link" href="#module-content">Direkt zum Inhalt</a>
 <div id="progress-bar"></div>
-<button aria-controls="notfall-banner" aria-expanded="false" id="notfall-trigger" onclick="toggleNotfall(this)" title="Notfall-Informationen ein-/ausblenden">
-<span class="nt-icon">🆘</span>
-  Ich brauche jetzt sofort Hilfe
-  <span class="nt-chevron">▼</span>
-</button>
-<div aria-label="Notfall-Informationen" id="notfall-banner" role="region">
-<div class="notfall-content">
-<!-- Situation 1: Fremdgefährdung -->
-<div class="notfall-situation">
-<div class="notfall-sit-label">🚨 Akute Gefahr — Ihr Partner gefährdet sich oder andere</div>
-<div class="notfall-nums">
-<div class="notfall-num-card notfall-priority">
-<span class="notfall-num-label">Polizei</span>
-<a href="tel:117">117</a>
-<span class="notfall-num-sub">Bei Fremdgefährdung oder wenn Sie sich selbst nicht mehr sicher fühlen</span>
-</div>
-<div class="notfall-num-card notfall-priority">
-<span class="notfall-num-label">Sanität / Notfall</span>
-<a href="tel:144">144</a>
-<span class="notfall-num-sub">Bei akuter Suizidgefahr oder medizinischem Notfall — koordiniert alle weiteren Schritte</span>
-</div>
-</div>
-</div>
-<!-- Situation 2: Psychiatrische Krise -->
-<div class="notfall-situation">
-<div class="notfall-sit-label">⚠️ Psychiatrische Krise — Suizidgedanken oder schwere Episode</div>
-<div class="notfall-nums">
-<div class="notfall-num-card">
-<span class="notfall-num-label">Psychiatrischer Notfalldienst ZH</span>
-<a href="tel:0800336655">0800 33 66 55</a>
-<span class="notfall-num-sub">24/7 · kostenlos · Kanton Zürich<br/>Vermittelt Notfallpsychiater*in nach Hause oder in die Klinik</span>
-</div>
-<div class="notfall-num-card">
-<span class="notfall-num-label">KIZ — PUK Zürich</span>
-<a href="tel:+41583846500">058 384 65 00</a>
-<span class="notfall-num-sub">24/7 · Durchwahl 4 · Militärstrasse 8<br/>Krisenintervention: telefonisch, ambulant oder stationär (bis 7 Tage)</span>
-</div>
-<div class="notfall-num-card">
-<span class="notfall-num-label">KIZ — IPW Winterthur</span>
-<a href="tel:0522643700">052 264 37 00</a>
-<span class="notfall-num-sub">24/7 · Region Winterthur-Unterland<br/>Krisenintervention ambulant und stationär</span>
-</div>
-</div>
-</div>
-<!-- Situation 3: Sie selbst brauchen Unterstützung -->
-<div class="notfall-situation">
-<div class="notfall-sit-label">💬 Sie selbst sind am Limit — Gespräch und Orientierung</div>
-<div class="notfall-nums">
-<div class="notfall-num-card">
-<span class="notfall-num-label">Dargebotene Hand</span>
-<a href="tel:143">143</a>
-<span class="notfall-num-sub">24/7 · anonym · kostenlos<br/>Zuhören, Entlasten, Weiterverweisen — auch für Angehörige</span>
-</div>
-<div class="notfall-num-card">
-<span class="notfall-num-label">Fachstelle Angehörige PUK</span>
-<a href="tel:+41583843800">058 384 38 00</a>
-<span class="notfall-num-sub">Mo–Fr · kostenlos · vertraulich<br/>Spezialisierte Beratung für Angehörige</span>
-</div>
-<div class="notfall-num-card">
-<span class="notfall-num-label">Pro Mente Sana</span>
-<a href="tel:0848800858">0848 800 858</a>
-<!-- REDAKTIONELL: Öffnungszeiten Pro Mente Sana periodisch prüfen → promentesana.ch/beratung -->
-<span class="notfall-num-sub">Mo/Di/Do 9–12 Uhr, Do 14–17 Uhr, Di/Mi 16:30–19:30 Uhr<br/>Psychosoziale und rechtliche Beratung für Angehörige</span>
-</div>
-</div>
-</div>
-<div class="notfall-hinweis">
-<strong>Hinweis für Angehörige:</strong> Bei konkreten Suizidgedanken Ihres Partners ist die Dargebotene Hand <a href="tel:143">143</a> ein erster Schritt — aber nicht das einzige Mittel. Der psychiatrische Notfalldienst (<a href="tel:0800336655">0800 33 66 55</a>) oder das KIZ können psychiatrische Fachpersonen direkt einbeziehen und eine Einschätzung vor Ort ermöglichen.
-    </div>
-<button class="notfall-close" aria-label="Notfall-Banner schliessen" onclick="toggleNotfall(document.getElementById('notfall-trigger'))">Schliessen</button>
-</div>
-</div>
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -596,7 +524,7 @@
 <ul>
 <li>Sie sind nicht allein — es gibt spezialisierte Anlaufstellen für Angehörige.</li>
 <li>VASK Zürich, Pro Mente Sana und die Fachstelle Angehörigenarbeit PUK bieten konkrete Unterstützung.</li>
-<li>Die Dargebotene Hand (<a href="tel:143">143</a>) ist rund um die Uhr erreichbar — auch für Angehörige.</li>
+<li>Die Dargebotene Hand ist rund um die Uhr erreichbar — auch für Angehörige. Alle Nummern finden Sie unter <a href="/notfall/">Notfall &amp; Krisenhilfe</a>.</li>
 <li>Nutzen Sie die Handouts als Gedächtnisstütze und zum Weitergeben.</li>
 </ul>
 </div>
@@ -648,7 +576,7 @@
       für Angehörige und Partner*innen
     </div>
 <div class="footer-crisis">
-<div><strong>Psychiatrischer Notfall:</strong> <a href="tel:0800336655" class="fc-num">0800 33 66 55</a> Notfalldienst ZH (24/7) · <a href="tel:+41583846500" class="fc-num">058 384 65 00</a> KIZ PUK (Durchwahl 4) · <a href="tel:144" class="fc-num">144</a> Sanität · <a href="tel:117" class="fc-num">117</a> Polizei (Fremdgefährdung) · <a href="tel:143" class="fc-num">143</a> Dargebotene Hand</div>
+<a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
 </div>
 </div>
 <div class="footer-bottom">
@@ -674,5 +602,9 @@
 <script src="/main.js" defer></script>
 <script src="/search.js" defer></script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
+  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-label">Hilfe</span>
+</a>
 </body>
 </html>

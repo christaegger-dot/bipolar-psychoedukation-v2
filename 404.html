@@ -33,47 +33,6 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
-
-<button id="notfall-trigger" aria-expanded="false" aria-controls="notfall-banner" onclick="toggleNotfall(this)">
-<span class="nt-icon">🆘</span>
-  Ich brauche jetzt sofort Hilfe
-  <span class="nt-chevron">▼</span>
-</button>
-
-<div id="notfall-banner" role="region" aria-label="Notfall-Informationen">
-<div class="notfall-content">
-<div class="notfall-situation">
-<div class="notfall-sit-label">🚨 Akute Gefahr — Ihr Partner gefährdet sich oder andere</div>
-<div class="notfall-nums">
-<div class="notfall-num-card notfall-priority">
-<span class="notfall-num-label">Polizei</span>
-<a href="tel:117">117</a>
-</div>
-<div class="notfall-num-card notfall-priority">
-<span class="notfall-num-label">Sanität / Notfall</span>
-<a href="tel:144">144</a>
-</div>
-</div>
-</div>
-<div class="notfall-situation">
-<div class="notfall-sit-label">💬 Sie brauchen Unterstützung</div>
-<div class="notfall-nums">
-<div class="notfall-num-card">
-<span class="notfall-num-label">Dargebotene Hand</span>
-<a href="tel:143">143</a>
-<span class="notfall-num-sub">24/7 · anonym · kostenlos</span>
-</div>
-<div class="notfall-num-card">
-<span class="notfall-num-label">Psychiatrischer Notfalldienst ZH</span>
-<a href="tel:0800336655">0800 33 66 55</a>
-<span class="notfall-num-sub">24/7 · kostenlos · Kanton Zürich</span>
-</div>
-</div>
-</div>
-<button class="notfall-close" aria-label="Notfall-Banner schliessen" onclick="toggleNotfall(document.getElementById('notfall-trigger'))">Schliessen</button>
-</div>
-</div>
-
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -141,10 +100,7 @@
   <a href="/" class="error-back">← Zur Startseite</a>
 
   <div class="error-notfall">
-    <strong>In einer Krise?</strong> &nbsp;
-    <a href="tel:143">Dargebotene Hand 143</a> · 
-    <a href="tel:0800336655">Psych. Notfall 0800 33 66 55</a> · 
-    <a href="tel:144">Sanität 144</a>
+    <a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
   </div>
 </div>
 </main>
@@ -164,5 +120,9 @@
 </div>
 </div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
+  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-label">Hilfe</span>
+</a>
 </body>
 </html>

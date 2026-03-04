@@ -33,27 +33,6 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
-
-<button id="notfall-trigger" onclick="toggleNotfall(this)" aria-expanded="false" aria-controls="notfall-banner" title="Notfall-Informationen ein-/ausblenden">
-  🆘 &nbsp; Ich brauche jetzt sofort Hilfe &nbsp; ▼
-</button>
-
-<div id="notfall-banner" role="region" aria-label="Notfall-Informationen">
-  <div class="notfall-inner">
-    <div class="notfall-top">
-      🚨 <strong>Akute Gefahr</strong> — Ihr Partner gefährdet sich oder andere &nbsp;
-      <a href="tel:117" class="notfall-phone">Polizei 117</a>
-    </div>
-    <div class="notfall-details">
-      Bei Fremdgefährdung → <a href="tel:117">117</a> &nbsp;
-      Psychiatrischer Notfall → <a href="tel:0800336655">0800 33 66 55</a> &nbsp;
-      KIZ PUK → <a href="tel:+41583846500">058 384 65 00</a> (Durchwahl 4) &nbsp;
-      Sanität → <a href="tel:144">144</a> &nbsp;
-      Dargebotene Hand → <a href="tel:143">143</a>
-    </div>
-  </div>
-</div>
-
 <nav>
 <div class="nav-logo">
 <a href="/" class="link-plain">
@@ -153,12 +132,8 @@
       für Angehörige und Partner*innen
     </div>
     <div class="footer-notfall">
-      Psychiatrischer Notfall: <a href="tel:0800336655">0800 33 66 55</a> Notfalldienst ZH (24/7) ·
-      <a href="tel:+41583846500">058 384 65 00</a> KIZ PUK (Durchwahl 4) ·
-      <a href="tel:144">144</a> Sanität ·
-      <a href="tel:117">117</a> Polizei (Fremdgefährdung) ·
-      <a href="tel:143">143</a> Dargebotene Hand
-    </div>
+<a href="/notfall/" class="footer-notfall-link">Notfall &amp; Krisenhilfe →</a>
+</div>
     <div class="footer-copy">© 2026 Psychiatrische Universitätsklinik Zürich. Alle Rechte vorbehalten. <a href="/impressum/">Impressum</a></div>
   </div>
 </footer>
@@ -178,5 +153,9 @@
 </div>
 </div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
+  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-label">Hilfe</span>
+</a>
 </body>
 </html>
