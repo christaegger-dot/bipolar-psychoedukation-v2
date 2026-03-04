@@ -355,7 +355,7 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <script src="/search-index.js" defer></script>
 <script src="/main.js" defer></script>
 <script src="/search.js" defer></script>
-<div class="search-overlay" id="search-overlay">
+<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
 <div class="search-modal">
 <div class="search-header">
 <input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
