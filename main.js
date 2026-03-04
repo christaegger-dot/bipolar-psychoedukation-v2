@@ -19,6 +19,7 @@ document.addEventListener('keydown', function(e) {
 // Notfall-Banner
 function toggleNotfall(triggerBtn) {
   var banner = document.getElementById('notfall-banner');
+  if (!banner) return;
   var isOpen = banner.classList.contains('open');
   banner.classList.toggle('open', !isOpen);
   triggerBtn.classList.toggle('open', !isOpen);
@@ -509,7 +510,7 @@ function setRoleStage(stage) {
 document.addEventListener('DOMContentLoaded', function() {
   var marker = document.getElementById('rgt-marker');
   if (marker) {
-    marker.style.left = '92%';
+    marker.style.left = '8%';
     setTimeout(function() {
       marker.style.transition = 'left 1.8s cubic-bezier(0.4,0,0.2,1)';
       marker.style.left = '92%';
@@ -537,6 +538,7 @@ function highlightEE(n) {
 // Accordion
 function toggleAcc(btn) {
   var item = btn.closest('.acc-item');
+  if (!item) return;
   var body = item.querySelector('.acc-body');
   var isOpen = item.classList.contains('open');
   var siblings = item.parentElement.querySelectorAll('.acc-item.open');
@@ -574,6 +576,7 @@ function filterHandouts(category) {
 // FAQ-Akkordeon
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
+  if (!item) return;
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i) {
     i.classList.remove('open');
@@ -588,6 +591,7 @@ function toggleFaq(btn) {
 // Glossar-Akkordeon
 function toggleGlossar(btn) {
   var item = btn.closest('.glossar-item');
+  if (!item) return;
   var wasOpen = item.classList.contains('open');
   item.parentElement.querySelectorAll('.glossar-item.open').forEach(function(i) {
     i.classList.remove('open');
@@ -602,6 +606,7 @@ function toggleGlossar(btn) {
 // Notfall Mini-Guide Akkordeon
 function toggleMG(btn) {
   var guide = btn.closest('.mini-guide');
+  if (!guide) return;
   var wasOpen = guide.classList.contains('open');
   guide.parentElement.querySelectorAll('.mini-guide.open').forEach(function(g) {
     g.classList.remove('open');
@@ -616,6 +621,7 @@ function toggleMG(btn) {
 // Progressive Disclosure
 function togglePD(btn) {
   var full = document.getElementById(btn.dataset.target);
+  if (!full) return;
   var isOpen = full.classList.contains('open');
   full.classList.toggle('open', !isOpen);
   btn.classList.toggle('open', !isOpen);

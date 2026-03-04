@@ -53,6 +53,10 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
 
+  const offline503 = () => new Response('Offline – bitte später erneut versuchen.', {
+    status: 503, headers: { 'Content-Type': 'text/plain;charset=UTF-8' }
+  });
+
   // Resolve shortcut URLs that Netlify normally redirects
   const url = new URL(e.request.url);
   const target = REDIRECT_MAP[url.pathname];
@@ -66,7 +70,7 @@ self.addEventListener('fetch', e => {
             caches.open(CACHE_NAME).then(cache => cache.put(redirected, clone));
           }
           return response;
-        }).catch(() => cached);
+        }).catch(() => cached || offline503());
         return cached || fetchPromise;
       })
     );
@@ -81,7 +85,7 @@ self.addEventListener('fetch', e => {
           caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
         }
         return response;
-      }).catch(() => cached);
+      }).catch(() => cached || offline503());
       return cached || fetchPromise;
     })
   );
