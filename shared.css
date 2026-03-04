@@ -213,7 +213,7 @@ nav {
   border-radius: var(--radius);
   padding: var(--sp-sm);
   box-shadow: var(--shadow-lg);
-  z-index: 200;
+  z-index: 210;
   font-size: var(--fs-sm);
 }
 .bookmark-panel.open { display: block; }
@@ -3122,7 +3122,7 @@ footer {
   color: var(--muted);
   font-style: italic;
   background: var(--kp-paper);
-  border-top: 1px solid var(--kp-paper);
+  border-top: 1px solid var(--bg3);
 }
 
 /* ═══════════════════════════════════════
@@ -3145,7 +3145,7 @@ footer {
   top: 0; left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--m1), var(--m5), var(--m6));
-  z-index: 200;
+  z-index: 190;
   width: 0%;
   transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
@@ -3858,7 +3858,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   padding: 0.5rem 0.8rem;
   border-radius: 8px;
   width: 220px;
-  z-index: 200;
+  z-index: 220;
   pointer-events: none;
   font-style: normal;
   font-weight: 400;

@@ -396,6 +396,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   } catch(e) {}
+  // Init rgt-marker animation (Rollengrammatik)
+  var marker = document.getElementById('rgt-marker');
+  if (marker) {
+    marker.style.left = '8%';
+    setTimeout(function() {
+      marker.style.transition = 'left 1.8s cubic-bezier(0.4,0,0.2,1)';
+      marker.style.left = '92%';
+    }, 600);
+  }
 });
 
 function showPole(pole) {
@@ -506,17 +515,6 @@ function setRoleStage(stage) {
   if (marker) marker.style.left = positions[stage];
 }
 
-// Init: Marker auf Stage 3 (rechts) setzen
-document.addEventListener('DOMContentLoaded', function() {
-  var marker = document.getElementById('rgt-marker');
-  if (marker) {
-    marker.style.left = '8%';
-    setTimeout(function() {
-      marker.style.transition = 'left 1.8s cubic-bezier(0.4,0,0.2,1)';
-      marker.style.left = '92%';
-    }, 600);
-  }
-});
 
 function highlightEE(n) {
   document.querySelectorAll('.ee-node').forEach(function(node) {
@@ -565,11 +563,9 @@ function filterHandouts(category) {
     c.classList.toggle('active', c.dataset.filter === category);
   });
   document.querySelectorAll('.pdf-card').forEach(function(card) {
-    if (category === 'alle' || card.dataset.category === category) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
+    var show = category === 'alle' || card.dataset.category === category;
+    var wrap = card.closest('.card-wrap');
+    (wrap || card).style.display = show ? '' : 'none';
   });
 }
 
