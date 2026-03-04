@@ -100,12 +100,12 @@
 
 <!-- MANIE -->
 <div class="mini-guide open">
-<button class="mg-header" aria-expanded="true" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="true" aria-controls="mg-manie" onclick="toggleMG(this)">
 <span class="mg-icon">⚡</span>
 <span>Manie — Ihr*e Partner*in ist euphorisch, schläft nicht, ist überaktiv</span>
 <span class="mg-arrow">›</span>
 </button>
-<div class="mg-body"><div class="mg-body-inner">
+<div class="mg-body" id="mg-manie"><div class="mg-body-inner">
 <ul>
 <li data-icon="👁">Beobachten Sie: Schläft die Person seit 2+ Nächten kaum? Gibt sie unkontrolliert Geld aus? Ist sie ungewöhnlich reizbar oder grandios?</li>
 <li data-icon="🗣">Sprechen Sie ruhig und kurz: «Mir fällt auf, dass du seit drei Nächten kaum schläfst. Ich mache mir Sorgen.»</li>
@@ -126,12 +126,12 @@
 
 <!-- DEPRESSION -->
 <div class="mini-guide">
-<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" aria-controls="mg-depression" onclick="toggleMG(this)">
 <span class="mg-icon">🌧</span>
 <span>Depression — Rückzug, Antriebslosigkeit, Hoffnungslosigkeit</span>
 <span class="mg-arrow">›</span>
 </button>
-<div class="mg-body"><div class="mg-body-inner">
+<div class="mg-body" id="mg-depression"><div class="mg-body-inner">
 <ul>
 <li data-icon="👁">Achten Sie auf: anhaltende Traurigkeit, Rückzug, Schlafveränderungen, Appetitlosigkeit, Aussagen wie «Es hat keinen Sinn».</li>
 <li data-icon="🤝">Anwesenheit ist wichtiger als Worte. Sitzen Sie daneben. Fragen Sie: «Was brauchst du gerade?»</li>
@@ -151,12 +151,12 @@
 
 <!-- PSYCHOSE -->
 <div class="mini-guide">
-<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" aria-controls="mg-psychose" onclick="toggleMG(this)">
 <span class="mg-icon">🌀</span>
 <span>Psychose / Wahn — Die Person glaubt Dinge, die nicht real sind</span>
 <span class="mg-arrow">›</span>
 </button>
-<div class="mg-body"><div class="mg-body-inner">
+<div class="mg-body" id="mg-psychose"><div class="mg-body-inner">
 <ul>
 <li data-icon="🧠">Verstehen Sie: Wahnideen fühlen sich für die Person absolut real an. Argumentieren hilft nicht — es verstärkt den Konflikt.</li>
 <li data-icon="🗣">Sprechen Sie ruhig, langsam, in kurzen Sätzen. Nicht widersprechen, aber auch nicht bestätigen: «Ich verstehe, dass du das so siehst. Ich sehe es anders.»</li>
@@ -176,12 +176,12 @@
 
 <!-- SUIZIDGEDANKEN -->
 <div class="mini-guide">
-<button class="mg-header" aria-expanded="false" onclick="toggleMG(this)">
+<button class="mg-header" aria-expanded="false" aria-controls="mg-suizid" onclick="toggleMG(this)">
 <span class="mg-icon">🆘</span>
 <span>Suizidgedanken — Die Person spricht davon, sich etwas anzutun</span>
 <span class="mg-arrow">›</span>
 </button>
-<div class="mg-body"><div class="mg-body-inner">
+<div class="mg-body" id="mg-suizid"><div class="mg-body-inner">
 <ul>
 <li data-icon="❗">Nehmen Sie jede Äusserung ernst. Auch indirekte Hinweise: «Es wäre besser, wenn ich nicht mehr da wäre», «Ihr wärt ohne mich besser dran.»</li>
 <li data-icon="🗣">Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» — Diese Frage löst Suizidgedanken nicht aus. Sie gibt Raum.</li>

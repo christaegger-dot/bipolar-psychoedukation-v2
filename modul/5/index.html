@@ -198,7 +198,7 @@
 </div>
 </div>
 <div class="acc-item" id="selbstfuersorge">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-1" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">🧘</span>
 <div>
@@ -208,7 +208,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-1">
 <div class="oxygen-banner">
 <div class="oxygen-illustration">
 <svg aria-label="Sauerstoffmaske zuerst anlegen" class="oxygen-svg" role="img" viewBox="0 0 158 95" xmlns="http://www.w3.org/2000/svg">
@@ -269,7 +269,7 @@
 </div>
 </div>
 <div class="acc-item" id="krisenplan">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-2" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">📋</span>
 <div>
@@ -279,7 +279,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-2">
 <!-- SVG: Krisenplan-Ampel -->
 <div class="wave-chart-wrap mb-md">
 <svg aria-label="Krisenplan-Ampel mit drei Stufen: Gelb für Frühwarnzeichen, Orange für akute Krise, Rot für Notfall" class="viz-svg" role="img" viewBox="0 -6 600 232" xmlns="http://www.w3.org/2000/svg">
@@ -461,7 +461,7 @@
 </div>
 </div>
 <div class="acc-item" id="grenzen">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-3" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">🛡️</span>
 <div>
@@ -471,7 +471,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-3">
 <!-- SVG: Grenzsetzungs-Spektrum -->
 <div class="wave-chart-wrap mb-md">
 <svg aria-label="Spektrum der Grenzsetzung: von zu weich über gesund bis zu hart, mit einer grünen Zielzone in der Mitte" class="viz-svg" role="img" viewBox="0 -5 600 218" xmlns="http://www.w3.org/2000/svg">
@@ -529,9 +529,9 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Klartext + Grenze</div>
             «Ich liebe dich, aber ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»
-            <button class="boundary-why-btn" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-1" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
-<div class="boundary-why">Ich-Botschaft + klare Konsequenz ohne Drohung. Die Grenze bezieht sich auf das Verhalten («anschreien»), nicht die Person — und signalisiert gleichzeitig Bereitschaft zur Rückkehr.</div>
+<div class="boundary-why" id="why-1">Ich-Botschaft + klare Konsequenz ohne Drohung. Die Grenze bezieht sich auf das Verhalten («anschreien»), nicht die Person — und signalisiert gleichzeitig Bereitschaft zur Rückkehr.</div>
 </div>
 <div class="boundary-row wrap">
 <div class="boundary-col bad-col">
@@ -541,9 +541,9 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Konsequenz</div>
             «Wenn du die Medikamente absetzt, kann ich die Verantwortung zu Hause nicht mehr tragen. Dann müssen wir über die Klinik reden.»
-            <button class="boundary-why-btn" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-2" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
-<div class="boundary-why">Drohungen («Ich gehe!») werden oft nicht ernst genommen und eskalieren. Eine Konsequenz benennt konkret was passiert — ohne Bestrafung, aber mit klarer Information. Das respektiert die Autonomie beider.</div>
+<div class="boundary-why" id="why-2">Drohungen («Ich gehe!») werden oft nicht ernst genommen und eskalieren. Eine Konsequenz benennt konkret was passiert — ohne Bestrafung, aber mit klarer Information. Das respektiert die Autonomie beider.</div>
 </div>
 <div class="boundary-row wrap">
 <div class="boundary-col bad-col">
@@ -553,15 +553,15 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Sorge + Verantwortung</div>
             «Ich mache mir Sorgen, wenn ich sehe, dass die Packung noch voll ist. Was brauchst du, um dran zu bleiben?»
-            <button class="boundary-why-btn" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-3" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
-<div class="boundary-why">Kontrollfragen («Schon wieder?») lösen Scham und Widerstand aus. Die Ich-Botschaft mit einer offenen Frage lässt dem Partner Handlungsspielraum — und überträgt die Verantwortung zurück an ihn.</div>
+<div class="boundary-why" id="why-3">Kontrollfragen («Schon wieder?») lösen Scham und Widerstand aus. Die Ich-Botschaft mit einer offenen Frage lässt dem Partner Handlungsspielraum — und überträgt die Verantwortung zurück an ihn.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="acc-item" id="komm">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-4" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">💬</span>
 <div>
@@ -571,7 +571,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-4">
 <div class="comm-strategies">
 <div class="comm-card">
 <div class="comm-num">1</div>
@@ -614,7 +614,7 @@
 </div>
 </div>
 <div class="acc-item" id="coping">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-5" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">🔄</span>
 <div>
@@ -624,7 +624,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-5">
 <div class="coping-grid">
 <div class="coping-col">
 <div class="coping-header" style="background:var(--m1);color:white">
@@ -661,7 +661,7 @@
 </div>
 </div>
 <div class="acc-item" id="ablehnung">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-6" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">🚧</span>
 <div>
@@ -671,7 +671,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-6">
 <div class="refusal-wrap">
 <div class="refusal-col">
 <div class="refusal-col-title">Warum Behandlung abgelehnt wird</div>
@@ -744,7 +744,7 @@
 </div>
 </div>
 <div class="acc-item" id="situationen">
-<button aria-expanded="false" class="acc-header" onclick="toggleAcc(this)">
+<button aria-expanded="false" class="acc-header" aria-controls="acc-7" onclick="toggleAcc(this)">
 <div class="acc-title-wrap">
 <span class="acc-icon">⚡</span>
 <div>
@@ -754,7 +754,7 @@
 </div>
 <span class="acc-chevron">▼</span>
 </button>
-<div class="acc-body">
+<div class="acc-body" id="acc-7">
 <div class="notfall-karten">
 <div class="nk-card">
 <div class="nk-situation">🌙 Es ist 2 Uhr nachts. Ihr Partner schläft nicht und wirkt aufgedreht.</div>
