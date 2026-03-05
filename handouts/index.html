@@ -682,6 +682,52 @@
   lb.querySelector('.ho-lb-close').addEventListener('click',closeLb);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('active'))closeLb()});
 })();
+// Asset-ID & Version labels for QA and professional use
+(function(){
+  var assetMap={
+    'krisenplan-vorlage':'TPL-01 · v02 · 2026-02',
+    'kurzblatt-was-stabilisiert':'TPL-02 · v01 · 2026-02',
+    'notfallkarte-kanton':'TPL-03 · v01 · 2026-02',
+    'a8_warnsignale':'INF-01 · v01 · 2026-02',
+    'b1_18_belastungen':'INF-02 · v01 · 2026-02',
+    'a4_ambiguous_loss':'INF-03 · v01 · 2026-02',
+    'a5_affiliate_stigma':'INF-04 · v01 · 2026-02',
+    'b9_depression_partner':'INF-05 · v01 · 2026-02',
+    'b2_erosion_solidaritaet':'INF-06 · v01 · 2026-02',
+    'b3_kritische_zeitpunkte':'INF-07 · v01 · 2026-02',
+    'b4_mechanismen_erosion':'INF-08 · v01 · 2026-02',
+    'b6_geschlechtsspezifisch':'INF-09 · v01 · 2026-02',
+    'a3_ambivalente_loyalitaet':'INF-10 · v01 · 2026-02',
+    'b5_loyalitaetskonflikte':'INF-11 · v01 · 2026-02',
+    'expressed_emotions':'INF-12 · v01 · 2026-02',
+    'b7_behandlung_ambivalenz':'INF-13 · v01 · 2026-02',
+    'c1_krisenplan':'INF-14 · v01 · 2026-02',
+    'c2_suizidgedanken':'INF-15 · v01 · 2026-02',
+    'c3_psychose_wahn':'INF-16 · v01 · 2026-02',
+    'c4_manie':'INF-17 · v01 · 2026-02',
+    'c5_depression':'INF-18 · v01 · 2026-02',
+    'c6_selbstfuersorge':'INF-19 · v01 · 2026-02',
+    'grenzsetzung':'INF-20 · v01 · 2026-02',
+    'd4_solidaritaet_wellen':'INF-21 · v01 · 2026-02',
+    'b10_trennung_scheidung':'INF-22 · v01 · 2026-02',
+    'transformationsreise':'INF-23 · v01 · 2026-02',
+    'trialog':'INF-24 · v01 · 2026-02'
+  };
+  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
+    var href=card.getAttribute('href')||card.getAttribute('data-pdf')||'';
+    var badge=card.querySelector('.card-badge');
+    if(!badge)return;
+    for(var key in assetMap){
+      if(href.indexOf(key)!==-1){
+        var span=document.createElement('span');
+        span.className='card-asset-id';
+        span.textContent=assetMap[key];
+        badge.parentNode.appendChild(span);
+        break;
+      }
+    }
+  });
+})();
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">

@@ -5910,6 +5910,120 @@ footer .footer-notfall-link:hover {
   color: white;
 }
 
+/* ── Collapsible Details Sections ── */
+/* Reduces cognitive load by hiding secondary info behind expandable sections */
+details.collapsible {
+  border: 1px solid var(--bg3);
+  border-radius: 10px;
+  margin: 1rem 0;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+details.collapsible[open] {
+  box-shadow: var(--shadow-lg);
+}
+details.collapsible > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.2rem;
+  min-height: 44px;
+  cursor: pointer;
+  background: var(--bg);
+  user-select: none;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--text-head);
+  list-style: none;
+  transition: background 0.2s;
+  gap: 0.75rem;
+}
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::after {
+  content: '▼';
+  font-size: 0.7em;
+  color: var(--muted);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+details.collapsible[open] > summary::after {
+  transform: rotate(180deg);
+}
+details.collapsible > summary:hover {
+  background: var(--bg2);
+}
+details.collapsible[open] > summary {
+  background: var(--bg2);
+}
+details.collapsible > .collapsible-body {
+  padding: 1rem 1.2rem 1.2rem;
+  background: white;
+}
+
+/* ── Touch Targets: 44×44px minimum ── */
+/* Ensures interactive elements meet accessibility touch target guidelines */
+@media (max-width: 768px) {
+  .pole-tab {
+    min-height: 44px;
+    padding: 0.6rem 0.5rem;
+  }
+  .role-stage {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.85rem 0.75rem;
+  }
+  .pd-dot {
+    position: relative;
+    /* Expand touch target without changing visual size */
+    padding: 17px;
+    margin: -17px;
+  }
+  .filter-chip {
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+  }
+  .boundary-row button,
+  .selfcare-item,
+  .nav-btn {
+    min-height: 44px;
+  }
+}
+
+/* ── Show More Button for long lists ── */
+.show-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  background: var(--bg);
+  border: 1px dashed var(--bg3);
+  border-radius: 8px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.show-more-btn:hover {
+  background: var(--bg2);
+  color: var(--text-head);
+  border-color: var(--text-head);
+}
+
+/* ── Asset Version Labels ── */
+.card-asset-id {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
 /* ─────────────────────────────────────────
    ACCORDION (Native Details/Summary)
    Optimiert für iOS & Barrierefreiheit
@@ -6022,27 +6136,27 @@ details.acc-item[open] .acc-chevron {
     min-height: 48px;
     padding: 0.6rem 0.4rem;
   }
-  
+
   .viz-svg {
     touch-action: manipulation;
   }
-  
+
   /* Bessere Lesbarkeit in Tabellen/Grids auf Mobile */
   .selfcare-grid, .coping-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-sm);
   }
-  
+
   .kp-mock-row {
     grid-template-columns: 1fr;
   }
-  
+
   .kp-mock-label {
     border-right: none;
     border-bottom: 1px solid var(--kp-paper);
     padding: 0.4rem 0.8rem;
   }
-  
+
   /* Sticky-Header Offset für Mobile */
   :root {
     --sticky-nav-h: 52px;

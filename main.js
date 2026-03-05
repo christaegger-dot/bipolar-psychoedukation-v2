@@ -624,6 +624,40 @@ function toggleMG(btn) {
   }
 }
 
+// Auto-collapse long lists to reduce cognitive load
+// Shows first 3 items and hides the rest behind a "Mehr anzeigen" button
+(function initCollapsibleLists() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var VISIBLE_COUNT = 3;
+    var wraps = document.querySelectorAll('.manie-komm-wrap');
+    wraps.forEach(function(wrap) {
+      var cards = wrap.querySelectorAll('.manie-komm-card');
+      if (cards.length <= VISIBLE_COUNT) return;
+      var hiddenCards = [];
+      for (var i = VISIBLE_COUNT; i < cards.length; i++) {
+        cards[i].style.display = 'none';
+        hiddenCards.push(cards[i]);
+      }
+      var btn = document.createElement('button');
+      btn.className = 'show-more-btn';
+      btn.setAttribute('aria-expanded', 'false');
+      var remaining = cards.length - VISIBLE_COUNT;
+      btn.innerHTML = '▼ ' + remaining + ' weitere Punkte anzeigen';
+      btn.addEventListener('click', function() {
+        var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        hiddenCards.forEach(function(c) {
+          c.style.display = isExpanded ? 'none' : '';
+        });
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        btn.innerHTML = isExpanded
+          ? '▼ ' + remaining + ' weitere Punkte anzeigen'
+          : '▲ Weniger anzeigen';
+      });
+      wrap.appendChild(btn);
+    });
+  });
+})();
+
 // Progressive Disclosure
 function togglePD(btn) {
   var full = document.getElementById(btn.dataset.target);
