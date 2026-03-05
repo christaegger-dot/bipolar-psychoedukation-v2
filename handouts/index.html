@@ -234,7 +234,7 @@
 </div>
 </div>
 <div class="section-group" data-module="m4">
-<h2>Modul 4 – Loyalitätskonflikte und Expressed Emotion</h2>
+<h2>Modul 4 – Loyalitätskonflikte und Beziehungsstress</h2>
 <div class="card-grid">
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m4" href="/handouts/a3_ambivalente_loyalitaet.pdf">
@@ -652,6 +652,7 @@
 </style>
 <script>
 (function(){
+  var isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   var lb=document.getElementById('ho-lightbox'),
       img=document.getElementById('ho-lb-img'),
       dl=document.getElementById('ho-lb-dl');
@@ -665,6 +666,7 @@
     card.setAttribute('tabindex','0');
     card.addEventListener('click',function(e){
       e.preventDefault();
+      if(isMobile){window.open(pdfHref,'_blank');return;}
       var thumb=card.querySelector('.card-thumb img');
       if(!thumb)return;
       img.src=thumb.src;
