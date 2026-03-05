@@ -4267,10 +4267,6 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
 /* ═══════════════════════════════════════════════════════════
    ENHANCEMENT: Sub-page Visual Strengthening
    ═══════════════════════════════════════════════════════════ */
-.subpage-hero {
-  position: relative;
-  overflow: hidden;
-}
 .subpage-hero::after {
   content: '';
   position: absolute;

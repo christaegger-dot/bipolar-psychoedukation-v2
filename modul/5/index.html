@@ -145,7 +145,7 @@
 <div class="module-card c5">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><h2>Selbstfürsorge und Handeln</h2><button class="share-btn" onclick="shareSection('m5',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><button class="share-btn" onclick="shareSection('m5',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 <div class="module-subtitle">Handlungsfähig bleiben — für sich selbst und den Partner</div>
 </div>
 </div>
@@ -703,6 +703,25 @@
 </div>
 </div>
 </footer>
-<script src="/main.js?v=206dc5c"></script>
+<script src="/search-index.js" defer></script>
+<script src="/main.js?v=206dc5c" defer></script>
+<script src="/search.js" defer></script>
+<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<div class="search-box">
+<div class="search-input-wrap">
+<span class="section-num">🔎</span>
+<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
+<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
+</div>
+<div class="search-results" id="search-results">
+<div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
+</div>
+</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+<a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
+  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-label">Hilfe</span>
+</a>
 </body>
 </html>
