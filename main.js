@@ -421,8 +421,11 @@ function showPole(pole) {
   document.querySelectorAll('.pole-panel').forEach(function(p) { p.classList.add('hidden'); });
   var panel = document.getElementById('pole-' + pole);
   if (panel) panel.classList.remove('hidden');
-  document.querySelectorAll('.pole-tab').forEach(function(t) { t.classList.remove('active'); });
-  document.querySelectorAll('.pole-tab[data-pole="' + pole + '"]').forEach(function(t) { t.classList.add('active'); });
+  document.querySelectorAll('.pole-tab').forEach(function(t) {
+    var isActive = t.getAttribute('data-pole') === pole;
+    t.classList.toggle('active', isActive);
+    t.setAttribute('aria-selected', String(isActive));
+  });
 }
 
 function showPhase(n) {

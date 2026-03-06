@@ -24,7 +24,7 @@
 </style>
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=206dc5c">
+<link rel="stylesheet" href="/shared.css?v=a9f0306">
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m1.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -54,7 +54,7 @@
 <body>
 <a class="skip-link" href="#module-content">Direkt zum Inhalt</a>
 <div id="progress-bar"></div>
-<nav>
+<nav aria-label="Hauptnavigation">
 <div class="nav-logo">
 <a href="/" class="link-plain">
 <span class="nav-logo-text">Bipolare Störung</span>
@@ -145,7 +145,7 @@
 <div class="module-card c1">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><button class="share-btn" onclick="shareSection('m1',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><h2>Die bipolare Störung verstehen</h2><button class="share-btn" onclick="shareSection('m1',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 <div class="module-subtitle">Was ist das — und warum belastet es die Beziehung?</div>
 </div>
 </div>
@@ -193,18 +193,18 @@
 <div class="pole-toggle-wrap">
 <div class="keyboard-hint">← → Pfeiltasten zum Wechseln</div>
 <div class="pole-tabs" role="tablist">
-<button class="pole-tab active" data-pole="manie" onclick="showPole('manie')" role="tab" aria-label="Manie und Hypomanie anzeigen">
+<button class="pole-tab active" data-pole="manie" onclick="showPole('manie')" role="tab" id="tab-manie" aria-selected="true" aria-controls="pole-manie" aria-label="Manie und Hypomanie anzeigen">
 <span class="pole-arrow">↑</span> Manie / <span class="tt" tabindex="0">Hypomanie<span class="tt-box">Abgeschwächte Form der Manie: erhöhte Energie, weniger Schlaf, gesteigerter Antrieb — aber ohne schwere Beeinträchtigung des Alltags. Kann unbemerkt in eine Manie übergehen.</span></span>
 </button>
-<button class="pole-tab" data-pole="stabil" onclick="showPole('stabil')" role="tab" aria-label="Stabile Phase anzeigen">
+<button class="pole-tab" data-pole="stabil" onclick="showPole('stabil')" role="tab" id="tab-stabil" aria-selected="false" aria-controls="pole-stabil" aria-label="Stabile Phase anzeigen">
 <span class="pole-arrow">→</span> Stabile Phase
           </button>
-<button class="pole-tab" data-pole="depression" onclick="showPole('depression')" role="tab" aria-label="Depression anzeigen">
+<button class="pole-tab" data-pole="depression" onclick="showPole('depression')" role="tab" id="tab-depression" aria-selected="false" aria-controls="pole-depression" aria-label="Depression anzeigen">
 <span class="pole-arrow">↓</span> Depression
           </button>
 </div>
 <!-- Manie -->
-<div class="pole-panel" id="pole-manie">
+<div class="pole-panel" id="pole-manie" role="tabpanel" aria-labelledby="tab-manie">
 <div class="pole-header manie">
 <div class="pole-title">Manie / Hypomanie</div>
 <div class="pole-sub">Gehobene oder gereizte Stimmung, oft ohne Krankheitseinsicht</div>
@@ -236,7 +236,7 @@
           </div>
 </div>
 <!-- Stabil -->
-<div class="pole-panel hidden" id="pole-stabil">
+<div class="pole-panel hidden" id="pole-stabil" role="tabpanel" aria-labelledby="tab-stabil">
 <div class="pole-header stabil">
 <div class="pole-title">Stabile Phase (<span class="tt" tabindex="0">Euthymie<span class="tt-box">Stabile, ausgeglichene Stimmungslage — weder manisch noch depressiv. In der Euthymie ist die betroffene Person am ehesten «sie selbst».</span></span>)</div>
 <div class="pole-sub">Ausgeglichene Stimmung — oft aber nicht vollständige Erholung</div>
@@ -263,7 +263,7 @@
           </div>
 </div>
 <!-- Depression -->
-<div class="pole-panel hidden" id="pole-depression">
+<div class="pole-panel hidden" id="pole-depression" role="tabpanel" aria-labelledby="tab-depression">
 <div class="pole-header depression">
 <div class="pole-title">Depression</div>
 <div class="pole-sub">Lähmende Schwere — der Alltag wird zur unüberwindbaren Hürde</div>
@@ -977,8 +977,8 @@
 </div>
 <div class="module-feedback">
 <span class="feedback-label">War dieses Modul hilfreich?</span>
-<button class="feedback-btn" onclick="giveFeedback(this,\'m1\',\'ja\')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
-<button class="feedback-btn" onclick="giveFeedback(this,\'m1\',\'nein\')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
+<button class="feedback-btn" onclick="giveFeedback(this,'m1','ja')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
+<button class="feedback-btn" onclick="giveFeedback(this,'m1','nein')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
 <span class="feedback-thanks" id="fb-m1">Danke für Ihr Feedback.</span>
 </div>
 </div>
@@ -1034,7 +1034,7 @@
 
 
 <script src="/search-index.js" defer></script>
-<script src="/main.js?v=206dc5c" defer></script>
+<script src="/main.js?v=a9f0306" defer></script>
 <script src="/search.js" defer></script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
