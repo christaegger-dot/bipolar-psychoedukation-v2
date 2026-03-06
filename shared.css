@@ -6158,3 +6158,131 @@ details.acc-item[open] .acc-chevron {
     --sticky-nav-h: 52px;
   }
 }
+
+/* ─────────────────────────────────────────
+   RESSOURCEN-SEITE
+───────────────────────────────────────── */
+.res-urgent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.res-urgent-card {
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+}
+.res-urgent-notfall {
+  background: var(--danger-light);
+  border: 2px solid var(--danger);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.res-urgent-notfall:hover {
+  background: #f8d8d8;
+}
+.res-urgent-puk {
+  background: var(--m5-light);
+  border: 2px solid var(--m5);
+}
+.res-urgent-icon {
+  font-size: 1.5rem;
+}
+.res-urgent-card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.res-urgent-card p {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin: 0;
+}
+.res-urgent-tel {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--m5);
+}
+.res-urgent-meta {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.res-urgent-link {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.res-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.res-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+}
+.res-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.8rem;
+}
+.res-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.res-list li {
+  padding: 0.4rem 0;
+  font-size: var(--fs-sm);
+  border-bottom: 1px solid var(--bg2);
+}
+.res-list li:last-child {
+  border-bottom: none;
+}
+.res-note {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin-top: 0.8rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--bg2);
+}
+
+.res-glossar-toggle, .res-faq-toggle {
+  width: 100%;
+  text-align: left;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  color: var(--text);
+}
+.res-glossar-toggle:hover, .res-faq-toggle:hover {
+  background: var(--bg3);
+}
+.res-toggle-icon {
+  transition: transform 0.2s;
+  font-size: 1.2rem;
+}
+.res-glossar-toggle[aria-expanded="true"] .res-toggle-icon,
+.res-faq-toggle[aria-expanded="true"] .res-toggle-icon {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+  .res-urgent, .res-grid {
+    grid-template-columns: 1fr;
+  }
+}

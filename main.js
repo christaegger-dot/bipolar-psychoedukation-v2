@@ -609,6 +609,16 @@ function toggleGlossar(btn) {
   }
 }
 
+// Ressourcen-Seite: Glossar + FAQ Section Toggles
+document.querySelectorAll('.res-glossar-toggle, .res-faq-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    var target = document.getElementById(this.getAttribute('aria-controls'));
+    this.setAttribute('aria-expanded', !expanded);
+    target.hidden = expanded;
+  });
+});
+
 // Notfall Mini-Guide Akkordeon
 function toggleMG(btn) {
   var guide = btn.closest('.mini-guide');
