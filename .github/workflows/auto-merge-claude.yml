@@ -1,0 +1,27 @@
+name: Auto-merge Claude Code PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  check_suite:
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: >
+      startsWith(github.head_ref, 'claude/') &&
+      github.event.pull_request.user.login == 'app/claude'
+    steps:
+      - name: Wait for Netlify deploy
+        run: sleep 30
+
+      - name: Enable auto-merge
+        run: gh pr merge --auto --merge "<LaTex>$PR_URL"
+        env:
+          PR_URL: $</LaTex>{{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
