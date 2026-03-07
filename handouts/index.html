@@ -629,62 +629,100 @@
 </div>
 </div>
 </div>
-<!-- Handout Preview Lightbox -->
-<div class="ho-lightbox" id="ho-lightbox" role="dialog" aria-modal="true" aria-label="Infografik-Vorschau">
-<div class="ho-lb-backdrop"></div>
-<div class="ho-lb-content">
-<button class="ho-lb-close" aria-label="Schliessen">✕</button>
-<img class="ho-lb-img" id="ho-lb-img" alt="" />
-<a class="ho-lb-download" id="ho-lb-dl" download="">⬇ PDF herunterladen</a>
-</div>
-</div>
+<!-- PDF Lightbox: Desktop=iframe-Overlay, Mobile=neuer Tab -->
 <style>
-.ho-lightbox{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center}
-.ho-lightbox.active{display:flex}
-.ho-lb-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.82)}
-.ho-lb-content{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;max-width:92vw;max-height:92vh;z-index:1}
-.ho-lb-img{width:auto;height:min(78vh,750px);max-width:92vw;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.4);object-fit:contain;background:#fff}
-.ho-lb-download{display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.6rem;background:#fff;color:#2c2418;font-weight:600;font-size:1rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s}
-.ho-lb-download:hover{background:#f0ebe4;transform:translateY(-1px)}
-.ho-lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;padding:0.3rem 0.6rem;line-height:1;opacity:0.8;transition:opacity 0.2s}
-.ho-lb-close:hover{opacity:1}
-@media(max-width:600px){.ho-lb-close{top:-2rem;font-size:1.4rem}.ho-lb-download{font-size:0.9rem;padding:0.6rem 1.2rem}}
+#pdf-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;background:rgba(0,0,0,0.82)}
+.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+.pdf-lb-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f5f5f5;border-bottom:1px solid #ddd;flex-shrink:0}
+.pdf-lb-dl{display:inline-flex;align-items:center;gap:0.4rem;color:#3d3530;font-weight:600;font-size:0.85rem;text-decoration:none;transition:color 0.2s}
+.pdf-lb-dl:hover{color:#1a6b3c}
+.pdf-lb-close{background:none;border:none;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;color:#3d3530;transition:opacity 0.2s}
+.pdf-lb-close:hover{opacity:0.6}
+.pdf-lb-iframe{flex:1;width:100%;border:none}
 </style>
 <script>
+/* PDF Lightbox — single consolidated implementation */
 (function(){
-  var isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  var lb=document.getElementById('ho-lightbox'),
-      img=document.getElementById('ho-lb-img'),
-      dl=document.getElementById('ho-lb-dl');
-  if(!lb)return;
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    var pdfHref=card.getAttribute('href');
-    card.setAttribute('data-pdf',pdfHref);
+    var pdfHref = card.getAttribute('href');
+    if(!pdfHref) return;
+    card.setAttribute('data-pdf', pdfHref);
     card.removeAttribute('href');
-    card.style.cursor='pointer';
-    card.setAttribute('role','button');
-    card.setAttribute('tabindex','0');
-    card.addEventListener('click',function(e){
+    card.style.cursor = 'pointer';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+
+    card.addEventListener('click', function(e){
       e.preventDefault();
-      if(isMobile){window.open(pdfHref,'_blank');return;}
-      var thumb=card.querySelector('.card-thumb img');
-      if(!thumb)return;
-      img.src=thumb.src;
-      img.alt=thumb.alt;
-      dl.href=pdfHref;
-      lb.classList.add('active');
-      document.body.style.overflow='hidden';
+      if(isMobile){ window.open(pdfHref, '_blank'); return; }
+      openPdfLightbox(pdfHref);
     });
-    card.addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
+    card.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); }
     });
   });
-  function closeLb(){lb.classList.remove('active');document.body.style.overflow=''}
-  lb.querySelector('.ho-lb-backdrop').addEventListener('click',closeLb);
-  lb.querySelector('.ho-lb-close').addEventListener('click',closeLb);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('active'))closeLb()});
+
+  function closeLightbox(){
+    var lb = document.getElementById('pdf-lightbox');
+    if(lb){ lb.remove(); document.body.style.overflow=''; }
+  }
+
+  function openPdfLightbox(url){
+    closeLightbox();
+    var ov = document.createElement('div');
+    ov.id = 'pdf-lightbox';
+    ov.setAttribute('role','dialog');
+    ov.setAttribute('aria-modal','true');
+    ov.setAttribute('aria-label','PDF-Vorschau');
+
+    var panel = document.createElement('div');
+    panel.className = 'pdf-lb-panel';
+
+    var bar = document.createElement('div');
+    bar.className = 'pdf-lb-bar';
+
+    var dl = document.createElement('a');
+    dl.className = 'pdf-lb-dl';
+    dl.href = url;
+    dl.download = '';
+    dl.textContent = '\u2B07 PDF herunterladen';
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'pdf-lb-close';
+    closeBtn.setAttribute('aria-label','Schliessen');
+    closeBtn.textContent = '\u2715';
+    closeBtn.addEventListener('click', closeLightbox);
+
+    bar.appendChild(dl);
+    bar.appendChild(closeBtn);
+
+    var iframe = document.createElement('iframe');
+    iframe.className = 'pdf-lb-iframe';
+    iframe.src = url;
+    iframe.title = 'PDF-Vorschau';
+
+    panel.appendChild(bar);
+    panel.appendChild(iframe);
+    ov.appendChild(panel);
+
+    ov.addEventListener('click', function(e){
+      if(e.target === ov) closeLightbox();
+    });
+
+    document.body.appendChild(ov);
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape') closeLightbox();
+  });
 })();
-// Asset-ID & Version labels for QA and professional use
+</script>
+<!-- Asset-ID labels for QA -->
+<script>
 (function(){
   var assetMap={
     'krisenplan-vorlage':'TPL-01 · v02 · 2026-02',
@@ -716,7 +754,7 @@
     'trialog':'INF-24 · v01 · 2026-02'
   };
   document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    var href=card.getAttribute('href')||card.getAttribute('data-pdf')||'';
+    var href=card.getAttribute('data-pdf')||'';
     var badge=card.querySelector('.card-badge');
     if(!badge)return;
     for(var key in assetMap){
@@ -732,57 +770,6 @@
 })();
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
-<script>
-/* PDF Lightbox — Mobile: neuer Tab, Desktop: Overlay */
-(function(){
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    card.addEventListener('click', function(e){
-      e.preventDefault();
-      var url = this.getAttribute('href') || this.getAttribute('data-pdf');
-      if(!url) return;
-
-      if(isMobile){
-        window.open(url, '_blank');
-        return;
-      }
-      openPdfLightbox(url);
-    });
-  });
-
-  function openPdfLightbox(url){
-    var old = document.getElementById('pdf-lightbox');
-    if(old) old.remove();
-
-    var ov = document.createElement('div');
-    ov.id = 'pdf-lightbox';
-    ov.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box';
-    ov.innerHTML =
-      '<div style="position:relative;width:100%;max-width:820px;height:90vh;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column">' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f5f5f5;border-bottom:1px solid #ddd">' +
-      '<a href="'+url+'" download style="color:#3d3530;font-weight:600;font-size:0.85rem;text-decoration:none">⬇ PDF herunterladen</a>' +
-      '<button onclick="document.getElementById(\'pdf-lightbox\').remove();document.body.style.overflow=\'\'" style="background:none;border:none;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1" aria-label="Schliessen">✕</button>' +
-      '</div>' +
-      '<iframe src="'+url+'" style="flex:1;width:100%;border:none"></iframe>' +
-      '</div>';
-
-    ov.addEventListener('click', function(e){
-      if(e.target===ov){ ov.remove(); document.body.style.overflow=''; }
-    });
-
-    document.body.appendChild(ov);
-    document.body.style.overflow='hidden';
-  }
-
-  document.addEventListener('keydown', function(e){
-    if(e.key==='Escape'){
-      var lb=document.getElementById('pdf-lightbox');
-      if(lb){ lb.remove(); document.body.style.overflow=''; }
-    }
-  });
-})();
-</script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>
