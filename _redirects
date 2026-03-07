@@ -11,7 +11,7 @@
 /m6  /modul/6/  301
 /m7  /modul/7/  301
 
-# Handout-Seiten Shortcuts
+# Handout-Seiten — Rewrite (200): URL bleibt sauber, Inhalt von handouts/
 /notfall/      /handouts/notfall/      200
 /notfall       /handouts/notfall/      200
 /impressum/    /handouts/impressum/    200

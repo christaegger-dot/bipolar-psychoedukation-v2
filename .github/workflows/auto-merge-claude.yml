@@ -1,0 +1,42 @@
+name: Auto-PR and merge for Claude Code
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create PR if none exists
+        id: create-pr
+        run: |
+          EXISTING=$(gh pr list --head "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json number --jq '.[0].number')
+          if [ -z "$EXISTING" ]; then
+            PR_URL=$(gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --head "$GITHUB_REF_NAME" \
+              --base main \
+              --title "Claude Code: $(echo $GITHUB_REF_NAME | sed 's|claude/||')" \
+              --body "Automatisch erstellt von Claude Code.")
+            echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+            echo "Created PR: $PR_URL"
+          else
+            echo "pr_url=$(gh pr view $EXISTING --repo $GITHUB_REPOSITORY --json url --jq '.url')" >> $GITHUB_OUTPUT
+            echo "PR already exists: #$EXISTING"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait for Netlify deploy
+        run: sleep 60
+
+      - name: Merge PR
+        run: gh pr merge --merge --delete-branch "${{ steps.create-pr.outputs.pr_url }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
