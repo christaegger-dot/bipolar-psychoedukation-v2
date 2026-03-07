@@ -370,26 +370,6 @@ nav {
 .hope-banner strong { color: var(--m6); }
 
 /* CTA Buttons */
-.module-ctas {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 99px;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  font-family: inherit;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
-}
 .cta-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 .cta-btn.m1 { background: var(--m1); color: white; }
 .cta-btn.m2 { background: var(--m2); color: white; }
@@ -420,16 +400,6 @@ nav {
   gap: 1.2rem;
   border-radius: var(--radius) var(--radius) 0 0;
 }
-.module-number {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 2.8rem;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0.28;
-  flex-shrink: 0;
-  margin-top: 0;
-  letter-spacing: -0.02em;
-}
 .module-header-text h2 {
   font-family: 'Lora', Georgia, serif;
   font-size: var(--fs-h2);
@@ -457,8 +427,6 @@ nav {
   font-size: var(--fs-sm);
   margin-bottom: 1rem;
 }
-.placeholder-icon { font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.4; }
-.placeholder-label { font-weight: 600; margin-bottom: 0.25rem; color: var(--text); opacity: 0.5; }
 
 /* Farbstreifen oben je Modul */
 .module-card.c1 { border-top: 4px solid var(--m1); }
@@ -851,7 +819,6 @@ footer {
   box-shadow: var(--shadow-md);
   border-top: 3px solid var(--m2);
 }
-.erosion-icon { font-size: var(--fs-h2); margin-bottom: 0.5rem; }
 .erosion-title { font-weight: 600; font-size: var(--fs-base); margin-bottom: 0.4rem; }
 .erosion-text { font-size: var(--fs-sm); color: var(--muted); line-height: 1.5; margin-bottom: 0.5rem; }
 
@@ -1526,12 +1493,6 @@ footer {
 /* ─────────────────────────────────────────
    MODUL 6: 5 SÄULEN
 ───────────────────────────────────────── */
-.pillars-wrap {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .pillar {
   background: var(--white);
   border-radius: 12px;
@@ -1540,9 +1501,6 @@ footer {
   border-top: 3px solid var(--m6);
   text-align: center;
 }
-.pillar-icon { font-size: var(--fs-h2); margin-bottom: 0.4rem; }
-.pillar-title { font-weight: 600; font-size: var(--fs-sm); margin-bottom: 0.4rem; }
-.pillar-text { font-size: var(--fs-xs); color: var(--muted); line-height: 1.45; }
 .pillars-note { font-size: var(--fs-xs); color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
 
 /* ─────────────────────────────────────────
@@ -1552,14 +1510,6 @@ footer {
 /* PTG optionaler Einstieg */
 
 /* Lesezeit-Hinweis Hero */
-.hero-readtime {
-  text-align: center;
-  font-size: var(--fs-xs);
-  color: var(--muted);
-  opacity: 0.8;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.01em;
-}
 
 /* Identitätsverlust Erstschritt */
 .identity-first-step {
@@ -1780,70 +1730,10 @@ footer {
 /* ═══════════════════════════════════════════════
    NOTFALLKARTEN
 ═══════════════════════════════════════════════ */
-.notfall-karten {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
-}
-.nk-card {
-  background: var(--white);
-  border-radius: 10px;
-  border: 1px solid var(--bg3);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-.nk-situation {
-  background: var(--m5-light);
-  border-bottom: 1px solid var(--bg3);
-  padding: 0.75rem 1.2rem;
-  font-weight: 600;
-  font-size: var(--fs-base);
-  color: var(--text);
-  line-height: 1.5;
-}
-.nk-steps {
-  padding: var(--sp-sm) 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.nk-step {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  font-size: var(--fs-sm);
-  line-height: 1.6;
-  color: var(--text);
-}
-.nk-num {
-  background: var(--m5);
-  color: white;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0;
-}
 
 /* ═══════════════════════════════════════════════
    SÄULEN «IN DER PRAXIS»
 ═══════════════════════════════════════════════ */
-.pillar-practice {
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  background: var(--bg);
-  border-radius: 6px;
-  font-size: var(--fs-xs);
-  color: var(--muted);
-  line-height: 1.55;
-  border-left: 2px solid var(--bg3);
-}
 
 .ptg-wrap { margin-bottom: 1.5rem; }
 .ptg-quote-wrap {
@@ -2220,60 +2110,13 @@ footer {
    MODUL 5: KRISENPLAN
 ───────────────────────────────────────── */
 /* Schweigepflichtentbindung — visueller Anker */
-.schwei-anchor {
-  background: linear-gradient(135deg, #1a3a6a 0%, #2a5a9a 100%);
-  border-radius: 12px;
-  padding: var(--sp-md) 1.5rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-.schwei-anchor-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.2);
-  border-radius: 99px;
-  padding: 0.25rem 0.75rem;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-.schwei-anchor-title {
-  font-family: 'Lora', Georgia, serif;
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-.schwei-anchor-sub {
-  font-size: var(--fs-sm);
-  opacity: 0.85;
-  line-height: 1.5;
-}
 
 /* Schweigepflichtentbindung — Inhalt */
-.schwei-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  margin-bottom: 1.2rem;
-}
 .schwei-left, .schwei-right {
   background: var(--schwei-light);
   border-radius: 10px;
   padding: 1rem var(--sp-md);
 }
-.schwei-title { font-weight: 600; font-size: var(--fs-base); margin-bottom: 0.5rem; color: var(--schwei-blue); }
-.schwei-text { font-size: var(--fs-sm); line-height: 1.6; color: var(--text); margin-bottom: 0.75rem; }
-.schwei-important {
-  display: flex;
-  gap: 0.5rem;
-  background: rgba(180,30,30,0.07);
-  border-radius: 7px;
-  padding: 0.5rem var(--sp-sm);
-  font-size: var(--fs-sm);
-  line-height: 1.55;
-  color: var(--danger-dark);
-}
-.schwei-warn { font-size: var(--fs-md); flex-shrink: 0; }
 .schwei-steps { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem; }
 .schwei-step {
   display: flex;
@@ -2306,76 +2149,11 @@ footer {
 }
 .schwei-resource a { color: var(--schwei-blue); }
 @media (max-width: 640px) {
-  .schwei-wrap { grid-template-columns: 1fr; }
 }
 
-.sleep-trigger-box {
-  display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
-  background: var(--warn-bg);
-  border: 2px solid var(--warn-border);
-  border-radius: 10px;
-  padding: 1rem var(--sp-md);
-  margin: 0.5rem 0 0.4rem 2rem;
-}
-.stb-icon { font-size: var(--fs-h2); flex-shrink: 0; margin-top: 0; }
-.stb-title { font-weight: 700; font-size: var(--fs-base); color: var(--stigma-brown); margin-bottom: 0.25rem; }
-.stb-text { font-size: var(--fs-sm); line-height: 1.6; color: var(--text); margin-bottom: 0.4rem; }
-.stb-action { font-size: var(--fs-sm); font-style: italic; color: var(--stigma-brown); border-top: 1px solid rgba(232,160,32,0.3); padding-top: 0.4rem; }
 @media (max-width: 540px) {
-  .sleep-trigger-box { margin-left: 0; }
 }
 
-.crisis-plan-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.crisis-plan-col {
-  background: var(--white);
-  border-radius: 12px;
-  padding: var(--sp-md);
-  box-shadow: var(--shadow-md);
-}
-.cp-col-title {
-  font-weight: 600;
-  font-size: var(--fs-sm);
-  color: var(--text);
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--m5);
-}
-.cp-items { display: flex; flex-direction: column; gap: 0.5rem; }
-.cp-item {
-  display: flex;
-  gap: 0.5rem;
-  align-items: flex-start;
-  font-size: var(--fs-sm);
-  line-height: 1.5;
-}
-.cp-icon { font-size: var(--fs-md); flex-shrink: 0; margin-top: 0; }
-.cp-why { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem; }
-.cp-why-item {
-  display: flex;
-  gap: 0.5rem;
-  align-items: flex-start;
-  font-size: var(--fs-sm);
-  line-height: 1.5;
-  background: var(--bg);
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-}
-.cp-why-icon { font-size: var(--fs-md); flex-shrink: 0; }
-.cp-tip {
-  background: var(--m5-light);
-  border-radius: 8px;
-  padding: 0.75rem 0.8rem;
-  font-size: var(--fs-sm);
-  line-height: 1.55;
-  border-left: 3px solid var(--m5);
-}
 
 /* ─────────────────────────────────────────
    MODUL 5: BEHANDLUNGSABLEHNUNG
@@ -2733,7 +2511,6 @@ footer {
   border-radius: 7px;
   padding: 0.5rem 0.75rem;
 }
-.is-icon { font-size: var(--fs-md); flex-shrink: 0; margin-top: 0; }
 .identity-note {
   font-size: var(--fs-sm);
   color: var(--muted);
@@ -2822,7 +2599,6 @@ footer {
   .module { padding: 0 0.5rem; }
   .hero { padding: 3rem 1rem 2rem; }
   .module-header { flex-direction: column; gap: 0.5rem; padding: 1.4rem 0.5rem 1rem; }
-  .module-number { font-size: var(--fs-h1); }
   .module-body { padding: var(--sp-md) 0.5rem; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-right { text-align: left; }
@@ -2845,7 +2621,6 @@ footer {
   .ee-cycle-wrap { grid-template-columns: 1fr; }
   .pole-tabs { flex-direction: column; }
   .pole-tab { border-right: none; border-bottom: 1px solid var(--bg3); }
-  .pillars-wrap { grid-template-columns: 1fr 1fr; }
   .ptg-aspects { grid-template-columns: 1fr 1fr; }
   .slide-comparison { grid-template-columns: 1fr; }
   .slide-arrow { display: none; }
@@ -2855,7 +2630,6 @@ footer {
   .children-wrap { grid-template-columns: 1fr; }
   .loss-types-grid { grid-template-columns: 1fr; }
   .bf-stats { flex-direction: column; }
-  .crisis-plan-wrap { grid-template-columns: 1fr; }
   .refusal-wrap { grid-template-columns: 1fr; }
   .suicide-wrap { grid-template-columns: 1fr; }
   .suicide-stat-row { flex-direction: column; }
@@ -3123,10 +2897,6 @@ footer {
   align-items: center;
 }
 .kp-filled { color: var(--text); }
-.kp-empty {
-  color: var(--bg3);
-  letter-spacing: 0.1em;
-}
 .kp-mock-row-empty .kp-mock-label { opacity: 0.6; }
 .kp-mock-footer {
   padding: 0.75rem 1rem;
@@ -3614,7 +3384,6 @@ circle[tabindex]:focus-visible {
 /* #22 Scroll-Margin für fixe Nav */
 html { scroll-padding-top: var(--sticky-offset); }
 section[id] { scroll-margin-top: var(--sticky-offset); }
-.m5-anchor { scroll-margin-top: var(--sticky-offset); }
 
 /* ═══════════════════════════════════════════════════
    NOTFALL-BANNER
@@ -3674,21 +3443,6 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   margin: 0 auto;
   text-align: left;
 }
-.notfall-nums {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-.notfall-num-card {
-  flex: 1;
-  min-width: 160px;
-  background: rgba(255,255,255,0.12);
-  border-radius: 10px;
-  padding: var(--sp-sm) 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
 .notfall-num-card a {
   color: white;
   text-decoration: none;
@@ -3698,64 +3452,12 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   letter-spacing: 0.02em;
 }
 .notfall-num-card a:hover { text-decoration: underline; }
-.notfall-num-label {
-  font-size: var(--fs-xs);
-  opacity: 0.85;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.notfall-num-sub {
-  font-size: var(--fs-xs);
-  opacity: 0.7;
-  line-height: 1.4;
-}
-.notfall-situation {
-  margin-bottom: 1rem;
-}
-.notfall-sit-label {
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  opacity: 0.85;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
 .notfall-priority a {
   font-size: var(--fs-h2);
-}
-.notfall-hinweis {
-  background: rgba(255,255,255,0.08);
-  border-left: 3px solid rgba(255,255,255,0.3);
-  border-radius: 0 8px 8px 0;
-  padding: var(--sp-sm) 1rem;
-  font-size: var(--fs-xs);
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-  opacity: 0.9;
-}
-.notfall-close {
-  align-self: flex-end;
-  background: none;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  border-radius: 6px;
-  padding: 0.25rem 0.8rem;
-  font-size: var(--fs-xs);
-  cursor: pointer;
-  font-family: inherit;
-  opacity: 0.8;
-  transition: opacity 0.2s;
 }
 .notfall-close:hover { opacity: 1; }
 
 @media (max-width: 480px) {
-  .notfall-num-card {
-    min-width: 0;
-    flex-basis: 100%;
-  }
   .notfall-num-card a {
     font-size: var(--fs-base);
   }
@@ -4666,8 +4368,6 @@ details.inline-mg ul li {
   nav { background: var(--bg); border-color: var(--bg3); }
   .module-card, .card, .lernziele { background: var(--bg2); border-color: var(--bg3); }
   .vignette { background: rgba(255,255,255,0.04); }
-  .notfall-num-card { background: var(--bg2); }
-  .module-number { color: var(--text); }
   a { color: var(--m1); }
   .breadcrumb a { color: var(--m1); }
   .pd-dot { background: var(--bg3); }
@@ -4680,13 +4380,11 @@ details.inline-mg ul li {
   .slider-tab { background: var(--bg2); color: var(--text); }
   .acc-header { background: var(--bg2); color: var(--text); }
   .reflexion { background: var(--bg2); border-color: var(--bg3); }
-  .quiz-block { background: var(--bg2); border-color: var(--bg3); }
   .kurzfassung { background: rgba(255,255,255,0.04); }
   .module-toc { background: rgba(255,255,255,0.04); }
   .error-links a { background: var(--bg2); border-color: var(--bg3); }
   .resource-card, .resource-item { background: var(--bg2); }
   .pdf-card { background: var(--bg2); }
-  .handout-card { background: var(--bg2); }
   .impressum-section { color: var(--text); }
   .subpage-hero { background: var(--bg2); }
   #view-controls button { background: var(--bg2); color: var(--text); border-color: var(--bg3); }
@@ -5152,34 +4850,7 @@ details.inline-mg ul li {
    NOTFALL-BANNER: Subpage-Variante
    (notfall-inner, notfall-top, notfall-phone, notfall-details)
 ───────────────────────────────────────── */
-.notfall-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  text-align: left;
-}
-.notfall-top {
-  font-size: var(--fs-base);
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-.notfall-phone {
-  display: inline-block;
-  background: rgba(255,255,255,0.2);
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: var(--fs-md);
-  color: white;
-  text-decoration: none;
-  margin-left: 0.25rem;
-}
 .notfall-phone:hover { background: rgba(255,255,255,0.3); }
-.notfall-details {
-  font-size: var(--fs-sm);
-  line-height: 1.8;
-  opacity: 0.9;
-}
 .notfall-details a {
   color: white;
   font-weight: 600;
@@ -5294,16 +4965,7 @@ details.inline-mg ul li {
 /* ─────────────────────────────────────────
    RESSOURCEN: Section & Arrow-Icons
 ───────────────────────────────────────── */
-.ressourcen-section {
-  margin: 2.5rem 0;
-}
 .glossar-arrow,
-.faq-arrow {
-  display: inline-block;
-  transition: transform 0.2s;
-  font-size: var(--fs-sm);
-  margin-left: 0.25rem;
-}
 
 /* ─────────────────────────────────────────
    404-SEITE (migriert aus Inline-Styles)
@@ -5543,9 +5205,6 @@ details.inline-mg ul li {
 .behandlung-box {
   /* Styling via inline style-Attribut */
 }
-.grenzen-modul {
-  /* Styling via inline style-Attribut */
-}
 
 /* EE-Diagramm & Loyalty: Positionsmarker */
 .ee-node.top { /* Oberer Knoten im EE-Kreislauf */ }
@@ -5660,17 +5319,9 @@ details.inline-mg ul li {
 
 /* Emoji-Icons (konsistente Grössen) */
 .icon-sm { font-size: var(--fs-md); flex-shrink: 0; }
-.icon-md { font-size: var(--fs-lg); flex-shrink: 0; }
 .icon-lg { font-size: var(--fs-h3); flex-shrink: 0; }
 
 /* Content-Card (weisser Kasten) */
-.content-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: var(--sp-md);
-  margin-bottom: 1rem;
-}
 
 /* Muted-Subtext */
 .subtext {
@@ -5764,7 +5415,6 @@ details.inline-mg ul li {
 .mb-md { margin-bottom: 1rem; }
 .mt-sm { margin-top: 0.5rem; }
 .mt-md { margin-top: 1rem; }
-.lh-relaxed { line-height: 1.6; }
 .mb-md-lh { margin-bottom: 1rem; line-height: 1.6; }
 
 /* Border-color per module */
@@ -5789,7 +5439,6 @@ details.inline-mg ul li {
 .blc-m4 { border-left-color: var(--m4); }
 .blc-danger { border-left-color: var(--danger); }
 .bc-danger { border-color: var(--danger); }
-.bl-danger { border-left: 4px solid var(--danger); }
 .module-overview { max-width: 680px; margin: 0 auto; padding: 0 1.2rem 3rem; }
 .module-overview-title { font-family: 'Lora', Georgia, serif; font-size: var(--fs-h3); margin: 2rem 0 0.5rem; color: var(--text); text-align: center; }
 .module-overview-sub { text-align: center; color: var(--muted); font-size: var(--fs-sm); margin-bottom: 1.5rem; }
