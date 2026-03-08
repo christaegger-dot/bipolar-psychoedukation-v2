@@ -5995,6 +5995,3 @@ details.acc-item[open] .acc-chevron {
 .text-sm-muted { font-size: .875rem; color: #5a504a; }
 .text-xs-muted { font-size: .75rem; color: #8a7e76; }
 .mt-half { margin-top: 0.5rem; }
-.feedback-block { text-align: center; padding: 1rem; margin: 1.5rem 0; background: var(--bg-warm, #faf8f5); border-radius: var(--radius); }
-.feedback-block p { margin-bottom: 0.8rem; color: var(--muted); }
-.feedback-btn { font-size: 1.5rem; background: none; border: none; cursor: pointer; padding: 0.5rem 1rem; }
