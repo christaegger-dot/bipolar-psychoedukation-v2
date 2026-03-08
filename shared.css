@@ -4666,6 +4666,8 @@ details.inline-mg ul li {
   font-family: 'Source Sans 3', sans-serif;
 }
 
+.module-updated { font-size: var(--fs-xs); color: var(--muted); margin-top: 0.3rem; }
+
 /* ═══════════ FIX #18: MODULE-END-NEXT ═══════════ */
 .module-end-next {
   background: var(--bg2);
@@ -5056,6 +5058,16 @@ details.inline-mg ul li {
   transition: opacity 0.2s;
 }
 .error-back:hover { opacity: 0.9; }
+.error-search { margin-top: 2rem; text-align: center; }
+.error-search-hint { font-size: var(--fs-base); color: var(--muted); margin-bottom: 0.75rem; }
+.error-search-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.85rem 2rem; background: var(--bg2); color: var(--text);
+  border: 2px solid var(--bg3); border-radius: var(--radius);
+  font-size: var(--fs-lg); font-weight: 600; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.error-search-btn:hover { border-color: var(--m1); background: var(--bg3); }
 .error-notfall {
   margin-top: 2rem;
   padding: 1rem;
