@@ -1,5 +1,13 @@
 
 /* ─────────────────────────────────────────
+   FONT-FACE
+───────────────────────────────────────── */
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/lora-v37-latin-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/lora-v37-latin-600.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/source-sans-3-v19-latin-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/source-sans-3-v19-latin-600.woff2') format('woff2'); }
+
+/* ─────────────────────────────────────────
    TOKENS
 ───────────────────────────────────────── */
 :root {
