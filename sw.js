@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bipolar-puk-v10';
+const CACHE_NAME = 'bipolar-puk-v11';
 const CORE_ASSETS = [
   '/',
   '/shared.css',
