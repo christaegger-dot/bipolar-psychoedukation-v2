@@ -124,7 +124,7 @@
 | URL | Organisation | Dateien |
 |-----|-------------|---------|
 | https://www.bipolar-forum.de | bipolar-forum.de (deutschsprachig) | `modul/3/index.html:587` |
-| https://vfrp.ch | VASK (Verweis) | `modul/2/index.html:366` |
+
 
 ### Eigene Website
 | URL | Dateien |
