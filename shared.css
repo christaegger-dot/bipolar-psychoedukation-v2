@@ -3443,7 +3443,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
 }
 #notfall-trigger.open .nt-chevron { transform: rotate(180deg); }
 
-.notfall-content {
+#notfall-drop .notfall-content {
   background: var(--danger-hover);
   padding: 1.4rem 1.5rem 1.6rem;
   display: flex;
@@ -3474,7 +3474,7 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   .notfall-priority a {
     font-size: var(--fs-h3);
   }
-  .notfall-content {
+  #notfall-drop .notfall-content {
     padding: 1rem;
   }
 }
@@ -5050,6 +5050,11 @@ details.inline-mg ul li {
   padding: 2.5rem 1rem 2rem;
   text-align: center;
   border-bottom: 3px solid var(--danger);
+}
+.notfall-hero + .notfall-content {
+  background: var(--bg-warm, #faf8f5);
+  color: var(--text);
+  padding: 1.5rem;
 }
 .notfall-hero h1 {
   font-family: 'Lora', Georgia, serif;
