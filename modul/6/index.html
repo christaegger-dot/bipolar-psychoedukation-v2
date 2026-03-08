@@ -275,9 +275,6 @@
 /* Roof bar */
 .sl-roof{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:#f0ebe5;border-left:1.5px solid #e2dbd3;border-right:1.5px solid #e2dbd3}
 .sl-roof span{font-size:.82rem;font-weight:600;color:#5a504a;letter-spacing:.01em}
-/* Pillar grid */
-.sl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#fff;border-left:1.5px solid #e2dbd3;border-right:1.5px solid #e2dbd3}
-.sl-grid .sl-pillar:nth-child(5){grid-column:1 / -1;max-width:calc(50% - 4px);justify-self:center}
 .sl-pillar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;border:1.5px solid;cursor:pointer;transition:all .2s ease;-webkit-tap-highlight-color:transparent;text-align:left;background:#fff;width:100%}
 .sl-pillar:focus-visible{outline:2px solid #3d3530;outline-offset:2px;border-radius:12px}
 .sl-pillar:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -520,7 +517,7 @@
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
 <h3 class="section-title-sm">Trialog — Gemeinsam statt übereinander</h3>
 <p class="m-subtext">Die wirksamste Versorgung entsteht, wenn drei Perspektiven zusammenwirken: Betroffene, Angehörige und Fachpersonen — auf Augenhöhe, nicht in einer Hierarchie.</p>
-<div class="trialog-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; margin-bottom:1.2rem;">
+<div class="trialog-grid">
 <div style="background:var(--m1-light); border-radius:10px; padding:1rem; border-top:3px solid var(--m1); text-align:center;">
 <div class="section-subtitle">🧑‍⚕️</div>
 <div style="font-weight:600; font-size:var(--fs-sm); margin-bottom:0.3rem; color:var(--m1);">Fachpersonen</div>
@@ -991,10 +988,9 @@
 </div>
 
 
-<script src="/search-index.js" defer></script>
+<script src="/init.js" defer></script>
 <script src="/main.js?v=58d48fe" defer></script>
 <script src="/search.js" defer></script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>

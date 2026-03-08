@@ -1198,11 +1198,13 @@ footer {
   margin-bottom: 1.5rem;
 }
 .mkn-icon { font-size: var(--fs-h3); flex-shrink: 0; margin-top: 0; }
+.komm-vergleich { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.2rem; }
+.trialog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.2rem; }
 @media (max-width: 540px) {
   .manie-komm-card { flex-direction: column; gap: 0.5rem; }
   .mk-num { width: 1.8rem; height: 1.8rem; font-size: var(--fs-base); }
-  .komm-vergleich { grid-template-columns: 1fr !important; }
-  .trialog-grid { grid-template-columns: 1fr !important; }
+  .komm-vergleich { grid-template-columns: 1fr; }
+  .trialog-grid { grid-template-columns: 1fr; }
 }
 
 /* ─────────────────────────────────────────
@@ -2599,6 +2601,11 @@ footer {
   margin-bottom: 1rem;
 }
 
+.do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; font-size: var(--fs-sm); line-height: 1.6; }
+.kk-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; aspect-ratio: 1.15; }
+.sl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; background: #fff; border-left: 1.5px solid #e2dbd3; border-right: 1.5px solid #e2dbd3; }
+.sl-grid .sl-pillar:nth-child(5) { grid-column: 1 / -1; max-width: calc(50% - 4px); justify-self: center; }
+
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
@@ -2642,9 +2649,9 @@ footer {
   .suicide-wrap { grid-template-columns: 1fr; }
   .suicide-stat-row { flex-direction: column; }
   .resources-grid { grid-template-columns: 1fr; }
-  .do-dont-grid { grid-template-columns: 1fr !important; }
-  .kk-grid { grid-template-columns: 1fr !important; aspect-ratio: unset !important; }
-  .sl-grid { grid-template-columns: 1fr !important; }
+  .do-dont-grid { grid-template-columns: 1fr; }
+  .kk-grid { grid-template-columns: 1fr; aspect-ratio: unset; }
+  .sl-grid { grid-template-columns: 1fr; }
   .sl-grid .sl-pillar:nth-child(5) { grid-column: auto; max-width: 100%; }
   #back-to-top { bottom: 90px; width: 40px; height: 40px; font-size: var(--fs-base); }
   #back-to-top.visible { opacity: 0.85; }
@@ -3075,7 +3082,7 @@ footer {
   transition: background 0.2s, color 0.2s;
 }
 .phase-show-all:hover { background: var(--m3-light); }
-.phase-all-wrap .phase-content { display: block !important; margin-bottom: 1rem; border-bottom: 1px solid var(--bg3); }
+.phase-all-wrap .phase-content { display: block; margin-bottom: 1rem; border-bottom: 1px solid var(--bg3); }
 .phase-all-wrap .phase-content:last-child { border-bottom: none; }
 
 /* #10 Loyalty-Items: Focus-Styling */
@@ -3165,9 +3172,9 @@ body.readmode .loyalty-wrap {
   pointer-events: none;
   opacity: 0.85;
 }
-body.readmode .pole-panel { display: block !important; }
-body.readmode .phase-content { display: block !important; }
-body.readmode .slide-wrap { display: block !important; margin-bottom: 1rem; }
+body.readmode .pole-panel { display: block; }
+body.readmode .phase-content { display: block; }
+body.readmode .slide-wrap { display: block; margin-bottom: 1rem; }
 
 /* #14 Print-Styles */
 @media print {
@@ -3196,7 +3203,7 @@ body.readmode .slide-wrap { display: block !important; margin-bottom: 1rem; }
   #notfall-banner, .notfall-fab, .filter-bar { display: none; }
   .tt-box { display: none !important; }
   .tt { border-bottom: none; }
-  .komm-vergleich { grid-template-columns: 1fr !important; }
+  .komm-vergleich { grid-template-columns: 1fr; }
   .m-insight, .kurzfassung, .reflexion { break-inside: avoid; border: 1px solid #ccc; }
   .acc-body { display: block !important; }
   .handout-section { break-before: page; }
@@ -4143,13 +4150,6 @@ details.inline-mg summary span:last-child {
 }
 details.inline-mg ul li {
   margin-bottom: 0.25rem;
-}
-
-/* ── Monitoring-Grenzen Grid (M1) ── */
-@media (max-width: 600px) {
-  #m1-monitoring > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-  }
 }
 
 /* ═══════════════════════════════════════

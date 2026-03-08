@@ -1,10 +1,21 @@
 // ═══════════════════════════════════════════════════════════
 // SEARCH — uses pre-built SEARCH_INDEX from search-index.js
+// Lazy-loads search-index.js on first search open
 // ═══════════════════════════════════════════════════════════
+
+var searchIndexLoaded = false;
+function loadSearchIndex() {
+  if (searchIndexLoaded) return;
+  var script = document.createElement('script');
+  script.src = '/search-index.js';
+  script.onload = function() { searchIndexLoaded = true; };
+  document.head.appendChild(script);
+}
 
 function openSearch() {
   var overlay = document.getElementById('search-overlay');
   if (!overlay) return;
+  loadSearchIndex();
   overlay.classList.add('active');
   setTimeout(function() {
     var input = document.getElementById('search-input');

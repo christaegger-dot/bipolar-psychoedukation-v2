@@ -65,20 +65,6 @@
 <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-<script>
-// Redirect old /#m1..#m7 links to new module pages
-(function() {
-  var h = window.location.hash;
-  var m = h && h.match(/^#m(\d)$/);
-  if (m) { window.location.replace('/modul/' + m[1] + '/'); return; }
-  var ms = h && h.match(/^#(m\d-.+)$/);
-  if (ms) {
-    var num = ms[1].charAt(1);
-    var anchor = ms[1].substring(3);
-    window.location.replace('/modul/' + num + '/#' + anchor);
-  }
-})();
-</script>
 <a class="skip-link" href="#module-overview">Direkt zum Inhalt</a>
 <div id="progress-bar"></div>
 <nav aria-label="Hauptnavigation">
@@ -296,10 +282,9 @@
 </div>
 
 
-<script src="/search-index.js" defer></script>
+<script src="/init.js" defer></script>
 <script src="/main.js?v=58d48fe" defer></script>
 <script src="/search.js" defer></script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>
