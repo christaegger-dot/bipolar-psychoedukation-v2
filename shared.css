@@ -3555,14 +3555,14 @@ section[id] { scroll-margin-top: var(--sticky-offset); }
   flex-shrink: 0;
 }
 .acc-item.open .acc-chevron { transform: rotate(180deg); }
-.acc-body {
+.acc-item:not(details) .acc-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
   padding: 0 1.2rem;
   background: var(--white);
 }
-.acc-body.open {
+.acc-item:not(details) .acc-body.open {
   max-height: 8000px;
   padding: 1rem 1.2rem 1.2rem;
 }
