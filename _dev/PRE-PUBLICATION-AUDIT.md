@@ -301,7 +301,7 @@
 | Herausgeberin (PUK ZH) | ✅ |
 | Adresse | ✅ Lenggstrasse 31, 8032 Zürich |
 | Telefon | ✅ +41 58 384 38 00 |
-| E-Mail | ✅ Anti-Scrape JS (angehoerige@pukzh.ch) |
+| E-Mail | ✅ Anti-Scrape JS (angehoerigenarbeit@pukzh.ch) |
 | Inhaltliche Verantwortung | ✅ Ch. Egger |
 | Haftungsausschluss | ✅ |
 | Datenschutz | ✅ |

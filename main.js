@@ -377,9 +377,9 @@ document.addEventListener('DOMContentLoaded', function() {
   initContinue();
   // footer email (anti-scrape)
   var e = document.getElementById('footer-email');
-  if (e) { var a = document.createElement('a'); a.href = 'mai'+'lto:'+'angehoerige'+'@'+'pukzh'+'.ch'; a.textContent = 'angehoerige'+'@'+'pukzh'+'.ch'; e.appendChild(a); }
+  if (e) { var a = document.createElement('a'); a.href = 'mai'+'lto:'+'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; a.textContent = 'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; e.appendChild(a); }
   var e2 = document.getElementById('m7-email');
-  if (e2) { var a2 = document.createElement('a'); a2.href = 'mai'+'lto:'+'angehoerige'+'@'+'pukzh'+'.ch'; a2.textContent = 'angehoerige'+'@'+'pukzh'+'.ch'; e2.appendChild(a2); }
+  if (e2) { var a2 = document.createElement('a'); a2.href = 'mai'+'lto:'+'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; a2.textContent = 'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; e2.appendChild(a2); }
   // restore large-text
   try {
     if (localStorage.getItem('bipolar-font') === 'large') {
