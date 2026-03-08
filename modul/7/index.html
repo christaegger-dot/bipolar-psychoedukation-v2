@@ -176,7 +176,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m7)">
+<div class="module-top mc-m7" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Unterstützung und Ressourcen</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -209,12 +209,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m7)">
+<div class="vignette mc-m7" >
 <p class="vignette-text">«Der wichtigste Moment war, als ich verstanden habe: Ich darf mir Hilfe holen. Nicht nur für ihn — auch für mich. Das hat alles verändert.»</p>
 <p class="vignette-source">— Partnerin, 55 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m7)">
+<div class="lernziele mc-m7" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Welche Fachstellen in der Schweiz speziell für Angehörige da sind.</li>
@@ -223,7 +223,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m7)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m7">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>7 wichtigste Erkenntnisse</li>
@@ -232,7 +232,7 @@
 <li>PDFs zum Mitnehmen</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m7)">
+<div class="kurzfassung mc-m7" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Es gibt ein dichtes Netz an Unterstützung in der Schweiz — für Sie, die Beziehung und Ihren Partner.</li>
@@ -352,7 +352,7 @@
 </div>
 </div>
 </div>
-<div class="wissens-anker" style="--module-color:var(--m7)">
+<div class="wissens-anker mc-m7" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-7-0">
 <p>Was ist der wichtigste erste Schritt für Angehörige?</p>
@@ -363,6 +363,11 @@
 </div>
 <div class="wa-feedback"></div>
 </div>
+</div>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m7','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m7','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
 </div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
@@ -641,6 +646,7 @@
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">

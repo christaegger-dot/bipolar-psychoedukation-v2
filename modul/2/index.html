@@ -128,7 +128,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m2)">
+<div class="module-top mc-m2" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Was die Erkrankung mit Beziehungen macht</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -162,12 +162,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m2)">
+<div class="vignette mc-m2" >
 <p class="vignette-text">«Ich merkte irgendwann, dass ich nicht mehr seine Partnerin war, sondern seine Managerin. Ich kontrollierte Medikamente, Termine, Finanzen — und vergass dabei, dass wir mal ein Liebespaar waren.»</p>
 <p class="vignette-source">— Partnerin, 41 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m2)">
+<div class="lernziele mc-m2" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Wie die Erkrankung Beziehungsstrukturen schleichend verändert.</li>
@@ -176,7 +176,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m2)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m2">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>Vom Liebespaar zum Funktionspaar</li>
@@ -186,7 +186,7 @@
 <li>Was Sie konkret tun können</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m2)">
+<div class="kurzfassung mc-m2" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Die Erkrankung verändert Beziehungsstrukturen schleichend — Rollenverschiebung und Identitätsverlust sind keine persönlichen Fehler.</li>
@@ -241,7 +241,7 @@
       </div>
 <!-- ── SVG: Was sich verschiebt ── -->
 <div class="wave-chart-wrap mt-md">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Zeitachse: Vier Dimensionen der Beziehung verschieben sich von Partnerschaft zu Betreuung über die Jahre" class="viz-svg" role="img" viewBox="-15 0 630 355" xmlns="http://www.w3.org/2000/svg">
 <!-- Background -->
 <rect fill="#fafaf6" height="236.0" rx="8" width="600" x="0" y="0.0"></rect>
@@ -397,8 +397,8 @@
 </div>
 </div>
 <!-- SVG: Erosion von Vertrauen, Nähe und Leichtigkeit -->
-<div class="wave-chart-wrap" style="margin-top:0.5rem;">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="wave-chart-wrap mt-half" >
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Diagramm: Vertrauen, Nähe und Leichtigkeit sinken nach jeder Episode, Episoden sind als vertikale Markierungen dargestellt" class="viz-svg" role="img" viewBox="0 0 620 305" xmlns="http://www.w3.org/2000/svg">
 <!-- Background zones -->
 <rect fill="#fafaf6" height="153.4" rx="6" width="520" x="60" y="17.7"></rect>
@@ -578,7 +578,7 @@ Opferhilfe Kanton Zürich — <a href="tel:+41444461550">044 446 15 50</a> (Bera
 </div>
 </div>
 </div>
-<div class="wissens-anker" style="--module-color:var(--m2)">
+<div class="wissens-anker mc-m2" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-2-0">
 <p>Was beschreibt der Begriff «Funktionspaar»?</p>
@@ -598,6 +598,11 @@ Opferhilfe Kanton Zürich — <a href="tel:+41444461550">044 446 15 50</a> (Bera
 <div class="wa-feedback"></div>
 </div>
 </div>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m2','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m2','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
+</div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
 <h3 class="section-title-sm">Merken Sie sich</h3>
@@ -612,7 +617,7 @@ Opferhilfe Kanton Zürich — <a href="tel:+41444461550">044 446 15 50</a> (Bera
         </div>
 </div>
 
-<div class="module-end-next" style="--module-color:var(--m3)">
+<div class="module-end-next mc-m3" >
 <p class="men-label">Nächster Schritt</p>
 <p class="men-text">Modul 3 zeigt, wie sich Solidarität schleichend aufbraucht — und wie Sie rechtzeitig gegensteuern.</p>
 <a href="/modul/3/" class="men-link bc-m3">Weiter zu Modul 3 →</a>
@@ -712,6 +717,7 @@ Opferhilfe Kanton Zürich — <a href="tel:+41444461550">044 446 15 50</a> (Bera
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">

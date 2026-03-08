@@ -128,7 +128,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m6)">
+<div class="module-top mc-m6" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Resilienz und Paardynamik</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -162,12 +162,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m6)">
+<div class="vignette mc-m6" >
 <p class="vignette-text">«Wir haben gelernt, als Team zu funktionieren. Er sagt mir, wenn es kippt. Ich sage ihm, wenn ich eine Pause brauche. Es ist nicht perfekt — aber es ist unseres.»</p>
 <p class="vignette-source">— Partnerin, 49 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m6)">
+<div class="lernziele mc-m6" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Was Paare zusammenhält — die fünf Säulen stabiler Solidarität.</li>
@@ -176,7 +176,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m6)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m6">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>Kommunikation: Vorher / Nachher</li>
@@ -188,7 +188,7 @@
 <li>Akute Krise — Kurzanleitungen</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m6)">
+<div class="kurzfassung mc-m6" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Resilienz ist kein Persönlichkeitsmerkmal — sie ist ein Prozess, der aktiv gefördert werden kann.</li>
@@ -562,7 +562,7 @@
 </div>
 <!-- SVG: Resilienz-Welle — nicht-linearer Fortschritt -->
 <div class="wave-chart-wrap" style="margin-top:0.8rem;">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Diagramm: Zwei Linien zeigen den Unterschied zwischen erwartetem linearem und tatsächlichem wellenförmigem Fortschritt über die Zeit" class="viz-svg" role="img" viewBox="-10 0 610 360" xmlns="http://www.w3.org/2000/svg">
 <!-- Background -->
 <rect fill="#fafaf6" height="250.0" rx="8" width="600" x="0" y="0.0"></rect>
@@ -852,7 +852,7 @@
 </div>
 </details>
 </div>
-<div class="wissens-anker" style="--module-color:var(--m6)">
+<div class="wissens-anker mc-m6" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-6-0">
 <p>Ist Resilienz ein angeborenes Persönlichkeitsmerkmal?</p>
@@ -871,6 +871,11 @@
 <div class="wa-feedback"></div>
 </div>
 </div>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m6','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m6','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
+</div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
 <h3 class="section-title-sm">Merken Sie sich</h3>
@@ -885,7 +890,7 @@
         </div>
 </div>
 
-<div class="module-end-next" style="--module-color:var(--m7)">
+<div class="module-end-next mc-m7" >
 <p class="men-label">Nächster Schritt</p>
 <p class="men-text">In Modul 7 finden Sie alle Anlaufstellen, PDFs und den Blick nach vorn.</p>
 <a href="/modul/7/" class="men-link bc-m7">Weiter zu Modul 7 →</a>
@@ -984,6 +989,7 @@
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">

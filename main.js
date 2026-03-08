@@ -1,4 +1,21 @@
 
+/* Feedback mechanism — stores locally, prepared for backend beacon */
+function sendFeedback(module, value, btn) {
+  var key = 'feedback_' + module;
+  if (localStorage.getItem(key)) {
+    return; // already voted
+  }
+  localStorage.setItem(key, value);
+  var block = btn.closest('.feedback-block');
+  if (block) {
+    block.innerHTML = '<p style="color:var(--muted);padding:1rem;">Danke für Ihr Feedback</p>';
+  }
+  // Prepared for backend: uncomment when endpoint is available
+  // if (navigator.sendBeacon) {
+  //   navigator.sendBeacon('/api/feedback', JSON.stringify({module: module, value: value}));
+  // }
+}
+
 /* Escape HTML to prevent XSS when inserting dynamic text via innerHTML */
 function escHtml(str) {
   var d = document.createElement('div');

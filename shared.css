@@ -60,16 +60,11 @@
   --fs-h2:    1.4rem;   /* 22.4px — Sektions-Überschriften */
   --fs-h1:    1.7rem;   /* 27.2px — Seiten-Titel */
 
-  /* Spacing-Skala (7-Stufen) */
-  --sp-2xs:   0.25rem;  /* 4px — Micro-Abstände, Badges */
+  /* Spacing-Skala (aktiv genutzte Stufen) */
   --sp-xs:    0.4rem;   /* 6.4px */
-  --sp-half:  0.5rem;   /* 8px — Kompakte Abstände */
   --sp-sm:    0.8rem;   /* 12.8px */
-  --sp-1:     1rem;     /* 16px — Standard-Abstand */
   --sp-md:    1.2rem;   /* 19.2px */
-  --sp-ml:    1.5rem;   /* 24px — Zwischen-Sektionen */
   --sp-lg:    2rem;     /* 32px */
-  --sp-xl:    3rem;     /* 48px — Grosse Sektions-Abstände */
 
   /* ── Semantische Gefahrfarben (konsolidiert) ── */
   --danger:       #b03030;
@@ -97,7 +92,6 @@
 
   /* ── Bereichsspezifische Farben ── */
   --schwei-blue:   #2a4a8a;
-  --stigma-brown:  #7a4a00;
   --depress-dark:  #2a5070;
   --depress-mid:   #3d5c3d;
   --warn-bg:       #fff8f0;
@@ -4354,7 +4348,6 @@ details.inline-mg ul li {
     --kp-paper-light: #222018;
     --open-bg:      #1a2a20;
     --success-light: #a0d8a0;
-    --success-bg:    #1a3a20;
     --danger-bg:     #3a1818;
     --danger-text:   #d8a0a0;
     --m1-light: #1a2a38;
@@ -5986,3 +5979,22 @@ details.acc-item[open] .acc-chevron {
     align-items: center;
   }
 }
+
+/* ─────────────────────────────────────────
+   UTILITY CLASSES (Fix 19 — Inline-Style-Reduktion)
+───────────────────────────────────────── */
+.link-inherit-u { color: inherit; text-decoration: underline; }
+.mc-m1 { --module-color: var(--m1); }
+.mc-m2 { --module-color: var(--m2); }
+.mc-m3 { --module-color: var(--m3); }
+.mc-m4 { --module-color: var(--m4); }
+.mc-m5 { --module-color: var(--m5); }
+.mc-m6 { --module-color: var(--m6); }
+.mc-m7 { --module-color: var(--m7); }
+.scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.5rem; padding: 0 0.5rem; }
+.text-sm-muted { font-size: .875rem; color: #5a504a; }
+.text-xs-muted { font-size: .75rem; color: #8a7e76; }
+.mt-half { margin-top: 0.5rem; }
+.feedback-block { text-align: center; padding: 1rem; margin: 1.5rem 0; background: var(--bg-warm, #faf8f5); border-radius: var(--radius); }
+.feedback-block p { margin-bottom: 0.8rem; color: var(--muted); }
+.feedback-btn { font-size: 1.5rem; background: none; border: none; cursor: pointer; padding: 0.5rem 1rem; }

@@ -128,7 +128,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m4)">
+<div class="module-top mc-m4" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Loyalitätskonflikte und Beziehungsstress</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -161,12 +161,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m4)">
+<div class="vignette mc-m4" >
 <p class="vignette-text">«Ich darf ihn nicht im Stich lassen — aber ich verliere mich dabei selbst. Dieses Hin und Her zwischen Pflicht und Überleben macht mich kaputt.»</p>
 <p class="vignette-source">— Partner, 52 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m4)">
+<div class="lernziele mc-m4" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Warum innere Spannungsfelder zwischen Verpflichtung und Selbstschutz entstehen.</li>
@@ -175,7 +175,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m4)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m4">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>Das innere Spannungsfeld</li>
@@ -188,7 +188,7 @@
 <li>Was Sie konkret tun können</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m4)">
+<div class="kurzfassung mc-m4" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Das Spannungsfeld zwischen Verpflichtung und Selbstschutz ist kein persönliches Versagen — es ist strukturell.</li>
@@ -573,8 +573,8 @@
   <!-- Detail panel -->
   <div class="kk-detail" id="kk-detail" aria-live="polite">
     <div class="kk-empty">
-      <p style="font-size:.875rem;color:#5a504a">Klicken Sie auf ein Feld.</p>
-      <p style="font-size:.75rem;color:#8a7e76">Dieselbe Situation — vier verschiedene Reaktionen.<br>
+      <p class="text-sm-muted">Klicken Sie auf ein Feld.</p>
+      <p class="text-xs-muted">Dieselbe Situation — vier verschiedene Reaktionen.<br>
       Was verändert sich, wenn Sie den Zeitpunkt oder die Worte ändern?</p>
     </div>
   </div>
@@ -643,8 +643,8 @@
       panel.style.borderColor = '#e8e2dc';
       panel.innerHTML =
         '<div class="kk-empty">' +
-        '<p style="font-size:.875rem;color:#5a504a">Klicken Sie auf ein Feld.</p>' +
-        '<p style="font-size:.75rem;color:#8a7e76">Dieselbe Situation — vier verschiedene Reaktionen.<br>' +
+        '<p class="text-sm-muted">Klicken Sie auf ein Feld.</p>' +
+        '<p class="text-xs-muted">Dieselbe Situation — vier verschiedene Reaktionen.<br>' +
         'Was verändert sich, wenn Sie den Zeitpunkt oder die Worte ändern?</p></div>';
       return;
     }
@@ -837,7 +837,7 @@
 </div>
 </div>
 </div>
-<div class="wissens-anker" style="--module-color:var(--m4)">
+<div class="wissens-anker mc-m4" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-4-0">
 <p>Was beschreibt «Expressed Emotion»?</p>
@@ -857,6 +857,11 @@
 </div>
 <div class="wa-feedback"></div>
 </div>
+</div>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m4','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m4','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
 </div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
@@ -884,7 +889,7 @@
 	</div>
 	</details>
 
-<div class="module-end-next" style="--module-color:var(--m5)">
+<div class="module-end-next mc-m5" >
 <p class="men-label">Nächster Schritt</p>
 <p class="men-text">Modul 5 gibt Ihnen konkrete Werkzeuge: Krisenplan, Grenzsetzung, Coping-Strategien.</p>
 <a href="/modul/5/" class="men-link bc-m5">Weiter zu Modul 5 →</a>
@@ -1007,6 +1012,7 @@
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">

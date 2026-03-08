@@ -128,7 +128,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m5)">
+<div class="module-top mc-m5" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Selbstfürsorge und Handeln</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -161,12 +161,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m5)">
+<div class="vignette mc-m5" >
 <p class="vignette-text">«Ich habe jahrelang funktioniert, bis ich nicht mehr konnte. Erst als ich anfing, meine eigenen Grenzen zu ziehen, wurde auch die Situation mit meinem Mann stabiler. Ich bin nicht mehr sein Aufpasser, sondern wieder seine Partnerin.»</p>
 <p class="vignette-source">— Ehefrau, 44 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m5)">
+<div class="lernziele mc-m5" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Warum Selbstfürsorge die Voraussetzung für langfristige Unterstützung ist.</li>
@@ -176,7 +176,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m5)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m5">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>Selbstfürsorge als Pflicht</li>
@@ -188,7 +188,7 @@
 <li>Umgang mit Behandlungsablehnung</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m5)">
+<div class="kurzfassung mc-m5" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Selbstfürsorge ist kein Egoismus, sondern die Basis Ihrer Handlungsfähigkeit.</li>
@@ -289,7 +289,7 @@
 </summary>
 <div class="acc-body">
 <div class="wave-chart-wrap mb-md">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Krisenplan-Ampel mit drei Stufen: Gelb für Frühwarnzeichen, Orange für akute Krise, Rot für Notfall" class="viz-svg" role="img" viewBox="0 -6 600 232" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf6" height="188" rx="8" width="600" x="0" y="0.0"></rect>
 <text fill="#5a5070" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="600" text-anchor="middle" x="300" y="30.0">Der Krisenplan — 3 Stufen</text>
@@ -403,7 +403,7 @@
 </summary>
 <div class="acc-body">
 <div class="wave-chart-wrap mb-md">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Spektrum der Grenzsetzung: von zu weich über gesund bis zu hart, mit einer grünen Zielzone in der Mitte" class="viz-svg" role="img" viewBox="0 -5 600 218" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf6" height="158" rx="8" width="600" x="0" y="0.0"></rect>
 <text fill="#5a5070" font-family="Source Sans 3, sans-serif" font-size="24" font-weight="600" text-anchor="middle" x="300" y="30.0">Grenzsetzungs-Spektrum: Wo stehen Sie?</text>
@@ -675,6 +675,11 @@
 </div>
 </div>
 </section>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m5','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m5','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
+</div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
 <details class="acc-item" id="merken">
@@ -701,7 +706,7 @@
 	</div>
 </details>
 
-<div class="module-end-next" style="--module-color:var(--m6)">
+<div class="module-end-next mc-m6" >
 <p class="men-label">Nächster Schritt</p>
 <p class="men-text">Lesen Sie in Modul 6, wie Sie Resilienz als Paar aktiv aufbauen können — und warum auch Rückschläge zum Fortschritt gehören.</p>
 <a href="/modul/6/" class="men-link bc-m6">Weiter zu Modul 6 →</a>
@@ -745,6 +750,7 @@
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <script src="/init.js" defer></script>

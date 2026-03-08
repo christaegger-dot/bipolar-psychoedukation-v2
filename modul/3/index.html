@@ -128,7 +128,7 @@
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
-<div class="module-top" style="--module-color:var(--m3)">
+<div class="module-top mc-m3" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Wenn die Kraft nachlässt</span></div>
 <div class="page-dots">
 <div class="pd-track">
@@ -161,12 +161,12 @@
 </div>
 </div>
 <div class="module-body">
-<div class="vignette" style="--module-color:var(--m3)">
+<div class="vignette mc-m3" >
 <p class="vignette-text">«Ich sage allen, es geht mir gut. Aber nachts liege ich wach und frage mich, wie lange ich das noch schaffe. Ich bin so müde — nicht körperlich, sondern in meiner Seele.»</p>
 <p class="vignette-source">— Partnerin, 38 Jahre (anonymisiert)</p>
 </div>
 
-<div class="lernziele" style="--module-color:var(--m3)">
+<div class="lernziele mc-m3" >
 <p class="lernziele-label">Nach diesem Modul wissen Sie:</p>
 <ul>
 <li>Warum Solidarität wellenförmig erodiert — und das kein Versagen ist.</li>
@@ -175,7 +175,7 @@
 </ul>
 </div>
 
-<nav class="module-toc" aria-label="Inhalt dieses Moduls" style="--module-color:var(--m3)">
+<nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m3">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
 <li>Drei Phasen der Solidaritätserosion</li>
@@ -186,7 +186,7 @@
 <li>Was Sie konkret tun können</li>
 </ol>
 </nav>
-<div class="kurzfassung" style="--module-color:var(--m3)">
+<div class="kurzfassung mc-m3" >
 <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
 <ul>
 <li>Solidarität verschwindet nicht über Nacht — sie erodiert wellenförmig, über Monate und Jahre.</li>
@@ -320,7 +320,7 @@
 <h3 class="section-title-sm">Wie Solidarität erodiert</h3>
 <p class="m-subtext">Die blaue Linie zeigt den Verlauf der Erkrankung. Die rote Linie zeigt die Solidarität — sie erholt sich nach jeder Krise etwas weniger vollständig. Nicht weil die Liebe fehlt, sondern weil die Ressourcen erschöpfen.</p>
 <div class="burden-accumulation-wrap">
-<div class="svg-scroll-mobile" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -0.5rem; padding:0 0.5rem">
+<div class="svg-scroll-mobile scroll-wrap" >
 <svg aria-label="Solidaritätserosion: Die Fähigkeit zur Solidarität sinkt mit jeder Krise" class="burden-accumulation-svg" role="img" viewBox="0 0 600 326" xmlns="http://www.w3.org/2000/svg">
 <!-- Hintergrund -->
 <rect fill="#faf8f5" height="236.0" rx="10" width="600" x="0" y="0.0"></rect>
@@ -493,7 +493,7 @@
 </div>
 <!-- ── Kinder im System ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
-<h3 class="section-title-sm">Wenn Kinder im Haus sind</h3>
+<h3 class="section-title-sm" id="kinder">Wenn Kinder im Haus sind</h3>
 <p class="m-subtext">Kinder erleben die Erkrankung eines Elternteils hautnah — aber oft ohne Erklärung. Das macht sie verletzlicher als notwendig. Frühe, altersgerechte Aufklärung schützt.</p>
 <div class="children-wrap">
 <div class="children-col">
@@ -595,7 +595,7 @@
 </div>
 </div>
 </div>
-<div class="wissens-anker" style="--module-color:var(--m3)">
+<div class="wissens-anker mc-m3" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-3-0">
 <p>Was bedeutet «Ambiguous Loss» (uneindeutiger Verlust)?</p>
@@ -616,6 +616,11 @@
 <div class="wa-feedback"></div>
 </div>
 </div>
+<div class="feedback-block">
+  <p>War dieses Modul hilfreich?</p>
+  <button class="feedback-btn" onclick="sendFeedback('m3','yes',this)" aria-label="Ja, hilfreich">👍</button>
+  <button class="feedback-btn" onclick="sendFeedback('m3','no',this)" aria-label="Nein, nicht hilfreich">👎</button>
+</div>
 <!-- ── Merken Sie sich ── -->
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 C40,0 60,8 100,4 C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width="0.5"/></svg></div>
 <h3 class="section-title-sm">Merken Sie sich</h3>
@@ -630,7 +635,7 @@
         </div>
 </div>
 
-<div class="module-end-next" style="--module-color:var(--m4)">
+<div class="module-end-next mc-m4" >
 <p class="men-label">Nächster Schritt</p>
 <p class="men-text">In Modul 4 erfahren Sie, warum gut gemeinte Reaktionen oft das Gegenteil bewirken — und welche Kommunikation wirklich hilft.</p>
 <a href="/modul/4/" class="men-link bc-m4">Weiter zu Modul 4 →</a>
@@ -721,6 +726,7 @@
 <div class="footer-bottom">
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
+<a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
