@@ -484,6 +484,10 @@ document.addEventListener('click', function(e) {
   var item = e.target.closest('.handout-item');
   if (!item) return;
   e.preventDefault();
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+    window.open(item.getAttribute('href'), '_blank');
+    return;
+  }
   var label = item.querySelector('.handout-label');
   var title = label ? label.textContent : 'Handout';
   openHandoutLightbox(item.getAttribute('href'), title);
