@@ -64,21 +64,42 @@
 
 **Hauptproblem:** Die Farben `#5a504a` und `#8a7e76` in den interaktiven SVG-Elementen (M1, M4, M6) sind nicht als CSS-Variablen definiert. Sie entsprechen ungefähr `--muted` (#605850) — könnten zu `var(--muted)` konsolidiert werden.
 
-### 1.4 Zusammenfassung Farben
+### 1.4 Eingebettete `<style>`-Blöcke in HTML (schwerwiegend)
+
+Drei Module enthalten **eingebettete `<style>`-Blöcke** mit umfangreichen hardcoded Farben für interaktive SVG-Komponenten:
+
+| Datei | Zeilen | Hardcoded Hex-Farben | Komponente |
+|---|---|---|---|
+| `modul/1/index.html` | 556–620 | ~120+ | Belastungskreislauf-Stationen |
+| `modul/4/index.html` | 457–508 | ~70+ | EE-Quadranten |
+| `modul/6/index.html` | 269–333 | ~90+ | Solidaritäts-Säulen |
+
+**Beispiel-Farben:** `#d4a843`, `#e67e22`, `#c0392b`, `#6b9e7e`, `#c2dece`, `#c8bade`, `#e6b8af` — keine davon als CSS-Variable definiert.
+
+**Zusätzlich: SVG-Attribute mit hardcoded Farben:**
+- `modul/2/index.html`: `fill="#4a7fa5"`, `fill="#5a7a5a"`, `fill="#9a6a8a"`, `fill="#c07030"`, `fill="#94a3b8"`
+- `modul/3/index.html`: `fill="#6a9abc"`
+
+**Gesamtzahl hardcoded Farben in HTML: ~150+ einzigartige Hex-Werte** (weit mehr als die 18 Inline-Style-Instanzen allein).
+
+### 1.5 Zusammenfassung Farben
 
 | Metrik | Ist | Soll | Status |
 |---|---|---|---|
-| Einzigartige Hex-Farben gesamt | 85 | ≤40–50 | ⚠️ Hoch |
+| Einzigartige Hex-Farben in shared.css | 85 | ≤40–50 | ⚠️ Hoch |
 | Davon als Variable definiert | 51 | Möglichst alle | ⚠️ ~34 hardcoded |
-| Hardcoded in HTML | 6 unique Werte | 0 | ⚠️ |
+| Hardcoded in HTML-Inline-Styles | 6 unique Werte | 0 | ⚠️ |
+| Hardcoded in HTML-`<style>`-Blöcken | ~150+ unique | 0 | 🔴 Kritisch |
+| Hardcoded in SVG fill-Attributen | 6 Werte | 0 | ⚠️ |
 | Modulfarben --m1 bis --m7 | 7/7 | 7/7 | ✅ |
 | Semantische Gefahrfarben | Vorhanden | Vorhanden | ✅ |
 
 **Empfehlungen:**
 1. Die ~20 Dark-Mode-Farben sind korrekt und bleiben dort
-2. Die ~14 verbleibenden hardcoded Farben (Closing-Banner, EE-Flow-SVG, etc.) sollten als CSS-Variablen extrahiert werden
+2. Die ~14 verbleibenden hardcoded Farben in shared.css (Closing-Banner, EE-Flow-SVG, etc.) sollten als CSS-Variablen extrahiert werden
 3. `#5a504a` und `#8a7e76` in HTML-Inline-Styles durch `var(--muted)` ersetzen
 4. `#8a6a3a` und `#fdf6e8` im EE-Flow-SVG sind Duplikate von `--m4` / `--m4-light`
+5. **Priorität:** Die eingebetteten `<style>`-Blöcke in M1, M4 und M6 enthalten die grösste Farb-Drift. Langfristig sollten diese Farben als CSS-Variablen in shared.css definiert und referenziert werden — kurzfristig ist das Dark-Mode-Risiko gering, da die SVGs bereits mit hellem Hintergrund geschützt werden
 
 ---
 
@@ -182,8 +203,9 @@
 
 ### 3.4 Empfehlungen
 
-1. **Spacing-Variablen konsequenter nutzen.** Die Variablen existieren, werden aber in nur ~20% der Fälle referenziert. Hardcoded-Werte wie `0.5rem`, `0.8rem`, `1rem` könnten durch `var(--sp-half)`, `var(--sp-sm)`, `var(--sp-1)` ersetzt werden.
+1. **Spacing-Variablen konsequenter nutzen.** Von ~280 Spacing-Deklarationen nutzen nur ~67 (24%) CSS-Variablen. ~66% der Werte entsprechen zwar der Skala, verwenden aber hardcoded rem-Werte statt Variablen. Werte wie `0.5rem`, `0.8rem`, `1rem` könnten durch `var(--sp-half)`, `var(--sp-sm)`, `var(--sp-1)` ersetzt werden.
 2. **Padding-Vielfalt reduzieren.** 104 einzigartige Padding-Werte ist sehr hoch. Viele sind Varianten wie `0.5rem 0.75rem` vs. `0.5rem 0.8rem` — könnten vereinheitlicht werden.
+3. **Off-Scale-Werte konsolidieren.** 38 rem-Werte liegen ausserhalb der definierten Skala: `0.75rem` (8×), `1.4rem` (8×), `1.6rem` (5×) sind die häufigsten. `0.75rem` ist nahe genug an `--sp-sm` (0.8rem) um vereinheitlicht zu werden.
 
 ---
 
@@ -221,7 +243,21 @@
 | `.slider-tab` | `0.75rem 0.5rem` | `var(--fs-sm)` | — |
 | `.copy-btn` | `0.25rem 0.4rem` | `var(--fs-xs)` | `6px` |
 
-**Befund:** Buttons sind **funktional unterschiedlich** (Nav, Tabs, Copy), daher sind Unterschiede im Styling **grundsätzlich akzeptabel**. Tab-Buttons (pole-tab, phase-tab, slider-tab) sind untereinander konsistent.
+**Befunde:**
+- Tab-Buttons (pole-tab, phase-tab, slider-tab) sind untereinander im Padding konsistent (`0.75rem 0.5rem`)
+- `.cta-btn` hat **keine Basis-Styles** — nur Hover-Effekt und Modul-Farbvarianten. Padding/Grösse fehlen
+- 🔴 **Touch-Target-Problem:** `.phase-tab` und `.slider-tab` haben kein `min-height: 44px` auf Mobile. `.nav-btn` und `.pole-tab` haben Mobile-Overrides mit `min-height: 44px` — aber phase-tab und slider-tab nicht. Das ist eine **Accessibility-Lücke** (WCAG 2.5.5)
+
+**Zusätzlich: Border-Behandlung der Karten inkonsistent:**
+
+| Karte | Border | Breite |
+|---|---|---|
+| `.rec-card` | `border-left` | `3px` |
+| `.erosion-card`, `.stigma-card`, `.resource-card` | `border-top` | `3px` |
+| `.nn-card` | `border-left` | `4px` |
+| `.module-card` | `border-top` | `4px` |
+
+Kein einheitliches Pattern: mal links, mal oben, mal 3px, mal 4px.
 
 ### 4.3 Erfahrungsberichte
 
@@ -249,7 +285,15 @@ Die Erfahrungsberichte (`.exp-report`, `.exp-body`, `.exp-note`) sind **in einer
 | `640px` | Erfahrungsberichte Phase-Grid, Schweigepflicht |
 | `768px` | Navigation → Hamburger-Menü |
 
-**6 Breakpoints:** ✅ Angemessen für die Komplexität. Folgen gängigen Mustern.
+**6 Breakpoint-Breiten, 28 @media-Queries** insgesamt. Die Verteilung:
+- `480px`: 10 Queries (häufigster Breakpoint)
+- `600px`: 7 Queries
+- `640px`: 4 Queries
+- `768px`: 2 Queries
+- `540px`: 2 Queries
+- `400px`: 1 Query
+
+Angemessen für die Komplexität. ⚠️ Hinweis: 3 leere @media-Blöcke (Zeilen 2155, 5523, 5750) können entfernt werden.
 
 Zusätzlich:
 - `@media (hover: none)` — Touch-Geräte
@@ -324,29 +368,35 @@ Zusätzlich:
 
 | Bereich | Bewertung | Details |
 |---|---|---|
-| **Farbsystem** | ⚠️ Gut, aber Drift | 51 Variablen definiert, ~34 hardcoded, ~6 in HTML |
+| **Farbsystem (shared.css)** | ⚠️ Gut, aber Drift | 51 Variablen, ~34 hardcoded in CSS |
+| **Farbsystem (HTML)** | 🔴 Kritisch | ~150+ hardcoded Farben in `<style>`-Blöcken (M1, M4, M6) |
 | **Typografie** | ✅ Sehr gut | 2 Familien, 8 Stufen, 3 Gewichte |
-| **Abstände** | ⚠️ Variablen existieren, wenig genutzt | 9 Variablen, 104 unique Paddings |
-| **Karten** | ⚠️ Leichte Inkonsistenzen | border-radius 10px vs 12px |
-| **Buttons** | ✅ OK | Funktional unterschiedlich, innerhalb Gruppen konsistent |
+| **Abstände** | ⚠️ Variablen existieren, wenig genutzt | 9 Variablen, 24% Adoption, 104 unique Paddings |
+| **Karten** | ⚠️ Leichte Inkonsistenzen | border-radius 10px vs 12px, Border-Position/Breite uneinheitlich |
+| **Buttons** | ⚠️ Touch-Target-Lücke | `.phase-tab` und `.slider-tab` fehlt `min-height: 44px` auf Mobile |
 | **Erfahrungsberichte** | ✅ Perfekt | Einheitliche CSS-Definition |
-| **Responsive** | ✅ Sehr gut | 6 sinnvolle Breakpoints, keine Overflow-Risiken |
+| **Responsive** | ✅ Sehr gut | 6 Breakpoint-Breiten, 28 Queries, keine Overflow-Risiken |
 | **Dark Mode** | ✅ Vollständig | ~112 Zeilen, alle Variablen + Komponenten |
 | **Print** | ✅ Gut | Grundlagen vorhanden, kleine Lücken |
 
 ### Priorisierte Empfehlungen
 
 **Priorität 1 (Quick Wins):**
-1. `border-radius: 12px` → `var(--radius)` in allen Karten (oder `--radius` auf 12px ändern)
-2. `#8a6a3a` / `#fdf6e8` in `.ee-flow-svg` durch `var(--m4)` / `var(--m4-light)` ersetzen
-3. `--fs-md` entfernen (= `--fs-base`), alle Referenzen konsolidieren
+1. `min-height: 44px` für `.phase-tab` und `.slider-tab` auf Mobile-Breakpoints (Accessibility)
+2. `border-radius: 12px` → `var(--radius)` in allen Karten (oder `--radius` auf 12px ändern)
+3. `#8a6a3a` / `#fdf6e8` in `.ee-flow-svg` durch `var(--m4)` / `var(--m4-light)` ersetzen
+4. `--fs-md` entfernen (= `--fs-base`), alle Referenzen konsolidieren
+5. 3 leere @media-Blöcke entfernen (Zeilen 2155, 5523, 5750)
 
 **Priorität 2 (Mittelfristig):**
-4. Hardcoded Inline-Farben `#5a504a`, `#8a7e76` in M1/M4/M6 durch CSS-Klassen ersetzen
-5. Spacing-Variablen konsequenter einsetzen (grösster ROI: Paddings)
-6. `.closing-banner` Gradient als Variable definieren
+6. Hardcoded Inline-Farben `#5a504a`, `#8a7e76` in M1/M4/M6 durch CSS-Klassen ersetzen
+7. Spacing-Variablen konsequenter einsetzen (grösster ROI: Paddings, aktuell 24% Adoption)
+8. `.closing-banner` Gradient als Variable definieren
+9. `.cta-btn` Basis-Styles definieren (aktuell nur Hover + Modul-Farben)
 
-**Priorität 3 (Nice-to-have):**
-7. Print: `break-inside: avoid` für `.exp-report`
-8. Print: SVG-Diagramme optimieren oder ausblenden
-9. Padding-Vielfalt von 104 auf ~30–40 reduzieren
+**Priorität 3 (Langfristig):**
+10. Eingebettete `<style>`-Blöcke in M1/M4/M6 (~150+ hardcoded Farben) nach shared.css extrahieren
+11. Print: `break-inside: avoid` für `.exp-report`
+12. Print: SVG-Diagramme optimieren oder ausblenden
+13. Padding-Vielfalt von 104 auf ~30–40 reduzieren
+14. Border-Behandlung der Karten vereinheitlichen (Position: top vs left, Breite: 3px vs 4px)
