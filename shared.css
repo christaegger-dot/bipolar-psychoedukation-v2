@@ -4481,6 +4481,26 @@ details.inline-mg ul li {
   color: var(--module-color, var(--m1));
   text-decoration: underline;
 }
+@media (max-width: 600px) {
+  .module-toc {
+    position: static;
+    padding: 0.8rem 1rem;
+    margin: 0 0 1rem;
+  }
+  .module-toc ol { font-size: var(--fs-xs); }
+  #view-controls {
+    top: auto;
+    bottom: 70px;
+    right: 0.5rem;
+    opacity: 0.75;
+    transform: scale(0.85);
+    transform-origin: bottom right;
+  }
+  #view-controls:hover,
+  #view-controls:focus-within {
+    opacity: 1;
+  }
+}
 
 /* ═══════════ FIX #7: KURZFASSUNG ═══════════ */
 .kurzfassung {
