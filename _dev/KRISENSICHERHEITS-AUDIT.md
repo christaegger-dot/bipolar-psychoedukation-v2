@@ -62,7 +62,9 @@ Jede Seite hat in der Hauptnavigation einen rot markierten Link (`text-danger fw
 Die folgenden Nummern sind durchgehend als klickbare `tel:`-Links implementiert:
 
 - `0800 33 66 55` — Psychiatrischer Notfalldienst ZH
-- `058 384 65 00` — KIZ PUK Zürich
+- `058 384 20 00` — PUK Zürich Erwachsene
+- `058 384 66 66` — PUK Zürich Kinder/Jugendliche
+- `058 384 46 82` — PUK Zürich Alterspsychiatrie
 - `058 384 38 00` — Fachstelle Angehörigenarbeit PUK
 - `143` — Dargebotene Hand
 - `144` — Sanität
@@ -152,7 +154,9 @@ Module **M2** (Beziehung), **M3** (Erschöpfung) und **M4** (Loyalität) behande
 2. Sanität — `144`
 3. Polizei — `117`
 4. Dargebotene Hand — `143`
-5. PUK Zürich Notfall — `058 384 65 00`
+5. PUK Zürich Erwachsene — `058 384 20 00`
+5a. PUK Zürich Kinder/Jugendliche — `058 384 66 66`
+5b. PUK Zürich Alterspsychiatrie — `058 384 46 82`
 6. Fachstelle Angehörigenarbeit — `058 384 38 00`
 
 ### Bewertung

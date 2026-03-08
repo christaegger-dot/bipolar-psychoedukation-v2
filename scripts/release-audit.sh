@@ -84,7 +84,7 @@ if $c2_ok; then ok 2 "Handout-Zuordnungen korrekt"; else fail 2 "Handout-Zuordnu
 # ── CHECK 3: Notfallnummern ──
 content=$(fetch "/handouts/notfall/index.html")
 c3_ok=true
-echo "$content" | grep -qE '058 384 65 00|\+41583846500' || { c3_ok=false; info "058 384 65 00 (PUK Notfall) NICHT auf Notfall-Seite"; }
+echo "$content" | grep -qE '058 384 20 00|\+41583842000' || { c3_ok=false; info "058 384 20 00 (PUK Notfall Erwachsene) NICHT auf Notfall-Seite"; }
 echo "$content" | grep -qE '058 384 38 00|\+41583843800' || { c3_ok=false; info "058 384 38 00 (Fachstelle) NICHT auf Notfall-Seite"; }
 
 if $c3_ok; then ok 3 "Notfallnummern vorhanden"; else fail 3 "Notfallnummern fehlen auf /notfall/"; fi

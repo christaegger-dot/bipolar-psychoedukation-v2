@@ -210,7 +210,7 @@ Die Website enthält zahlreiche medizinische und psychologische Aussagen. Alle g
 
 #### [A5-06] Telefonnummern — überwiegend korrekt, 2 nicht verlinkt
 - **Schwere**: 🟡 Mittel
-- **Beschreibung**: Die meisten Notfallnummern (117, 144, 143, 0800 33 66 55, 058 384 65 00, 052 264 37 00, 058 384 38 00, 0848 800 858, 147) sind korrekt und im `tel:`-Format verlinkt. Zwei Nummern im Modulinhalt sind jedoch nicht als `tel:`-Link formatiert:
+- **Beschreibung**: Die meisten Notfallnummern (117, 144, 143, 0800 33 66 55, 058 384 20 00, 058 384 66 66, 058 384 46 82, 052 264 37 00, 058 384 38 00, 0848 800 858, 147) sind korrekt und im `tel:`-Format verlinkt. Zwei Nummern im Modulinhalt sind jedoch nicht als `tel:`-Link formatiert:
   - VASK-Telefon **044 240 12 00** in `modul/6/index.html` — nur als Text
   - PUK Notfall **058 384 21 11** in `modul/5/index.html` — nur als Text
 - **Auswirkung**: Auf Mobile können diese Nummern nicht direkt angetippt werden.

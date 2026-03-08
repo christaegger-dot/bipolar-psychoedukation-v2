@@ -24,10 +24,12 @@
 |--------|--------|---------|
 | +41 58 384 38 00 | `tel:+41583843800` | Alle Footer, `impressum/index.html:75`, `ressourcen/index.html:80`, `modul/7/index.html:382`, `modul/3/index.html:515`, `modul/2/index.html:527`, `modul/6/index.html:767` |
 
-### PUK Zürich — Psychiatrische Notaufnahme (KIZ)
-| Nummer | Format | Dateien |
-|--------|--------|---------|
-| 058 384 65 00 | `tel:+41583846500` | `notfall/index.html:92`, `modul/6/index.html:764`, `modul/1/index.html:446`, `modul/1/index.html:507`, `modul/1/index.html:519` |
+### PUK Zürich — Psychiatrische Notaufnahme
+| Nummer | Format | Zielgruppe | Dateien |
+|--------|--------|------------|---------|
+| 058 384 20 00 | `tel:+41583842000` | Erwachsene ab 18 | `notfall/index.html`, `modul/6/index.html`, `modul/1/index.html` (3×) |
+| 058 384 66 66 | `tel:+41583846666` | Kinder/Jugendliche | `notfall/index.html`, `modul/6/index.html`, `modul/1/index.html` |
+| 058 384 46 82 | `tel:+41583844682` | Erwachsene ab 65 | `notfall/index.html` |
 
 ### Psychiatrischer Notfalldienst Zürich
 | Nummer | Format | Dateien |
@@ -72,7 +74,7 @@
 ### Opferhilfe Kanton Zürich
 | Nummer | Format | Dateien |
 |--------|--------|---------|
-| 044 446 15 50 | `tel:+41444461550` | `modul/2/index.html:529` |
+| 044 299 40 50 | `tel:+41442994050` | `modul/2/index.html:529` |
 
 ---
 
