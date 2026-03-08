@@ -10,8 +10,13 @@ if ('serviceWorker' in navigator) {
 // Auto-open <details> elements linked via URL hash
 if (location.hash) {
   var target = document.querySelector(location.hash);
-  if (target && target.tagName === 'DETAILS') {
-    target.open = true;
+  if (target) {
+    if (target.tagName === 'DETAILS') {
+      target.open = true;
+    }
+    // Also open any parent <details> that contain the target
+    var parent = target.closest ? target.closest('details') : null;
+    if (parent) { parent.open = true; }
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
