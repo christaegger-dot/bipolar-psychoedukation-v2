@@ -3344,3 +3344,113 @@ display:inline-flex;
 font-size:.75rem;
 opacity:0.7;
 color:#8a7e76}.mt-half{ margin-top: 0.5rem}
+
+/* ═══════════════════════════════════════════════════════
+   UX VERBESSERUNGEN — 6 Features
+   ═══════════════════════════════════════════════════════ */
+
+/* Feature 1: Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--progress-color, var(--m1));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Feature 2: Read Badge on Homepage Module Cards */
+.mc-link { position: relative; }
+.read-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--m3);
+  color: white;
+  font-size: var(--fs-xs);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+/* Feature 3: Skip to Action Shortcut */
+.skip-to-action {
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.skip-to-action:hover { color: var(--text); }
+
+/* Feature 4: Accordion Animations */
+details .acc-body,
+details .glossar-def {
+  animation: none;
+}
+details[open] .acc-body,
+details[open] .glossar-def {
+  animation: accordionOpen 0.3s ease;
+}
+@keyframes accordionOpen {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.module-card,
+.mc-link {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.module-card:hover,
+.mc-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress { transition: none; }
+  details[open] .acc-body,
+  details[open] .glossar-def { animation: none; }
+  .module-card,
+  .mc-link { transition: none; }
+  .module-card:hover,
+  .mc-link:hover { transform: none; }
+}
+
+/* Feature 5: Note Button */
+.note-btn {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  padding: 0.3rem;
+}
+.note-btn:hover, .note-btn:focus { opacity: 1; }
+
+/* Feature 5: Notes Panel on Homepage */
+.notes-panel { margin: 1rem 0; }
+.notes-toggle { cursor: pointer; color: var(--muted); font-size: var(--fs-sm); }
+.notes-list { padding: 0.8rem; background: var(--bg2); border-radius: var(--radius); margin-top: 0.5rem; }
+.note-item { padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+.note-item a { color: var(--text); text-decoration: none; font-size: var(--fs-sm); display: block; }
+.note-item small { color: var(--muted); font-size: var(--fs-xs); }
+
+/* Feature 6: Situational Hint */
+.situational-hint {
+  text-align: center;
+  padding: 0.8rem 1rem;
+  background: var(--bg2);
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.situational-hint a { color: var(--text); font-weight: 600; }

@@ -415,6 +415,12 @@ document.addEventListener('DOMContentLoaded', function() {
       marker.style.left = '92%';
     }, 600);
   }
+  // UX Verbesserungen
+  initReadingProgress();
+  initReadTracking();
+  initNotes();
+  showNotesOnHomepage();
+  showSituationalHint();
 });
 
 function showPole(pole) {
@@ -689,5 +695,131 @@ function togglePD(btn) {
     setTimeout(function() {
       full.scrollIntoView({behavior: 'smooth', block: 'nearest'});
     }, 100);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// UX VERBESSERUNGEN — 6 Features
+// ═══════════════════════════════════════════════════════
+
+// Feature 1: Reading Progress Bar (Modulseiten)
+function initReadingProgress() {
+  var bar = document.querySelector('.reading-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h > 0) bar.style.width = (window.scrollY / h * 100) + '%';
+  }, { passive: true });
+}
+
+// Feature 2: Persönlicher Lesefortschritt
+function initReadTracking() {
+  // On module pages: track scroll progress
+  var bar = document.querySelector('.reading-progress');
+  if (bar) {
+    var moduleMatch = window.location.pathname.match(/\/modul\/(\d)\//);
+    if (moduleMatch) {
+      var mod = 'm' + moduleMatch[1];
+      var tracked = false;
+      window.addEventListener('scroll', function() {
+        if (tracked) return;
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        if (h > 0 && (window.scrollY / h) >= 0.8) {
+          tracked = true;
+          try { localStorage.setItem('bipolar_read_' + mod, 'true'); } catch(e) {}
+        }
+      }, { passive: true });
+    }
+  }
+  // On homepage: show badges
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    document.querySelectorAll('.mc-link').forEach(function(card) {
+      var mod = card.dataset.module;
+      if (!mod) return;
+      try {
+        if (localStorage.getItem('bipolar_read_' + mod)) {
+          var badge = document.createElement('span');
+          badge.className = 'read-badge';
+          badge.textContent = '\u2713 gelesen';
+          card.appendChild(badge);
+        }
+      } catch(e) {}
+    });
+  }
+}
+
+// Feature 5: "Notiz an mich selbst"
+function initNotes() {
+  // Skip on Notfall page
+  if (window.location.pathname.indexOf('/notfall') === 0) return;
+  document.querySelectorAll('.m-insight, .m-subtext, .key-msg').forEach(function(el) {
+    var btn = document.createElement('button');
+    btn.className = 'note-btn';
+    btn.setAttribute('aria-label', 'Als Notiz speichern');
+    btn.textContent = '\uD83D\uDCCC';
+    btn.onclick = function() {
+      try {
+        var notes = JSON.parse(localStorage.getItem('bipolar_notes') || '[]');
+        var text = el.textContent.trim().substring(0, 200);
+        var url = location.pathname;
+        if (!notes.some(function(n) { return n.text === text; })) {
+          notes.push({ text: text, url: url, date: new Date().toLocaleDateString('de-CH') });
+          localStorage.setItem('bipolar_notes', JSON.stringify(notes));
+          btn.textContent = '\u2705';
+          setTimeout(function() { btn.textContent = '\uD83D\uDCCC'; }, 2000);
+        }
+      } catch(e) {}
+    };
+    el.style.position = 'relative';
+    el.appendChild(btn);
+  });
+}
+
+function showNotesOnHomepage() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  try {
+    var notes = JSON.parse(localStorage.getItem('bipolar_notes') || '[]');
+    if (notes.length === 0) return;
+    var container = document.querySelector('.sh-label');
+    if (!container) return;
+    var link = document.createElement('details');
+    link.className = 'notes-panel';
+    var listHtml = notes.map(function(n) {
+      return '<div class="note-item"><a href="' + escHtml(n.url) + '">' + escHtml(n.text) + '</a><small>' + escHtml(n.date) + '</small></div>';
+    }).join('');
+    link.innerHTML = '<summary class="notes-toggle">\uD83D\uDCCC Ihre Notizen (' + notes.length + ')</summary>' +
+      '<div class="notes-list">' + listHtml + '<button class="notes-clear-btn" style="margin-top:0.5rem;font-size:var(--fs-sm);cursor:pointer;">Alle Notizen l\u00F6schen</button></div>';
+    container.parentNode.insertBefore(link, container);
+    link.querySelector('.notes-clear-btn').addEventListener('click', function() {
+      try { localStorage.removeItem('bipolar_notes'); } catch(e) {}
+      location.reload();
+    });
+  } catch(e) {}
+}
+
+// Feature 6: Situativer Hinweis auf der Homepage
+function showSituationalHint() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  var container = document.querySelector('.sh-label');
+  if (!container || !document.querySelector('.hero')) return;
+
+  var hour = new Date().getHours();
+  var hint = '';
+  if (hour >= 22 || hour < 6) {
+    hint = '\uD83C\uDF19 Gerade nachts hier? Sie sind nicht allein. Die Dargebotene Hand ist 24/7 erreichbar: <a href="tel:143" style="font-weight:700;">143</a>';
+  } else if (hour >= 6 && hour < 9) {
+    hint = '\u2600\uFE0F Ein neuer Tag. Auch kleine Schritte z\u00E4hlen.';
+  }
+  // Feiertage: Dezember
+  var month = new Date().getMonth();
+  if (month === 11) {
+    hint = '\uD83D\uDD6F Feiertage k\u00F6nnen besonders belastend sein. Unterst\u00FCtzung finden Sie jederzeit: <a href="/notfall/">Notfall &amp; Krisenhilfe</a>';
+  }
+
+  if (hint) {
+    var div = document.createElement('div');
+    div.className = 'situational-hint';
+    div.innerHTML = hint;
+    container.parentNode.insertBefore(div, container);
   }
 }
