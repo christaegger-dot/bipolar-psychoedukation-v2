@@ -122,6 +122,7 @@
 | URL | Organisation | Dateien |
 |-----|-------------|---------|
 | https://www.bipolar-forum.de | bipolar-forum.de (deutschsprachig) | `modul/3/index.html:587` |
+| https://vfrp.ch | VASK (Verweis) | `modul/2/index.html:366` |
 
 ### Eigene Website
 | URL | Dateien |
@@ -137,11 +138,20 @@
 |------|-------|---------|
 | Ch. Egger | Fachstelle Angehörigenarbeit, inhaltliche Verantwortung | Alle Footer, `impressum/index.html:80` |
 
+### Fiktiver Name (Beispiel im Krisenplan)
+| Name | Kontext | Datei |
+|------|---------|-------|
+| Dr. Müller | Beispiel-Arzt im Krisenplan-Mockup ("Termin bei Dr. Müller vorziehen") | `modul/5/index.html:332` |
+
 ### Anonymisierte Erfahrungsberichte (fiktiv / pseudonymisiert)
 | Name | Beschreibung | Datei |
 |------|-------------|-------|
 | Thomas, 52 | Partner seit 18 Jahren | `modul/1/index.html:842` |
 | Miriam, 47 | Mutter und Partnerin | `modul/1/index.html:837` |
+| Maria, 42 | Partnerin eines Menschen mit bipolarer Störung | `modul/2/index.html:292` |
+| Susanne, 39 | Partnerin | `modul/2/index.html:369` |
+| Sabine, 44 | Partnerin seit 9 Jahren | `modul/2/index.html:506` |
+| Marco, 48 | Ehemann seit 14 Jahren | `modul/2/index.html:511` |
 | Thomas, 51 | Ehemann, 8 Jahre Begleitung | `modul/3/index.html:521` |
 | Elena, 34 | Tochter einer betroffenen Mutter | `modul/3/index.html:542` |
 | Lukas, 28 | Sohn eines betroffenen Vaters | `modul/3/index.html:547` |
