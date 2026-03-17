@@ -1,8 +1,9 @@
-const CACHE_NAME = 'bipolar-puk-v13';
+const CACHE_NAME = 'bipolar-puk-v14';
 const CORE_ASSETS = [
   '/',
   '/shared.css',
   '/main.js',
+  '/init.js',
   '/search.js',
   '/search-index.js',
   '/fonts/lora-v37-latin-regular.woff2',
@@ -16,6 +17,7 @@ const CORE_ASSETS = [
   '/modul/5/',
   '/modul/6/',
   '/modul/7/',
+  '/modul/8/',
   '/handouts/',
   '/handouts/notfall/',
   '/handouts/ressourcen/',

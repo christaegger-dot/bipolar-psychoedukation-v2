@@ -95,6 +95,16 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// showSlide must be defined before initSwipe so the wrapper can capture it
+function showSlide(n) {
+  document.querySelectorAll('.slide-wrap').forEach(function(s) { s.classList.add('hidden'); });
+  var slide = document.getElementById('slide-' + n);
+  if (slide) slide.classList.remove('hidden');
+  document.querySelectorAll('.slider-tab').forEach(function(t, i) {
+    t.classList.toggle('active', i === n);
+  });
+}
+
 // #7 Swipe-Geste für Slider
 function initSwipe() {
   var sliderEl = document.querySelector('.slider-examples');
@@ -279,11 +289,11 @@ function renderBookmarksList() {
     var el = document.querySelector('[data-bmid="' + k + '"]');
     if (el) {
       var top = el.getBoundingClientRect().top + window.scrollY - 70;
-      return '<div class="bp-item"><a href="#" onclick="window.scrollTo({top:' + top + ',behavior:\'smooth\'});toggleBookmarks();return false">' + bookmarks[k] + '</a></div>';
+      return '<div class="bp-item"><a href="#" onclick="window.scrollTo({top:' + top + ',behavior:\'smooth\'});toggleBookmarks();return false">' + escHtml(bookmarks[k]) + '</a></div>';
     } else {
       // Cross-page bookmark: link to module page
       var moduleNum = k.replace(/[^\d]/g, '').charAt(0);
-      return '<div class="bp-item"><a href="/modul/' + moduleNum + '/">' + bookmarks[k] + '</a></div>';
+      return '<div class="bp-item"><a href="/modul/' + moduleNum + '/">' + escHtml(bookmarks[k]) + '</a></div>';
     }
   }).join('');
 }
@@ -439,6 +449,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initNotes();
   showNotesOnHomepage();
   showSituationalHint();
+  initCollapsibleLists();
 });
 
 function showPole(pole) {
@@ -458,15 +469,6 @@ function showPhase(n) {
   if (panel) panel.classList.remove('hidden');
   document.querySelectorAll('.phase-tab').forEach(function(t) { t.classList.remove('active'); });
   document.querySelectorAll('.phase-tab[data-phase="' + n + '"]').forEach(function(t) { t.classList.add('active'); });
-}
-
-function showSlide(n) {
-  document.querySelectorAll('.slide-wrap').forEach(function(s) { s.classList.add('hidden'); });
-  var slide = document.getElementById('slide-' + n);
-  if (slide) slide.classList.remove('hidden');
-  document.querySelectorAll('.slider-tab').forEach(function(t, i) {
-    t.classList.toggle('active', i === n);
-  });
 }
 
 function toggleLoyalty(el) {
@@ -667,37 +669,35 @@ function toggleMG(btn) {
 
 // Auto-collapse long lists to reduce cognitive load
 // Shows first 3 items and hides the rest behind a "Mehr anzeigen" button
-(function initCollapsibleLists() {
-  document.addEventListener('DOMContentLoaded', function() {
-    var VISIBLE_COUNT = 3;
-    var wraps = document.querySelectorAll('.manie-komm-wrap');
-    wraps.forEach(function(wrap) {
-      var cards = wrap.querySelectorAll('.manie-komm-card');
-      if (cards.length <= VISIBLE_COUNT) return;
-      var hiddenCards = [];
-      for (var i = VISIBLE_COUNT; i < cards.length; i++) {
-        cards[i].style.display = 'none';
-        hiddenCards.push(cards[i]);
-      }
-      var btn = document.createElement('button');
-      btn.className = 'show-more-btn';
-      btn.setAttribute('aria-expanded', 'false');
-      var remaining = cards.length - VISIBLE_COUNT;
-      btn.innerHTML = '▼ ' + remaining + ' weitere Punkte anzeigen';
-      btn.addEventListener('click', function() {
-        var isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        hiddenCards.forEach(function(c) {
-          c.style.display = isExpanded ? 'none' : '';
-        });
-        btn.setAttribute('aria-expanded', String(!isExpanded));
-        btn.innerHTML = isExpanded
-          ? '▼ ' + remaining + ' weitere Punkte anzeigen'
-          : '▲ Weniger anzeigen';
+function initCollapsibleLists() {
+  var VISIBLE_COUNT = 3;
+  var wraps = document.querySelectorAll('.manie-komm-wrap');
+  wraps.forEach(function(wrap) {
+    var cards = wrap.querySelectorAll('.manie-komm-card');
+    if (cards.length <= VISIBLE_COUNT) return;
+    var hiddenCards = [];
+    for (var i = VISIBLE_COUNT; i < cards.length; i++) {
+      cards[i].style.display = 'none';
+      hiddenCards.push(cards[i]);
+    }
+    var btn = document.createElement('button');
+    btn.className = 'show-more-btn';
+    btn.setAttribute('aria-expanded', 'false');
+    var remaining = cards.length - VISIBLE_COUNT;
+    btn.innerHTML = '▼ ' + remaining + ' weitere Punkte anzeigen';
+    btn.addEventListener('click', function() {
+      var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      hiddenCards.forEach(function(c) {
+        c.style.display = isExpanded ? 'none' : '';
       });
-      wrap.appendChild(btn);
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      btn.innerHTML = isExpanded
+        ? '▼ ' + remaining + ' weitere Punkte anzeigen'
+        : '▲ Weniger anzeigen';
     });
+    wrap.appendChild(btn);
   });
-})();
+}
 
 // Progressive Disclosure
 function togglePD(btn) {
