@@ -286,7 +286,7 @@
 .sl-header p{font-size:.84rem;color:#8a7e76;margin:0;line-height:1.5;max-width:380px;margin-left:auto;margin-right:auto}
 /* Roof bar */
 .sl-roof{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:#f0ebe5;border-left:1.5px solid #e2dbd3;border-right:1.5px solid #e2dbd3}
-.sl-roof span{font-size:.82rem;font-weight:600;color:#5a504a;letter-spacing:.01em}
+.sl-roof span{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.01em}
 .sl-pillar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;border:1.5px solid;cursor:pointer;transition:all .2s ease;-webkit-tap-highlight-color:transparent;text-align:left;background:#fff;width:100%}
 .sl-pillar:focus-visible{outline:2px solid #3d3530;outline-offset:2px;border-radius:12px}
 .sl-pillar:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -298,8 +298,8 @@
 /* Pillar colors */
 .sl-pillar[data-id="sol01"]{border-color:#c2dece}
 .sl-pillar[data-id="sol01"] .sl-icon{background:#edf5f0}
-.sl-pillar[data-id="sol01"] .sl-p-title{color:#2d6a4f}
-.sl-pillar[data-id="sol01"].active{border-color:#2d6a4f;background:#f5faf7}
+.sl-pillar[data-id="sol01"] .sl-p-title{color:var(--success)}
+.sl-pillar[data-id="sol01"].active{border-color:var(--success);background:#f5faf7}
 .sl-pillar[data-id="sol02"]{border-color:#e6d5a0}
 .sl-pillar[data-id="sol02"] .sl-icon{background:#fef9ec}
 .sl-pillar[data-id="sol02"] .sl-p-title{color:#7a6000}
@@ -318,7 +318,7 @@
 .sl-pillar[data-id="sol05"].active{border-color:#8a5a00;background:#fffaf2}
 /* Foundation */
 .sl-fundament{padding:12px 16px;background:#e8e2d8;border-radius:0 0 16px 16px;border:1.5px solid #d4c8bc;border-top:2px solid #c4b8a8;text-align:center}
-.sl-fundament p{margin:0;font-size:.82rem;font-weight:600;color:#5a504a;line-height:1.4}
+.sl-fundament p{margin:0;font-size:.82rem;font-weight:600;color:var(--muted);line-height:1.4}
 .sl-fundament .sl-f-sub{font-weight:400;font-size:.75rem;color:#8a7e76;display:block;margin-top:2px}
 /* Detail panel */
 .sl-detail{border-radius:14px;padding:20px 18px;transition:all .25s ease;min-height:80px;border:1.5px solid #e8e2dc;background:#f8f6f4;margin-top:16px}
@@ -326,9 +326,9 @@
 .sl-detail .sl-d-emoji{font-size:1.6rem}
 .sl-detail .sl-d-title{font-size:1.05rem;font-weight:700;line-height:1.3;margin:0}
 .sl-detail .sl-d-why{font-size:.8rem;color:#6b6058;margin:0 0 12px;line-height:1.5;font-style:italic;padding-left:12px;border-left:2px solid #d4c8bc}
-.sl-detail .sl-d-body{font-size:.84rem;color:#5a504a;margin:0 0 14px;line-height:1.6}
+.sl-detail .sl-d-body{font-size:.84rem;color:var(--muted);margin:0 0 14px;line-height:1.6}
 .sl-detail .sl-d-concrete{font-size:.8rem;margin:0;line-height:1.55;padding:12px 14px;background:rgba(255,255,255,.6);border-radius:10px;border-left:3px solid}
-.sl-detail .sl-d-concrete strong{color:#5a504a}
+.sl-detail .sl-d-concrete strong{color:var(--muted)}
 .sl-detail .sl-empty{text-align:center;padding:12px 0}
 .sl-detail .sl-empty p{margin:0 0 6px;line-height:1.5}
 .sl-detail .sl-empty p:last-child{margin:0}
@@ -338,7 +338,7 @@
 .sl-erosion .sl-e-list{font-size:.78rem;color:#6b6058;margin:0;line-height:1.7}
 /* Note */
 .sl-note{margin-top:16px;padding:14px 18px;background:#f5f2ed;border-radius:12px;border:1.5px solid #ddd6cc;text-align:center}
-.sl-note p{font-size:.82rem;color:#5a504a;margin:0;line-height:1.6}
+.sl-note p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.6}
 </style>
 <div class="sl-wrap" role="region" aria-label="5 Säulen gegen Solidaritäts-Erosion">
   
@@ -396,7 +396,7 @@
   
   <div class="sl-detail" id="sl-detail" aria-live="polite">
     <div class="sl-empty">
-      <p style="font-size:.88rem;color:#5a504a">Klicken Sie auf eine Säule.</p>
+      <p style="font-size:.88rem;color:var(--muted)">Klicken Sie auf eine Säule.</p>
       <p style="font-size:.78rem;color:#8a7e76">Solidarität zerbricht selten an zu wenig Liebe — sondern an Erschöpfung, fehlenden Grenzen und Isolation.</p>
     </div>
   </div>
@@ -476,7 +476,7 @@
       panel.style.borderColor = '#e8e2dc';
       panel.innerHTML =
         '<div class="sl-empty">' +
-        '<p style="font-size:.88rem;color:#5a504a">Klicken Sie auf eine Säule.</p>' +
+        '<p style="font-size:.88rem;color:var(--muted)">Klicken Sie auf eine Säule.</p>' +
         '<p style="font-size:.78rem;color:#8a7e76">Solidarität zerbricht selten an zu wenig Liebe — sondern an Erschöpfung, fehlenden Grenzen und Isolation.</p></div>';
       return;
     }

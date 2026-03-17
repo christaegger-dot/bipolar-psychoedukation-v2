@@ -502,42 +502,42 @@
 .kk-title{text-align:center;margin-bottom:16px}
 .kk-title h3{font-size:1.18rem;font-weight:700;color:#3d3530;margin:0 0 6px;line-height:1.3}
 .kk-title p{font-size:.82rem;color:#8a7e76;margin:0;line-height:1.4}
-.kk-title strong{color:#5a504a}
+.kk-title strong{color:var(--muted)}
 .kk-axis-top,.kk-axis-bottom{display:grid;grid-template-columns:24px 1fr 24px}
 .kk-axis-top{margin-bottom:4px}
 .kk-axis-bottom{margin-top:4px;margin-bottom:12px}
 .kk-axis-label{display:flex;justify-content:center;align-items:center;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.kk-axis-label.red{color:#c0392b}
-.kk-axis-label.green{color:#2d6a4f}
+.kk-axis-label.red{color:var(--danger)}
+.kk-axis-label.green{color:var(--success)}
 .kk-main{display:grid;grid-template-columns:24px 1fr 24px;gap:0}
 .kk-side{writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.kk-side.left{transform:rotate(180deg);color:#c0392b}
-.kk-side.right{color:#2d6a4f}
+.kk-side.left{transform:rotate(180deg);color:var(--danger)}
+.kk-side.right{color:var(--success)}
 .kk-q{border-radius:14px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:all .2s;position:relative;border:2px solid;outline:none;-webkit-tap-highlight-color:transparent}
 .kk-q:focus-visible{outline:2px solid #3d3530;outline-offset:2px}
 .kk-q .kk-icon{font-size:1.35rem}
 .kk-q .kk-label{font-size:.875rem;font-weight:700;line-height:1.2;text-align:center}
 .kk-q .kk-sub{font-size:.69rem;color:#8a7e76;line-height:1.2}
-.kk-badge{position:absolute;top:6px;right:6px;font-size:.56rem;font-weight:700;color:#2d6a4f;background:#d4edda;padding:2px 7px;border-radius:4px;letter-spacing:.04em}
+.kk-badge{position:absolute;top:6px;right:6px;font-size:.56rem;font-weight:700;color:var(--success);background:#d4edda;padding:2px 7px;border-radius:4px;letter-spacing:.04em}
 .kk-gradient{display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:14px;padding:8px 12px;background:#f8f6f4;border-radius:10px}
-.kk-gradient .left{font-size:.75rem;color:#c0392b}
-.kk-gradient .right{font-size:.75rem;color:#2d6a4f}
-.kk-gradient .bar{flex:1;height:2px;background:linear-gradient(to right,#c0392b,#b8860b,#2d6a4f);border-radius:2px}
+.kk-gradient .left{font-size:.75rem;color:var(--danger)}
+.kk-gradient .right{font-size:.75rem;color:var(--success)}
+.kk-gradient .bar{flex:1;height:2px;background:linear-gradient(to right,var(--danger),#b8860b,var(--success));border-radius:2px}
 .kk-detail{border-radius:14px;padding:16px 14px;transition:all .25s ease;min-height:140px;border:1.5px solid #e8e2dc;background:#f8f6f4}
 .kk-detail .kk-verdict{display:inline-block;font-size:.75rem;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:10px}
 .kk-detail .kk-situation{font-size:.75rem;color:#8a7e76;margin:0 0 8px;line-height:1.4;font-style:italic}
 .kk-detail .kk-says{font-size:.94rem;margin:0 0 10px;line-height:1.5;font-weight:600;font-style:italic;padding:8px 10px;background:rgba(255,255,255,.6);border-radius:8px;border-left:3px solid}
-.kk-detail .kk-effect{font-size:.81rem;color:#5a504a;margin:0 0 8px;line-height:1.5}
+.kk-detail .kk-effect{font-size:.81rem;color:var(--muted);margin:0 0 8px;line-height:1.5}
 .kk-detail .kk-why{font-size:.75rem;color:#8a7e76;margin:0;line-height:1.5}
 .kk-detail .kk-empty{text-align:center;padding:12px 0}
 .kk-detail .kk-empty p{margin:0 0 8px;line-height:1.5}
 .kk-detail .kk-empty p:last-child{margin:0}
 .kk-rule{margin-top:14px;padding:12px 14px;background:#edf5f0;border-radius:12px;border:1.5px solid #a8d5ba;text-align:center}
-.kk-rule p{font-size:.81rem;color:#2d6a4f;margin:0;line-height:1.6}
+.kk-rule p{font-size:.81rem;color:var(--success);margin:0;line-height:1.6}
 /* quadrant color states */
 .kk-q[data-id="topLeft"]{background:#fdf0ed;border-color:#e6b8af}
-.kk-q[data-id="topLeft"] .kk-label{color:#c0392b}
-.kk-q[data-id="topLeft"].active{background:#fbe3dd;border-color:#c0392b}
+.kk-q[data-id="topLeft"] .kk-label{color:var(--danger)}
+.kk-q[data-id="topLeft"].active{background:#fbe3dd;border-color:var(--danger)}
 .kk-q[data-id="topRight"]{background:#fef9ec;border-color:#e6d5a0}
 .kk-q[data-id="topRight"] .kk-label{color:#b8860b}
 .kk-q[data-id="topRight"].active{background:#fdf0d0;border-color:#b8860b}
@@ -545,8 +545,8 @@
 .kk-q[data-id="bottomLeft"] .kk-label{color:#b8860b}
 .kk-q[data-id="bottomLeft"].active{background:#fdf0d0;border-color:#b8860b}
 .kk-q[data-id="bottomRight"]{background:#edf5f0;border-color:#a8d5ba}
-.kk-q[data-id="bottomRight"] .kk-label{color:#2d6a4f}
-.kk-q[data-id="bottomRight"].active{background:#d4edda;border-color:#2d6a4f}
+.kk-q[data-id="bottomRight"] .kk-label{color:var(--success)}
+.kk-q[data-id="bottomRight"].active{background:#d4edda;border-color:var(--success)}
 </style>
 <div class="kk-wrap" role="region" aria-label="Kommunikations-Kompass: Was sage ich — und wann?">
   
