@@ -1965,7 +1965,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
   max-width: 960px;
   margin: 0 auto;
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 .restructure-notice-inner a {
   color: var(--m1);
