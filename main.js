@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (fs) fs.textContent = 'A−';
     }
     // restore feedback states
-    ['m1','m2','m3','m4','m5','m6','m7'].forEach(function(m) {
+    ['m1','m2','m3','m4','m5','m6','m7','m8'].forEach(function(m) {
       var val = localStorage.getItem('bipolar-fb-' + m);
       if (val) {
         var thanks = document.getElementById('fb-' + m);
@@ -488,9 +488,9 @@ function openHandoutLightbox(href, title) {
   overlay.innerHTML =
     '<div class="handout-lb-inner">' +
     '<button class="handout-lb-close" aria-label="Schliessen">✕</button>' +
-    '<img class="handout-lb-img" src="' + thumbSrc + '" alt="' + title + '">' +
-    '<div class="handout-lb-title">' + title + '</div>' +
-    '<a class="handout-lb-download" href="' + href + '" download>⬇ PDF herunterladen</a>' +
+    '<img class="handout-lb-img" src="' + escHtml(thumbSrc) + '" alt="' + escHtml(title) + '">' +
+    '<div class="handout-lb-title">' + escHtml(title) + '</div>' +
+    '<a class="handout-lb-download" href="' + escHtml(href) + '" download>⬇ PDF herunterladen</a>' +
     '</div>';
   overlay.querySelector('.handout-lb-close').onclick = closeHandoutLightbox;
   document.body.appendChild(overlay);
