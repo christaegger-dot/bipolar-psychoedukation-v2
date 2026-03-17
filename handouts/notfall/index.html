@@ -41,17 +41,23 @@
 <a class="nav-btn" href="/modul/3/"><span class="nb-dot d3"></span>Erschöpfung</a>
 <a class="nav-btn" href="/modul/4/"><span class="nb-dot d4"></span>Loyalität</a>
 <a class="nav-btn text-danger fw-bold" href="/notfall/" aria-current="page"><span class="nb-dot d-danger"></span>Notfall</a>
-<a class="nav-btn" href="/modul/5/"><span class="nb-dot d5"></span>Handeln</a>
+<a class="nav-btn" href="/modul/5/"><span class="nb-dot d5"></span>Handeln · Krisenplan</a>
 <a class="nav-btn" href="/modul/6/"><span class="nb-dot d6"></span>Resilienz</a>
-<a class="nav-btn" href="/modul/7/"><span class="nb-dot d7"></span>Ressourcen</a>
+<a class="nav-btn" href="/modul/7/"><span class="nb-dot d7"></span>Ressourcen · Hilfe finden</a>
 <div class="nav-divider"></div>
 <a class="nav-btn" href="/impressum/"><span class="nb-dot d-muted"></span>Impressum</a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
@@ -112,6 +118,17 @@
 
 <div class="m-insight" style="background:var(--bg-warm, #faf8f5); border-left:4px solid var(--m7, #4a6878); padding:1.2rem 1.4rem; margin:2rem 0; border-radius:var(--radius, 8px);">
 <p style="margin:0; line-height:1.7; color:var(--text, #2c2c2c);">Wenn Sie diese Seite öffnen, ist wahrscheinlich gerade etwas Schlimmes passiert — oder Sie haben Angst, dass es passiert. <strong>Sie sind nicht allein.</strong> Es ist richtig, dass Sie hier sind. Atmen Sie einmal durch. Dann: Lesen Sie nur den Abschnitt, der gerade auf Ihre Situation zutrifft. Den Rest können Sie später lesen — oder nie. Das ist in Ordnung.</p>
+</div>
+
+<div style="display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;">
+<div style="flex:1;min-width:240px;background:var(--m5-light,#ddeeed);border-left:4px solid var(--m5,#3d6b6b);border-radius:var(--radius,8px);padding:1rem 1.2rem;">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--m5,#3d6b6b);">📋 Krisenplan vorhanden?</p>
+<p style="margin:0;font-size:var(--fs-sm,0.9rem);line-height:1.6;">Wenn Sie in einer stabilen Phase bereits einen Krisenplan erstellt haben, finden Sie ihn in <a href="/modul/5/#krisenplan" style="color:var(--m5,#3d6b6b);font-weight:600;">Modul 5 → Krisenplan</a>. Öffnen Sie ihn jetzt und folgen Sie den dort vereinbarten Schritten.</p>
+</div>
+<div style="flex:1;min-width:240px;background:var(--danger-light,#fceaea);border-left:4px solid var(--danger,#b03030);border-radius:var(--radius,8px);padding:1rem 1.2rem;">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--danger,#b03030);">📋 Noch keinen Krisenplan?</p>
+<p style="margin:0;font-size:var(--fs-sm,0.9rem);line-height:1.6;">Jetzt: Nutzen Sie die Mini-Guides und Notfallnummern auf dieser Seite. In einer stabilen Phase: <a href="/modul/5/#krisenplan" style="color:var(--danger-dark,#7a2020);font-weight:600;">Krisenplan erstellen → Modul 5</a>.</p>
+</div>
 </div>
 
 <h2>Was passiert gerade? — Mini-Guides</h2>

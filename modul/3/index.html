@@ -90,7 +90,7 @@
     </a>
 <a class="nav-btn" href="/modul/5/">
 <span class="nb-dot d5"></span>
-      Handeln
+      Handeln · Krisenplan
     </a>
 <a class="nav-btn" href="/modul/6/">
 <span class="nb-dot d6"></span>
@@ -98,7 +98,7 @@
     </a>
 <a class="nav-btn" href="/modul/7/">
 <span class="nb-dot d7"></span>
-      Ressourcen
+      Ressourcen · Hilfe finden
     </a>
 <div class="nav-divider"></div>
 <a class="nav-btn" href="/impressum/">
@@ -107,20 +107,23 @@
     </a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<div id="view-controls">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
-</div>
+
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
@@ -171,6 +174,14 @@
 </ul>
 </div>
 
+<div class="kurzfassung mc-m3" >
+<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
+<ul>
+<li>Solidarität verschwindet nicht über Nacht — sie erodiert wellenförmig, über Monate und Jahre.</li>
+<li>Ambiguous Loss (uneindeutiger Verlust) erklärt, warum Trauer ohne Abschluss so zermürbend ist.</li>
+<li>Warnsignale bei sich selbst zu erkennen ist kein Zeichen von Schwäche, sondern von Stärke.</li>
+</ul>
+</div>
 <nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m3">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
@@ -183,14 +194,6 @@
 </ol>
 </nav>
 <a href="#handeln" class="skip-to-action">↓ Direkt zu den Handlungsschritten</a>
-<div class="kurzfassung mc-m3" >
-<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
-<ul>
-<li>Solidarität verschwindet nicht über Nacht — sie erodiert wellenförmig, über Monate und Jahre.</li>
-<li>Ambiguous Loss (uneindeutiger Verlust) erklärt, warum Trauer ohne Abschluss so zermürbend ist.</li>
-<li>Warnsignale bei sich selbst zu erkennen ist kein Zeichen von Schwäche, sondern von Stärke.</li>
-</ul>
-</div>
 <p class="m-intro">Solidarität verschwindet nicht über Nacht. Sie erodiert in einem schleichenden Prozess — wellenförmig, über Monate und Jahre. Das ist kein Zeichen von Schwäche, sondern eine natürliche Reaktion auf eine unberechenbare Situation.</p>
 <div class="selfcheck-wrap">
 <h3 class="sc-title">Wo stehen Sie gerade?</h3>
@@ -591,6 +594,11 @@
 </div>
 </div>
 </div>
+
+<div style="margin:1.5rem 0;padding:1rem 1.2rem;background:var(--m3-light,#e2ede2);border-left:4px solid var(--m3,#5a7a5a);border-radius:var(--radius,8px);">
+<p style="margin:0;font-size:var(--fs-sm,0.9rem);line-height:1.6;"><strong style="color:var(--text,#2c2c2c);">Wenn Sie merken, dass Ihre Erschöpfung zu gross wird:</strong> Die Fachstelle Angehörigenarbeit der PUK Zürich bietet kostenlose, vertrauliche Beratung — auch für Sie persönlich. <a href="tel:+41583843800" style="color:var(--m3-dk,#3d5a3d);font-weight:600;">058 384 38 00</a> — oder: <a href="/notfall/" style="color:var(--m3-dk,#3d5a3d);font-weight:600;">→ Notfall-Seite mit allen Anlaufstellen</a></p>
+</div>
+
 <div class="wissens-anker mc-m3" >
 <p class="wa-title">Wissens-Anker</p>
 <div class="wa-q" id="wa-3-0">

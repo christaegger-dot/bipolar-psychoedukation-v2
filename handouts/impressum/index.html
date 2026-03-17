@@ -40,17 +40,23 @@
 <a class="nav-btn" href="/modul/3/"><span class="nb-dot d3"></span>Erschöpfung</a>
 <a class="nav-btn" href="/modul/4/"><span class="nb-dot d4"></span>Loyalität</a>
 <a class="nav-btn text-danger" href="/notfall/"><span class="nb-dot d-danger"></span>Notfall</a>
-<a class="nav-btn" href="/modul/5/"><span class="nb-dot d5"></span>Handeln</a>
+<a class="nav-btn" href="/modul/5/"><span class="nb-dot d5"></span>Handeln · Krisenplan</a>
 <a class="nav-btn" href="/modul/6/"><span class="nb-dot d6"></span>Resilienz</a>
-<a class="nav-btn" href="/modul/7/"><span class="nb-dot d7"></span>Ressourcen</a>
+<a class="nav-btn" href="/modul/7/"><span class="nb-dot d7"></span>Ressourcen · Hilfe finden</a>
 <div class="nav-divider"></div>
 <a class="nav-btn fw-bold" href="/impressum/" aria-current="page"><span class="nb-dot d-muted"></span>Impressum</a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">

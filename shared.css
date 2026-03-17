@@ -143,6 +143,41 @@ padding:var(--sp-sm);
 box-shadow:var(--shadow-lg);
 z-index:210;
 font-size:var(--fs-sm)}.bookmark-panel.open{ display: block}
+.settings-panel{
+display:none;
+position:fixed;
+top:58px;
+right:1rem;
+width:200px;
+background:var(--white);
+border:1px solid var(--bg3);
+border-radius:var(--radius);
+padding:0;
+box-shadow:var(--shadow-lg);
+z-index:210;
+overflow:hidden}
+.settings-panel.open{ display: flex;flex-direction: column}
+.settings-panel #font-toggle,
+.settings-panel #readmode-toggle{
+background:none;
+border:none;
+border-bottom:1px solid var(--bg2);
+padding:0.5rem 1rem;
+font-size:var(--fs-sm);
+font-weight:600;
+cursor:pointer;
+color:var(--muted);
+display:flex;
+align-items:center;
+gap:0.4rem;
+font-family:inherit;
+transition:background 0.15s;
+white-space:nowrap;
+width:100%;
+text-align:left}
+.settings-panel #readmode-toggle{ border-bottom: none}
+.settings-panel #font-toggle:hover,
+.settings-panel #readmode-toggle:hover{ background: var(--bg2);color: var(--text)}
 @media (max-width: 768px){
  nav{ flex-wrap: wrap;height: auto;min-height: 48px;padding: 0 1rem}
  nav > .nav-logo{ flex-shrink: 0}
@@ -1920,7 +1955,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
  nav, #back-to-top, #font-toggle, #readmode-toggle,
  #progress-bar,
  .module-feedback, .share-btn, .swipe-hint,
- #view-controls, #continue-reading, .bookmark-panel,
+ #view-controls, #continue-reading, .bookmark-panel, .settings-panel,
  .nav-bookmark, .search-overlay, .hamburger,
  .prev-next-nav, .module-end-next .men-link,
  .wissens-anker, .section-wave, .module-toc,

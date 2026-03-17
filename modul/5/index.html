@@ -90,7 +90,7 @@
     </a>
 <a class="nav-btn fw-bold" href="/modul/5/" aria-current="page">
 <span class="nb-dot d5"></span>
-      Handeln
+      Handeln · Krisenplan
     </a>
 <a class="nav-btn" href="/modul/6/">
 <span class="nb-dot d6"></span>
@@ -98,7 +98,7 @@
     </a>
 <a class="nav-btn" href="/modul/7/">
 <span class="nb-dot d7"></span>
-      Ressourcen
+      Ressourcen · Hilfe finden
     </a>
 <div class="nav-divider"></div>
 <a class="nav-btn" href="/impressum/">
@@ -107,20 +107,23 @@
     </a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<div id="view-controls">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
-</div>
+
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
@@ -172,6 +175,15 @@
 </ul>
 </div>
 
+<div class="kurzfassung mc-m5" >
+<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
+<ul>
+<li>Selbstfürsorge ist kein Egoismus, sondern die Basis Ihrer Handlungsfähigkeit.</li>
+<li>Ein Krisenplan gibt Sicherheit, wenn das Denken in der Krise schwerfällt.</li>
+<li>Grenzen schützen die Beziehung — sie sind keine Strafe für den Partner.</li>
+<li>Bei akuter Selbst- oder Fremdgefährdung ist professionelle Hilfe (Notfall/FU) unumgänglich.</li>
+</ul>
+</div>
 <nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m5">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
@@ -185,15 +197,6 @@
 </ol>
 </nav>
 <a href="#handeln" class="skip-to-action">↓ Direkt zu den Handlungsschritten</a>
-<div class="kurzfassung mc-m5" >
-<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
-<ul>
-<li>Selbstfürsorge ist kein Egoismus, sondern die Basis Ihrer Handlungsfähigkeit.</li>
-<li>Ein Krisenplan gibt Sicherheit, wenn das Denken in der Krise schwerfällt.</li>
-<li>Grenzen schützen die Beziehung — sie sind keine Strafe für den Partner.</li>
-<li>Bei akuter Selbst- oder Fremdgefährdung ist professionelle Hilfe (Notfall/FU) unumgänglich.</li>
-</ul>
-</div>
 <p class="m-intro">In diesem Modul geht es um Sie: Wie Sie Ihre eigene Energie erhalten, handlungsfähig bleiben und klare Strukturen schaffen, die Ihnen und Ihrem Partner Sicherheit geben.</p>
 
 <div class="m5-toc">
@@ -698,6 +701,45 @@
 	</div>
 	</div>
 </details>
+
+<div class="handout-section">
+<div class="handout-section-title">Handouts zu diesem Modul</div>
+<div class="handout-grid">
+<div class="card-wrap">
+<a class="handout-item" href="/handouts/c1_krisenplan.pdf">
+<span class="handout-icon">📋</span>
+<span class="handout-label">Krisenplan erstellen</span>
+<span class="handout-badge">PDF</span>
+</a>
+<a class="text-version-link" href="/handouts-text/c1_krisenplan.pdf" download>📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="handout-item" href="/handouts/c6_selbstfuersorge.pdf">
+<span class="handout-icon">🌱</span>
+<span class="handout-label">Selbstfürsorge-Plan</span>
+<span class="handout-badge">PDF</span>
+</a>
+<a class="text-version-link" href="/handouts-text/c6_selbstfuersorge.pdf" download>📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="handout-item" href="/handouts/grenzsetzung.pdf">
+<span class="handout-icon">⚡</span>
+<span class="handout-label">Grenzsetzung</span>
+<span class="handout-badge">PDF</span>
+</a>
+<a class="text-version-link" href="/handouts-text/grenzsetzung.pdf" download>📄 Textversion</a>
+</div>
+<div class="card-wrap">
+<a class="handout-item" href="/handouts/c2_suizidgedanken.pdf">
+<span class="handout-icon">🆘</span>
+<span class="handout-label">Umgang mit Suizidgedanken</span>
+<span class="handout-badge">PDF</span>
+</a>
+<a class="text-version-link" href="/handouts-text/c2_suizidgedanken.pdf" download>📄 Textversion</a>
+</div>
+</div>
+<a href="/handouts/" class="text-m5" style="display:inline-block;margin-top:0.75rem;font-size:var(--fs-sm);">Alle Handouts →</a>
+</div>
 
 <div class="module-end-next mc-m6" >
 <p class="men-label">Nächster Schritt</p>

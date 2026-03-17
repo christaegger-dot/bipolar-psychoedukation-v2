@@ -90,7 +90,7 @@
     </a>
 <a class="nav-btn" href="/modul/5/">
 <span class="nb-dot d5"></span>
-      Handeln
+      Handeln · Krisenplan
     </a>
 <a class="nav-btn" href="/modul/6/">
 <span class="nb-dot d6"></span>
@@ -98,7 +98,7 @@
     </a>
 <a class="nav-btn" href="/modul/7/">
 <span class="nb-dot d7"></span>
-      Ressourcen
+      Ressourcen · Hilfe finden
     </a>
 <div class="nav-divider"></div>
 <a class="nav-btn" href="/impressum/">
@@ -107,20 +107,23 @@
     </a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<div id="view-controls">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
-</div>
+
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
@@ -172,6 +175,14 @@
 </ul>
 </div>
 
+<div class="kurzfassung mc-m2" >
+<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
+<ul>
+<li>Die Erkrankung verändert Beziehungsstrukturen schleichend — Rollenverschiebung und Identitätsverlust sind keine persönlichen Fehler.</li>
+<li>Die Frage «Gehen oder Bleiben» verdient eine reflektierte Antwort statt einer impulsiven.</li>
+<li>Es gibt konkrete Schritte, um Ihre Beziehung — und Ihre Identität — aktiv zu schützen.</li>
+</ul>
+</div>
 <nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m2">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
@@ -183,14 +194,6 @@
 </ol>
 </nav>
 <a href="#handeln" class="skip-to-action">↓ Direkt zu den Handlungsschritten</a>
-<div class="kurzfassung mc-m2" >
-<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
-<ul>
-<li>Die Erkrankung verändert Beziehungsstrukturen schleichend — Rollenverschiebung und Identitätsverlust sind keine persönlichen Fehler.</li>
-<li>Die Frage «Gehen oder Bleiben» verdient eine reflektierte Antwort statt einer impulsiven.</li>
-<li>Es gibt konkrete Schritte, um Ihre Beziehung — und Ihre Identität — aktiv zu schützen.</li>
-</ul>
-</div>
 <p class="m-intro">Die Erkrankung greift tief in die Beziehungsstruktur ein. Es sind nicht einzelne Konflikte, sondern strukturelle Veränderungen, die eine Partnerschaft von innen aushöhlen — oft ohne dass man es sofort bemerkt.</p>
 
 <h3 class="section-title-sm">Vom Liebespaar zum Funktionspaar</h3>

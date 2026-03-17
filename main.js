@@ -293,6 +293,24 @@ function toggleBookmarks() {
   if (panel) panel.classList.toggle('open');
 }
 
+// Settings panel toggle
+function toggleSettings() {
+  var panel = document.getElementById('settings-panel');
+  if (!panel) return;
+  panel.classList.toggle('open');
+  // Close bookmarks if open
+  var bp = document.getElementById('bookmark-panel');
+  if (bp && bp.classList.contains('open')) bp.classList.remove('open');
+}
+// Close settings panel on outside click
+document.addEventListener('click', function(e) {
+  var panel = document.getElementById('settings-panel');
+  var toggle = document.getElementById('settings-toggle');
+  if (panel && panel.classList.contains('open') && !panel.contains(e.target) && e.target !== toggle) {
+    panel.classList.remove('open');
+  }
+});
+
 // #19 Feedback
 // #19b Wissens-Anker Quiz
 function waSelect(btn, qId) {

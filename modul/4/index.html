@@ -90,7 +90,7 @@
     </a>
 <a class="nav-btn" href="/modul/5/">
 <span class="nb-dot d5"></span>
-      Handeln
+      Handeln · Krisenplan
     </a>
 <a class="nav-btn" href="/modul/6/">
 <span class="nb-dot d6"></span>
@@ -98,7 +98,7 @@
     </a>
 <a class="nav-btn" href="/modul/7/">
 <span class="nb-dot d7"></span>
-      Ressourcen
+      Ressourcen · Hilfe finden
     </a>
 <div class="nav-divider"></div>
 <a class="nav-btn" href="/impressum/">
@@ -107,20 +107,23 @@
     </a>
 </div>
 <div class="nav-controls">
+<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
 <button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
+</div>
+<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<div class="settings-panel" id="settings-panel">
+<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<div id="view-controls">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
-</div>
+
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
 <button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
 <main>
@@ -171,6 +174,14 @@
 </ul>
 </div>
 
+<div class="kurzfassung mc-m4" >
+<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
+<ul>
+<li>Das Spannungsfeld zwischen Verpflichtung und Selbstschutz ist kein persönliches Versagen — es ist strukturell.</li>
+<li>Expressed Emotion (Kritik, Überengagement) erhöht das Rückfallrisiko — aber der Kreislauf ist unterbrechbar.</li>
+<li>Beobachtung statt Bewertung ist die wichtigste Kommunikationsstrategie.</li>
+</ul>
+</div>
 <nav class="module-toc" aria-label="Inhalt dieses Moduls" class="mc-m4">
 <p class="module-toc-title">In diesem Modul</p>
 <ol>
@@ -185,14 +196,6 @@
 </ol>
 </nav>
 <a href="#handeln" class="skip-to-action">↓ Direkt zu den Handlungsschritten</a>
-<div class="kurzfassung mc-m4" >
-<p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
-<ul>
-<li>Das Spannungsfeld zwischen Verpflichtung und Selbstschutz ist kein persönliches Versagen — es ist strukturell.</li>
-<li>Expressed Emotion (Kritik, Überengagement) erhöht das Rückfallrisiko — aber der Kreislauf ist unterbrechbar.</li>
-<li>Beobachtung statt Bewertung ist die wichtigste Kommunikationsstrategie.</li>
-</ul>
-</div>
 <p class="m-intro">Angehörige stehen in einem zermürbenden inneren Spannungsfeld — zwischen Verpflichtung und Selbstschutz. Und gut gemeinte Reaktionen können unbeabsichtigt Stress erzeugen. Keines davon ist Ihr Versagen: Es sind strukturelle Muster, die durch Überlastung entstehen.</p>
 
 <h3 class="section-title-sm">Das innere Spannungsfeld</h3>
@@ -775,6 +778,10 @@
 <div class="m-insight bg-m4-light">
 <div class="insight-icon">💡</div>
 <div><strong>Was Sie tun können:</strong> Nicht überzeugen wollen (funktioniert in akuter Manie praktisch nie). Stattdessen sachlich dokumentieren, Behandlungsteam informieren und sich selbst schützen. Vereinbarungen über den Umgang mit fehlender Einsicht in stabilen Phasen treffen — idealerweise schriftlich und gemeinsam (→ Modul 5, Krisenplan).</div>
+</div>
+
+<div style="margin:1.5rem 0;padding:1rem 1.2rem;background:var(--danger-light,#fceaea);border-left:4px solid var(--danger,#b03030);border-radius:var(--radius,8px);">
+<p style="margin:0;font-size:var(--fs-sm,0.9rem);line-height:1.6;"><strong style="color:var(--danger,#b03030);">Wenn Sie gerade an einem Punkt sind, an dem alles zu viel wird:</strong> <a href="/notfall/" style="color:var(--danger-dark,#7a2020);font-weight:700;">→ Notfall-Seite</a> — dort finden Sie alle Anlaufstellen. Oder rufen Sie direkt an: <a href="tel:143" style="color:var(--danger-dark,#7a2020);font-weight:600;">143</a> (Dargebotene Hand, 24/7)</p>
 </div>
 
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4C40,0 60,8 100,4C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width=".5"/></svg></div>
