@@ -10,6 +10,20 @@
 /m5  /modul/5/  301
 /m6  /modul/6/  301
 /m7  /modul/7/  301
+/m8  /modul/8/  301
+
+# Note on old module URLs (before 8-module restructure, 2026-03):
+# Old /modul/1/ split into /modul/1/ (Krankheitsbild) + /modul/2/ (Belastung)
+# Old /modul/2/ (Beziehung) → new /modul/3/
+# Old /modul/3/ (Erschöpfung) → new /modul/4/
+# Old /modul/4/ (Loyalität) → new /modul/5/
+# Old /modul/5/ (Handeln) → new /modul/6/
+# Old /modul/6/ (Resilienz) → new /modul/7/
+# Old /modul/7/ (Ressourcen) → new /modul/8/
+# Server-side redirects for old URLs 2-7 are NOT possible because
+# the new module numbers 2-7 now serve different content at those paths.
+# Visitors with old bookmarks to /modul/2/ will land on the new Modul 2 (Belastung),
+# which is closely related to the old Modul 1 content they may have bookmarked.
 
 # Handout-Seiten — Rewrite (200): URL bleibt sauber, Inhalt von handouts/
 /notfall/      /handouts/notfall/      200
