@@ -77,7 +77,7 @@ function doSearch(q) {
       var re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
       snippet = snippet.replace(re, '<mark>$1</mark>');
     });
-    var moduleLabel = 'Modul ' + r.m + ': ' + r.mt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    var moduleLabel = r.m <= 8 ? ('Modul ' + r.m + ': ' + r.mt.replace(/</g,'&lt;').replace(/>/g,'&gt;')) : r.mt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
     html += '<a class="sr-item" href="' + r.u + '" onclick="closeSearch()">' +
       '<div class="sr-module">' + moduleLabel + '</div>' +
       '<div class="sr-text">' + snippet + '</div></a>';
