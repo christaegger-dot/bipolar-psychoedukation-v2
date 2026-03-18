@@ -20,7 +20,7 @@
 
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 <!-- DESIGN: Eigenes OG-Image (og-index.png) für diese Seite erstellen. Aktuell Fallback auf og-index.png. -->
 <meta content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-handouts.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -83,19 +83,19 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
@@ -112,11 +112,11 @@
 
 <div class="filter-bar" style="margin:1rem 0 1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
 <span class="subtext">Filtern:</span>
-<button class="filter-chip active" data-filter="alle" onclick="filterHandouts('alle')">Alle</button>
-<button class="filter-chip" data-filter="krise" onclick="filterHandouts('krise')">🆘 Krise & Notfall</button>
-<button class="filter-chip" data-filter="kommunikation" onclick="filterHandouts('kommunikation')">🗣 Kommunikation</button>
-<button class="filter-chip" data-filter="selbstfuersorge" onclick="filterHandouts('selbstfuersorge')">🛡 Selbstfürsorge</button>
-<button class="filter-chip" data-filter="belastung" onclick="filterHandouts('belastung')">📊 Belastung verstehen</button>
+<button class="filter-chip active" data-filter="alle" data-action="filterHandouts" data-param="alle"">Alle</button>
+<button class="filter-chip" data-filter="krise" data-action="filterHandouts" data-param="krise"">🆘 Krise & Notfall</button>
+<button class="filter-chip" data-filter="kommunikation" data-action="filterHandouts" data-param="kommunikation"">🗣 Kommunikation</button>
+<button class="filter-chip" data-filter="selbstfuersorge" data-action="filterHandouts" data-param="selbstfuersorge"">🛡 Selbstfürsorge</button>
+<button class="filter-chip" data-filter="belastung" data-action="filterHandouts" data-param="belastung"">📊 Belastung verstehen</button>
 </div>
 
 <div class="section-group" data-module="download">
@@ -659,14 +659,14 @@
 </div>
 </footer>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-modal">
 <div class="search-header">
-<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
-<button class="search-close" onclick="closeSearch()">✕</button>
+<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" autocomplete="off">
+<button class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
@@ -674,145 +674,10 @@
 </div>
 </div>
 <!-- PDF Lightbox: Desktop=iframe-Overlay, Mobile=neuer Tab -->
-<style>
-#pdf-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;background:rgba(0,0,0,0.82)}
-.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
-.pdf-lb-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f5f5f5;border-bottom:1px solid #ddd;flex-shrink:0}
-.pdf-lb-dl{display:inline-flex;align-items:center;gap:0.4rem;color:#3d3530;font-weight:600;font-size:0.85rem;text-decoration:none;transition:color 0.2s}
-.pdf-lb-dl:hover{color:#1a6b3c}
-.pdf-lb-close{background:none;border:none;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;color:#3d3530;transition:opacity 0.2s}
-.pdf-lb-close:hover{opacity:0.6}
-.pdf-lb-iframe{flex:1;width:100%;border:none}
-</style>
-<script>
-/* PDF Lightbox — single consolidated implementation */
-(function(){
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    var pdfHref = card.getAttribute('href');
-    if(!pdfHref) return;
-    card.setAttribute('data-pdf', pdfHref);
-    card.removeAttribute('href');
-    card.style.cursor = 'pointer';
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
 
-    card.addEventListener('click', function(e){
-      e.preventDefault();
-      if(isMobile){ window.open(pdfHref, '_blank'); return; }
-      openPdfLightbox(pdfHref);
-    });
-    card.addEventListener('keydown', function(e){
-      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); }
-    });
-  });
-
-  function closeLightbox(){
-    var lb = document.getElementById('pdf-lightbox');
-    if(lb){ lb.remove(); document.body.style.overflow=''; }
-  }
-
-  function openPdfLightbox(url){
-    closeLightbox();
-    var ov = document.createElement('div');
-    ov.id = 'pdf-lightbox';
-    ov.setAttribute('role','dialog');
-    ov.setAttribute('aria-modal','true');
-    ov.setAttribute('aria-label','PDF-Vorschau');
-
-    var panel = document.createElement('div');
-    panel.className = 'pdf-lb-panel';
-
-    var bar = document.createElement('div');
-    bar.className = 'pdf-lb-bar';
-
-    var dl = document.createElement('a');
-    dl.className = 'pdf-lb-dl';
-    dl.href = url;
-    dl.download = '';
-    dl.textContent = '\u2B07 PDF herunterladen';
-
-    var closeBtn = document.createElement('button');
-    closeBtn.className = 'pdf-lb-close';
-    closeBtn.setAttribute('aria-label','Schliessen');
-    closeBtn.textContent = '\u2715';
-    closeBtn.addEventListener('click', closeLightbox);
-
-    bar.appendChild(dl);
-    bar.appendChild(closeBtn);
-
-    var iframe = document.createElement('iframe');
-    iframe.className = 'pdf-lb-iframe';
-    iframe.src = url;
-    iframe.title = 'PDF-Vorschau';
-
-    panel.appendChild(bar);
-    panel.appendChild(iframe);
-    ov.appendChild(panel);
-
-    ov.addEventListener('click', function(e){
-      if(e.target === ov) closeLightbox();
-    });
-
-    document.body.appendChild(ov);
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
-  }
-
-  document.addEventListener('keydown', function(e){
-    if(e.key==='Escape') closeLightbox();
-  });
-})();
-</script>
 <!-- Asset-ID labels for QA -->
-<script>
-(function(){
-  var assetMap={
-    'krisenplan-vorlage':'TPL-01 · v02 · 2026-02',
-    'kurzblatt-was-stabilisiert':'TPL-02 · v01 · 2026-02',
-    'notfallkarte-kanton':'TPL-03 · v01 · 2026-02',
-    'a8_warnsignale':'INF-01 · v01 · 2026-02',
-    'b1_18_belastungen':'INF-02 · v01 · 2026-02',
-    'a4_ambiguous_loss':'INF-03 · v01 · 2026-02',
-    'a5_affiliate_stigma':'INF-04 · v01 · 2026-02',
-    'b9_depression_partner':'INF-05 · v01 · 2026-02',
-    'b2_erosion_solidaritaet':'INF-06 · v01 · 2026-02',
-    'b3_kritische_zeitpunkte':'INF-07 · v01 · 2026-02',
-    'b4_mechanismen_erosion':'INF-08 · v01 · 2026-02',
-    'b6_geschlechtsspezifisch':'INF-09 · v01 · 2026-02',
-    'a3_ambivalente_loyalitaet':'INF-10 · v01 · 2026-02',
-    'b5_loyalitaetskonflikte':'INF-11 · v01 · 2026-02',
-    'expressed_emotions':'INF-12 · v01 · 2026-02',
-    'b7_behandlung_ambivalenz':'INF-13 · v01 · 2026-02',
-    'c1_krisenplan':'INF-14 · v01 · 2026-02',
-    'c2_suizidgedanken':'INF-15 · v01 · 2026-02',
-    'c3_psychose_wahn':'INF-16 · v01 · 2026-02',
-    'c4_manie':'INF-17 · v01 · 2026-02',
-    'c5_depression':'INF-18 · v01 · 2026-02',
-    'c6_selbstfuersorge':'INF-19 · v01 · 2026-02',
-    'grenzsetzung':'INF-20 · v01 · 2026-02',
-    'd4_solidaritaet_wellen':'INF-21 · v01 · 2026-02',
-    'b10_trennung_scheidung':'INF-22 · v01 · 2026-02',
-    'transformationsreise':'INF-23 · v01 · 2026-02',
-    'trialog':'INF-24 · v01 · 2026-02'
-  };
-  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
-    var href=card.getAttribute('data-pdf')||'';
-    var badge=card.querySelector('.card-badge');
-    if(!badge)return;
-    for(var key in assetMap){
-      if(href.indexOf(key)!==-1){
-        var span=document.createElement('span');
-        span.className='card-asset-id';
-        span.textContent=assetMap[key];
-        badge.parentNode.appendChild(span);
-        break;
-      }
-    }
-  });
-})();
-</script>
+
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>

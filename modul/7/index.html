@@ -19,7 +19,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m7.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,25 +113,25 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
 
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
-<button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
+<button aria-label="Nach oben scrollen" id="back-to-top" data-action="scrollToTop" title="Nach oben">↑</button>
 <main>
 <div class="module-top mc-m7" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Zusammen stark: Resilienz und Paardynamik</span></div>
@@ -164,7 +164,7 @@
 <div class="module-card c7">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><h2>Kommunikation verbessern, Solidarität stabilisieren, gemeinsam wachsen</h2><button class="share-btn" onclick="shareSection('m7',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><h2>Kommunikation verbessern, Solidarität stabilisieren, gemeinsam wachsen</h2><button class="share-btn" data-action="shareSection" data-param="m7"" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 <div class="module-subtitle">Was Paare zusammenhält — und was aus der Krise entstehen kann</div>
 </div>
 </div>
@@ -211,10 +211,10 @@
 <div class="slider-examples">
 <div class="swipe-hint">← Wischen zum Blättern →</div>
 <div class="slider-tabs">
-<button class="slider-tab active" onclick="showSlide(0)" aria-label="Situation 1 anzeigen">Situation 1</button>
-<button class="slider-tab" onclick="showSlide(1)" aria-label="Situation 2 anzeigen">Situation 2</button>
-<button class="slider-tab" onclick="showSlide(2)" aria-label="Situation 3 anzeigen">Situation 3</button>
-<button class="slider-tab" onclick="showSlide(3)" aria-label="Situation 4 anzeigen">Situation 4</button>
+<button class="slider-tab active" data-action="showSlide" data-param="0" aria-label="Situation 1 anzeigen">Situation 1</button>
+<button class="slider-tab" data-action="showSlide" data-param="1" aria-label="Situation 2 anzeigen">Situation 2</button>
+<button class="slider-tab" data-action="showSlide" data-param="2" aria-label="Situation 3 anzeigen">Situation 3</button>
+<button class="slider-tab" data-action="showSlide" data-param="3" aria-label="Situation 4 anzeigen">Situation 4</button>
 </div>
 <div class="slide-wrap" id="slide-0">
 <div class="slide-context">💬 Rückzug — Partner*in will nichts mehr unternehmen</div>
@@ -286,68 +286,7 @@
 <h3 class="section-title-sm">Was Solidarität stabilisiert — 5 Säulen</h3>
 <p class="m-subtext">Diese Säulen müssen gebaut werden, wenn das Wetter ruhig ist — nicht im Sturm. Stabile Phasen sind die wichtigste Zeit für Aufbauarbeit.</p>
 
-<style>
-.sl-wrap{font-family:inherit;max-width:620px;margin:0 auto;padding:0}
-/* Header */
-.sl-header{text-align:center;padding:24px 16px 20px;background:linear-gradient(180deg,#f8f5f0 0%,#fff 100%);border-radius:16px 16px 0 0;border:1.5px solid #e2dbd3;border-bottom:none}
-.sl-header h3{font-size:1.25rem;font-weight:700;color:#3d3530;margin:0 0 8px;line-height:1.3;letter-spacing:-.01em}
-.sl-header p{font-size:.84rem;color:#8a7e76;margin:0;line-height:1.5;max-width:380px;margin-left:auto;margin-right:auto}
-/* Roof bar */
-.sl-roof{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:#f0ebe5;border-left:1.5px solid #e2dbd3;border-right:1.5px solid #e2dbd3}
-.sl-roof span{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.01em}
-.sl-pillar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;border:1.5px solid;cursor:pointer;transition:all .2s ease;-webkit-tap-highlight-color:transparent;text-align:left;background:#fff;width:100%}
-.sl-pillar:focus-visible{outline:2px solid #3d3530;outline-offset:2px;border-radius:12px}
-.sl-pillar:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.sl-pillar.active{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
-.sl-pillar .sl-icon{font-size:1.5rem;flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px}
-.sl-pillar .sl-p-text{flex:1;min-width:0}
-.sl-pillar .sl-p-num{font-size:.6rem;font-weight:700;opacity:.45;line-height:1;margin-bottom:2px;display:block}
-.sl-pillar .sl-p-title{font-size:.82rem;font-weight:700;line-height:1.25;display:block;word-break:break-word}
-/* Pillar colors */
-.sl-pillar[data-id="sol01"]{border-color:#c2dece}
-.sl-pillar[data-id="sol01"] .sl-icon{background:#edf5f0}
-.sl-pillar[data-id="sol01"] .sl-p-title{color:var(--success)}
-.sl-pillar[data-id="sol01"].active{border-color:var(--success);background:#f5faf7}
-.sl-pillar[data-id="sol02"]{border-color:#e6d5a0}
-.sl-pillar[data-id="sol02"] .sl-icon{background:#fef9ec}
-.sl-pillar[data-id="sol02"] .sl-p-title{color:#7a6000}
-.sl-pillar[data-id="sol02"].active{border-color:#8a6d00;background:#fefcf5}
-.sl-pillar[data-id="sol03"]{border-color:#c8bade}
-.sl-pillar[data-id="sol03"] .sl-icon{background:#f0ecf7}
-.sl-pillar[data-id="sol03"] .sl-p-title{color:#5b3e8a}
-.sl-pillar[data-id="sol03"].active{border-color:#5b3e8a;background:#f7f4fb}
-.sl-pillar[data-id="sol04"]{border-color:#e6b8af}
-.sl-pillar[data-id="sol04"] .sl-icon{background:#fdf0ed}
-.sl-pillar[data-id="sol04"] .sl-p-title{color:#a02015}
-.sl-pillar[data-id="sol04"].active{border-color:#a02015;background:#fef7f5}
-.sl-pillar[data-id="sol05"]{border-color:#e6c9a0}
-.sl-pillar[data-id="sol05"] .sl-icon{background:#fff6eb}
-.sl-pillar[data-id="sol05"] .sl-p-title{color:#7a5200}
-.sl-pillar[data-id="sol05"].active{border-color:#8a5a00;background:#fffaf2}
-/* Foundation */
-.sl-fundament{padding:12px 16px;background:#e8e2d8;border-radius:0 0 16px 16px;border:1.5px solid #d4c8bc;border-top:2px solid #c4b8a8;text-align:center}
-.sl-fundament p{margin:0;font-size:.82rem;font-weight:600;color:var(--muted);line-height:1.4}
-.sl-fundament .sl-f-sub{font-weight:400;font-size:.75rem;color:#8a7e76;display:block;margin-top:2px}
-/* Detail panel */
-.sl-detail{border-radius:14px;padding:20px 18px;transition:all .25s ease;min-height:80px;border:1.5px solid #e8e2dc;background:#f8f6f4;margin-top:16px}
-.sl-detail .sl-d-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.sl-detail .sl-d-emoji{font-size:1.6rem}
-.sl-detail .sl-d-title{font-size:1.05rem;font-weight:700;line-height:1.3;margin:0}
-.sl-detail .sl-d-why{font-size:.8rem;color:#6b6058;margin:0 0 12px;line-height:1.5;font-style:italic;padding-left:12px;border-left:2px solid #d4c8bc}
-.sl-detail .sl-d-body{font-size:.84rem;color:var(--muted);margin:0 0 14px;line-height:1.6}
-.sl-detail .sl-d-concrete{font-size:.8rem;margin:0;line-height:1.55;padding:12px 14px;background:rgba(255,255,255,.6);border-radius:10px;border-left:3px solid}
-.sl-detail .sl-d-concrete strong{color:var(--muted)}
-.sl-detail .sl-empty{text-align:center;padding:12px 0}
-.sl-detail .sl-empty p{margin:0 0 6px;line-height:1.5}
-.sl-detail .sl-empty p:last-child{margin:0}
-/* Erosion markers */
-.sl-erosion{margin-top:16px;padding:14px 18px;background:#fdf8f6;border-radius:12px;border:1.5px solid #e6d5cc}
-.sl-erosion .sl-e-title{font-size:.82rem;font-weight:700;color:#a02015;margin:0 0 8px;line-height:1.3}
-.sl-erosion .sl-e-list{font-size:.78rem;color:#6b6058;margin:0;line-height:1.7}
-/* Note */
-.sl-note{margin-top:16px;padding:14px 18px;background:#f5f2ed;border-radius:12px;border:1.5px solid #ddd6cc;text-align:center}
-.sl-note p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.6}
-</style>
+
 <div class="sl-wrap" role="region" aria-label="5 Säulen gegen Solidaritäts-Erosion">
   
   <div class="sl-header">
@@ -360,35 +299,35 @@
   </div>
   
   <div class="sl-grid">
-    <button class="sl-pillar" data-id="sol01" onclick="slToggle('sol01')" aria-label="Säule 1: Gemeinsames Krankheitsverständnis" aria-expanded="false" aria-controls="sl-detail">
+    <button class="sl-pillar" data-id="sol01" data-action="slToggle" data-param="sol01"" aria-label="Säule 1: Gemeinsames Krankheitsverständnis" aria-expanded="false" aria-controls="sl-detail">
       <span class="sl-icon">🧠</span>
       <span class="sl-p-text">
         <span class="sl-p-num">SÄULE 1</span>
         <span class="sl-p-title">Gemeinsames Krankheitsverständnis</span>
       </span>
     </button>
-    <button class="sl-pillar" data-id="sol02" onclick="slToggle('sol02')" aria-label="Säule 2: Krankheitsfreie Inseln und Wertschätzung" aria-expanded="false" aria-controls="sl-detail">
+    <button class="sl-pillar" data-id="sol02" data-action="slToggle" data-param="sol02"" aria-label="Säule 2: Krankheitsfreie Inseln und Wertschätzung" aria-expanded="false" aria-controls="sl-detail">
       <span class="sl-icon">🏝️</span>
       <span class="sl-p-text">
         <span class="sl-p-num">SÄULE 2</span>
         <span class="sl-p-title">Krankheitsfreie Inseln + Wertschätzung</span>
       </span>
     </button>
-    <button class="sl-pillar" data-id="sol03" onclick="slToggle('sol03')" aria-label="Säule 3: Grenzen und faire Lastverteilung" aria-expanded="false" aria-controls="sl-detail">
+    <button class="sl-pillar" data-id="sol03" data-action="slToggle" data-param="sol03"" aria-label="Säule 3: Grenzen und faire Lastverteilung" aria-expanded="false" aria-controls="sl-detail">
       <span class="sl-icon">🛡️</span>
       <span class="sl-p-text">
         <span class="sl-p-num">SÄULE 3</span>
         <span class="sl-p-title">Grenzen + faire Lastverteilung</span>
       </span>
     </button>
-    <button class="sl-pillar" data-id="sol04" onclick="slToggle('sol04')" aria-label="Säule 4: Gemeinsamer Krisenplan" aria-expanded="false" aria-controls="sl-detail">
+    <button class="sl-pillar" data-id="sol04" data-action="slToggle" data-param="sol04"" aria-label="Säule 4: Gemeinsamer Krisenplan" aria-expanded="false" aria-controls="sl-detail">
       <span class="sl-icon">📋</span>
       <span class="sl-p-text">
         <span class="sl-p-num">SÄULE 4</span>
         <span class="sl-p-title">Gemeinsamer Krisenplan</span>
       </span>
     </button>
-    <button class="sl-pillar" data-id="sol05" onclick="slToggle('sol05')" aria-label="Säule 5: Eigene Entlastung und Peer-Support" aria-expanded="false" aria-controls="sl-detail">
+    <button class="sl-pillar" data-id="sol05" data-action="slToggle" data-param="sol05"" aria-label="Säule 5: Eigene Entlastung und Peer-Support" aria-expanded="false" aria-controls="sl-detail">
       <span class="sl-icon">💚</span>
       <span class="sl-p-text">
         <span class="sl-p-num">SÄULE 5</span>
@@ -420,89 +359,7 @@
     <p><strong>Wichtig:</strong> Sie müssen nicht alle Säulen gleichzeitig bauen. Beginnen Sie dort, wo der Druck am grössten ist.</p>
   </div>
 </div>
-<script>
-(function(){
-  var data = {
-    sol01: {
-      emoji: "🧠",
-      title: "Gemeinsames Krankheitsverständnis",
-      color: "#2d6a4f", bg: "#f5faf7", border: "#c2dece", signBorder: "#6b9e7e",
-      why: "Solidarität bleibt stabiler, wenn Angehörige und Betroffene dieselbe Landkarte haben: Was ist Symptom, was ist Persönlichkeit? Was hilft, was schadet?",
-      body: "«Wir gegen die Episode — nicht gegeneinander.» Beide Partner verstehen die Erkrankung als <em>Dritten im Bunde</em>, nicht als Charakterfehler. Dazu gehört: ein gemeinsames Episoden-Profil (Frühwarnzeichen, Trigger), Kommunikations-Grundregeln und ein kurzes Debrief nach jeder Krise.",
-      concrete: "<strong>Konkret:</strong> Erstellen Sie zusammen ein 1-Seiten-Episoden-Profil: Frühwarnzeichen Manie (z.B. weniger Schlaf, Gereiztheit), Frühwarnzeichen Depression (z.B. Rückzug, Hoffnungslosigkeit), persönliche Trigger. Regel: keine Grundsatzdebatten in der Krise — nur Handlungsfragen."
-    },
-    sol02: {
-      emoji: "🏝️",
-      title: "Krankheitsfreie Inseln + Wertschätzung",
-      color: "#7a6000", bg: "#fefcf5", border: "#e6d5a0", signBorder: "#d4a843",
-      why: "Solidarität erodiert besonders, wenn die Beziehung nur noch um Symptome, Kontrolle und Reparatur kreist. «Inseln» sind nicht Verdrängung — sondern Beziehungsnahrung.",
-      body: "Bewusste Zeiten ohne Therapie-Talk, ohne Symptom-Analyse, ohne Konflikt-Rehash. <strong>Mikro-Insel</strong> (täglich 5–10 Min): Tee, kurzer Walk, Musik. <strong>Mini-Insel</strong> (2×/Woche 30–90 Min): Kochen, Ausflug, Kino. <strong>Makro-Insel</strong> (alle 2–4 Wochen): halber/ganzer Tag — auch getrennt möglich. <em class='quelle'>(Zeitangaben: Empfehlung der Fachstelle Angehörigenarbeit PUK Zürich)</em>",
-      concrete: "<strong>Konkret:</strong> Bestimmen Sie einen festen Abend pro Woche als «krankheitsfreie Zone». Und: 1× pro Woche fragen Sie sich gegenseitig: «Was war diese Woche gut zwischen uns — trotz Erkrankung?»"
-    },
-    sol03: {
-      emoji: "🛡️",
-      title: "Grenzen + faire Lastverteilung",
-      color: "#5b3e8a", bg: "#f7f4fb", border: "#c8bade", signBorder: "#8a70b8",
-      why: "Solidarität zerbricht selten an «zu wenig Liebe», sondern an zu viel Übernahme und zu wenig Schutz. Ohne klare Grenzen entstehen Akkommodations-Spiralen — kurzfristig beruhigend, langfristig erschöpfend.",
-      body: "«Ich bleibe in Beziehung — aber nicht in Eskalation.» Dazu: ein Codewort «Pause» für sofortigen Themenstopp, eine <strong>Lasten-Matrix</strong> (wer ist wofür zuständig — und wofür nicht), schriftliche Grenzen, und eine Reparatur-Regel nach Grenzbruch: Anerkennen → Verantwortung → Wiedergutmachung → Prävention.",
-      concrete: "<strong>Konkret:</strong> Schreiben Sie eine «No-List»: Was übernehme ich nicht mehr? Z.B. nächtliche Dauertelefonate, impulsive Geldrettung, Konflikt-Schiedsrichter:in. Grenzregel: «Wenn geschrien wird, gehe ich aus dem Raum. Ich komme zurück, wenn es ruhig ist.»"
-    },
-    sol04: {
-      emoji: "📋",
-      title: "Gemeinsamer Krisenplan",
-      color: "#a02015", bg: "#fef7f5", border: "#e6b8af", signBorder: "#c0392b",
-      why: "Wiederholte Krisen ohne Plan sind wie wiederholte Brände ohne Rauchmelder: Jede Episode hinterlässt Beziehungsschäden. Ein Krisenplan macht Krisen kürzer, klarer, weniger traumatisierend.",
-      body: "Ein 1-Seiter, erstellt in stabiler Phase: <strong>Ampel</strong> (Grün/Gelb/Rot), <strong>Gelb-Massnahmen</strong> (Schlafschutz, Reizreduktion), <strong>No-Gos</strong> (Diskutieren, Drohen, Moralpredigten), <strong>Kontaktkette</strong> (Behandler:in → Krisendienst → Notruf), <strong>Rollen</strong> (wer telefoniert, wer fährt, wer bleibt bei Kindern).",
-      concrete: "<strong>Konkret:</strong> Der Plan schützt Sie vor dem «Retter-Reflex». Er legitimiert: «Ich helfe — aber nicht allein und nicht grenzenlos.» Dokumente griffbereit: am Kühlschrank, im Handy, bei der Therapeutin."
-    },
-    sol05: {
-      emoji: "💚",
-      title: "Eigene Entlastung + Peer-Support",
-      color: "#7a5200", bg: "#fffaf2", border: "#e6c9a0", signBorder: "#d4a050",
-      why: "Solidarität kann nur stabil bleiben, wenn Angehörige nicht ausbrennen. Entlastung ist kein Luxus, sondern Voraussetzung.",
-      body: "<strong>Fixe Entlastungszeiten</strong> (nicht verhandelbar): 2× pro Woche 60–90 Minuten «frei», 1× pro Monat halber Tag. <em class='quelle'>(Zeitangaben: Empfehlung der Fachstelle Angehörigenarbeit PUK Zürich)</em> <strong>Peer-Kontakt</strong>: Selbsthilfe-/Angehörigengruppe — normalisiert, reduziert Isolation. <strong>Eigene therapeutische Unterstützung</strong> bei Warnsignalen: Schlafstörung, Angst, Übererregung, «emotionale Taubheit», Schuld/Scham.",
-      concrete: "<strong>Konkret:</strong> Benennen Sie 2–3 Menschen, die Sie in einer Krise anrufen können. Melden Sie sich bei einer Angehörigen-Gruppe an (z.B. <a href='/notfall/' style='color:inherit;font-weight:600'>Fachstelle Angehörigenarbeit PUK</a>). Warnsignal: «Ist mir egal» — das ist oft Schutz vor Überlastung, nicht Gleichgültigkeit."
-    }
-  };
-  var active = null;
-  var pillars = document.querySelectorAll('.sl-pillar');
-  var panel = document.getElementById('sl-detail');
-  window.slToggle = function(id) {
-    if (active === id) { active = null; } else { active = id; }
-    pillars.forEach(function(p) {
-      var pId = p.getAttribute('data-id');
-      if (pId === active) {
-        p.classList.add('active');
-        p.setAttribute('aria-expanded', 'true');
-      } else {
-        p.classList.remove('active');
-        p.setAttribute('aria-expanded', 'false');
-      }
-    });
-    if (!active) {
-      panel.style.background = '#f8f6f4';
-      panel.style.borderColor = '#e8e2dc';
-      panel.innerHTML =
-        '<div class="sl-empty">' +
-        '<p style="font-size:.88rem;color:var(--muted)">Klicken Sie auf eine Säule.</p>' +
-        '<p style="font-size:.78rem;color:#8a7e76">Solidarität zerbricht selten an zu wenig Liebe — sondern an Erschöpfung, fehlenden Grenzen und Isolation.</p></div>';
-      return;
-    }
-    var d = data[active];
-    panel.style.background = d.bg;
-    panel.style.borderColor = d.border;
-    panel.innerHTML =
-      '<div class="sl-d-head">' +
-        '<span class="sl-d-emoji">' + d.emoji + '</span>' +
-        '<p class="sl-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
-      '</div>' +
-      '<p class="sl-d-why">' + d.why + '</p>' +
-      '<p class="sl-d-body">' + d.body + '</p>' +
-      '<div class="sl-d-concrete" style="border-left-color:' + d.signBorder + '">' + d.concrete + '</div>';
-    panel.scrollIntoView({behavior:'smooth',block:'nearest'});
-  };
-})();
-</script>
+
 <div class="pillars-note">
 <em>Quellen: Reinares et al. (2016). Clin Psychol Rev; Miklowitz (2008). Am J Psychiatry</em>
 </div>
@@ -613,7 +470,7 @@
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4C40,0 60,8 100,4C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width=".5"/></svg></div>
 <h3 class="section-title-sm">Was aus der Krise entstehen kann</h3>
 <div class="ptg-intro-note">Dieser Abschnitt ist für Momente, in denen Sie etwas Abstand gewonnen haben — nicht für Zeiten akuter Erschöpfung. Wenn Sie gerade mitten in einer Krise sind, dürfen Sie ihn überspringen und später zurückkehren.</div>
-<button class="pd-toggle-btn" aria-expanded="false" aria-controls="ptg-full" data-target="ptg-full" onclick="togglePD(this)"><span class="pd-label">Abschnitt lesen</span><span class="pd-chevron">▸</span></button>
+<button class="pd-toggle-btn" aria-expanded="false" aria-controls="ptg-full" data-target="ptg-full" data-action="togglePD"><span class="pd-label">Abschnitt lesen</span><span class="pd-chevron">▸</span></button>
 <div class="pd-full-content" id="ptg-full">
 <p class="m-subtext">Posttraumatisches Wachstum (PTG) bedeutet nicht, dass das Leid «gut» war — und nicht alle erleben es. Es beschreibt, dass manche Menschen durch die Auseinandersetzung mit der Krise neue Stärken entdecken. Das ist keine Pflicht und kein Massstab.</p>
 <div class="ptg-wrap">
@@ -856,16 +713,16 @@
 <div class="wa-q" id="wa-7-0">
 <p>Ist Resilienz ein angeborenes Persönlichkeitsmerkmal?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Resilienz ist kein fixes Merkmal, sondern ein Prozess, der aktiv gefördert werden kann." onclick="waSelect(this,'7-0')">Ja — manche Menschen sind resilient, andere nicht</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — die fünf Säulen (Wissen, Kommunikation, Netzwerk, Grenzen, Sinn) lassen sich gezielt stärken." onclick="waSelect(this,'7-0')">Nein — Resilienz ist ein aktiver Prozess</button>
+<button class="wa-opt" data-correct="false" data-fb="Resilienz ist kein fixes Merkmal, sondern ein Prozess, der aktiv gefördert werden kann." data-action="waSelect" data-param="7-0"">Ja — manche Menschen sind resilient, andere nicht</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — die fünf Säulen (Wissen, Kommunikation, Netzwerk, Grenzen, Sinn) lassen sich gezielt stärken." data-action="waSelect" data-param="7-0"">Nein — Resilienz ist ein aktiver Prozess</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
 <div class="wa-q" id="wa-7-1">
 <p>Was ist ein Trialog?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Trialog meint den gleichberechtigten Austausch zwischen Betroffenen, Angehörigen und Fachpersonen — nicht nur ein Einzelgespräch." onclick="waSelect(this,'7-1')">Ein Gespräch zu dritt mit dem Therapeuten</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — Trialog bedeutet: Gemeinsam statt übereinander reden." onclick="waSelect(this,'7-1')">Gleichberechtigter Austausch zwischen Betroffenen, Angehörigen und Fachpersonen</button>
+<button class="wa-opt" data-correct="false" data-fb="Trialog meint den gleichberechtigten Austausch zwischen Betroffenen, Angehörigen und Fachpersonen — nicht nur ein Einzelgespräch." data-action="waSelect" data-param="7-1"">Ein Gespräch zu dritt mit dem Therapeuten</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — Trialog bedeutet: Gemeinsam statt übereinander reden." data-action="waSelect" data-param="7-1"">Gleichberechtigter Austausch zwischen Betroffenen, Angehörigen und Fachpersonen</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
@@ -938,8 +795,8 @@
 </div>
 <div class="module-feedback">
 <span class="feedback-label">War dieses Modul hilfreich?</span>
-<button class="feedback-btn" onclick="giveFeedback(this,'m7','ja')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
-<button class="feedback-btn" onclick="giveFeedback(this,'m7','nein')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m7" data-val="ja"" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m7" data-val="nein"" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
 <span class="feedback-thanks" id="fb-m7">Danke für Ihr Feedback.</span>
 </div>
 </div>
@@ -986,12 +843,12 @@
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-box">
 <div class="search-input-wrap">
 <span class="section-num">🔎</span>
-<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
+<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche in allen Modulen…" type="text"/>
+<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div class="search-results" id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
@@ -999,9 +856,9 @@
 </div>
 </div>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>

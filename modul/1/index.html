@@ -19,7 +19,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m1.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,25 +113,25 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
 
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
-<button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
+<button aria-label="Nach oben scrollen" id="back-to-top" data-action="scrollToTop" title="Nach oben">↑</button>
 <main>
 <div class="module-top mc-m1" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Die bipolare Störung verstehen</span></div>
@@ -164,7 +164,7 @@
 <div class="module-card c1">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><h2>Was ist die bipolare Störung?</h2><button class="share-btn" onclick="shareSection('m1',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><h2>Was ist die bipolare Störung?</h2><button class="share-btn" data-action="shareSection" data-param="m1"" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 </div>
 </div>
 <div class="module-body">
@@ -206,13 +206,13 @@
 <div class="pole-toggle-wrap">
 <div class="keyboard-hint">← → Pfeiltasten zum Wechseln</div>
 <div class="pole-tabs" role="tablist">
-<button class="pole-tab active" data-pole="manie" onclick="showPole('manie')" role="tab" id="tab-manie" aria-selected="true" aria-controls="pole-manie" aria-label="Manie und Hypomanie anzeigen">
+<button class="pole-tab active" data-pole="manie" data-action="showPole" data-param="manie"" role="tab" id="tab-manie" aria-selected="true" aria-controls="pole-manie" aria-label="Manie und Hypomanie anzeigen">
 <span class="pole-arrow">↑</span> Manie / <span class="tt" tabindex="0">Hypomanie<span class="tt-box">Abgeschwächte Form der Manie: erhöhte Energie, weniger Schlaf, gesteigerter Antrieb — aber ohne schwere Beeinträchtigung des Alltags. Kann unbemerkt in eine Manie übergehen.</span></span>
 </button>
-<button class="pole-tab" data-pole="stabil" onclick="showPole('stabil')" role="tab" id="tab-stabil" aria-selected="false" aria-controls="pole-stabil" aria-label="Stabile Phase anzeigen">
+<button class="pole-tab" data-pole="stabil" data-action="showPole" data-param="stabil"" role="tab" id="tab-stabil" aria-selected="false" aria-controls="pole-stabil" aria-label="Stabile Phase anzeigen">
 <span class="pole-arrow">→</span> Stabile Phase
           </button>
-<button class="pole-tab" data-pole="depression" onclick="showPole('depression')" role="tab" id="tab-depression" aria-selected="false" aria-controls="pole-depression" aria-label="Depression anzeigen">
+<button class="pole-tab" data-pole="depression" data-action="showPole" data-param="depression"" role="tab" id="tab-depression" aria-selected="false" aria-controls="pole-depression" aria-label="Depression anzeigen">
 <span class="pole-arrow">↓</span> Depression
           </button>
 </div>
@@ -436,9 +436,9 @@
 <div class="wa-q" id="wa-1-0">
 <p>Was ist die bipolare Störung?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Die bipolare Störung ist eine neurobiologische Erkrankung — kein Charakterfehler." onclick="waSelect(this,'1-0')">Eine Persönlichkeitsstörung</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — die bipolare Störung hat neurobiologische Ursachen und ist gut behandelbar." onclick="waSelect(this,'1-0')">Eine neurobiologische Erkrankung</button>
-<button class="wa-opt" data-correct="false" data-fb="Stress kann Episoden auslösen, aber die Erkrankung hat neurobiologische Ursachen." onclick="waSelect(this,'1-0')">Eine Reaktion auf Stress</button>
+<button class="wa-opt" data-correct="false" data-fb="Die bipolare Störung ist eine neurobiologische Erkrankung — kein Charakterfehler." data-action="waSelect" data-param="1-0"">Eine Persönlichkeitsstörung</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — die bipolare Störung hat neurobiologische Ursachen und ist gut behandelbar." data-action="waSelect" data-param="1-0"">Eine neurobiologische Erkrankung</button>
+<button class="wa-opt" data-correct="false" data-fb="Stress kann Episoden auslösen, aber die Erkrankung hat neurobiologische Ursachen." data-action="waSelect" data-param="1-0"">Eine Reaktion auf Stress</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
@@ -524,8 +524,8 @@
 </div>
 <div class="module-feedback">
 <span class="feedback-label">War dieses Modul hilfreich?</span>
-<button class="feedback-btn" onclick="giveFeedback(this,'m1','ja')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
-<button class="feedback-btn" onclick="giveFeedback(this,'m1','nein')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m1" data-val="ja"" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m1" data-val="nein"" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
 <span class="feedback-thanks" id="fb-m1">Danke für Ihr Feedback.</span>
 </div>
 </div>
@@ -567,12 +567,12 @@
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-box">
 <div class="search-input-wrap">
 <span class="section-num">🔎</span>
-<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
+<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche in allen Modulen…" type="text"/>
+<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div class="search-results" id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
@@ -580,9 +580,9 @@
 </div>
 </div>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>

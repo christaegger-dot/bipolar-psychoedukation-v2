@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-impressum.png">
 <meta property="og:image:width" content="1200">
@@ -80,19 +80,19 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
@@ -184,14 +184,14 @@
 </div>
 </footer>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-modal">
 <div class="search-header">
-<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
-<button class="search-close" onclick="closeSearch()">✕</button>
+<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" autocomplete="off">
+<button class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>

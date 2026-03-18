@@ -7,7 +7,7 @@ var searchIndexLoaded = false;
 function loadSearchIndex() {
   if (searchIndexLoaded) return;
   var script = document.createElement('script');
-  script.src = '/search-index.js?v=f9dedeb';
+  script.src = '/search-index.js?v=3e59e51';
   script.onload = function() { searchIndexLoaded = true; };
   script.onerror = function() {
     var c = document.getElementById('search-results');

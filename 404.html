@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Seite nicht gefunden – Bipolare Störung">
@@ -79,7 +79,7 @@
     </a>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
@@ -131,7 +131,7 @@
 
   <div class="error-search">
     <p class="error-search-hint">Vielleicht hilft eine Suche:</p>
-    <button class="error-search-btn" onclick="openSearch()">Inhalte durchsuchen</button>
+    <button class="error-search-btn" data-action="openSearch">Inhalte durchsuchen</button>
   </div>
 
   <a href="/" class="error-back">← Zur Startseite</a>
@@ -150,14 +150,14 @@
 </div>
 </footer>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
 <div class="search-overlay" id="search-overlay">
 <div class="search-modal">
 <div class="search-header">
-<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
-<button class="search-close" onclick="closeSearch()">✕</button>
+<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" autocomplete="off">
+<button class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>

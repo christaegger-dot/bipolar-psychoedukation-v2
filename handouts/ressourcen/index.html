@@ -19,7 +19,7 @@
 
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link href="/shared.css?v=f9dedeb" rel="stylesheet"/>
+<link href="/shared.css?v=3e59e51" rel="stylesheet"/>
 
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-ressourcen.png">
 <meta property="og:image:width" content="1200">
@@ -82,19 +82,19 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
@@ -187,107 +187,107 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <div class="glossar-list">
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-1" onclick="toggleGlossar(this)">Ambiguous Loss <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-1" data-action="toggleGlossar">Ambiguous Loss <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-1"><p>Ein Verlust, der nicht eindeutig ist — die Person ist physisch anwesend, aber psychisch manchmal unerreichbar. Dieses Konzept erklärt, warum Angehörige trauern, obwohl niemand gestorben ist.</p><span class="gd-module">→ Modul 3</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-2" onclick="toggleGlossar(this)">Affiliate Stigma <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-2" data-action="toggleGlossar">Affiliate Stigma <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-2"><p>Die Stigmatisierung, die Angehörige erleben — nicht weil sie selbst erkrankt sind, sondern weil sie zu einer erkrankten Person gehören. Kann zu Rückzug, Scham und Isolation führen.</p><span class="gd-module">→ Modul 4</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-3" onclick="toggleGlossar(this)">Expressed Emotion (EE) <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-3" data-action="toggleGlossar">Expressed Emotion (EE) <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-3"><p>Ein Fachbegriff für familiäre Kommunikationsmuster — insbesondere Kritik, Feindseligkeit und emotionale Überinvolviertheit. Hohe EE korreliert mit höheren Rückfallraten. Die gute Nachricht: EE-Muster sind veränderbar.</p><span class="gd-module">→ Modul 4</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-4" onclick="toggleGlossar(this)">Hypervigilanz <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-4" data-action="toggleGlossar">Hypervigilanz <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-4"><p>Dauerhaft erhöhte Wachsamkeit — das ständige Beobachten, ob sich eine neue Episode ankündigt. Erschöpft Angehörige langfristig, auch in stabilen Phasen des Partners.</p><span class="gd-module">→ Modul 1</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-5" onclick="toggleGlossar(this)">Krisenplan <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-5" data-action="toggleGlossar">Krisenplan <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-5"><p>Eine in stabilen Zeiten erstellte Vereinbarung: Wer wird wann informiert? Welche Medikamente? Wer betreut die Kinder? Gibt Handlungssicherheit im Notfall und reduziert Konflikte in der Krise.</p><span class="gd-module">→ Modul 5</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-6" onclick="toggleGlossar(this)">Posttraumatisches Wachstum <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-6" data-action="toggleGlossar">Posttraumatisches Wachstum <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-6"><p>Positive psychologische Veränderungen, die aus der Auseinandersetzung mit belastenden Lebensereignissen entstehen — tiefere Empathie, veränderte Prioritäten, innere Stärke. Kein Automatismus, aber eine reale Möglichkeit.</p><span class="gd-module">→ Modul 6</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-7" onclick="toggleGlossar(this)">Solidaritätserosion <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-7" data-action="toggleGlossar">Solidaritätserosion <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-7"><p>Die schleichende Abnahme der Fähigkeit zur Solidarität über Jahre hinweg. Nach jeder Episode erholt sich die Unterstützungsbereitschaft etwas weniger vollständig — nicht aus fehlendem Willen, sondern weil die Ressourcen erschöpfen.</p><span class="gd-module">→ Modul 3</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-8" onclick="toggleGlossar(this)">Trialog <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-8" data-action="toggleGlossar">Trialog <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-8"><p>Der gleichberechtigte Austausch zwischen drei Gruppen: Betroffene, Angehörige und Fachpersonen. Jede Perspektive hat eigene Expertise — der Trialog nutzt alle drei.</p><span class="gd-module">→ Modul 6</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-9" onclick="toggleGlossar(this)">Bipolar I / Bipolar II <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-9" data-action="toggleGlossar">Bipolar I / Bipolar II <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-9"><p>Bipolar I: Episoden mit voll ausgeprägter Manie (oft mit psychotischen Symptomen). Bipolar II: Hypomanien (abgeschwächt) und schwere Depressionen. Beide Formen sind chronisch und behandlungsbedürftig. → Modul 1</p></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-10" onclick="toggleGlossar(this)">Manie / Hypomanie <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-10" data-action="toggleGlossar">Manie / Hypomanie <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-10"><p>Manie: Phase extrem gehobener oder gereizter Stimmung, vermindertes Schlafbedürfnis, Grössenideen, riskantes Verhalten. Kann Tage bis Wochen dauern. Hypomanie: abgeschwächte Form, die Betroffene oft als produktiv erleben — für Angehörige aber belastend sein kann. → Modul 1, Notfallseite</p></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-11" onclick="toggleGlossar(this)">Psychoedukation <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-11" data-action="toggleGlossar">Psychoedukation <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-11"><p>Strukturiertes Lernprogramm für Betroffene und Angehörige: Wissen über die Erkrankung, Frühwarnzeichen, Bewältigungsstrategien. Nachweislich wirksam zur Senkung des Rückfallrisikos (um bis zu 50 %). Diese Website ist ein psychoedukatives Angebot.</p></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-12" onclick="toggleGlossar(this)">Vorsorgeauftrag / Patientenverfügung <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-12" data-action="toggleGlossar">Vorsorgeauftrag / Patientenverfügung <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-12"><p>Vorsorgeauftrag: Bestimmt, wer bei Urteilsunfähigkeit Entscheidungen trifft (Finanzen, Wohnen, Gesundheit). Patientenverfügung: Legt fest, welche medizinischen Massnahmen gewünscht oder abgelehnt werden. Beide Dokumente sollten in stabilen Phasen erstellt werden. → Ressourcen: Arbeit & Finanzen</p></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-13" onclick="toggleGlossar(this)">KESB <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-13" data-action="toggleGlossar">KESB <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-13"><p>Kindes- und Erwachsenenschutzbehörde. Zuständig für Massnahmen bei Kindeswohlgefährdung oder Erwachsenenschutz (z.B. Beistandschaft bei dauerhafter Urteilsunfähigkeit). Kann von Angehörigen, Ärzten oder Behörden eingeschaltet werden. → Ressourcen: Arbeit & Finanzen</p></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-14" onclick="toggleGlossar(this)">Anosognosie <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-14" data-action="toggleGlossar">Anosognosie <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-14"><p>Fehlende Krankheitseinsicht als Symptom der Erkrankung — nicht als bewusste Entscheidung. Betrifft bis zu 40–60% der Betroffenen in manischen Phasen. Besonders belastend für Angehörige, weil Gespräche über die Erkrankung dadurch erschwert werden.</p><span class="gd-module">→ Modul 4</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-15" onclick="toggleGlossar(this)">Co-Isolation <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-15" data-action="toggleGlossar">Co-Isolation <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-15"><p>Sozialer Rückzug, der entsteht, weil Angehörige aus Scham, Erschöpfung oder Zeitmangel Kontakte reduzieren. Verstärkt die Belastung, weil das stützende Umfeld wegfällt.</p><span class="gd-module">→ Modul 3</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-16" onclick="toggleGlossar(this)">Euthymie <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-16" data-action="toggleGlossar">Euthymie <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-16"><p>Stabile Stimmungslage zwischen den Episoden — die «normale» Phase. Wichtigste Zeit für Prävention, Kommunikation und Krisenplan-Erstellung.</p><span class="gd-module">→ Modul 1</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-17" onclick="toggleGlossar(this)">Rapid Cycling <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-17" data-action="toggleGlossar">Rapid Cycling <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-17"><p>Besonders belastende Verlaufsform mit vier oder mehr Episoden pro Jahr. Kürzere stabile Phasen bedeuten weniger Erholungszeit für Angehörige.</p><span class="gd-module">→ Modul 1</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-18" onclick="toggleGlossar(this)">Schonhaltung <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-18" data-action="toggleGlossar">Schonhaltung <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-18"><p>Unbewusste Strategie von Angehörigen, eigene Bedürfnisse und Gefühle (besonders Wut) zu unterdrücken, um den Partner nicht zu belasten. Kurzfristig stabilisierend, langfristig erschöpfend.</p><span class="gd-module">→ Modul 3</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-19" onclick="toggleGlossar(this)">Schweigepflichtentbindung <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-19" data-action="toggleGlossar">Schweigepflichtentbindung <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-19"><p>Schriftliche Erklärung, mit der die erkrankte Person dem Behandlungsteam erlaubt, mit Angehörigen zu sprechen. Am besten in einer stabilen Phase vereinbaren. Ermöglicht Angehörigen, ihre Beobachtungen einzubringen.</p><span class="gd-module">→ Modul 5</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-20" onclick="toggleGlossar(this)">Lithium <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-20" data-action="toggleGlossar">Lithium <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-20"><p>Stimmungsstabilisierendes Medikament — Goldstandard in der Behandlung bipolarer Störungen. Regelmässige Blutspiegel-Kontrollen notwendig. Wirkt vorbeugend gegen manische und depressive Episoden.</p><span class="gd-module">→ Modul 1</span></div>
 </div>
 
 <div class="glossar-item">
-<button class="glossar-term" aria-expanded="false" aria-controls="glossar-21" onclick="toggleGlossar(this)">Valproat / Lamotrigin <span class="gt-arrow">›</span></button>
+<button class="glossar-term" aria-expanded="false" aria-controls="glossar-21" data-action="toggleGlossar">Valproat / Lamotrigin <span class="gt-arrow">›</span></button>
 <div class="glossar-def" id="glossar-21"><p>Stimmungsstabilisierende Medikamente, die alternativ oder ergänzend zu Lithium eingesetzt werden. Valproat wirkt stärker gegen Manie, Lamotrigin stärker gegen depressive Episoden.</p><span class="gd-module">→ Modul 1</span></div>
 </div>
 
@@ -304,52 +304,52 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 <div class="faq-list">
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-1" onclick="toggleFaq(this)">Können meine Kinder die bipolare Störung erben? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-1" data-action="toggleFaq">Können meine Kinder die bipolare Störung erben? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-1"><div class="faq-a-inner">Die Heritabilität der bipolaren Störung liegt bei 60–85 % — genetische Faktoren spielen also eine grosse Rolle. Ein erhöhtes Risiko ist aber keine Gewissheit: Die meisten Kinder mit einem betroffenen Elternteil erkranken nicht. Frühzeitige Aufmerksamkeit für Frühzeichen schützt. Sprechen Sie das Behandlungsteam direkt an. <em>(Craddock &amp; Sklar, 2013)</em></div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-2" onclick="toggleFaq(this)">Darf ich über Trennung nachdenken? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-2" data-action="toggleFaq">Darf ich über Trennung nachdenken? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-2"><div class="faq-a-inner">Ja. Ambivalenz ist normal und kein Verrat. Die Frage «Gehen oder Bleiben» ist eine der zentralen Fragen für Angehörige. Professionelle Begleitung hilft, diese Frage nicht aus Schuld oder Angst zu beantworten, sondern aus einer realistischen Einschätzung der eigenen Ressourcen. Mehr dazu in <a href="/modul/2/">Modul 2</a>.</div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-3" onclick="toggleFaq(this)">Was tue ich, wenn mein*e Partner*in die Medikamente absetzt? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-3" data-action="toggleFaq">Was tue ich, wenn mein*e Partner*in die Medikamente absetzt? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-3"><div class="faq-a-inner">Medikamenten-Ambivalenz ist häufig — besonders wenn Nebenwirkungen die Lebensqualität beeinträchtigen oder die Manie als «produktiv» erlebt wird. Vermeiden Sie Ultimaten. Sprechen Sie das Thema in einer stabilen Phase an, idealerweise gemeinsam mit dem Behandlungsteam. Ein Krisenplan (<a href="/modul/5/">Modul 5</a>) hält fest, was passiert, wenn Medikamente eigenmächtig abgesetzt werden.</div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-4" onclick="toggleFaq(this)">Wie spreche ich Suizidgedanken an? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-4" data-action="toggleFaq">Wie spreche ich Suizidgedanken an? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-4"><div class="faq-a-inner">Direkt und ohne Umwege. Die Frage «Denkst du daran, dir etwas anzutun?» löst Suizidgedanken nicht aus — sie gibt Raum. Wenn akute Gefahr besteht: Psychiatrischer Notfalldienst Zürich <a href="tel:0800336655" class="danger-bold">0800 33 66 55</a> (24/7, kostenlos) oder Sanität <a href="tel:144">144</a>. Mehr in <a href="/modul/5/">Modul 5</a>.</div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-5" onclick="toggleFaq(this)">Bin ich schuld an den Episoden meines Partners? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-5" data-action="toggleFaq">Bin ich schuld an den Episoden meines Partners? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-5"><div class="faq-a-inner">Nein. Episoden werden durch biologische Faktoren ausgelöst — nicht durch das Verhalten von Angehörigen. Was Angehörige beeinflussen können, ist das Kommunikationsklima (Expressed Emotion). Das ist etwas anderes als Schuld. Familienorientierte Therapie kann helfen, ungünstige Muster zu verändern. Siehe <a href="/modul/4/">Modul 4</a>.</div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-6" onclick="toggleFaq(this)">Wo finde ich andere Angehörige zum Austausch? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-6" data-action="toggleFaq">Wo finde ich andere Angehörige zum Austausch? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-6"><div class="faq-a-inner"><a href="https://www.vaskzuerich.ch" target="_blank" rel="noopener">VASK Zürich</a> bietet Gesprächsgruppen speziell für Angehörige. Die <a href="https://www.selbsthilfezuerich.ch" target="_blank" rel="noopener">Selbsthilfe Zürich</a> vermittelt Selbsthilfegruppen. Und die Psychoedukationsgruppen der PUK ermöglichen den Austausch mit anderen Betroffenen in einem professionell begleiteten Rahmen.</div></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-7" onclick="toggleFaq(this)">Wie erkläre ich die Krankheit meinen Kindern? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-7" data-action="toggleFaq">Wie erkläre ich die Krankheit meinen Kindern? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-7"><p>Altersgerecht und ehrlich. «Mama/Papa hat eine Krankheit, die die Gefühle durcheinanderbringt. Manchmal ist sie/er sehr traurig, manchmal sehr aufgeregt. Das hat nichts mit dir zu tun.» Kinder spüren, wenn etwas nicht stimmt — Schweigen schafft mehr Angst als altersgerechte Erklärungen. Pro Juventute (<a href="tel:147">147</a>) berät auch Eltern.</p></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-8" onclick="toggleFaq(this)">Wann brauche ich selbst professionelle Hilfe? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-8" data-action="toggleFaq">Wann brauche ich selbst professionelle Hilfe? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-8"><p>Wenn Sie anhaltend schlecht schlafen, ständig grübeln, Angst haben, sich sozial zurückziehen oder körperliche Symptome entwickeln (Erschöpfung, Kopfschmerzen, Magenbeschwerden). Wenn Ihre Stimmung dauerhaft mit den Episoden Ihres Partners mitschwingt. Und: Sie müssen nicht «am Ende sein», um Hilfe zu suchen — frühzeitig ist besser als zu spät.</p></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-9" onclick="toggleFaq(this)">Was ist der Unterschied zwischen Bipolar I und II? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-9" data-action="toggleFaq">Was ist der Unterschied zwischen Bipolar I und II? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-9"><p>Bei <strong>Bipolar I</strong> treten voll ausgeprägte Manien auf — mit möglichem Realitätsverlust, Grössenideen und massiver Enthemmung. Bei <strong>Bipolar II</strong> gibt es Hypomanien (abgeschwächte Manien) und ausgeprägte Depressionen. Bipolar II ist nicht «milder» — die Depressionen sind oft schwerer und langanhaltender. Die Behandlung unterscheidet sich teilweise.</p></div>
 </div>
 
 <div class="faq-item">
-<button class="faq-q" aria-expanded="false" aria-controls="faq-10" onclick="toggleFaq(this)">Kann mein*e Partner*in mit bipolarer Störung arbeiten? <span class="fq-arrow">›</span></button>
+<button class="faq-q" aria-expanded="false" aria-controls="faq-10" data-action="toggleFaq">Kann mein*e Partner*in mit bipolarer Störung arbeiten? <span class="fq-arrow">›</span></button>
 <div class="faq-a" id="faq-10"><p>Ja — viele Menschen mit bipolarer Störung arbeiten erfolgreich, besonders in stabilen Phasen. Entscheidend sind: verlässliche Medikation, ausreichend Schlaf, Stressmanagement und ein verständnisvolles Arbeitsumfeld. Bei längerer Arbeitsunfähigkeit unterstützt die IV-Stelle bei der beruflichen Eingliederung (Früherfassung).</p></div>
 </div>
 
@@ -392,14 +392,14 @@ Bei akuten Krisen wenden Sie sich an den <a href="tel:0800336655" class="danger-
 </div>
 </footer>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-modal">
 <div class="search-header">
-<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" oninput="doSearch(this.value)" autocomplete="off">
-<button class="search-close" onclick="closeSearch()">✕</button>
+<input type="text" aria-label="Suchbegriff eingeben" id="search-input" placeholder="Suchen — z.B. Krisenplan, Trennung, Suizid…" autocomplete="off">
+<button class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>

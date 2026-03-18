@@ -19,7 +19,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m6.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,25 +113,25 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
 
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
-<button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
+<button aria-label="Nach oben scrollen" id="back-to-top" data-action="scrollToTop" title="Nach oben">↑</button>
 <main>
 <div class="module-top mc-m6" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Was hilft: Selbstfürsorge und Handeln</span></div>
@@ -164,7 +164,7 @@
 <div class="module-card c6">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><h2>Handlungsfähig bleiben — für sich selbst und den Partner</h2><button class="share-btn" onclick="shareSection('m6',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><h2>Handlungsfähig bleiben — für sich selbst und den Partner</h2><button class="share-btn" data-action="shareSection" data-param="m6"" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 </div>
 </div>
 <div class="module-body">
@@ -463,7 +463,7 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Klartext + Grenze</div>
             «Ich liebe dich, aber ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»
-            <button class="boundary-why-btn" aria-controls="why-1" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-1" data-action="toggleWhy" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
 <div class="boundary-why" id="why-1">Ich-Botschaft + klare Konsequenz ohne Drohung. Die Grenze bezieht sich auf das Verhalten («anschreien»), nicht die Person — und signalisiert gleichzeitig Bereitschaft zur Rückkehr.</div>
 </div>
@@ -475,7 +475,7 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Konsequenz</div>
             «Wenn du die Medikamente absetzt, kann ich die Verantwortung zu Hause nicht mehr tragen. Dann müssen wir über die Klinik reden.»
-            <button class="boundary-why-btn" aria-controls="why-2" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-2" data-action="toggleWhy" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
 <div class="boundary-why" id="why-2">Drohungen («Ich gehe!») werden oft nicht ernst genommen und eskalieren. Eine Konsequenz benennt konkret was passiert — ohne Bestrafung, aber mit klarer Information. Das respektiert die Autonomie beider.</div>
 </div>
@@ -487,7 +487,7 @@
 <div class="boundary-col good-col">
 <div class="boundary-type">Sorge + Verantwortung</div>
             «Ich mache mir Sorgen, wenn ich sehe, dass die Packung noch voll ist. Was brauchst du, um dran zu bleiben?»
-            <button class="boundary-why-btn" aria-controls="why-3" onclick="toggleWhy(this)" aria-expanded="false">💡 Warum ist das besser?</button>
+            <button class="boundary-why-btn" aria-controls="why-3" data-action="toggleWhy" aria-expanded="false">💡 Warum ist das besser?</button>
 </div>
 <div class="boundary-why" id="why-3">Kontrollfragen («Schon wieder?») lösen Scham und Widerstand aus. Die Ich-Botschaft mit einer offenen Frage lässt dem Partner Handlungsspielraum — und überträgt die Verantwortung zurück an ihn.</div>
 </div>
@@ -690,27 +690,27 @@
 <div class="wa-q" id="wa-6-0">
 <p>Warum ist Selbstfürsorge für Angehörige so wichtig?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Selbstfürsorge dient nicht der Abgrenzung, sondern erhält Ihre Handlungsfähigkeit — und ist ein eigenständiges Recht." onclick="waSelect(this,'6-0')">Damit man sich vom Partner abgrenzen kann</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — wenn Sie ausbrennen, verliert Ihr Partner seine wichtigste Stütze. Selbstfürsorge ist die Basis, nicht der Luxus." onclick="waSelect(this,'6-0')">Sie ist die Voraussetzung, um langfristig unterstützen zu können</button>
-<button class="wa-opt" data-correct="false" data-fb="Selbstfürsorge ist keine Option, sondern Pflicht — und in stabilen wie in Krisenzeiten wichtig." onclick="waSelect(this,'6-0')">Sie ist optional und nur in Krisenzeiten nötig</button>
+<button class="wa-opt" data-correct="false" data-fb="Selbstfürsorge dient nicht der Abgrenzung, sondern erhält Ihre Handlungsfähigkeit — und ist ein eigenständiges Recht." data-action="waSelect" data-param="6-0"">Damit man sich vom Partner abgrenzen kann</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — wenn Sie ausbrennen, verliert Ihr Partner seine wichtigste Stütze. Selbstfürsorge ist die Basis, nicht der Luxus." data-action="waSelect" data-param="6-0"">Sie ist die Voraussetzung, um langfristig unterstützen zu können</button>
+<button class="wa-opt" data-correct="false" data-fb="Selbstfürsorge ist keine Option, sondern Pflicht — und in stabilen wie in Krisenzeiten wichtig." data-action="waSelect" data-param="6-0"">Sie ist optional und nur in Krisenzeiten nötig</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
 <div class="wa-q" id="wa-6-1">
 <p>Wann sollte ein Krisenplan erstellt werden?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="In einer akuten Krise fehlt die Ruhe für Planung. Der Krisenplan soll gerade verhindern, dass Sie in der Krise noch denken müssen." onclick="waSelect(this,'6-1')">Während einer akuten Krise</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — in stabilen Phasen gemeinsam erstellt, gibt der Krisenplan Sicherheit, wenn das Denken schwerfällt." onclick="waSelect(this,'6-1')">In einer stabilen Phase, gemeinsam mit dem Partner</button>
-<button class="wa-opt" data-correct="false" data-fb="Angehörige kennen Frühwarnzeichen oft am besten. Der Krisenplan sollte gemeinsam erstellt werden — mit Einbezug des Teams." onclick="waSelect(this,'6-1')">Nur vom Behandlungsteam, ohne Angehörige</button>
+<button class="wa-opt" data-correct="false" data-fb="In einer akuten Krise fehlt die Ruhe für Planung. Der Krisenplan soll gerade verhindern, dass Sie in der Krise noch denken müssen." data-action="waSelect" data-param="6-1"">Während einer akuten Krise</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — in stabilen Phasen gemeinsam erstellt, gibt der Krisenplan Sicherheit, wenn das Denken schwerfällt." data-action="waSelect" data-param="6-1"">In einer stabilen Phase, gemeinsam mit dem Partner</button>
+<button class="wa-opt" data-correct="false" data-fb="Angehörige kennen Frühwarnzeichen oft am besten. Der Krisenplan sollte gemeinsam erstellt werden — mit Einbezug des Teams." data-action="waSelect" data-param="6-1"">Nur vom Behandlungsteam, ohne Angehörige</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
 <div class="wa-q" id="wa-6-2">
 <p>Was kennzeichnet eine gesunde Grenzsetzung?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Ultimaten eskalieren und werden oft nicht ernst genommen. Gesunde Grenzen benennen Konsequenzen ohne Bestrafung." onclick="waSelect(this,'6-2')">Ultimaten stellen und Drohungen aussprechen</button>
-<button class="wa-opt" data-correct="false" data-fb="Alles mitmachen führt zu Erschöpfung und Burnout. Eine Grenze ist kein Egoismus, sondern gibt beiden Halt." onclick="waSelect(this,'6-2')">Alles mitmachen, um Konflikte zu vermeiden</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — eine Grenze ist keine Mauer, sondern ein Geländer. Sie gibt beiden Seiten Halt und schützt die Beziehung." onclick="waSelect(this,'6-2')">Klar, liebevoll und konsequent</button>
+<button class="wa-opt" data-correct="false" data-fb="Ultimaten eskalieren und werden oft nicht ernst genommen. Gesunde Grenzen benennen Konsequenzen ohne Bestrafung." data-action="waSelect" data-param="6-2"">Ultimaten stellen und Drohungen aussprechen</button>
+<button class="wa-opt" data-correct="false" data-fb="Alles mitmachen führt zu Erschöpfung und Burnout. Eine Grenze ist kein Egoismus, sondern gibt beiden Halt." data-action="waSelect" data-param="6-2"">Alles mitmachen, um Konflikte zu vermeiden</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — eine Grenze ist keine Mauer, sondern ein Geländer. Sie gibt beiden Seiten Halt und schützt die Beziehung." data-action="waSelect" data-param="6-2"">Klar, liebevoll und konsequent</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
@@ -815,8 +815,8 @@
 </div>
 <div class="module-feedback">
 <span class="feedback-label">War dieses Modul hilfreich?</span>
-<button class="feedback-btn" onclick="giveFeedback(this,'m6','ja')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
-<button class="feedback-btn" onclick="giveFeedback(this,'m6','nein')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m6" data-val="ja"" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m6" data-val="nein"" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
 <span class="feedback-thanks" id="fb-m6">Danke für Ihr Feedback.</span>
 </div>
 
@@ -867,15 +867,15 @@
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-box">
 <div class="search-input-wrap">
 <span class="section-num">🔎</span>
-<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
+<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche in allen Modulen…" type="text"/>
+<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div class="search-results" id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>

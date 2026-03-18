@@ -19,7 +19,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/shared.css?v=f9dedeb">
+<link rel="stylesheet" href="/shared.css?v=3e59e51">
 <meta property="og:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-m5.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,25 +113,25 @@
 </div>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" onclick="openSearch()" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" onclick="toggleBookmarks()" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" title="Lesezeichen">🔖</button>
 <div class="bookmark-panel" id="bookmark-panel">
 <div class="bp-title">🔖 Lesezeichen</div>
 <div id="bookmark-list">Noch keine Lesezeichen gesetzt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" onclick="toggleSettings()" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" title="Ansicht" aria-label="Ansicht">⚙️</button>
 <div class="settings-panel" id="settings-panel">
-<button id="font-toggle" onclick="toggleFont()" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" onclick="toggleReadmode()" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
 </div>
 </div>
-<button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menü öffnen" title="Menü">
+<button class="hamburger" id="hamburger" data-action="toggleNav" aria-label="Menü öffnen" title="Menü">
 <span></span><span></span><span></span>
 </button>
 </nav>
 
 <button aria-label="Weiterlesen ab letzter Position" id="continue-reading"></button>
-<button aria-label="Nach oben scrollen" id="back-to-top" onclick="scrollToTop()" title="Nach oben">↑</button>
+<button aria-label="Nach oben scrollen" id="back-to-top" data-action="scrollToTop" title="Nach oben">↑</button>
 <main>
 <div class="module-top mc-m5" >
 <div class="breadcrumb"><a href="/">Startseite</a> <span class="bc-sep">›</span> <span>Loyalitätskonflikte und Beziehungsstress</span></div>
@@ -164,7 +164,7 @@
 <div class="module-card c5">
 <div class="module-header">
 <div class="module-header-text">
-<div class="module-h2-wrap"><h2>Wenn gut gemeinte Reaktionen Stress erzeugen — und das innere Dilemma</h2><button class="share-btn" onclick="shareSection('m5',this)" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
+<div class="module-h2-wrap"><h2>Wenn gut gemeinte Reaktionen Stress erzeugen — und das innere Dilemma</h2><button class="share-btn" data-action="shareSection" data-param="m5"" title="Link zu diesem Modul kopieren">🔗 Teilen</button></div>
 </div>
 </div>
 <div class="module-body">
@@ -211,19 +211,19 @@
 <div class="loyalty-wrap">
 <div class="loyalty-col left">
 <div class="loyalty-col-title text-m3">Verpflichtung</div>
-<div class="loyalty-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
 <span class="li-icon">💛</span>
             «Ich darf ihn/sie nicht im Stich lassen.»
           </div>
-<div class="loyalty-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
 <span class="li-icon">💛</span>
             «Er/sie kann nichts für die Erkrankung.»
           </div>
-<div class="loyalty-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
 <span class="li-icon">💛</span>
             «Ich habe versprochen, da zu sein.»
           </div>
-<div class="loyalty-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
 <span class="li-icon">💛</span>
             «Wenn ich gehe, bricht alles zusammen.»
           </div>
@@ -234,19 +234,19 @@
 </div>
 <div class="loyalty-col right">
 <div class="loyalty-col-title text-m2">Selbstschutz</div>
-<div class="loyalty-item right-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item right-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
             «Ich kann nicht mehr.»
             <span class="li-icon">🛡️</span>
 </div>
-<div class="loyalty-item right-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item right-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
             «Meine eigene Gesundheit leidet.»
             <span class="li-icon">🛡️</span>
 </div>
-<div class="loyalty-item right-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item right-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
             «Ich brauche Abstand, um weiterzumachen.»
             <span class="li-icon">🛡️</span>
 </div>
-<div class="loyalty-item right-item" onclick="toggleLoyalty(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleLoyalty(this)" role="button" tabindex="0">
+<div class="loyalty-item right-item" data-action="toggleLoyalty" data-keyaction="toggleLoyalty" role="button" tabindex="0">
             «Meine Kinder brauchen auch einen gesunden Elternteil.»
             <span class="li-icon">🛡️</span>
 </div>
@@ -287,22 +287,22 @@
 <text fill="#8a6a3a" font-family="Source Sans 3,sans-serif" font-size="19" font-weight="700" text-anchor="middle" x="170" y="208">kreis</text>
 <text fill="#a08060" font-family="Source Sans 3,sans-serif" font-size="15" font-style="italic" text-anchor="middle" x="170" y="230.0">anklicken</text>
 
-<circle aria-label="Schuldgefühle — klicken für Details" cx="170" cy="64.9" fill="white" id="ee-svg-1" onclick="highlightEE(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();highlightEE(1)}" r="52" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
+<circle aria-label="Schuldgefühle — klicken für Details" cx="170" cy="64.9" fill="white" id="ee-svg-1" data-action="highlightEE" data-param="1" data-keyaction="highlightEE" r="52" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
 <text fill="#7a6050" font-family="Source Sans 3,sans-serif" font-size="18" text-anchor="middle" x="170" y="56.6">😰</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="170" y="70">Schuld-</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="170" y="88">gefühle</text>
 
-<circle aria-label="Überinvolvement — klicken für Details" cx="285" cy="200.6" fill="white" id="ee-svg-2" onclick="highlightEE(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();highlightEE(2)}" r="60" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
+<circle aria-label="Überinvolvement — klicken für Details" cx="285" cy="200.6" fill="white" id="ee-svg-2" data-action="highlightEE" data-param="2" data-keyaction="highlightEE" r="60" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
 <text fill="#7a6050" font-family="Source Sans 3,sans-serif" font-size="18" text-anchor="middle" x="285" y="192.3">🔍</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="285" y="205">Über-</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="285" y="223">involvement</text>
 
-<circle aria-label="Erschöpfung — klicken für Details" cx="170" cy="336.3" fill="white" id="ee-svg-3" onclick="highlightEE(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();highlightEE(3)}" r="52" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
+<circle aria-label="Erschöpfung — klicken für Details" cx="170" cy="336.3" fill="white" id="ee-svg-3" data-action="highlightEE" data-param="3" data-keyaction="highlightEE" r="52" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
 <text fill="#7a6050" font-family="Source Sans 3,sans-serif" font-size="18" text-anchor="middle" x="170" y="324">😮‍💨</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="170" y="341">Erschöp-</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="170" y="359">fung</text>
 
-<circle aria-label="Kritik und Hostilität — klicken für Details" cx="55" cy="200.6" fill="white" id="ee-svg-4" onclick="highlightEE(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();highlightEE(4)}" r="55" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
+<circle aria-label="Kritik und Hostilität — klicken für Details" cx="55" cy="200.6" fill="white" id="ee-svg-4" data-action="highlightEE" data-param="4" data-keyaction="highlightEE" r="55" role="button" stroke="#d4c8b0" stroke-width="1.5" class="pointer" tabindex="0"></circle>
 <text fill="#7a6050" font-family="Source Sans 3,sans-serif" font-size="18" text-anchor="middle" x="55" y="192.3">😤</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="55" y="205">Kritik &amp;</text>
 <text fill="#5a4a3a" font-family="Source Sans 3,sans-serif" font-size="15.5" font-weight="700" text-anchor="middle" x="55" y="223">Hostilität</text>
@@ -505,62 +505,7 @@
 </div>
 
 <div class="wave-chart-wrap mb-md">
-<style>
-.kk-wrap{font-family:inherit;max-width:520px;margin:0 auto;padding:0 4px}
-.kk-title{text-align:center;margin-bottom:16px}
-.kk-title h3{font-size:1.18rem;font-weight:700;color:#3d3530;margin:0 0 6px;line-height:1.3}
-.kk-title p{font-size:.82rem;color:#8a7e76;margin:0;line-height:1.4}
-.kk-title strong{color:var(--muted)}
-.kk-axis-top,.kk-axis-bottom{display:grid;grid-template-columns:24px 1fr 24px}
-.kk-axis-top{margin-bottom:4px}
-.kk-axis-bottom{margin-top:4px;margin-bottom:12px}
-.kk-axis-label{display:flex;justify-content:center;align-items:center;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.kk-axis-label.red{color:var(--danger)}
-.kk-axis-label.green{color:var(--success)}
-.kk-main{display:grid;grid-template-columns:24px 1fr 24px;gap:0}
-.kk-side{writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.kk-side.left{transform:rotate(180deg);color:var(--danger)}
-.kk-side.right{color:var(--success)}
-.kk-q{border-radius:14px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:all .2s;position:relative;border:2px solid;outline:none;-webkit-tap-highlight-color:transparent}
-.kk-q:focus-visible{outline:2px solid #3d3530;outline-offset:2px}
-.kk-q .kk-icon{font-size:1.35rem}
-.kk-q .kk-label{font-size:.875rem;font-weight:700;line-height:1.2;text-align:center}
-.kk-q .kk-sub{font-size:.69rem;color:#8a7e76;line-height:1.2}
-.kk-badge{position:absolute;top:6px;right:6px;font-size:.56rem;font-weight:700;color:var(--success);background:#d4edda;padding:2px 7px;border-radius:4px;letter-spacing:.04em}
-.kk-gradient{display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:14px;padding:8px 12px;background:#f8f6f4;border-radius:10px}
-.kk-gradient .left{font-size:.75rem;color:var(--danger)}
-.kk-gradient .right{font-size:.75rem;color:var(--success)}
-.kk-gradient .bar{flex:1;height:2px;background:linear-gradient(to right,var(--danger),#b8860b,var(--success));border-radius:2px}
-.kk-detail{border-radius:14px;padding:16px 14px;transition:all .25s ease;min-height:140px;border:1.5px solid #e8e2dc;background:#f8f6f4}
-.kk-detail .kk-verdict{display:inline-block;font-size:.75rem;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:10px}
-.kk-detail .kk-situation{font-size:.75rem;color:#8a7e76;margin:0 0 8px;line-height:1.4;font-style:italic}
-.kk-detail .kk-says{font-size:.94rem;margin:0 0 10px;line-height:1.5;font-weight:600;font-style:italic;padding:8px 10px;background:rgba(255,255,255,.6);border-radius:8px;border-left:3px solid}
-.kk-detail .kk-effect{font-size:.81rem;color:var(--muted);margin:0 0 8px;line-height:1.5}
-.kk-detail .kk-why{font-size:.75rem;color:#8a7e76;margin:0;line-height:1.5}
-.kk-detail .kk-empty{text-align:center;padding:12px 0}
-.kk-detail .kk-empty p{margin:0 0 8px;line-height:1.5}
-.kk-detail .kk-empty p:last-child{margin:0}
-.kk-rule{margin-top:14px;padding:12px 14px;background:#edf5f0;border-radius:12px;border:1.5px solid #a8d5ba;text-align:center}
-.kk-rule p{font-size:.81rem;color:var(--success);margin:0;line-height:1.6}
-/* quadrant color states */
-.kk-q[data-id="topLeft"]{background:#fdf0ed;border-color:#e6b8af}
-.kk-q[data-id="topLeft"] .kk-label{color:var(--danger)}
-.kk-q[data-id="topLeft"].active{background:#fbe3dd;border-color:var(--danger)}
-.kk-q[data-id="topRight"]{background:#fef9ec;border-color:#e6d5a0}
-.kk-q[data-id="topRight"] .kk-label{color:#b8860b}
-.kk-q[data-id="topRight"].active{background:#fdf0d0;border-color:#b8860b}
-.kk-q[data-id="bottomLeft"]{background:#fef9ec;border-color:#e6d5a0}
-.kk-q[data-id="bottomLeft"] .kk-label{color:#b8860b}
-.kk-q[data-id="bottomLeft"].active{background:#fdf0d0;border-color:#b8860b}
-.kk-q[data-id="bottomRight"]{background:#edf5f0;border-color:#a8d5ba}
-.kk-q[data-id="bottomRight"] .kk-label{color:var(--success)}
-.kk-q[data-id="bottomRight"].active{background:#d4edda;border-color:var(--success)}
-@media (max-width: 768px){
-.kk-wrap{max-width:none}
-.kk-q .kk-label{font-size:.78rem}
-.kk-q .kk-sub{font-size:.62rem}
-}
-</style>
+
 <div class="kk-wrap" role="region" aria-label="Kommunikations-Kompass: Was sage ich — und wann?">
   
   <div class="kk-title">
@@ -578,22 +523,22 @@
   <div class="kk-main">
     <div class="kk-side left">← «Du bist…»</div>
     <div class="kk-grid">
-      <button class="kk-q" data-id="topLeft" onclick="kkToggle('topLeft')" aria-label="Bewertung in der Krise" aria-expanded="false" aria-controls="kk-detail">
+      <button class="kk-q" data-id="topLeft" data-action="kkToggle" data-param="topLeft"" aria-label="Bewertung in der Krise" aria-expanded="false" aria-controls="kk-detail">
         <span class="kk-icon">🔥</span>
         <span class="kk-label">Bewertung</span>
         <span class="kk-sub">in der Krise</span>
       </button>
-      <button class="kk-q" data-id="topRight" onclick="kkToggle('topRight')" aria-label="Beobachtung in der Krise" aria-expanded="false" aria-controls="kk-detail">
+      <button class="kk-q" data-id="topRight" data-action="kkToggle" data-param="topRight"" aria-label="Beobachtung in der Krise" aria-expanded="false" aria-controls="kk-detail">
         <span class="kk-icon">🕐</span>
         <span class="kk-label">Beobachtung</span>
         <span class="kk-sub">in der Krise</span>
       </button>
-      <button class="kk-q" data-id="bottomLeft" onclick="kkToggle('bottomLeft')" aria-label="Du-Botschaft in stabiler Phase" aria-expanded="false" aria-controls="kk-detail">
+      <button class="kk-q" data-id="bottomLeft" data-action="kkToggle" data-param="bottomLeft"" aria-label="Du-Botschaft in stabiler Phase" aria-expanded="false" aria-controls="kk-detail">
         <span class="kk-icon">💬</span>
         <span class="kk-label">Du-Botschaft</span>
         <span class="kk-sub">stabile Phase</span>
       </button>
-      <button class="kk-q" data-id="bottomRight" onclick="kkToggle('bottomRight')" aria-label="Ich-Botschaft in stabiler Phase — Zielzone" aria-expanded="false" aria-controls="kk-detail">
+      <button class="kk-q" data-id="bottomRight" data-action="kkToggle" data-param="bottomRight"" aria-label="Ich-Botschaft in stabiler Phase — Zielzone" aria-expanded="false" aria-controls="kk-detail">
         <span class="kk-badge">ZIEL</span>
         <span class="kk-icon">💚</span>
         <span class="kk-label">Ich-Botschaft</span>
@@ -628,82 +573,7 @@
     Stabile Phase wählen · Ich statt Du · 1 Satz · 1 Thema</p>
   </div>
 </div>
-<script>
-(function(){
-  var data = {
-    topLeft: {
-      marker: "❌", verdict: "Grösster Schaden",
-      color: "#c0392b", bg: "#fdf0ed", bgActive: "#fbe3dd", border: "#e6b8af",
-      situation: "Ihr Partner hat seit Tagen nicht geschlafen und gibt unkontrolliert Geld aus.",
-      says: "«Du bist total verantwortungslos! Du ruinierst uns!»",
-      effect: "Eskalation. Ihr Partner fühlt sich angegriffen, reagiert mit Abwehr oder Gegenangriff. Die Manie verstärkt die Reaktion.",
-      why: "Bewertung + Krise = maximaler Schaden. In der Manie fehlt die Fähigkeit zur Selbstreflexion. Jede Kritik wird als Angriff verarbeitet."
-    },
-    topRight: {
-      marker: "⚠️", verdict: "Richtige Worte, falscher Zeitpunkt",
-      color: "#b8860b", bg: "#fef9ec", bgActive: "#fdf0d0", border: "#e6d5a0",
-      situation: "Ihr Partner hat seit Tagen nicht geschlafen und gibt unkontrolliert Geld aus.",
-      says: "«Mir fällt auf, dass du seit drei Nächten kaum geschlafen hast.»",
-      effect: "Besser formuliert — aber der Zeitpunkt ist schlecht. In der akuten Manie kann Ihr Partner diese Information nicht verarbeiten.",
-      why: "Die Beobachtung ist richtig, aber die Krise ist der falsche Moment. Besser: Sicherheit gewährleisten, Gespräch auf stabile Phase verschieben."
-    },
-    bottomLeft: {
-      marker: "⚠️", verdict: "Richtiger Zeitpunkt, falsche Worte",
-      color: "#b8860b", bg: "#fef9ec", bgActive: "#fdf0d0", border: "#e6d5a0",
-      situation: "Stabile Phase. Sie möchten über die letzte Episode sprechen.",
-      says: "«Du machst mich wahnsinnig mit deinen Stimmungsschwankungen.»",
-      effect: "Der Zeitpunkt stimmt — aber die Formulierung verletzt. Ihr Partner hört einen Vorwurf statt eines Gesprächsangebots.",
-      why: "«Du machst…» erzeugt Schuld und Abwehr. Der richtige Zeitpunkt wird durch die falsche Sprache verschenkt."
-    },
-    bottomRight: {
-      marker: "✅", verdict: "✓ Zielzone",
-      color: "#2d6a4f", bg: "#edf5f0", bgActive: "#d4edda", border: "#a8d5ba",
-      situation: "Stabile Phase. Sie möchten über die letzte Episode sprechen.",
-      says: "«Ich mache mir Sorgen, wenn du nicht schläfst. Können wir darüber reden, was mir helfen würde?»",
-      effect: "Ihr Partner fühlt sich respektiert, nicht angegriffen. Ein Gespräch auf Augenhöhe wird möglich.",
-      why: "1 Satz, 1 Thema, Ich-Perspektive. Keine Schuldzuweisung. Der richtige Moment für die richtige Sprache — das öffnet Türen."
-    }
-  };
-  var active = null;
-  var btns = document.querySelectorAll('.kk-q');
-  var panel = document.getElementById('kk-detail');
-  window.kkToggle = function(id) {
-    // Toggle
-    if (active === id) { active = null; } else { active = id; }
-    // Update buttons
-    btns.forEach(function(b) {
-      var bId = b.getAttribute('data-id');
-      if (bId === active) {
-        b.classList.add('active');
-        b.setAttribute('aria-expanded', 'true');
-      } else {
-        b.classList.remove('active');
-        b.setAttribute('aria-expanded', 'false');
-      }
-    });
-    // Update detail panel
-    if (!active) {
-      panel.style.background = '#f8f6f4';
-      panel.style.borderColor = '#e8e2dc';
-      panel.innerHTML =
-        '<div class="kk-empty">' +
-        '<p class="text-sm-muted">Klicken Sie auf ein Feld.</p>' +
-        '<p class="text-xs-muted">Dieselbe Situation — vier verschiedene Reaktionen.<br>' +
-        'Was verändert sich, wenn Sie den Zeitpunkt oder die Worte ändern?</p></div>';
-      return;
-    }
-    var d = data[active];
-    panel.style.background = d.bg;
-    panel.style.borderColor = d.border;
-    panel.innerHTML =
-      '<div class="kk-verdict" style="color:' + d.color + ';background:' + d.bgActive + '">' + d.marker + ' ' + d.verdict + '</div>' +
-      '<p class="kk-situation">Situation: ' + d.situation + '</p>' +
-      '<p class="kk-says" style="color:' + d.color + ';border-left-color:' + d.color + '">' + d.says + '</p>' +
-      '<p class="kk-effect"><strong>Wirkung:</strong> ' + d.effect + '</p>' +
-      '<p class="kk-why">💡 ' + d.why + '</p>';
-  };
-})();
-</script>
+
 </div>
 
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4C40,0 60,8 100,4C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width=".5"/></svg></div>
@@ -903,18 +773,18 @@
 <div class="wa-q" id="wa-5-0">
 <p>Was beschreibt «Expressed Emotion»?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="EE beschreibt das Gegenteil: Kritik, Überengagement und Feindseligkeit, die Rückfälle begünstigen." onclick="waSelect(this,'5-0')">Offene, ehrliche Kommunikation</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — und dieser Kreislauf ist unterbrechbar durch bewusstere Kommunikation." onclick="waSelect(this,'5-0')">Kritik, Überengagement und Feindseligkeit im Familienumfeld</button>
-<button class="wa-opt" data-correct="false" data-fb="Es ist ein Forschungskonzept, das Kommunikationsmuster beschreibt — keine Therapiemethode." onclick="waSelect(this,'5-0')">Eine Therapiemethode</button>
+<button class="wa-opt" data-correct="false" data-fb="EE beschreibt das Gegenteil: Kritik, Überengagement und Feindseligkeit, die Rückfälle begünstigen." data-action="waSelect" data-param="5-0"">Offene, ehrliche Kommunikation</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — und dieser Kreislauf ist unterbrechbar durch bewusstere Kommunikation." data-action="waSelect" data-param="5-0"">Kritik, Überengagement und Feindseligkeit im Familienumfeld</button>
+<button class="wa-opt" data-correct="false" data-fb="Es ist ein Forschungskonzept, das Kommunikationsmuster beschreibt — keine Therapiemethode." data-action="waSelect" data-param="5-0"">Eine Therapiemethode</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
 <div class="wa-q" id="wa-5-1">
 <p>Welche Kommunikationsstrategie hilft am meisten?</p>
 <div class="wa-opts">
-<button class="wa-opt" data-correct="false" data-fb="Kritik erhöht das Rückfallrisiko. Beobachtung statt Bewertung ist wirksamer." onclick="waSelect(this,'5-1')">Deutliche Kritik, damit der Partner aufwacht</button>
-<button class="wa-opt" data-correct="true" data-fb="Richtig — «Ich sehe, dass du seit drei Tagen nicht geschlafen hast» statt «Du bist wieder manisch»." onclick="waSelect(this,'5-1')">Beobachtung statt Bewertung</button>
-<button class="wa-opt" data-correct="false" data-fb="Grenzenlosigkeit hilft niemandem. Sachliche Beobachtung ohne Bewertung ist der Mittelweg." onclick="waSelect(this,'5-1')">Alles akzeptieren und nichts ansprechen</button>
+<button class="wa-opt" data-correct="false" data-fb="Kritik erhöht das Rückfallrisiko. Beobachtung statt Bewertung ist wirksamer." data-action="waSelect" data-param="5-1"">Deutliche Kritik, damit der Partner aufwacht</button>
+<button class="wa-opt" data-correct="true" data-fb="Richtig — «Ich sehe, dass du seit drei Tagen nicht geschlafen hast» statt «Du bist wieder manisch»." data-action="waSelect" data-param="5-1"">Beobachtung statt Bewertung</button>
+<button class="wa-opt" data-correct="false" data-fb="Grenzenlosigkeit hilft niemandem. Sachliche Beobachtung ohne Bewertung ist der Mittelweg." data-action="waSelect" data-param="5-1"">Alles akzeptieren und nichts ansprechen</button>
 </div>
 <div class="wa-feedback"></div>
 </div>
@@ -1007,8 +877,8 @@
 </div>
 <div class="module-feedback">
 <span class="feedback-label">War dieses Modul hilfreich?</span>
-<button class="feedback-btn" onclick="giveFeedback(this,'m5','ja')" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
-<button class="feedback-btn" onclick="giveFeedback(this,'m5','nein')" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m5" data-val="ja"" aria-label="Ja, dieses Modul war hilfreich">👍 Ja</button>
+<button class="feedback-btn" data-action="giveFeedback" data-param="m5" data-val="nein"" aria-label="Nein, dieses Modul war nicht hilfreich">👎 Nein</button>
 <span class="feedback-thanks" id="fb-m5">Danke für Ihr Feedback.</span>
 </div>
 </div>
@@ -1055,12 +925,12 @@
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
 </div>
 </footer>
-<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+<div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-box">
 <div class="search-input-wrap">
 <span class="section-num">🔎</span>
-<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" oninput="doSearch(this.value)" placeholder="Suche in allen Modulen…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" onclick="closeSearch()">✕</button>
+<input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche in allen Modulen…" type="text"/>
+<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
 </div>
 <div class="search-results" id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
@@ -1068,9 +938,9 @@
 </div>
 </div>
 
-<script src="/init.js?v=f9dedeb" defer></script>
-<script src="/main.js?v=f9dedeb" defer></script>
-<script src="/search.js?v=f9dedeb" defer></script>
+<script src="/init.js?v=3e59e51" defer></script>
+<script src="/main.js?v=3e59e51" defer></script>
+<script src="/search.js?v=3e59e51" defer></script>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
   <span class="notfall-fab-icon">🆘</span>
   <span class="notfall-fab-label">Hilfe</span>

@@ -6,6 +6,78 @@ function escHtml(str) {
   return d.innerHTML;
 }
 
+// ═══════════════════════════════════════════════════════
+// EVENT DELEGATION — ersetzt alle inline onclick/onkeydown
+// ═══════════════════════════════════════════════════════
+
+// Action dispatch map: action name → handler function
+// Functions that need 'this' (the clicked element) receive it as first arg
+// Functions that need a parameter get it from data-param
+var ACTION_MAP = {
+  // Nav & Global
+  toggleNav: function() { toggleNav(); },
+  openSearch: function() { openSearch(); },
+  closeSearch: function() { closeSearch(); },
+  closeSearchOverlay: function(el, e) { if (e.target === el) closeSearch(); },
+  toggleSettings: function() { toggleSettings(); },
+  toggleFont: function() { toggleFont(); },
+  toggleReadmode: function() { toggleReadmode(); },
+  toggleBookmarks: function() { toggleBookmarks(); },
+  scrollToTop: function() { scrollToTop(); },
+
+  // this-delegated
+  toggleFaq: function(el) { toggleFaq(el); },
+  toggleGlossar: function(el) { toggleGlossar(el); },
+  toggleMG: function(el) { toggleMG(el); },
+  toggleWhy: function(el) { toggleWhy(el); },
+  toggleLoyalty: function(el) { toggleLoyalty(el); },
+  togglePD: function(el) { togglePD(el); },
+  toggleAllPhases: function(el) { toggleAllPhases(el); },
+
+  // Parameterized
+  showPole: function(el) { showPole(el.dataset.param); },
+  showPhase: function(el) { showPhase(Number(el.dataset.param)); },
+  showSlide: function(el) { showSlide(Number(el.dataset.param)); },
+  setRoleStage: function(el) { setRoleStage(Number(el.dataset.param)); },
+  highlightEE: function(el) { highlightEE(Number(el.dataset.param)); },
+  hvToggle: function(el) { hvToggle(el.dataset.param); },
+  kkToggle: function(el) { kkToggle(el.dataset.param); },
+  slToggle: function(el) { slToggle(el.dataset.param); },
+  filterHandouts: function(el) { filterHandouts(el.dataset.param); },
+  shareSection: function(el) { shareSection(el.dataset.param, el); },
+  copyNum: function(el) { copyNum(el.dataset.param, el); },
+
+  // Multi-param
+  scSelect: function(el) { scSelect(el, Number(el.dataset.q), el.dataset.val); },
+  giveFeedback: function(el) { giveFeedback(el, el.dataset.param, el.dataset.val); },
+  waSelect: function(el) { waSelect(el, el.dataset.param); }
+};
+
+// Click delegation
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('[data-action]');
+  if (!el) return;
+  var handler = ACTION_MAP[el.dataset.action];
+  if (handler) handler(el, e);
+});
+
+// Keyboard delegation (Enter/Space on interactive elements)
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  var el = e.target.closest('[data-keyaction]');
+  if (!el) return;
+  e.preventDefault();
+  var handler = ACTION_MAP[el.dataset.keyaction];
+  if (handler) handler(el, e);
+});
+
+// Search input delegation (replaces oninput="doSearch(this.value)")
+(function() {
+  var si = document.getElementById('search-input');
+  if (si) si.addEventListener('input', function() { doSearch(this.value); });
+})();
+
+
 /* Tooltip keyboard accessibility: Escape to dismiss */
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
@@ -802,4 +874,406 @@ function showSituationalHint() {
     div.innerHTML = hint;
     container.parentNode.insertBefore(div, container);
   }
+}
+
+
+// ═══════════════════════════════════════════════════════
+// Modul 2: Hypervigilanz-Kreislauf (hvToggle)
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.hv-wrap')) {
+(function(){
+  var data = {
+    beobachten: {
+      step: "Schritt 1",
+      stepColor: "#8a6d00", stepBg: "#fef9ec",
+      color: "#8a6d00", bg: "#fef9ec", border: "#d4a843",
+      signBorder: "#d4a843",
+      title: "🔍 Beobachten — Stimmung scannen",
+      body: "Sie haben gelernt, Ihren Partner ständig zu «lesen»: Wie ist die Stimme heute? Schläft er genug? Gibt sie zu viel aus? Diese Wachsamkeit war anfangs hilfreich — aber sie ist zum Dauerzustand geworden. Ihr Gehirn sucht permanent nach Warnsignalen, auch wenn es gerade ruhig ist.",
+      sign: "<strong>Kennen Sie das?</strong> Sie betreten einen Raum und checken als Erstes die Stimmung Ihres Partners — bevor Sie überhaupt «Hallo» sagen."
+    },
+    anspannung: {
+      step: "Schritt 2",
+      stepColor: "#bf5b00", stepBg: "#fff3e0",
+      color: "#bf5b00", bg: "#fff3e0", border: "#e67e22",
+      signBorder: "#e67e22",
+      title: "⚡ Anspannung — Körper in Alarmbereitschaft",
+      body: "Das ständige Beobachten aktiviert Ihr Stresssystem. Cortisol steigt, Muskeln spannen sich an, das Herz schlägt schneller. Ihr Körper reagiert, als wäre permanent Gefahr — auch wenn Ihr Partner gerade stabil ist. Das ist keine Einbildung, sondern Neurobiologie.",
+      sign: "<strong>Kennen Sie das?</strong> Ihr Partner lacht laut am Telefon — und Sie denken sofort: Ist das schon Manie? Ihr Körper reagiert mit einem Adrenalinstoss, bevor Ihr Verstand überhaupt einschätzen kann."
+    },
+    erschoepfung: {
+      step: "Schritt 3",
+      stepColor: "#a02015", stepBg: "#fdf0ed",
+      color: "#a02015", bg: "#fdf0ed", border: "#c0392b",
+      signBorder: "#c0392b",
+      title: "😢 Erschöpfung — Schlaf und Konzentration sinken",
+      body: "Die Daueranspannung fordert ihren Preis: Sie schlafen schlecht, können sich kaum konzentrieren, vergessen Dinge. Ihre eigenen Ressourcen schrumpfen — aber die Anforderungen bleiben gleich. Sie funktionieren auf Reserve.",
+      sign: "<strong>Kennen Sie das?</strong> Sie liegen nachts wach und hören, ob Ihr Partner noch atmet, ob er aufsteht, ob das Licht angeht. Am nächsten Morgen sind Sie erschöpfter als am Abend."
+    },
+    erholung: {
+      step: "Schritt 4",
+      stepColor: "#2d6a4f", stepBg: "#edf5f0",
+      color: "#2d6a4f", bg: "#edf5f0", border: "#6b9e7e",
+      signBorder: "#6b9e7e",
+      title: "🌿 Erholung — kurz und nie vollständig",
+      body: "Wenn eine Krise überstanden ist, erholen Sie sich — aber nicht ganz. Ein Rest Anspannung bleibt. Mit jeder Episode wird die Erholungsphase kürzer und unvollständiger. Wie eine Batterie, die nie mehr ganz auflädt.",
+      sign: "<strong>Kennen Sie das?</strong> Der Urlaub beginnt — und statt sich zu entspannen, warten Sie innerlich darauf, dass das Telefon klingelt. «Richtige» Erholung fühlt sich fast bedrohlich an."
+    }
+  };
+  var order = ['beobachten','anspannung','erschoepfung','erholung'];
+  var active = null;
+  var stations = document.querySelectorAll('.hv-station');
+  var dots = document.querySelectorAll('.hv-step-dot');
+  var panel = document.getElementById('hv-detail');
+  window.hvToggle = function(id) {
+    if (active === id) { active = null; } else { active = id; }
+    // Update stations
+    stations.forEach(function(s) {
+      var sId = s.getAttribute('data-id');
+      if (sId === active) {
+        s.classList.add('active');
+        s.setAttribute('aria-expanded', 'true');
+      } else {
+        s.classList.remove('active');
+        s.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Update dots
+    dots.forEach(function(d, i) {
+      d.className = 'hv-step-dot';
+      if (order[i] === active) {
+        d.classList.add('active-' + active);
+      }
+    });
+    // Update panel
+    if (!active) {
+      panel.style.background = '#f8f6f4';
+      panel.style.borderColor = '#e8e2dc';
+      panel.innerHTML =
+        '<div class="hv-empty">' +
+        '<p class="text-sm-muted">Klicken Sie auf eine Station im Kreislauf.</p>' +
+        '<p class="text-xs-muted">Erkennen Sie sich? Das ist kein Versagen — es ist ein automatisierter Schutzmechanismus.</p></div>';
+      return;
+    }
+    var d = data[active];
+    panel.style.background = d.bg;
+    panel.style.borderColor = d.border;
+    panel.innerHTML =
+      '<span class="hv-d-step" style="color:' + d.stepColor + ';background:' + d.stepBg + '">' + d.step + '</span>' +
+      '<p class="hv-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
+      '<p class="hv-d-body">' + d.body + '</p>' +
+      '<div class="hv-d-sign" style="border-left-color:' + d.signBorder + '">' + d.sign + '</div>';
+  };
+  // Keyboard support
+  stations.forEach(function(s) {
+  });
+})();
+
+}
+
+// ═══════════════════════════════════════════════════════
+// Modul 5: Kommunikationsquadrant (kkToggle)
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.kk-wrap')) {
+(function(){
+  var data = {
+    topLeft: {
+      marker: "❌", verdict: "Grösster Schaden",
+      color: "#c0392b", bg: "#fdf0ed", bgActive: "#fbe3dd", border: "#e6b8af",
+      situation: "Ihr Partner hat seit Tagen nicht geschlafen und gibt unkontrolliert Geld aus.",
+      says: "«Du bist total verantwortungslos! Du ruinierst uns!»",
+      effect: "Eskalation. Ihr Partner fühlt sich angegriffen, reagiert mit Abwehr oder Gegenangriff. Die Manie verstärkt die Reaktion.",
+      why: "Bewertung + Krise = maximaler Schaden. In der Manie fehlt die Fähigkeit zur Selbstreflexion. Jede Kritik wird als Angriff verarbeitet."
+    },
+    topRight: {
+      marker: "⚠️", verdict: "Richtige Worte, falscher Zeitpunkt",
+      color: "#b8860b", bg: "#fef9ec", bgActive: "#fdf0d0", border: "#e6d5a0",
+      situation: "Ihr Partner hat seit Tagen nicht geschlafen und gibt unkontrolliert Geld aus.",
+      says: "«Mir fällt auf, dass du seit drei Nächten kaum geschlafen hast.»",
+      effect: "Besser formuliert — aber der Zeitpunkt ist schlecht. In der akuten Manie kann Ihr Partner diese Information nicht verarbeiten.",
+      why: "Die Beobachtung ist richtig, aber die Krise ist der falsche Moment. Besser: Sicherheit gewährleisten, Gespräch auf stabile Phase verschieben."
+    },
+    bottomLeft: {
+      marker: "⚠️", verdict: "Richtiger Zeitpunkt, falsche Worte",
+      color: "#b8860b", bg: "#fef9ec", bgActive: "#fdf0d0", border: "#e6d5a0",
+      situation: "Stabile Phase. Sie möchten über die letzte Episode sprechen.",
+      says: "«Du machst mich wahnsinnig mit deinen Stimmungsschwankungen.»",
+      effect: "Der Zeitpunkt stimmt — aber die Formulierung verletzt. Ihr Partner hört einen Vorwurf statt eines Gesprächsangebots.",
+      why: "«Du machst…» erzeugt Schuld und Abwehr. Der richtige Zeitpunkt wird durch die falsche Sprache verschenkt."
+    },
+    bottomRight: {
+      marker: "✅", verdict: "✓ Zielzone",
+      color: "#2d6a4f", bg: "#edf5f0", bgActive: "#d4edda", border: "#a8d5ba",
+      situation: "Stabile Phase. Sie möchten über die letzte Episode sprechen.",
+      says: "«Ich mache mir Sorgen, wenn du nicht schläfst. Können wir darüber reden, was mir helfen würde?»",
+      effect: "Ihr Partner fühlt sich respektiert, nicht angegriffen. Ein Gespräch auf Augenhöhe wird möglich.",
+      why: "1 Satz, 1 Thema, Ich-Perspektive. Keine Schuldzuweisung. Der richtige Moment für die richtige Sprache — das öffnet Türen."
+    }
+  };
+  var active = null;
+  var btns = document.querySelectorAll('.kk-q');
+  var panel = document.getElementById('kk-detail');
+  window.kkToggle = function(id) {
+    // Toggle
+    if (active === id) { active = null; } else { active = id; }
+    // Update buttons
+    btns.forEach(function(b) {
+      var bId = b.getAttribute('data-id');
+      if (bId === active) {
+        b.classList.add('active');
+        b.setAttribute('aria-expanded', 'true');
+      } else {
+        b.classList.remove('active');
+        b.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Update detail panel
+    if (!active) {
+      panel.style.background = '#f8f6f4';
+      panel.style.borderColor = '#e8e2dc';
+      panel.innerHTML =
+        '<div class="kk-empty">' +
+        '<p class="text-sm-muted">Klicken Sie auf ein Feld.</p>' +
+        '<p class="text-xs-muted">Dieselbe Situation — vier verschiedene Reaktionen.<br>' +
+        'Was verändert sich, wenn Sie den Zeitpunkt oder die Worte ändern?</p></div>';
+      return;
+    }
+    var d = data[active];
+    panel.style.background = d.bg;
+    panel.style.borderColor = d.border;
+    panel.innerHTML =
+      '<div class="kk-verdict" style="color:' + d.color + ';background:' + d.bgActive + '">' + d.marker + ' ' + d.verdict + '</div>' +
+      '<p class="kk-situation">Situation: ' + d.situation + '</p>' +
+      '<p class="kk-says" style="color:' + d.color + ';border-left-color:' + d.color + '">' + d.says + '</p>' +
+      '<p class="kk-effect"><strong>Wirkung:</strong> ' + d.effect + '</p>' +
+      '<p class="kk-why">💡 ' + d.why + '</p>';
+  };
+})();
+
+}
+
+// ═══════════════════════════════════════════════════════
+// Modul 7: Solidaritäts-Säulen (slToggle)
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.sl-wrap')) {
+(function(){
+  var data = {
+    sol01: {
+      emoji: "🧠",
+      title: "Gemeinsames Krankheitsverständnis",
+      color: "#2d6a4f", bg: "#f5faf7", border: "#c2dece", signBorder: "#6b9e7e",
+      why: "Solidarität bleibt stabiler, wenn Angehörige und Betroffene dieselbe Landkarte haben: Was ist Symptom, was ist Persönlichkeit? Was hilft, was schadet?",
+      body: "«Wir gegen die Episode — nicht gegeneinander.» Beide Partner verstehen die Erkrankung als <em>Dritten im Bunde</em>, nicht als Charakterfehler. Dazu gehört: ein gemeinsames Episoden-Profil (Frühwarnzeichen, Trigger), Kommunikations-Grundregeln und ein kurzes Debrief nach jeder Krise.",
+      concrete: "<strong>Konkret:</strong> Erstellen Sie zusammen ein 1-Seiten-Episoden-Profil: Frühwarnzeichen Manie (z.B. weniger Schlaf, Gereiztheit), Frühwarnzeichen Depression (z.B. Rückzug, Hoffnungslosigkeit), persönliche Trigger. Regel: keine Grundsatzdebatten in der Krise — nur Handlungsfragen."
+    },
+    sol02: {
+      emoji: "🏝️",
+      title: "Krankheitsfreie Inseln + Wertschätzung",
+      color: "#7a6000", bg: "#fefcf5", border: "#e6d5a0", signBorder: "#d4a843",
+      why: "Solidarität erodiert besonders, wenn die Beziehung nur noch um Symptome, Kontrolle und Reparatur kreist. «Inseln» sind nicht Verdrängung — sondern Beziehungsnahrung.",
+      body: "Bewusste Zeiten ohne Therapie-Talk, ohne Symptom-Analyse, ohne Konflikt-Rehash. <strong>Mikro-Insel</strong> (täglich 5–10 Min): Tee, kurzer Walk, Musik. <strong>Mini-Insel</strong> (2×/Woche 30–90 Min): Kochen, Ausflug, Kino. <strong>Makro-Insel</strong> (alle 2–4 Wochen): halber/ganzer Tag — auch getrennt möglich. <em class='quelle'>(Zeitangaben: Empfehlung der Fachstelle Angehörigenarbeit PUK Zürich)</em>",
+      concrete: "<strong>Konkret:</strong> Bestimmen Sie einen festen Abend pro Woche als «krankheitsfreie Zone». Und: 1× pro Woche fragen Sie sich gegenseitig: «Was war diese Woche gut zwischen uns — trotz Erkrankung?»"
+    },
+    sol03: {
+      emoji: "🛡️",
+      title: "Grenzen + faire Lastverteilung",
+      color: "#5b3e8a", bg: "#f7f4fb", border: "#c8bade", signBorder: "#8a70b8",
+      why: "Solidarität zerbricht selten an «zu wenig Liebe», sondern an zu viel Übernahme und zu wenig Schutz. Ohne klare Grenzen entstehen Akkommodations-Spiralen — kurzfristig beruhigend, langfristig erschöpfend.",
+      body: "«Ich bleibe in Beziehung — aber nicht in Eskalation.» Dazu: ein Codewort «Pause» für sofortigen Themenstopp, eine <strong>Lasten-Matrix</strong> (wer ist wofür zuständig — und wofür nicht), schriftliche Grenzen, und eine Reparatur-Regel nach Grenzbruch: Anerkennen → Verantwortung → Wiedergutmachung → Prävention.",
+      concrete: "<strong>Konkret:</strong> Schreiben Sie eine «No-List»: Was übernehme ich nicht mehr? Z.B. nächtliche Dauertelefonate, impulsive Geldrettung, Konflikt-Schiedsrichter:in. Grenzregel: «Wenn geschrien wird, gehe ich aus dem Raum. Ich komme zurück, wenn es ruhig ist.»"
+    },
+    sol04: {
+      emoji: "📋",
+      title: "Gemeinsamer Krisenplan",
+      color: "#a02015", bg: "#fef7f5", border: "#e6b8af", signBorder: "#c0392b",
+      why: "Wiederholte Krisen ohne Plan sind wie wiederholte Brände ohne Rauchmelder: Jede Episode hinterlässt Beziehungsschäden. Ein Krisenplan macht Krisen kürzer, klarer, weniger traumatisierend.",
+      body: "Ein 1-Seiter, erstellt in stabiler Phase: <strong>Ampel</strong> (Grün/Gelb/Rot), <strong>Gelb-Massnahmen</strong> (Schlafschutz, Reizreduktion), <strong>No-Gos</strong> (Diskutieren, Drohen, Moralpredigten), <strong>Kontaktkette</strong> (Behandler:in → Krisendienst → Notruf), <strong>Rollen</strong> (wer telefoniert, wer fährt, wer bleibt bei Kindern).",
+      concrete: "<strong>Konkret:</strong> Der Plan schützt Sie vor dem «Retter-Reflex». Er legitimiert: «Ich helfe — aber nicht allein und nicht grenzenlos.» Dokumente griffbereit: am Kühlschrank, im Handy, bei der Therapeutin."
+    },
+    sol05: {
+      emoji: "💚",
+      title: "Eigene Entlastung + Peer-Support",
+      color: "#7a5200", bg: "#fffaf2", border: "#e6c9a0", signBorder: "#d4a050",
+      why: "Solidarität kann nur stabil bleiben, wenn Angehörige nicht ausbrennen. Entlastung ist kein Luxus, sondern Voraussetzung.",
+      body: "<strong>Fixe Entlastungszeiten</strong> (nicht verhandelbar): 2× pro Woche 60–90 Minuten «frei», 1× pro Monat halber Tag. <em class='quelle'>(Zeitangaben: Empfehlung der Fachstelle Angehörigenarbeit PUK Zürich)</em> <strong>Peer-Kontakt</strong>: Selbsthilfe-/Angehörigengruppe — normalisiert, reduziert Isolation. <strong>Eigene therapeutische Unterstützung</strong> bei Warnsignalen: Schlafstörung, Angst, Übererregung, «emotionale Taubheit», Schuld/Scham.",
+      concrete: "<strong>Konkret:</strong> Benennen Sie 2–3 Menschen, die Sie in einer Krise anrufen können. Melden Sie sich bei einer Angehörigen-Gruppe an (z.B. <a href='/notfall/' style='color:inherit;font-weight:600'>Fachstelle Angehörigenarbeit PUK</a>). Warnsignal: «Ist mir egal» — das ist oft Schutz vor Überlastung, nicht Gleichgültigkeit."
+    }
+  };
+  var active = null;
+  var pillars = document.querySelectorAll('.sl-pillar');
+  var panel = document.getElementById('sl-detail');
+  window.slToggle = function(id) {
+    if (active === id) { active = null; } else { active = id; }
+    pillars.forEach(function(p) {
+      var pId = p.getAttribute('data-id');
+      if (pId === active) {
+        p.classList.add('active');
+        p.setAttribute('aria-expanded', 'true');
+      } else {
+        p.classList.remove('active');
+        p.setAttribute('aria-expanded', 'false');
+      }
+    });
+    if (!active) {
+      panel.style.background = '#f8f6f4';
+      panel.style.borderColor = '#e8e2dc';
+      panel.innerHTML =
+        '<div class="sl-empty">' +
+        '<p style="font-size:.88rem;color:var(--muted)">Klicken Sie auf eine Säule.</p>' +
+        '<p style="font-size:.78rem;color:#8a7e76">Solidarität zerbricht selten an zu wenig Liebe — sondern an Erschöpfung, fehlenden Grenzen und Isolation.</p></div>';
+      return;
+    }
+    var d = data[active];
+    panel.style.background = d.bg;
+    panel.style.borderColor = d.border;
+    panel.innerHTML =
+      '<div class="sl-d-head">' +
+        '<span class="sl-d-emoji">' + d.emoji + '</span>' +
+        '<p class="sl-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
+      '</div>' +
+      '<p class="sl-d-why">' + d.why + '</p>' +
+      '<p class="sl-d-body">' + d.body + '</p>' +
+      '<div class="sl-d-concrete" style="border-left-color:' + d.signBorder + '">' + d.concrete + '</div>';
+    panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+})();
+
+}
+
+// ═══════════════════════════════════════════════════════
+// Handouts: PDF-Lightbox
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.pdf-card.has-thumb')) {
+/* PDF Lightbox — single consolidated implementation */
+(function(){
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
+    var pdfHref = card.getAttribute('href');
+    if(!pdfHref) return;
+    card.setAttribute('data-pdf', pdfHref);
+    card.removeAttribute('href');
+    card.style.cursor = 'pointer';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      if(isMobile){ window.open(pdfHref, '_blank'); return; }
+      openPdfLightbox(pdfHref);
+    });
+    card.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); }
+    });
+  });
+
+  function closeLightbox(){
+    var lb = document.getElementById('pdf-lightbox');
+    if(lb){ lb.remove(); document.body.style.overflow=''; }
+  }
+
+  function openPdfLightbox(url){
+    closeLightbox();
+    var ov = document.createElement('div');
+    ov.id = 'pdf-lightbox';
+    ov.setAttribute('role','dialog');
+    ov.setAttribute('aria-modal','true');
+    ov.setAttribute('aria-label','PDF-Vorschau');
+
+    var panel = document.createElement('div');
+    panel.className = 'pdf-lb-panel';
+
+    var bar = document.createElement('div');
+    bar.className = 'pdf-lb-bar';
+
+    var dl = document.createElement('a');
+    dl.className = 'pdf-lb-dl';
+    dl.href = url;
+    dl.download = '';
+    dl.textContent = '\u2B07 PDF herunterladen';
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'pdf-lb-close';
+    closeBtn.setAttribute('aria-label','Schliessen');
+    closeBtn.textContent = '\u2715';
+    closeBtn.addEventListener('click', closeLightbox);
+
+    bar.appendChild(dl);
+    bar.appendChild(closeBtn);
+
+    var iframe = document.createElement('iframe');
+    iframe.className = 'pdf-lb-iframe';
+    iframe.src = url;
+    iframe.title = 'PDF-Vorschau';
+
+    panel.appendChild(bar);
+    panel.appendChild(iframe);
+    ov.appendChild(panel);
+
+    ov.addEventListener('click', function(e){
+      if(e.target === ov) closeLightbox();
+    });
+
+    document.body.appendChild(ov);
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape') closeLightbox();
+  });
+})();
+
+}
+
+// ═══════════════════════════════════════════════════════
+// Handouts: Asset-Map (Version-Labels)
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.asset-meta')) {
+(function(){
+  var assetMap={
+    'krisenplan-vorlage':'TPL-01 · v02 · 2026-02',
+    'kurzblatt-was-stabilisiert':'TPL-02 · v01 · 2026-02',
+    'notfallkarte-kanton':'TPL-03 · v01 · 2026-02',
+    'a8_warnsignale':'INF-01 · v01 · 2026-02',
+    'b1_18_belastungen':'INF-02 · v01 · 2026-02',
+    'a4_ambiguous_loss':'INF-03 · v01 · 2026-02',
+    'a5_affiliate_stigma':'INF-04 · v01 · 2026-02',
+    'b9_depression_partner':'INF-05 · v01 · 2026-02',
+    'b2_erosion_solidaritaet':'INF-06 · v01 · 2026-02',
+    'b3_kritische_zeitpunkte':'INF-07 · v01 · 2026-02',
+    'b4_mechanismen_erosion':'INF-08 · v01 · 2026-02',
+    'b6_geschlechtsspezifisch':'INF-09 · v01 · 2026-02',
+    'a3_ambivalente_loyalitaet':'INF-10 · v01 · 2026-02',
+    'b5_loyalitaetskonflikte':'INF-11 · v01 · 2026-02',
+    'expressed_emotions':'INF-12 · v01 · 2026-02',
+    'b7_behandlung_ambivalenz':'INF-13 · v01 · 2026-02',
+    'c1_krisenplan':'INF-14 · v01 · 2026-02',
+    'c2_suizidgedanken':'INF-15 · v01 · 2026-02',
+    'c3_psychose_wahn':'INF-16 · v01 · 2026-02',
+    'c4_manie':'INF-17 · v01 · 2026-02',
+    'c5_depression':'INF-18 · v01 · 2026-02',
+    'c6_selbstfuersorge':'INF-19 · v01 · 2026-02',
+    'grenzsetzung':'INF-20 · v01 · 2026-02',
+    'd4_solidaritaet_wellen':'INF-21 · v01 · 2026-02',
+    'b10_trennung_scheidung':'INF-22 · v01 · 2026-02',
+    'transformationsreise':'INF-23 · v01 · 2026-02',
+    'trialog':'INF-24 · v01 · 2026-02'
+  };
+  document.querySelectorAll('.pdf-card.has-thumb').forEach(function(card){
+    var href=card.getAttribute('data-pdf')||'';
+    var badge=card.querySelector('.card-badge');
+    if(!badge)return;
+    for(var key in assetMap){
+      if(href.indexOf(key)!==-1){
+        var span=document.createElement('span');
+        span.className='card-asset-id';
+        span.textContent=assetMap[key];
+        badge.parentNode.appendChild(span);
+        break;
+      }
+    }
+  });
+})();
+
 }
