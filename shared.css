@@ -1607,7 +1607,6 @@ margin-bottom:1rem}
  .loyalty-center{ flex-direction: row;padding: 0.5rem 0}
  .loyalty-tension-label{ display: none}
  .ee-cycle-wrap{ grid-template-columns: 1fr}
- .ee-flow-svg{ max-width: none}
  .pole-tabs{ flex-direction: column}
  .pole-tab{ border-right: none;border-bottom: 1px solid var(--border)}
  .ptg-aspects{ grid-template-columns: 1fr 1fr}
@@ -1748,7 +1747,10 @@ margin-bottom:1.5rem}.oxygen-illustration{ flex-shrink: 0}.oxygen-svg{ width: 12
 width:100%;
 max-width:340px;
 height:auto;
-display:block}.ee-flow-svg circle[id^="ee-svg"]:hover{ opacity: 0.85}
+display:block}
+@media (max-width: 768px){
+ .ee-flow-svg{ max-width:none}
+}.ee-flow-svg circle[id^="ee-svg"]:hover{ opacity: 0.85}
 .kp-mock-doc{
 background:var(--bg);
 border:1.5px solid var(--border);
