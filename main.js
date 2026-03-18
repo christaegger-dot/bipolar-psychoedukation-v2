@@ -16,16 +16,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Notfall-Banner
-function toggleNotfall(triggerBtn) {
-  var banner = document.getElementById('notfall-banner');
-  if (!banner) return;
-  var isOpen = banner.classList.contains('open');
-  banner.classList.toggle('open', !isOpen);
-  triggerBtn.classList.toggle('open', !isOpen);
-  triggerBtn.setAttribute('aria-expanded', String(!isOpen));
-}
-
 // ═══════════════════════════════════════════════════════
 // UX OPTIMIERUNGEN
 // ═══════════════════════════════════════════════════════
@@ -69,10 +59,6 @@ function updateBackToTop() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function scrollToPos(top) {
-  window.scrollTo({ top: top, behavior: 'smooth' });
-}
-
 // Scroll-Event
 window.addEventListener('scroll', function() {
   updateProgress();
@@ -270,13 +256,6 @@ function initBookmarks() {
   try { bookmarks = JSON.parse(localStorage.getItem('bipolar-bookmarks') || '{}'); } catch(e) {}
   renderBookmarksList();
 }
-function toggleBookmarkItem(id, title) {
-  if (bookmarks[id]) { delete bookmarks[id]; }
-  else { bookmarks[id] = title; }
-  try { localStorage.setItem('bipolar-bookmarks', JSON.stringify(bookmarks)); } catch(e) {}
-  renderBookmarksList();
-}
-
 function renderBookmarksList() {
   var container = document.getElementById('bp-items') || document.getElementById('bookmark-list');
   if (!container) return;
@@ -573,30 +552,6 @@ function highlightEE(n) {
       '<div class="ee-detail-title">' + d.title + '</div>' +
       '<div class="ee-detail-text">' + d.text + '</div>' +
       '<div class="ee-detail-tip">💡 ' + d.tip + '</div>';
-  }
-}
-
-// Accordion
-function toggleAcc(btn) {
-  var item = btn.closest('.acc-item');
-  if (!item) return;
-  var body = item.querySelector('.acc-body');
-  var isOpen = item.classList.contains('open');
-  var siblings = item.parentElement.querySelectorAll('.acc-item.open');
-  siblings.forEach(function(s) {
-    if (s !== item) {
-      s.classList.remove('open');
-      s.querySelector('.acc-body').classList.remove('open');
-      s.querySelector('.acc-header').setAttribute('aria-expanded', 'false');
-    }
-  });
-  item.classList.toggle('open', !isOpen);
-  body.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', String(!isOpen));
-  if (!isOpen) {
-    setTimeout(function() {
-      item.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-    }, 50);
   }
 }
 

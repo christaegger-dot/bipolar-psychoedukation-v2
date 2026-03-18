@@ -9,6 +9,10 @@ function loadSearchIndex() {
   var script = document.createElement('script');
   script.src = '/search-index.js?v=72e5485';
   script.onload = function() { searchIndexLoaded = true; };
+  script.onerror = function() {
+    var c = document.getElementById('search-results');
+    if (c) c.innerHTML = '<div class="sr-empty">Suchindex konnte nicht geladen werden. Bitte Seite neu laden.</div>';
+  };
   document.head.appendChild(script);
 }
 
