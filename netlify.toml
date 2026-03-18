@@ -4,6 +4,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
@@ -38,12 +39,6 @@
   for = "/shared.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/handouts-legacy/*.pdf"
-  [headers.values]
-    Content-Type = "application/pdf"
-    Cache-Control = "public, max-age=604800"
 
 [build.processing]
   skip_processing = false

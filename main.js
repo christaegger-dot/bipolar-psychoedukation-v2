@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // footer email (anti-scrape)
   var e = document.getElementById('footer-email');
   if (e) { var a = document.createElement('a'); a.href = 'mai'+'lto:'+'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; a.textContent = 'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; e.appendChild(a); }
-  var e2 = document.getElementById('m7-email');
+  var e2 = document.getElementById('m8-email');
   if (e2) { var a2 = document.createElement('a'); a2.href = 'mai'+'lto:'+'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; a2.textContent = 'angehoerigenarbeit'+'@'+'pukzh'+'.ch'; e2.appendChild(a2); }
   // restore large-text
   try {
@@ -441,7 +441,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 600);
   }
   // UX Verbesserungen
-  initReadingProgress();
   initReadTracking();
   initNotes();
   showNotesOnHomepage();
@@ -620,7 +619,7 @@ document.querySelectorAll('.res-glossar-toggle, .res-faq-toggle').forEach(functi
   btn.addEventListener('click', function() {
     var expanded = this.getAttribute('aria-expanded') === 'true';
     var target = document.getElementById(this.getAttribute('aria-controls'));
-    this.setAttribute('aria-expanded', !expanded);
+    this.setAttribute('aria-expanded', String(!expanded));
     target.hidden = expanded;
   });
 });
@@ -692,12 +691,6 @@ function togglePD(btn) {
 // ═══════════════════════════════════════════════════════
 // UX VERBESSERUNGEN — 6 Features
 // ═══════════════════════════════════════════════════════
-
-// Feature 1: Reading Progress Bar (Modulseiten)
-// Uses updateProgress() from main scroll handler — no separate listener needed
-function initReadingProgress() {
-  // No-op: module reading progress is handled by updateProgress()
-}
 
 // Feature 2: Persönlicher Lesefortschritt
 function initReadTracking() {

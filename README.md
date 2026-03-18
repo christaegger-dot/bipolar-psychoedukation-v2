@@ -50,10 +50,10 @@ python3 -m http.server 8000
 ├── search.js               # Suchfunktion
 ├── search-index.js         # Suchindex
 ├── modul/1–8/index.html    # 8 Modulseiten
-├── notfall/index.html      # Notfallseite
+├── handouts/notfall/       # Notfallseite (served at /notfall/)
+├── handouts/ressourcen/    # Externe Ressourcen & Glossar (served at /ressourcen/)
+├── handouts/impressum/     # Impressum (served at /impressum/)
 ├── handouts/index.html     # PDF-Übersicht
-├── ressourcen/index.html   # Externe Ressourcen & Glossar
-├── impressum/index.html    # Impressum
 ├── 404.html                # Fehlerseite
 ├── downloads/              # Krisenplan, Notfallkarte PDFs
 ├── handouts/               # 24 Handout-PDFs
