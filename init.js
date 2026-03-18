@@ -4,7 +4,7 @@
 
 // Service Worker registration (PWA)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(function() {});
+  navigator.serviceWorker.register('/sw.js').catch(function(e) { console.warn('SW:', e); });
 }
 
 // Auto-open <details> elements linked via URL hash

@@ -69,8 +69,31 @@ font-family:'Source Sans 3';font-style:normal;font-weight:600;font-display:swap;
 --schwei-light:#e8f0ff;
 --anger-orange:#d05030;
 
+--rs-dot-1:#7a8a5a;
+--rs-dot-2:#9a7a4a;
 
-
+--hv-observe:#d4a843;
+--hv-observe-dark:#8a6d00;
+--hv-observe-light:#fef9ec;
+--hv-observe-active:#f5e6b8;
+--hv-tension:#e67e22;
+--hv-tension-dark:#bf5b00;
+--hv-tension-light:#fff3e0;
+--hv-tension-active:#fddcb5;
+--hv-exhaust-dark:#a02015;
+--hv-exhaust-light:#fdf0ed;
+--hv-exhaust-active:#f5cdc5;
+--hv-recover:#6b9e7e;
+--hv-recover-light:#edf5f0;
+--hv-recover-active:#d4edda;
+--hv-center-bg:#f8f0e8;
+--hv-center-border:#c4a882;
+--hv-center-text:#8a6d3b;
+--hv-center-sub:#a08a6e;
+--hv-dot-border:#d4c8bc;
+--hv-panel-border:#e8e2dc;
+--hv-panel-bg:#f8f6f4;
+--hv-muted:#8a7e76;
 
 
 
@@ -1724,7 +1747,7 @@ text-align:center}.role-stage:hover{ background: var(--bg2)}.role-stage.active{ 
 .rs-dot{
 width:10px;height:10px;
 border-radius:50%;
-margin:0 auto 0.4rem}.rs-dot-0{ background: var(--m4)}.rs-dot-1{ background: #7a8a5a}.rs-dot-2{ background: #9a7a4a}.rs-dot-3{ background: var(--m3)}
+margin:0 auto 0.4rem}.rs-dot-0{ background: var(--m4)}.rs-dot-1{ background: var(--rs-dot-1)}.rs-dot-2{ background: var(--rs-dot-2)}.rs-dot-3{ background: var(--m3)}
 .rs-title{ font-size:var(--fs-xs);font-weight:700;color:var(--text);margin-bottom:0.25rem}
 .rs-desc{ font-size:var(--fs-xs);color:var(--muted);line-height:1.4}
 .glasswand-wrap{ margin:1rem 0 1.2rem;text-align:center}
@@ -3540,40 +3563,40 @@ details[open] .glossar-def {
 .hv-station[data-pos="left"]{top:50%;left:-8px;transform:translateY(-50%)}
 .hv-station[data-pos="left"]:hover,.hv-station[data-pos="left"]:focus-visible{transform:translateY(-50%) scale(1.05)}
 /* Station colors */
-.hv-station[data-id="beobachten"] .hv-pill{background:#fef9ec;border-color:#d4a843;color:#8a6d00}
-.hv-station[data-id="beobachten"].active .hv-pill{background:#f5e6b8;border-color:#8a6d00}
-.hv-station[data-id="beobachten"] .hv-sub{color:#8a6d00}
-.hv-station[data-id="anspannung"] .hv-pill{background:#fff3e0;border-color:#e67e22;color:#bf5b00}
-.hv-station[data-id="anspannung"].active .hv-pill{background:#fddcb5;border-color:#bf5b00}
-.hv-station[data-id="anspannung"] .hv-sub{color:#bf5b00}
-.hv-station[data-id="erschoepfung"] .hv-pill{background:#fdf0ed;border-color:var(--danger);color:#a02015}
-.hv-station[data-id="erschoepfung"].active .hv-pill{background:#f5cdc5;border-color:#a02015}
-.hv-station[data-id="erschoepfung"] .hv-sub{color:#a02015}
-.hv-station[data-id="erholung"] .hv-pill{background:#edf5f0;border-color:#6b9e7e;color:var(--success)}
-.hv-station[data-id="erholung"].active .hv-pill{background:#d4edda;border-color:var(--success)}
+.hv-station[data-id="beobachten"] .hv-pill{background:var(--hv-observe-light);border-color:var(--hv-observe);color:var(--hv-observe-dark)}
+.hv-station[data-id="beobachten"].active .hv-pill{background:var(--hv-observe-active);border-color:var(--hv-observe-dark)}
+.hv-station[data-id="beobachten"] .hv-sub{color:var(--hv-observe-dark)}
+.hv-station[data-id="anspannung"] .hv-pill{background:var(--hv-tension-light);border-color:var(--hv-tension);color:var(--hv-tension-dark)}
+.hv-station[data-id="anspannung"].active .hv-pill{background:var(--hv-tension-active);border-color:var(--hv-tension-dark)}
+.hv-station[data-id="anspannung"] .hv-sub{color:var(--hv-tension-dark)}
+.hv-station[data-id="erschoepfung"] .hv-pill{background:var(--hv-exhaust-light);border-color:var(--danger);color:var(--hv-exhaust-dark)}
+.hv-station[data-id="erschoepfung"].active .hv-pill{background:var(--hv-exhaust-active);border-color:var(--hv-exhaust-dark)}
+.hv-station[data-id="erschoepfung"] .hv-sub{color:var(--hv-exhaust-dark)}
+.hv-station[data-id="erholung"] .hv-pill{background:var(--hv-recover-light);border-color:var(--hv-recover);color:var(--success)}
+.hv-station[data-id="erholung"].active .hv-pill{background:var(--hv-recover-active);border-color:var(--success)}
 .hv-station[data-id="erholung"] .hv-sub{color:var(--success)}
 /* Center */
 .hv-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:1}
-.hv-center-circle{width:100px;height:100px;border-radius:50%;background:#f8f0e8;border:2px dashed #c4a882;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
-.hv-center-label{font-size:.75rem;font-weight:700;color:#8a6d3b;line-height:1.2}
-.hv-center-sub{font-size:.6rem;color:#a08a6e;line-height:1.2}
+.hv-center-circle{width:100px;height:100px;border-radius:50%;background:var(--hv-center-bg);border:2px dashed var(--hv-center-border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.hv-center-label{font-size:.75rem;font-weight:700;color:var(--hv-center-text);line-height:1.2}
+.hv-center-sub{font-size:.6rem;color:var(--hv-center-sub);line-height:1.2}
 /* Arrows SVG */
 .hv-arrows{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 /* Step indicator */
 .hv-steps{display:flex;justify-content:center;gap:6px;margin-bottom:14px}
-.hv-step-dot{width:10px;height:10px;border-radius:50%;border:2px solid #d4c8bc;background:#fff;transition:all .2s;cursor:pointer;position:relative}.hv-step-dot::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;border-radius:50%}
-.hv-step-dot.active-beobachten{background:#d4a843;border-color:#8a6d00}
-.hv-step-dot.active-anspannung{background:#e67e22;border-color:#bf5b00}
-.hv-step-dot.active-erschoepfung{background:var(--danger);border-color:#a02015}
-.hv-step-dot.active-erholung{background:#6b9e7e;border-color:var(--success)}
+.hv-step-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--hv-dot-border);background:var(--white);transition:all .2s;cursor:pointer;position:relative}.hv-step-dot::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;border-radius:50%}
+.hv-step-dot.active-beobachten{background:var(--hv-observe);border-color:var(--hv-observe-dark)}
+.hv-step-dot.active-anspannung{background:var(--hv-tension);border-color:var(--hv-tension-dark)}
+.hv-step-dot.active-erschoepfung{background:var(--danger);border-color:var(--hv-exhaust-dark)}
+.hv-step-dot.active-erholung{background:var(--hv-recover);border-color:var(--success)}
 /* Note */
-.hv-note{text-align:center;margin-bottom:14px;font-size:.75rem;color:#8a7e76;font-style:italic;line-height:1.4}
+.hv-note{text-align:center;margin-bottom:14px;font-size:.75rem;color:var(--hv-muted);font-style:italic;line-height:1.4}
 /* Detail panel */
-.hv-detail{border-radius:14px;padding:16px 14px;transition:all .25s ease;min-height:100px;border:1.5px solid #e8e2dc;background:#f8f6f4}
+.hv-detail{border-radius:14px;padding:16px 14px;transition:all .25s ease;min-height:100px;border:1.5px solid var(--hv-panel-border);background:var(--hv-panel-bg)}
 .hv-detail .hv-d-step{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:8px}
 .hv-detail .hv-d-title{font-size:1rem;font-weight:700;margin:0 0 6px;line-height:1.3}
 .hv-detail .hv-d-body{font-size:.82rem;color:var(--muted);margin:0 0 8px;line-height:1.55}
-.hv-detail .hv-d-sign{font-size:.75rem;color:#8a7e76;margin:0;line-height:1.5;padding:8px 10px;background:rgba(255,255,255,.5);border-radius:8px;border-left:3px solid}
+.hv-detail .hv-d-sign{font-size:.75rem;color:var(--hv-muted);margin:0;line-height:1.5;padding:8px 10px;background:rgba(255,255,255,.5);border-radius:8px;border-left:3px solid}
 .hv-detail .hv-d-sign strong{color:var(--muted)}
 .hv-detail .hv-empty{text-align:center;padding:8px 0}
 .hv-detail .hv-empty p{margin:0 0 6px;line-height:1.5}

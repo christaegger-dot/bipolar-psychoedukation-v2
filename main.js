@@ -1,6 +1,7 @@
 
 /* Escape HTML to prevent XSS when inserting dynamic text via innerHTML */
 function escHtml(str) {
+  if (str == null) return '';
   var d = document.createElement('div');
   d.appendChild(document.createTextNode(str));
   return d.innerHTML;
@@ -310,7 +311,7 @@ function initContinue() {
         window.addEventListener('scroll', _crScrollHide2, { passive: true });
       }
     }
-  } catch(e) {}
+  } catch(e) { console.warn('initContinue:', e); }
 }
 
 // #17 Self-Check
@@ -453,7 +454,7 @@ function fallbackCopy(text, cb) {
   ta.style.cssText = 'position:fixed;opacity:0';
   document.body.appendChild(ta);
   ta.select();
-  try { document.execCommand('copy'); cb(); } catch(e) {}
+  try { document.execCommand('copy'); cb(); } catch(e) { console.warn('fallbackCopy:', e); }
   document.body.removeChild(ta);
 }
 
@@ -638,9 +639,9 @@ function highlightEE(n) {
   if (d && detail) {
     detail.classList.add('active');
     detail.innerHTML =
-      '<div class="ee-detail-title">' + d.title + '</div>' +
-      '<div class="ee-detail-text">' + d.text + '</div>' +
-      '<div class="ee-detail-tip">💡 ' + d.tip + '</div>';
+      '<div class="ee-detail-title">' + escHtml(d.title) + '</div>' +
+      '<div class="ee-detail-text">' + escHtml(d.text) + '</div>' +
+      '<div class="ee-detail-tip">💡 ' + escHtml(d.tip) + '</div>';
   }
 }
 
@@ -846,7 +847,7 @@ function showNotesOnHomepage() {
       try { localStorage.removeItem('bipolar_notes'); } catch(e) {}
       location.reload();
     });
-  } catch(e) {}
+  } catch(e) { console.warn('showNotesOnHomepage:', e); }
 }
 
 // Feature 6: Situativer Hinweis auf der Homepage
@@ -959,10 +960,10 @@ if (document.querySelector('.hv-wrap')) {
     panel.style.background = d.bg;
     panel.style.borderColor = d.border;
     panel.innerHTML =
-      '<span class="hv-d-step" style="color:' + d.stepColor + ';background:' + d.stepBg + '">' + d.step + '</span>' +
-      '<p class="hv-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
-      '<p class="hv-d-body">' + d.body + '</p>' +
-      '<div class="hv-d-sign" style="border-left-color:' + d.signBorder + '">' + d.sign + '</div>';
+      '<span class="hv-d-step" style="color:' + escHtml(d.stepColor) + ';background:' + escHtml(d.stepBg) + '">' + escHtml(d.step) + '</span>' +
+      '<p class="hv-d-title" style="color:' + escHtml(d.color) + '">' + escHtml(d.title) + '</p>' +
+      '<p class="hv-d-body">' + escHtml(d.body) + '</p>' +
+      '<div class="hv-d-sign" style="border-left-color:' + escHtml(d.signBorder) + '">' + escHtml(d.sign) + '</div>';
   };
   // Keyboard support
   stations.forEach(function(s) {
@@ -1042,11 +1043,11 @@ if (document.querySelector('.kk-wrap')) {
     panel.style.background = d.bg;
     panel.style.borderColor = d.border;
     panel.innerHTML =
-      '<div class="kk-verdict" style="color:' + d.color + ';background:' + d.bgActive + '">' + d.marker + ' ' + d.verdict + '</div>' +
-      '<p class="kk-situation">Situation: ' + d.situation + '</p>' +
-      '<p class="kk-says" style="color:' + d.color + ';border-left-color:' + d.color + '">' + d.says + '</p>' +
-      '<p class="kk-effect"><strong>Wirkung:</strong> ' + d.effect + '</p>' +
-      '<p class="kk-why">💡 ' + d.why + '</p>';
+      '<div class="kk-verdict" style="color:' + escHtml(d.color) + ';background:' + escHtml(d.bgActive) + '">' + escHtml(d.marker) + ' ' + escHtml(d.verdict) + '</div>' +
+      '<p class="kk-situation">Situation: ' + escHtml(d.situation) + '</p>' +
+      '<p class="kk-says" style="color:' + escHtml(d.color) + ';border-left-color:' + escHtml(d.color) + '">' + escHtml(d.says) + '</p>' +
+      '<p class="kk-effect"><strong>Wirkung:</strong> ' + escHtml(d.effect) + '</p>' +
+      '<p class="kk-why">💡 ' + escHtml(d.why) + '</p>';
   };
 })();
 
@@ -1128,12 +1129,12 @@ if (document.querySelector('.sl-wrap')) {
     panel.style.borderColor = d.border;
     panel.innerHTML =
       '<div class="sl-d-head">' +
-        '<span class="sl-d-emoji">' + d.emoji + '</span>' +
-        '<p class="sl-d-title" style="color:' + d.color + '">' + d.title + '</p>' +
+        '<span class="sl-d-emoji">' + escHtml(d.emoji) + '</span>' +
+        '<p class="sl-d-title" style="color:' + escHtml(d.color) + '">' + escHtml(d.title) + '</p>' +
       '</div>' +
-      '<p class="sl-d-why">' + d.why + '</p>' +
-      '<p class="sl-d-body">' + d.body + '</p>' +
-      '<div class="sl-d-concrete" style="border-left-color:' + d.signBorder + '">' + d.concrete + '</div>';
+      '<p class="sl-d-why">' + escHtml(d.why) + '</p>' +
+      '<p class="sl-d-body">' + escHtml(d.body) + '</p>' +
+      '<div class="sl-d-concrete" style="border-left-color:' + escHtml(d.signBorder) + '">' + escHtml(d.concrete) + '</div>';
     panel.scrollIntoView({behavior:'smooth',block:'nearest'});
   };
 })();
