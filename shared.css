@@ -468,10 +468,9 @@ margin-bottom:0.5rem}
 }
 @media (max-width: 600px){
  .svg-scroll-mobile{
-overflow-x:auto;
--webkit-overflow-scrolling:touch;
+overflow-x:visible;
 margin:0 -0.5rem;
-padding:0 0.5rem}.svg-scroll-mobile svg{ min-width: 500px}
+padding:0 0.5rem}.svg-scroll-mobile svg{ min-width: 0;width: 100%}
 .phase-tabs{ overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
 .wave-caption{ font-size:var(--fs-sm);color:var(--muted);line-height:1.5;font-style:italic}
@@ -1718,6 +1717,9 @@ margin:0 auto 0.4rem}.rs-dot-0{ background: var(--m4)}.rs-dot-1{ background: #7a
 .rs-desc{ font-size:var(--fs-xs);color:var(--muted);line-height:1.4}
 .glasswand-wrap{ margin:1rem 0 1.2rem;text-align:center}
 .glasswand-svg{ width:100%;max-width:400px;height:auto;display:block;margin:0 auto 0.5rem}
+@media (max-width: 768px){
+ .glasswand-svg{ max-width:none}
+}
 .glasswand-caption{
 font-size:var(--fs-sm);
 color:var(--muted);
