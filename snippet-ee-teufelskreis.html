@@ -1,0 +1,80 @@
+<!-- ═══════════════════════════════════════════════════════
+     M5 EE-TEUFELSKREIS — ersetzt den SVG-Block in modul/5/index.html
+     
+     ERSETZE: Den gesamten Block von
+       <div class="ee-cycle-wrap">
+       <div class="ee-svg-wrap">
+       <svg aria-label="EE Teufelskreis ..."> ... </svg>
+       </div>
+       <div class="wave-caption">Der Teufelskreis der Expressed Emotion ...</div>
+       <div class="ee-detail-box" id="ee-detail"> ... </div>
+       </div>
+     
+     MIT diesem HTML:
+     (Die ee-exit-box danach bleibt unverändert!)
+     
+     WICHTIG: Erfordert auch den JS-Patch in main.js (siehe patch-main-js.txt)
+     ═══════════════════════════════════════════════════════ -->
+
+<div class="ee-wrap" role="region" aria-label="Der EE-Teufelskreis">
+
+  <div class="ee-title-html">
+    <h3>Der Teufelskreis der Expressed Emotion</h3>
+    <p>Schuldgefühle → Überinvolviertheit → Erschöpfung → Kritik → und wieder von vorn. Klicken Sie auf eine Station.</p>
+  </div>
+
+  <div class="ee-ring">
+
+    <svg class="ee-ring-svg" viewBox="0 0 420 420" fill="none">
+      <circle cx="210" cy="210" r="136" stroke="#e8dfd0" stroke-dasharray="6,4" stroke-width="2"/>
+      <defs>
+        <marker id="ee-arr" markerWidth="8" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <polygon fill="#8a6a3a" opacity="0.5" points="0 0, 8 3.5, 0 7"/>
+        </marker>
+      </defs>
+      <path d="M268 106 A130 130 0 0 1 320 280" stroke="#8a6a3a" stroke-width="1.5" opacity="0.4" marker-end="url(#ee-arr)"/>
+      <path d="M318 296 A130 130 0 0 1 210 350" stroke="#8a6a3a" stroke-width="1.5" opacity="0.4" marker-end="url(#ee-arr)"/>
+      <path d="M196 350 A130 130 0 0 1 100 280" stroke="#8a6a3a" stroke-width="1.5" opacity="0.4" marker-end="url(#ee-arr)"/>
+      <path d="M100 260 A130 130 0 0 1 196 73" stroke="#8a6a3a" stroke-width="1.5" opacity="0.4" marker-end="url(#ee-arr)"/>
+    </svg>
+
+    <div class="ee-center">
+      <div class="ee-center-circle">
+        <span class="ee-center-label">Teufels-<br>kreis</span>
+        <span class="ee-center-sub">anklicken</span>
+      </div>
+    </div>
+
+    <div class="ee-station" data-pos="top" data-id="1" tabindex="0" role="button" aria-label="Schuldgefühle — klicken für Details" aria-expanded="false" aria-controls="ee-detail" data-action="highlightEE" data-param="1" data-keyaction="highlightEE">
+      <span class="ee-pill">😰 Schuldgefühle</span>
+    </div>
+
+    <div class="ee-station" data-pos="right" data-id="2" tabindex="0" role="button" aria-label="Überinvolvement — klicken für Details" aria-expanded="false" aria-controls="ee-detail" data-action="highlightEE" data-param="2" data-keyaction="highlightEE">
+      <span class="ee-pill">🔍 Über-<br>involvement</span>
+    </div>
+
+    <div class="ee-station" data-pos="bottom" data-id="3" tabindex="0" role="button" aria-label="Erschöpfung — klicken für Details" aria-expanded="false" aria-controls="ee-detail" data-action="highlightEE" data-param="3" data-keyaction="highlightEE">
+      <span class="ee-pill">😮‍💨 Erschöpfung</span>
+    </div>
+
+    <div class="ee-station" data-pos="left" data-id="4" tabindex="0" role="button" aria-label="Kritik und Hostilität — klicken für Details" aria-expanded="false" aria-controls="ee-detail" data-action="highlightEE" data-param="4" data-keyaction="highlightEE">
+      <span class="ee-pill">😤 Kritik &amp;<br>Hostilität</span>
+    </div>
+
+  </div>
+
+  <div class="ee-steps-dots">
+    <span class="ee-step-dot" tabindex="0" role="button" aria-label="Schuldgefühle" data-action="highlightEE" data-param="1" data-keyaction="highlightEE"></span>
+    <span class="ee-step-dot" tabindex="0" role="button" aria-label="Überinvolvement" data-action="highlightEE" data-param="2" data-keyaction="highlightEE"></span>
+    <span class="ee-step-dot" tabindex="0" role="button" aria-label="Erschöpfung" data-action="highlightEE" data-param="3" data-keyaction="highlightEE"></span>
+    <span class="ee-step-dot" tabindex="0" role="button" aria-label="Kritik & Hostilität" data-action="highlightEE" data-param="4" data-keyaction="highlightEE"></span>
+  </div>
+
+  <div class="ee-note-html">Der Kreislauf wiederholt sich nach jeder Krise — oft unbewusst.</div>
+
+  <div class="ee-detail-box" id="ee-detail">
+    <div class="ee-detail-title">Wählen Sie einen Schritt im Kreislauf</div>
+    <div class="ee-detail-text">Klicken Sie auf einen der vier Punkte, um mehr über diesen Schritt und konkrete Auswege zu erfahren.</div>
+  </div>
+
+</div>
