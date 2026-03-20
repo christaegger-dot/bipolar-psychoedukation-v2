@@ -1,3 +1,25 @@
+/* ═══════════════════════════════════════════════════════════
+   main.js — Bipolare Erkrankung · Interaktionslogik
+
+   AUFBAU (Ctrl+F → Kapitelname)
+   ─────────────────────────────
+   [XSS]         escHtml() Hilfsfunktion
+   [DELEGATION]  Event-Delegation (ACTION_MAP, Click, Keyboard)
+   [NAV]         Navigation, Hamburger, Settings, Bookmarks
+   [SEARCH]      Suchfunktion (openSearch, closeSearch, doSearch)
+   [SCROLL]      Scroll-Tracking, Progress-Bar, Back-to-Top
+   [POLES]       Modul 1: Stimmungspole, Phasen-Toggle
+   [SLIDER]      Vorher/Nachher-Slider, Swipe
+   [ROLES]       Modul 3: EE-Zyklus, Rollenmodell
+   [QUIZ]        Self-Check, Wissens-Anker
+   [FEEDBACK]    Modul-Feedback
+   [SHARE]       Teilen, Nummer kopieren
+   [HANDOUTS]    Handout-Filter
+   [BOOKMARKS]   Lesezeichen (localStorage)
+   [CONTINUE]    Weiterlesen-Position (sessionStorage)
+   [NOTES]       Persönliche Notizen
+   [INIT]        DOMContentLoaded-Initialisierung
+   ═══════════════════════════════════════════════════════════ */
 
 /* Escape HTML to prevent XSS when inserting dynamic text via innerHTML */
 function escHtml(str) {
