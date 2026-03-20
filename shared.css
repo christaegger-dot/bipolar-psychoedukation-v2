@@ -2613,6 +2613,7 @@ background:none;
 border:none;
 width:100%;
 text-align:left;transition:color 0.2s}.glossar-term:hover{ color: var(--m1)}.glossar-term:focus-visible{ background: var(--bg-info);outline:none}
+.glossar-term .gt-plain{font-weight:400;font-size:var(--fs-sm);color:var(--muted)}
 .glossar-term .gt-arrow{
 transition:transform 0.2s;
 font-size:var(--fs-sm);
