@@ -98,14 +98,14 @@
 </nav>
 <main id="main">
 <div class="notfall-hero">
-<h1>🚨 Notfall — Was tun Sie jetzt?</h1>
+<h1>Notfall — Was tun Sie jetzt?</h1>
 <p class="lead">Rufen Sie im Zweifel sofort an. Hier finden Sie die richtigen Nummern und konkrete Handlungsschritte.</p>
 </div>
 
 <div class="notfall-content">
 
-<div style="background:var(--danger-light,#fceaea);border:2px solid var(--danger,#b03030);border-radius:var(--radius,12px);padding:1.2rem 1.4rem;margin:0 0 1.2rem;">
-<p style="margin:0 0 0.8rem;font-weight:700;color:var(--danger-dark,#7a2020);font-size:1.05rem;">Welche Situation trifft zu?</p>
+<div class="notfall-triage-box">
+<p class="notfall-triage-title">Welche Situation trifft zu?</p>
 <div class="notfall-triage">
 <div class="notfall-triage-item nt-critical"><span class="nt-marker">!</span> Suizidgedanken oder Selbstverletzung → <a href="tel:144">144</a> oder <a href="tel:+41800336655">0800 33 66 55</a></div>
 <div class="notfall-triage-item nt-critical"><span class="nt-marker">!</span> Psychose, Wahnvorstellungen → <a href="tel:+41800336655">0800 33 66 55</a></div>
@@ -120,8 +120,8 @@
 Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abschnitt, der gerade auf Ihre Situation zutrifft.
 </div>
 
-<details>
-<summary style="cursor:pointer;font-weight:700;font-size:1.05rem;padding:0.6rem 0;color:var(--text);">Alle Notfallnummern anzeigen</summary>
+<div class="notfall-numbers-section">
+<h2 class="section-title-sm">Alle Notfallnummern</h2>
 <div class="notfall-numbers">
 <div class="nn-card">
 <h3>Psychiatrischer Notfalldienst Zürich</h3>
@@ -164,18 +164,12 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 <div class="nn-info">Beratung für Angehörige — kostenlos, vertraulich</div>
 </div>
 </div>
-</details>
+</div>
 
 
-<div class="notfall-krisenplan-grid">
 <div class="notfall-krisenplan-card">
-<p>📋 Krisenplan vorhanden?</p>
-<p>Öffnen Sie Ihren <a href="/modul/6/#krisenplan">Krisenplan (Modul 6)</a> und folgen Sie den vereinbarten Schritten.</p>
-</div>
-<div class="notfall-krisenplan-card danger">
-<p>📋 Noch keinen Krisenplan?</p>
-<p>Nutzen Sie die Mini-Guides unten. In stabiler Phase: <a href="/modul/6/#krisenplan">Krisenplan erstellen → Modul 6</a>.</p>
-</div>
+<p><strong>Krisenplan vorhanden?</strong> Öffnen Sie Ihren <a href="/modul/6/#krisenplan">Krisenplan (Modul 6)</a> und folgen Sie den vereinbarten Schritten.</p>
+<p>Noch keinen Krisenplan? Nutzen Sie die Mini-Guides unten. In stabiler Phase: <a href="/modul/6/#krisenplan">Krisenplan erstellen → Modul 6</a>.</p>
 </div>
 
 <h2>Was passiert gerade? — Mini-Guides</h2>
@@ -265,7 +259,7 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 <li data-icon="❗">Nehmen Sie jede Äusserung ernst. Auch indirekte Hinweise: «Es wäre besser, wenn ich nicht mehr da wäre», «Ihr wärt ohne mich besser dran.»</li>
 <li data-icon="🗣">Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» — Diese Frage löst Suizidgedanken nicht aus. Sie gibt Raum.</li>
 <li data-icon="👂">Hören Sie zu. Nicht bewerten. Nicht bagatellisieren. Nicht sagen: «Das wird schon.»</li>
-<li data-icon="📞">Rufen Sie jetzt an: <a href="tel:+41800336655" style="color:var(--danger);font-weight:700;">0800 33 66 55</a> (Psychiatrischer Notfalldienst, 24/7, kostenlos)</li>
+<li data-icon="📞">Rufen Sie jetzt an: <a href="tel:+41800336655" class="text-danger-dk">0800 33 66 55</a> (Psychiatrischer Notfalldienst, 24/7, kostenlos)</li>
 <li data-icon="🔒">Sichern Sie die Umgebung: Medikamente, scharfe Gegenstände, Alkohol wenn möglich ausser Reichweite bringen.</li>
 <li data-icon="🤝">Bleiben Sie bei der Person, bis professionelle Hilfe eintrifft. Lassen Sie sie nicht allein.</li>
 </ul>
@@ -275,18 +269,13 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 </div>
 </div><!-- /.notfall-content -->
 
-<div style="margin-top:2.5rem;padding:1.2rem;background:var(--bg2);border-radius:var(--radius);font-size:var(--fs-sm);line-height:1.6;color:var(--muted)">
+<div class="notfall-disclaimer">
 <strong>Wichtig:</strong> Diese Kurzanleitungen ersetzen keine professionelle Beratung. Sie geben Orientierung für die ersten Minuten einer akuten Situation. Wenn Sie unsicher sind, rufen Sie immer den Notfalldienst an — lieber einmal zu viel als einmal zu wenig.
-<div style="margin-top:0.8rem">
-<a href="/handouts/" class="text-m5">→ Alle Handouts & Downloads</a> · 
-<a href="/handouts/ressourcen/" class="text-m7">→ Beratungsstellen & Ressourcen</a> · 
+<div class="notfall-disclaimer-links">
+<a href="/handouts/" class="text-m5">→ Alle Handouts & Downloads</a> ·
+<a href="/handouts/ressourcen/" class="text-m7">→ Beratungsstellen & Ressourcen</a> ·
 <a href="/" class="text-m1">→ Module (Psychoedukation)</a>
 </div></div>
-<div class="restructure-notice" role="note">
-<div class="restructure-notice-inner">
-  <strong>Hinweis:</strong> Seit März 2026 umfasst diese Website <strong>8 Module</strong> statt 7. Falls ein gespeichertes Lesezeichen zum falschen Modul führt, bitte über die <a href="/">Startseite</a> neu navigieren.
-</div>
-</div>
 </main>
 
 <footer>
