@@ -2823,7 +2823,7 @@ transition:opacity 0.25s, color 0.2s}
  .text-version-link{ opacity: 0.6}
 }
 .card-wrap{ display:flex;flex-direction:column}.card-wrap .pdf-card,
-.card-wrap .handout-item{ flex: 1}
+.card-wrap .handout-item{ flex: 1;min-height:0}
 .card-wrap .text-version-link{ margin-top:-0.25rem;margin-bottom:0.5rem;align-self: flex-start}
 .text-version-note{
 background:var(--bg2);
@@ -3034,7 +3034,7 @@ transition:all 0.15s;
 color:var(--text)}.filter-chip:hover{ border-color: var(--m6);color: var(--m6)}
 .filter-chip.active{ background:var(--m6);border-color:var(--m6);color:white}
 .filter-hidden{ display:none!important}
-.card-grid{ display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:1rem;margin:1.5rem 0}
+.card-grid{ display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:1rem;margin:1.5rem 0;align-items:start}
 .pdf-card .card-icon{ font-size:var(--fs-h2);flex-shrink:0;line-height:1}
 .pdf-card .card-body h3{
 font-family:'Lora', Georgia, serif;
@@ -3615,6 +3615,15 @@ details[open] .glossar-def {
 .hv-center-circle{width:80px;height:80px}
 .hv-center-label{font-size:.65rem}
 .hv-center-sub{font-size:.55rem}
+}
+@media (max-width: 480px){
+.hv-ring{aspect-ratio:auto;padding:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.hv-arrows{display:none}
+.hv-station{position:static !important;transform:none !important;flex-direction:row;gap:8px}
+.hv-station:hover,.hv-station:focus-visible{transform:scale(1.02) !important}
+.hv-station .hv-sub{text-align:left}
+.hv-center{position:static;transform:none;order:-1;margin-bottom:4px}
+.hv-center-circle{width:72px;height:72px}
 }
 
 /* ═══════════════════════════════════════════════════════ */
