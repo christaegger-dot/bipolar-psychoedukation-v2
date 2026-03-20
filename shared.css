@@ -334,7 +334,7 @@ line-height:1.2;
 margin-bottom:0.25rem}
 .module-header-text .module-subtitle{
 font-size:var(--fs-base);
-color:var(--muted)}.module-body{ padding: var(--sp-lg) 1.5rem 2.5rem}
+color:var(--muted)}.module-body{ padding: var(--sp-lg) 1.5rem 2.5rem;overflow-wrap:break-word}
 .placeholder{
 background:var(--bg);
 border:2px dashed var(--border);
@@ -2286,7 +2286,7 @@ z-index:220;
 pointer-events:none;
 font-style:normal;
 font-weight:400;
-box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+box-shadow:0 4px 16px rgba(0,0,0,0.2); overflow-wrap:break-word; hyphens:auto}
 .tt-box::after{
 content:'';
 position:absolute;
@@ -2600,7 +2600,7 @@ details.inline-mg[open] summary span:last-child{ transform:rotate(90deg)}details
 color:var(--muted);
 text-decoration:none}.breadcrumb a:hover{ color: var(--text)}
 .bc-sep{ margin:0 0.25rem;opacity:0.5}
-.subpage-content{ max-width:960px;margin:0 auto;padding:0 1.5rem 3rem}
+.subpage-content{ max-width:960px;margin:0 auto;padding:0 1.5rem 3rem;overflow-wrap:break-word}
 .subpage-content .module{ padding-top:0;border-top:none;scroll-margin-top:0}
 .subpage-content .module > h2:first-child,
 .subpage-content .module > h2:first-of-type{ display:none}.subpage-content .module-header{ display: none}
@@ -4199,7 +4199,7 @@ details[open] .glossar-def {
   font-size:0.875rem;
   font-weight:700;
   line-height:1.2;
-  white-space:nowrap;
+  text-align:center;
   transition:all 0.2s;
   background:var(--m5-light);
   border-color:var(--m5);
