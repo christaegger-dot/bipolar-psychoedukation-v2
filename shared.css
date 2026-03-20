@@ -187,10 +187,10 @@ overflow-x:auto;
 scrollbar-width:none;
 min-width:0}.nav-links::-webkit-scrollbar{ display: none}
 .nav-links .nav-divider{ width:1px;height:16px;background:var(--border);flex-shrink:0;margin:0 0.25rem}
-.nav-controls{ display:flex;align-items: center;gap:0.25rem;flex-shrink:0;margin-left:auto;padding-left:0.5rem;border-left:1px solid var(--border)}
-#settings-toggle{ opacity:0.45;transition:opacity 0.2s}
+.nav-controls{ display:flex;align-items: center;gap:0.15rem;flex-shrink:0;margin-left:auto;padding-left:0.4rem;border-left:1px solid var(--border)}
+#settings-toggle{ opacity:0.35;transition:opacity 0.2s;font-size:0.85rem;padding:0.25rem 0.4rem}
 #settings-toggle:hover,#settings-toggle:focus-visible,#settings-toggle[aria-expanded="true"]{ opacity:1}
-.nav-bookmark{ opacity:0.55;transition:opacity 0.2s}
+.nav-bookmark{ opacity:0.35;transition:opacity 0.2s;font-size:0.85rem;padding:0.25rem 0.4rem}
 .nav-bookmark:hover,.nav-bookmark:focus-visible,.nav-bookmark.has-bookmarks{ opacity:1}
 .hamburger{
 display:none;
@@ -366,13 +366,14 @@ font-style:italic}
 background:var(--bg);
 border-radius:var(--radius);
 border-left:3px solid var(--m7);
-padding:0.8rem 1.2rem;
-max-width:640px;
-margin:0 auto 1.5rem;
+padding:0.75rem 1.2rem;
+max-width:600px;
+margin:1.5rem auto 0.5rem;
 font-size:var(--fs-sm);
 color:var(--muted);
 line-height:1.6;
-text-align:left}.hope-banner strong{ color: var(--m7);font-size:var(--fs-sm)}.cta-btn.m1{ background: var(--m1);color: white}.cta-btn.m3{ background: var(--m3);color: white}.cta-btn.m4{ background: var(--m4);color: white}.cta-btn.m5{ background: var(--m5);color: white}.cta-btn.m6{ background: var(--m6);color: white}.cta-btn.m7{ background: var(--m7);color: white}.cta-btn.m8{ background: var(--m8);color: white}.cta-btn.m2{ background: var(--m2);color: white}
+text-align:left;
+opacity:0.85}.hope-banner strong{ color: var(--m7);font-size:var(--fs-sm)}.cta-btn.m1{ background: var(--m1);color: white}.cta-btn.m3{ background: var(--m3);color: white}.cta-btn.m4{ background: var(--m4);color: white}.cta-btn.m5{ background: var(--m5);color: white}.cta-btn.m6{ background: var(--m6);color: white}.cta-btn.m7{ background: var(--m7);color: white}.cta-btn.m8{ background: var(--m8);color: white}.cta-btn.m2{ background: var(--m2);color: white}
 .module{ max-width:1060px;margin:0 auto 0;padding:0 1.5rem}
 .module-card{ background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform 0.2s ease, box-shadow 0.2s ease}
 .module-header{
@@ -2838,20 +2839,20 @@ transition-duration:0.01ms !important;
 scroll-behavior:auto !important}
 }
 .module-toc{
-background:var(--bg2, #eeeae3);
+background:var(--bg);
+border:1px solid var(--border);
 border-radius:var(--radius, 10px);
-padding:1.2rem 1.2rem;
-margin:0 0 1.5rem;
-border-left:3px solid var(--module-color, var(--m1))}
+padding:0.8rem 1.2rem;
+margin:0 0 1rem}
 .module-toc-title{
 font-size:var(--fs-xs);
-font-weight:700;
+font-weight:600;
 text-transform:uppercase;
-letter-spacing:0.1em;
-color:var(--module-color, var(--m1));
-margin:0 0 0.5rem}
+letter-spacing:0.08em;
+color:var(--muted);
+margin:0 0 0.3rem}
 .module-toc ol{ margin:0;padding-left:1.2rem}
-.module-toc li{ font-size:var(--fs-sm);line-height:1.6;margin-bottom:0.25rem}
+.module-toc li{ font-size:var(--fs-sm);line-height:1.5;color:var(--muted);margin-bottom:0.1rem}
 .module-toc li a{ color:var(--text);text-decoration:none}
 .module-toc li a:hover{ color:var(--module-color, var(--m1));text-decoration:underline}
 @media (max-width: 600px){
@@ -4498,27 +4499,66 @@ details[open] .glossar-def {
    [VISUAL-CONSISTENCY] Layout-Hierarchie & Ruhe
    ═══════════════════════════════════════════════════════════ */
 
+/* P0.1 — Header: Impressum visuell zurücknehmen */
+.nav-links .nav-btn[href="/impressum/"],
+.nav-links .nav-btn[href*="impressum"]{ opacity:0.5;font-weight:400}
+.nav-links .nav-btn[href="/impressum/"]:hover,
+.nav-links .nav-btn[href*="impressum"]:hover{ opacity:1}
+
+/* P0.2 — Startseite: Übergänge zwischen Blöcken */
+.hero{ padding-bottom:2rem}
+.situation-helper{ margin-top:1.2rem}
+.recognition{ margin-bottom:1.5rem}
+.module-overview-title{ margin-top:1rem}
+
 /* P0.3 — Notfall triage cards: bigger tap targets, clearer visual */
-.notfall-triage{ display:grid;gap:0.4rem;font-size:var(--fs-base);line-height:1.5}
+.notfall-triage{ display:grid;gap:0.5rem;font-size:var(--fs-base);line-height:1.5}
 .notfall-triage-item{
   display:flex;align-items:center;gap:0.8rem;
-  padding:0.75rem 1rem;
+  padding:0.85rem 1rem;
   background:var(--white);border-radius:10px;
   border-left:4px solid var(--danger);
-  transition:background 0.15s;min-height:44px}
+  transition:background 0.15s;min-height:48px}
 .notfall-triage-item:hover{ background:var(--danger-light)}
-.notfall-triage-item .nt-icon{ font-size:var(--fs-lg);flex-shrink:0}
+.notfall-triage-item .nt-icon{ font-size:1.2rem;flex-shrink:0;width:1.6rem;text-align:center}
 .notfall-triage-item a{ color:var(--danger);font-weight:700;white-space:nowrap}
+
+/* P0.3 — Notfall: validating message */
+.notfall-reassure{
+  background:var(--bg);border-radius:var(--radius);
+  padding:0.8rem 1.2rem;margin:0 0 2rem;
+  font-size:var(--fs-sm);color:var(--muted);line-height:1.6;
+  border-left:3px solid var(--m8)}
+
+/* P0.3 — Notfall: Krisenplan-Karten */
+.notfall-krisenplan-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1.5rem 0 2rem}
+@media(max-width:600px){ .notfall-krisenplan-grid{ grid-template-columns:1fr}}
+.notfall-krisenplan-card{
+  padding:1rem 1.2rem;border-radius:var(--radius);
+  border-left:4px solid var(--m6);background:var(--m6-light)}
+.notfall-krisenplan-card.danger{
+  border-left-color:var(--danger);background:var(--danger-light)}
+.notfall-krisenplan-card p:first-child{ margin:0 0 0.3rem;font-weight:700}
+.notfall-krisenplan-card p:last-child{ margin:0;font-size:var(--fs-sm);line-height:1.6}
 
 /* P1.4 — Module-intro spacing tighter */
 .module-top .breadcrumb{ margin-bottom:0}
-.module-readtime{ margin-top:0.15rem}
+.module-readtime{ margin-top:0.15rem;font-size:var(--fs-sm);color:var(--muted)}
+.module-updated{ font-size:var(--fs-xs);color:var(--muted);opacity:0.7;margin-top:0}
 .skip-to-action{ display:inline-block;margin-bottom:1rem;font-size:var(--fs-sm);color:var(--module-color,var(--m1));font-weight:600;text-decoration:none;opacity:0.7;transition:opacity 0.2s}
 .skip-to-action:hover{ opacity:1;text-decoration:underline}
 
-/* P1.5 — Card family harmonization */
+/* P1.4 — Vignette: kompakter */
+.vignette{ margin-bottom:0.8rem;padding:1rem 1.2rem}
+
+/* P1.5 — Card family harmonization: unified radius + shadow */
 .mc-link,.rec-card,.sh-card,.nn-card,.res-card,.res-urgent-card,.comm-card,.manie-komm-card{
   border-radius:var(--radius)}
+
+/* P1.5 — Consistent card shadows */
+.rec-card,.sh-card,.nn-card,.res-card{ box-shadow:var(--shadow-sm)}
+.rec-card:hover,.sh-card:hover,.nn-card:hover,.res-card:hover{ box-shadow:var(--shadow-md)}
 
 /* P1.6 — Ressourcen section spacing */
 .res-section-divider{
@@ -4531,8 +4571,28 @@ details[open] .glossar-def {
   transition:background 0.15s,color 0.15s,border-color 0.15s}
 .res-jump-nav a:hover{ background:var(--bg2);color:var(--text);border-color:var(--text)}
 
+/* P1.6 — Ressourcen: Zonenüberschriften stärker */
+.res-grid h3{ font-family:'Lora',Georgia,serif;font-size:var(--fs-base);margin:0 0 0.5rem}
+.res-card .res-list{ margin:0;padding-left:0;list-style:none}
+.res-card .res-list li{ padding:0.4rem 0;border-bottom:1px solid var(--bg2);font-size:var(--fs-sm);line-height:1.55}
+.res-card .res-list li:last-child{ border-bottom:none}
+
+/* P2.7 — Navigation: Impressum dot dimmer */
+.nb-dot.d-muted{ background:var(--border);opacity:0.5}
+
 /* P2.8 — Text density: better reading rhythm */
 .module-body > p,
 .module-body > .m-subtext{ max-width:720px}
 .notfall-content{ max-width:760px;margin:0 auto}
 .subpage-content{ max-width:820px;margin:0 auto;padding:0 1.5rem 2rem}
+
+/* P2.8 — Section spacing in module body */
+.module-body .section-title-sm{ margin-top:2rem}
+.module-body h3{ margin-top:1.8rem}
+
+/* P2.8 — Mini-Guide spacing */
+.mini-guide + .mini-guide{ margin-top:0.5rem}
+
+@media(max-width:600px){
+  .notfall-triage-item{ padding:0.7rem 0.8rem;gap:0.6rem;font-size:var(--fs-sm)}
+}
