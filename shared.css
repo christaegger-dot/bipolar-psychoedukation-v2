@@ -1,3 +1,46 @@
+/* ═══════════════════════════════════════════════════════════
+   shared.css — Bipolare Erkrankung · Psychoedukation für Angehörige
+
+   INHALTSVERZEICHNIS (Ctrl+F → Kapitelname)
+   ─────────────────────────────────────────
+   [FONTS]          @font-face Definitionen
+   [VARIABLES]      CSS Custom Properties (Farben, Spacing, Typo)
+   [BASE]           Reset, Skip-Link, Body, Links
+   [NAV]            Navbar, Hamburger, Navigation
+   [HERO]           Hero-Bereich Startseite + Subpage-Hero
+   [CARDS]          Modulkarten Startseite, Badges
+   [FOOTER]         Footer, Krisennummern
+   [CONTENT]        Modulseiten-Inhalt (.module-body, Insight, ToC)
+   [POLES]          Modul 1: Stimmungspole, Phasen-Tabs
+   [BURDEN]         Modul 2: Belastungsvisualisierungen
+   [QUOTES]         Zitate, Erfahrungsberichte
+   [RELATIONS]      Modul 3: EE-Zyklus, Rollen
+   [LOYALTY]        Modul 5: Loyalitätsmatrix, Spannungsfelder
+   [COMM]           Kommunikation, Gesprächstools
+   [CRISIS]         Krisenplan, Notfall-Elemente
+   [CARE]           Selbstfürsorge, Stigma, Coping
+   [SLIDER]         Vorher/Nachher-Slider
+   [HANDOUTS]       PDF-Karten, Handout-Seiten
+   [EXP]            Erfahrungsberichte (.exp-report)
+   [RESILIENCE]     Modul 7: Resilienz, Suizidprävention
+   [RESPONSIVE-1]   Responsive ≤768px
+   [PRINT]          Print-Styles
+   [ACCORDION]      Akkordeons (.acc-item, details/summary)
+   [SEARCH]         Such-Overlay, Ergebnisse
+   [GLOSSAR]        Glossar & FAQ
+   [DARK]           Dark-Mode
+   [A11Y]           Reduced Motion, Touch-Anpassungen
+   [FEATURES]       Reading-Progress, Bookmarks, Notes
+   [VIZ-HV]         Hypervigilanz-Kreislauf (.hv-*)
+   [VIZ-KK]         Kommunikationsquadrant (.kk-*)
+   [VIZ-SL]         Solidaritäts-Säulen (.sl-*)
+   [VIZ-KP]         Krisenplan-Ampel (.kp-*)
+   [VIZ-GS]         Grenzsetzung-Spektrum (.gs-*)
+   [VIZ-BARR]       Barrieren-Diagramm (.barr-*)
+   [LIGHTBOX]       PDF-Lightbox
+   ═══════════════════════════════════════════════════════════ */
+
+/* [FONTS] ─────────────────────────────────────────────────── */
 @font-face{
 font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lora-v37-latin-regular.woff2') format('woff2')}
 @font-face{
@@ -6,6 +49,8 @@ font-family:'Lora';font-style:normal;font-weight:600;font-display:swap;src:url('
 font-family:'Source Sans 3';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/source-sans-3-v19-latin-regular.woff2') format('woff2')}
 @font-face{
 font-family:'Source Sans 3';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/source-sans-3-v19-latin-600.woff2') format('woff2')}
+
+/* [VARIABLES] ─────────────────────────────────────────────── */
 :root{
 --sticky-nav-h:48px;
 --sticky-offset:calc(var(--sticky-nav-h) + 16px);
@@ -97,7 +142,10 @@ font-family:'Source Sans 3';font-style:normal;font-weight:600;font-display:swap;
 
 
 
-}*{ box-sizing: border-box;margin: 0;padding: 0}
+}
+
+/* [BASE] ──────────────────────────────────────────────────── */
+*{ box-sizing: border-box;margin: 0;padding: 0}
 .skip-link{
 position:absolute;
 top:-100%;
@@ -115,6 +163,8 @@ from{ opacity:0;transform:translateY(12px)}
 to{ opacity:1;transform:translateY(0)}
 }
 body{ font-family:'Source Sans 3', sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* [NAV] ───────────────────────────────────────────────────── */
 nav{
 position:sticky;
 top:0;
@@ -256,6 +306,8 @@ transition:background 0.2s, color 0.2s;
 background:none;
 border:none;
 cursor:pointer}.nav-btn:hover{ background: var(--bg2);color: var(--text)}.nav-divider{ height:1px;background:var(--border);margin:0.4rem 0.5rem}.nav-btn .nb-dot{ width: 8px;height: 8px;border-radius: 50%;flex-shrink: 0}
+
+/* [HERO] ──────────────────────────────────────────────────── */
 .hero{
 max-width:1060px;
 margin:0 auto;
@@ -351,6 +403,7 @@ margin-bottom:1rem}.module-card.c1{ border-top: 4px solid var(--m1)}.module-card
 .module-card.c6 .module-header{ background:linear-gradient(135deg, var(--m6-light) 0%, var(--white) 60%);border-top:3px solid var(--m6)}
 .module-card.c7 .module-header{ background:linear-gradient(135deg, var(--m7-light) 0%, var(--white) 60%);border-top:3px solid var(--m7)}
 .module-card.c8 .module-header{ background:linear-gradient(135deg, var(--m8-light) 0%, var(--white) 60%);border-top:3px solid var(--m8)}.module-card.c2 .module-header{ background:linear-gradient(135deg, var(--m2-light) 0%, var(--white) 60%);border-top:3px solid var(--m2)}.module-number.c1{ color: var(--m1)}.module-number.c3{ color: var(--m3)}.module-number.c4{ color: var(--m4)}.module-number.c5{ color: var(--m5)}.module-number.c6{ color: var(--m6)}.module-number.c7{ color: var(--m7)}.module-number.c8{ color: var(--m8)}.module-number.c2{ color: var(--m2)}
+/* [FOOTER] ────────────────────────────────────────────────── */
 footer{ background:var(--text);color:rgba(255,255,255,0.7);padding:2.5rem 1.5rem;margin-top:3rem}
 .footer-inner{
 max-width:1060px;
@@ -431,6 +484,8 @@ margin-top:1.5rem;
 margin-bottom:1.5rem;
 font-size:var(--fs-base);
 line-height:1.6}.insight-icon{ font-size: var(--fs-h3);flex-shrink: 0;margin-top: 0}
+
+/* [POLES] ─────────────────────────────────────────────────── */
 .pole-toggle-wrap{
 background:var(--bg);
 border-radius:var(--radius);
@@ -1028,6 +1083,7 @@ color:var(--muted);
 font-style:italic;
 line-height:1.6;
 margin-bottom:1rem}
+/* [EXP] ───────────────────────────────────────────────────── */
 .exp-report{
 background:var(--white);
 border-radius:16px;
@@ -2019,6 +2075,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
   .restructure-notice { padding: 0.6rem 0.75rem; }
 }
 
+/* [PRINT] ─────────────────────────────────────────────────── */
 @media print{
  nav, #back-to-top, #font-toggle, #readmode-toggle,
  #progress-bar,
@@ -2240,6 +2297,8 @@ display:none;
 from{ opacity:0;transform:translateY(-8px)}
 to{ opacity:1;transform:translateY(0)}
 }
+
+/* [ACCORDION] ─────────────────────────────────────────────── */
 .acc-item{
 border:1px solid var(--border);
 border-radius:10px;
@@ -2434,6 +2493,8 @@ border-left:3px solid transparent}
 .sh-card:hover{ transform:translateY(-1px);box-shadow:0 4px 18px rgba(40,36,32,0.1)}
 .sh-card .sh-icon{ font-size:var(--fs-h3);flex-shrink:0}
 .sh-card .sh-text strong{ display:block;font-size:var(--fs-base);margin-bottom:0}
+
+/* [SEARCH] ────────────────────────────────────────────────── */
 .search-overlay{
 position:fixed;
 inset:0;
@@ -2494,6 +2555,19 @@ margin-bottom:0.25rem}
 .sr-item .sr-text{ font-size:var(--fs-sm);line-height:1.5}
 .sr-item mark{ background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .sr-empty{ text-align:center;color:var(--muted);padding:var(--sp-lg) 0;font-size:var(--fs-sm)}
+.sr-crisis{
+background:var(--danger-light);
+border-left:4px solid var(--danger);
+padding:0.75rem 1rem;
+margin-bottom:0.75rem;
+border-radius:var(--radius);
+font-size:var(--fs-sm);
+line-height:1.6}
+.sr-crisis strong{ color:var(--danger-dark)}
+.sr-crisis a{
+color:var(--danger-dark);
+font-weight:600;
+text-decoration:underline}
 .sr-hint{
 text-align:center;
 color:var(--border);
@@ -2661,6 +2735,8 @@ border-radius:10px;
 background:var(--white);
 border:1px solid var(--border);
 margin-bottom:0.5rem}
+
+/* [DARK] ──────────────────────────────────────────────────── */
 @media (prefers-color-scheme: dark){
  :root{
 --bg:#1a1917;
@@ -2748,6 +2824,8 @@ border:1px solid var(--border);
 box-shadow:0 2px 8px rgba(0,0,0,0.4)}.tt-box::after{ border-top-color: var(--bg2)}.module-top{ color: var(--text)}
  .module-top-title{ color: var(--text)}
 }
+
+/* [A11Y] ──────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce){
  *, *::before, *::after{
  animation-duration: 0.01ms !important;

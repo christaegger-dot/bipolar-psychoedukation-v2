@@ -1,4 +1,15 @@
-name: Auto-PR and merge for Claude Code
+# ──────────────────────────────────────────────────────────────
+# Auto-PR for Claude Code branches
+# Creates a PR automatically but does NOT auto-merge.
+# Merging requires manual review in the GitHub UI.
+#
+# Rationale: Without robust CI checks (linting, tests, link
+# validation), auto-merging after a fixed sleep is unsafe for
+# a health-information website where broken content or wrong
+# crisis numbers could cause real harm.
+# ──────────────────────────────────────────────────────────────
+
+name: Auto-PR for Claude Code
 
 on:
   push:
@@ -6,37 +17,98 @@ on:
       - 'claude/**'
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 jobs:
-  create-and-merge:
+  create-pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run smoke checks
+        run: |
+          echo "=== Smoke checks ==="
+          ERRORS=0
+
+          # 1. All module pages exist and are non-empty
+          for i in 1 2 3 4 5 6 7 8; do
+            f="modul/$i/index.html"
+            if [ ! -s "$f" ]; then
+              echo "FAIL: $f missing or empty"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+
+          # 2. Critical standalone pages exist
+          for f in index.html handouts/notfall/index.html handouts/ressourcen/index.html handouts/impressum/index.html 404.html; do
+            if [ ! -s "$f" ]; then
+              echo "FAIL: $f missing or empty"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+
+          # 3. Core assets exist
+          for f in shared.css main.js search.js init.js sw.js search-index.js; do
+            if [ ! -s "$f" ]; then
+              echo "FAIL: $f missing or empty"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+
+          # 4. No HTML syntax errors in critical pages (unclosed tags, conflict markers)
+          for f in index.html modul/*/index.html handouts/*/index.html; do
+            if grep -q '<<<<<<< ' "$f" 2>/dev/null; then
+              echo "FAIL: merge conflict markers in $f"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+
+          # 5. Crisis numbers present on Notfall page
+          if ! grep -q '143' handouts/notfall/index.html; then
+            echo "FAIL: Dargebotene Hand (143) missing from Notfall page"
+            ERRORS=$((ERRORS + 1))
+          fi
+          if ! grep -q '144' handouts/notfall/index.html; then
+            echo "FAIL: Sanität (144) missing from Notfall page"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          # 6. Service worker cache version references valid files
+          if ! grep -q 'shared.css' sw.js; then
+            echo "FAIL: sw.js does not reference shared.css"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          echo "=== $ERRORS error(s) found ==="
+          if [ "$ERRORS" -gt 0 ]; then
+            exit 1
+          fi
+
       - name: Create PR if none exists
-        id: create-pr
         run: |
           EXISTING=$(gh pr list --head "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json number --jq '.[0].number')
           if [ -z "$EXISTING" ]; then
-            PR_URL=$(gh pr create \
+            gh pr create \
               --repo "$GITHUB_REPOSITORY" \
               --head "$GITHUB_REF_NAME" \
               --base main \
               --title "Claude Code: $(echo $GITHUB_REF_NAME | sed 's|claude/||')" \
-              --body "Automatisch erstellt von Claude Code.")
-            echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
-            echo "Created PR: $PR_URL"
+              --body "$(cat <<'BODY'
+Automatisch erstellt von Claude Code.
+
+**Smoke checks:** ✅ bestanden (Module, Notfallnummern, Kernressourcen, keine Merge-Marker)
+
+⚠️ **Manuelle Prüfung erforderlich vor dem Merge:**
+- [ ] Netlify-Preview aufrufen und Seiten stichprobenartig prüfen
+- [ ] Notfallseite: Nummern korrekt, Links funktionieren
+- [ ] Mobile Ansicht geprüft
+BODY
+)"
+            echo "PR created."
           else
-            echo "pr_url=$(gh pr view $EXISTING --repo $GITHUB_REPOSITORY --json url --jq '.url')" >> $GITHUB_OUTPUT
             echo "PR already exists: #$EXISTING"
           fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Wait for Netlify deploy
-        run: sleep 60
-
-      - name: Merge PR
-        run: gh pr merge --merge --delete-branch "${{ steps.create-pr.outputs.pr_url }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
