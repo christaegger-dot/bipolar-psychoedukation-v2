@@ -629,11 +629,19 @@ function setRoleStage(stage) {
 
 
 function highlightEE(n) {
-  document.querySelectorAll('.ee-flow-svg circle.pointer').forEach(function(node) {
+  // HTML-Stationen (neu) und Step-Dots deaktivieren
+  document.querySelectorAll('.ee-station, .ee-step-dot').forEach(function(node) {
     node.classList.remove('active');
   });
-  var node = document.getElementById('ee-svg-' + n);
-  if (node) node.classList.add('active');
+
+  // Richtige Station + Dot aktivieren
+  var station = document.querySelector('.ee-station[data-id="' + n + '"]');
+  if (station) station.classList.add('active');
+
+  var dots = document.querySelectorAll('.ee-step-dot');
+  if (dots[n - 1]) dots[n - 1].classList.add('active');
+
+  // Detail-Box aktualisieren (identisch wie vorher)
   var detail = document.getElementById('ee-detail');
   var d = eeData[n];
   if (d && detail) {

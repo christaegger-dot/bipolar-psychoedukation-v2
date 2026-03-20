@@ -250,39 +250,58 @@
 <div>Die Top-3-Belastungen drehen sich alle um <strong>Informationsmangel</strong> — und sind damit direkt beeinflussbar. Sie sind nicht «zu empfindlich» — Sie befinden sich in einer objektiv schwierigen Situation.</div>
 </div>
 
-<div class="wave-chart-wrap mt-md">
-<div class="svg-scroll-mobile scroll-wrap" >
-<svg font-family="Source Sans 3, sans-serif" aria-label="Eisberg-Metapher: Sichtbare Belastungen über der Wasserlinie, unsichtbare darunter — das meiste ist unsichtbar" class="viz-svg" role="img" viewBox="0 -10 560 310" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#ddeef8" height="140" opacity="0.4" width="560" x="0" y="108"></rect>
-<path d="M0 108 Q25 103 50 108 Q75 113 100 108 Q125 103 150 108 Q175 113 200 108 Q225 103 250 108 Q275 113 300 108 Q325 103 350 108 Q375 113 400 108 Q425 103 450 108 Q475 113 500 108 Q525 103 550 108" fill="none" opacity="0.6" stroke="#4a7fa5" stroke-width="1.5"></path>
-<text fill="#4a7fa5" font-size="15" font-style="italic" text-anchor="end" x="540" y="103">Wasserlinie</text>
-<path d="M170 107 L210 28 L265 18 L305 107" fill="#e8f0e8" opacity="0.9" stroke="#b8d0b8" stroke-width="1.5"></path>
-<path d="M150 109 L120 162 L105 200 L155 230 L320 235 L370 200 L355 162 L325 109" fill="#c8d8e8" opacity="0.7" stroke="#a0b8d0" stroke-width="1.5"></path>
-<text fill="#5a5070" font-size="18" font-weight="700" text-anchor="middle" x="237" y="14">Was andere sehen — und was nicht</text>
-<text fill="#5a7a5a" font-size="16" font-weight="700" text-anchor="middle" x="237" y="50">Sichtbar</text>
-<text fill="#5a7a5a" font-size="16" text-anchor="middle" x="237" y="70">«Müde aussehen»</text>
-<text fill="#5a7a5a" font-size="16" text-anchor="middle" x="237" y="88">Arzttermine · Medikamente</text>
-<text fill="#4a7fa5" font-size="19" font-weight="700" text-anchor="middle" x="237" y="132">Unsichtbar</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="155" y="155">Hypervigilanz</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="320" y="155">Schlafstörungen</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="160" y="178">Schuldgefühle</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="315" y="178">Einsamkeit</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="150" y="201">Angst vor dem</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="150" y="218">nächsten Rückfall</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="325" y="201">Trauer um das</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="325" y="218">«normale» Leben</text>
-<text fill="#4a7fa5" font-size="16" font-weight="600" text-anchor="middle" x="237" y="243">Ambivalenz: Gehen oder Bleiben?</text>
-<text fill="#4a7fa5" font-size="16" text-anchor="middle" x="237" y="263">Identitätsverlust</text>
-<text fill="#5a7a5a" font-size="22" font-weight="700" x="395" y="52">~20%</text>
-<text fill="#8a8070" font-size="16" x="395" y="72">sichtbar für</text>
-<text fill="#8a8070" font-size="16" x="395" y="90">das Umfeld</text>
-<text fill="#4a7fa5" font-size="22" font-weight="700" x="395" y="170">~80%</text>
-<text fill="#8a8070" font-size="16" x="395" y="192">unsichtbar —</text>
-<text fill="#8a8070" font-size="16" x="395" y="210">auch für Sie selbst</text>
-</svg>
+<div class="eisberg-wrap" role="img" aria-label="Eisberg-Metapher: Sichtbare Belastungen über der Wasserlinie, unsichtbare darunter — das meiste ist unsichtbar">
+
+  <div class="eisberg-title">Was andere sehen — und was nicht</div>
+
+  <div class="eisberg-layout">
+
+    <div class="eisberg-shape">
+
+      <div class="eisberg-above">
+        <div class="eisberg-above-title">Sichtbar</div>
+        <div class="eisberg-above-items">
+          «Müde aussehen»<br>
+          Arzttermine · Medikamente
+        </div>
+      </div>
+
+      <div class="eisberg-waterline">
+        <span class="eisberg-waterline-label">Wasserlinie</span>
+      </div>
+
+      <div class="eisberg-below">
+        <div class="eisberg-below-title">Unsichtbar</div>
+        <div class="eisberg-below-grid">
+          <div class="eisberg-below-item">Hypervigilanz</div>
+          <div class="eisberg-below-item">Schlafstörungen</div>
+          <div class="eisberg-below-item">Schuldgefühle</div>
+          <div class="eisberg-below-item">Einsamkeit</div>
+          <div class="eisberg-below-item">Angst vor dem nächsten Rückfall</div>
+          <div class="eisberg-below-item">Trauer um das «normale» Leben</div>
+          <div class="eisberg-below-center">Ambivalenz: Gehen oder Bleiben?</div>
+          <div class="eisberg-below-item" style="grid-column:1/-1;text-align:center">Identitätsverlust</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="eisberg-stats">
+      <div class="eisberg-stat eisberg-stat-above">
+        <div class="eisberg-stat-pct">~20%</div>
+        <div class="eisberg-stat-label">sichtbar für<br>das Umfeld</div>
+      </div>
+      <div class="eisberg-stat eisberg-stat-below">
+        <div class="eisberg-stat-pct">~80%</div>
+        <div class="eisberg-stat-label">unsichtbar —<br>auch für Sie selbst</div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
 <div class="wave-caption">Der grösste Teil Ihrer Belastung ist unsichtbar — für Ihr Umfeld, manchmal sogar für Sie selbst. Das ist kein Zeichen von Schwäche, sondern ein <strong>Merkmal chronischer Belastung</strong>: Sie haben gelernt, zu funktionieren, ohne zu fühlen.</div>
-</div>
 
 <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4C40,0 60,8 100,4C140,0 160,8 200,4" fill="none" stroke="currentColor" stroke-width=".5"/></svg></div>
 <h3 class="section-title-sm">Suizidalität — Was Sie wissen sollten</h3>

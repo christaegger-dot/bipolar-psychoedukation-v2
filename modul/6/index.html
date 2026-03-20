@@ -296,40 +296,57 @@
 <span class="acc-chevron">▼</span>
 </summary>
 <div class="acc-body">
-<div class="wave-chart-wrap mb-md">
-<div class="svg-scroll-mobile scroll-wrap" >
-<svg aria-label="Krisenplan-Ampel mit drei Stufen: Gelb für Frühwarnzeichen, Orange für akute Krise, Rot für Notfall" class="viz-svg" role="img" viewBox="0 -6 600 232" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#fafaf6" height="188" rx="8" width="600" x="0" y="0.0"></rect>
-<text fill="#5a5070" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="600" text-anchor="middle" x="300" y="30.0">Der Krisenplan — 3 Stufen</text>
-<line stroke="#d0ccc6" stroke-dasharray="4,3" stroke-width="1" x1="60" x2="555" y1="94.4" y2="94.4"></line>
-<rect fill="#fdf6e8" height="135" rx="8" stroke="#d4a843" stroke-width="1.5" width="192" x="10" y="36"></rect>
-<circle cx="55" cy="68.4" fill="#d4a843" opacity="0.8" r="17"></circle>
-<text fill="white" font-family="Source Sans 3, sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="55" y="73.2">!</text>
-<text fill="#8a6a3a" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="110" y="54">Frühwarnzeichen</text>
-<text fill="#8a6a3a" font-family="Source Sans 3, sans-serif" font-size="10" text-anchor="middle" x="110" y="89.3">Schlaf ↓ · Reizbarkeit ↑</text>
-<text fill="#8a6a3a" font-family="Source Sans 3, sans-serif" font-size="10" text-anchor="middle" x="110" y="108.3">Geld ausgeben · Schnell reden</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="110" y="127.3">→ Behandlungsteam informieren</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="110" y="146.3">→ Krisenplan hervornehmen</text>
-<text fill="#d0ccc6" font-family="Source Sans 3, sans-serif" font-size="14" x="205" y="108.3">→</text>
-<rect fill="#fdf0ed" height="135" rx="8" stroke="#c0392b" stroke-width="1.5" width="192" x="204" y="36"></rect>
-<circle cx="249" cy="68.4" fill="#c0392b" opacity="0.8" r="17"></circle>
-<text fill="white" font-family="Source Sans 3, sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="249" y="73.2">!!</text>
-<text fill="#a02015" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="304" y="54">Akute Krise</text>
-<text fill="#a02015" font-family="Source Sans 3, sans-serif" font-size="10" text-anchor="middle" x="304" y="89.3">Wahnideen · Aggression</text>
-<text fill="#a02015" font-family="Source Sans 3, sans-serif" font-size="10" text-anchor="middle" x="304" y="108.3">Suizidgedanken · Rückzug</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="304" y="127.3">→ Notfallmedikation</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="304" y="146.3">→ Klinik-Option prüfen</text>
-<text fill="#d0ccc6" font-family="Source Sans 3, sans-serif" font-size="14" x="399" y="108.3">→</text>
-<rect fill="#fceaea" height="135" rx="8" stroke="#b03030" stroke-width="2" width="192" x="398" y="36"></rect>
-<circle cx="443" cy="68.4" fill="#b03030" r="17"></circle>
-<text fill="white" font-family="Source Sans 3, sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="443" y="73.2">🆘</text>
-<text fill="#7a2020" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="498" y="54">Notfall</text>
-<text fill="#7a2020" font-family="Source Sans 3, sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="498" y="89.3">Selbst- oder Fremdgefährdung</text>
-<text fill="#7a2020" font-family="Source Sans 3, sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="498" y="108.3">Akute Psychose</text>
-<text fill="#b03030" font-family="Source Sans 3, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="498" y="135.3">NOTFALLDIENST: 0800 33 66 55</text>
-<text fill="#b03030" font-family="Source Sans 3, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="498" y="152.3">POLIZEI: 117 / SANITÄT: 144</text>
-</svg>
-</div>
+<div class="kp-ampel" role="img" aria-label="Krisenplan-Ampel mit drei Stufen: Gelb für Frühwarnzeichen, Orange für akute Krise, Rot für Notfall">
+
+  <div class="kp-stufe kp-stufe-gelb">
+    <div class="kp-stufe-header">
+      <div class="kp-stufe-badge">!</div>
+      <div class="kp-stufe-title">Frühwarnzeichen</div>
+    </div>
+    <div class="kp-symptome">
+      <span>Schlaf ↓ · Reizbarkeit ↑</span>
+      <span>Geld ausgeben · Schnell reden</span>
+    </div>
+    <div class="kp-massnahmen">
+      <span>→ Behandlungsteam informieren</span>
+      <span>→ Krisenplan hervornehmen</span>
+    </div>
+  </div>
+
+  <div class="kp-arrow">→</div>
+
+  <div class="kp-stufe kp-stufe-orange">
+    <div class="kp-stufe-header">
+      <div class="kp-stufe-badge">!!</div>
+      <div class="kp-stufe-title">Akute Krise</div>
+    </div>
+    <div class="kp-symptome">
+      <span>Wahnideen · Aggression</span>
+      <span>Suizidgedanken · Rückzug</span>
+    </div>
+    <div class="kp-massnahmen">
+      <span>→ Notfallmedikation</span>
+      <span>→ Klinik-Option prüfen</span>
+    </div>
+  </div>
+
+  <div class="kp-arrow">→</div>
+
+  <div class="kp-stufe kp-stufe-rot">
+    <div class="kp-stufe-header">
+      <div class="kp-stufe-badge">🆘</div>
+      <div class="kp-stufe-title">Notfall</div>
+    </div>
+    <div class="kp-symptome">
+      <span>Selbst- oder Fremdgefährdung</span>
+      <span>Akute Psychose</span>
+    </div>
+    <div class="kp-notfallnummern">
+      <a href="tel:+41800336655">Notfalldienst: 0800 33 66 55</a><br>
+      <a href="tel:117">Polizei: 117</a> · <a href="tel:144">Sanität: 144</a>
+    </div>
+  </div>
+
 </div>
 <p>Ein Krisenplan ist ein schriftliches Dokument, das in einer stabilen Phase gemeinsam erstellt wird. Er legt fest, was bei einer Verschlechterung zu tun ist. Das entlastet Sie in der Krise, weil Sie nicht mehr entscheiden müssen — Sie folgen dem Plan.</p>
 <div class="kp-mock-doc">
@@ -410,44 +427,45 @@
 <span class="acc-chevron">▼</span>
 </summary>
 <div class="acc-body">
-<div class="wave-chart-wrap mb-md">
-<div class="svg-scroll-mobile scroll-wrap" >
-<svg aria-label="Spektrum der Grenzsetzung: von zu weich über gesund bis zu hart, mit einer grünen Zielzone in der Mitte" class="viz-svg" role="img" viewBox="0 -5 600 218" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#fafaf6" height="158" rx="8" width="600" x="0" y="0.0"></rect>
-<text fill="#5a5070" font-family="Source Sans 3, sans-serif" font-size="24" font-weight="600" text-anchor="middle" x="300" y="30.0">Grenzsetzungs-Spektrum: Wo stehen Sie?</text>
-<rect fill="url(#grad-grenzen)" height="47" rx="15" width="580" x="10" y="40"></rect>
-<defs>
-<lineargradient id="grad-grenzen" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#ddeef8"></stop>
-<stop offset="35%" stop-color="#e8f0e8"></stop>
-<stop offset="50%" stop-color="#5a7a5a" stop-opacity="0.3"></stop>
-<stop offset="65%" stop-color="#e8f0e8"></stop>
-<stop offset="100%" stop-color="#fde8e0"></stop>
-</lineargradient>
-</defs>
-<rect fill="none" height="47" rx="19" stroke="#5a7a5a" stroke-dasharray="4,2" stroke-width="2" width="286" x="157" y="40"></rect>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="20" font-weight="600" text-anchor="middle" x="300" y="61.4">Gesunde Zone</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="15" text-anchor="middle" x="300" y="85.0">Klar · Liebevoll · Konsequent</text>
-<text fill="#4a7fa5" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="80" y="61.4">Zu weich</text>
-<text fill="#4a7fa5" font-family="Source Sans 3, sans-serif" font-size="14" text-anchor="middle" x="85" y="85.0">Alles mitmachen</text>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="515" y="61.4">Zu hart</text>
-<text fill="#c07030" font-family="Source Sans 3, sans-serif" font-size="14" text-anchor="middle" x="515" y="85.0">Ultimaten stellen</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="80" y="103.8">«Ich mache alles,</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="80" y="119.8">damit kein Streit</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="80" y="135.8">entsteht.»</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="210" y="103.8">«Ich liebe dich,</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="210" y="119.8">und ich brauche</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="210" y="135.8">heute Abend Ruhe.»</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="390" y="103.8">«Medikamente sind</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="390" y="119.8">deine Verantwortung.</text>
-<text fill="#5a7a5a" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="390" y="135.8">Ich erinnere dich gern.»</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="515" y="103.8">«Wenn du nicht zum</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="515" y="119.8">Arzt gehst, gehe</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="11" text-anchor="middle" x="515" y="135.8">ich für immer.»</text>
-<text fill="#8a8070" font-family="Source Sans 3, sans-serif" font-size="14" font-style="italic" text-anchor="middle" x="300" y="154.0"><tspan x="300" dy="0">Die meisten Angehörigen pendeln zwischen zu weich und zu hart.</tspan><tspan x="300" dy="18">Die Mitte braucht Übung — und ist erlernbar.</tspan></text>
-</svg>
-</div>
-<div class="wave-caption">Das Spektrum zeigt: Die meisten Angehörigen pendeln zwischen zu weich und zu hart. Die gesunde Mitte — klar, liebevoll, konsequent — ist erlernbar.</div>
+<div class="gs-wrap" role="img" aria-label="Spektrum der Grenzsetzung: von zu weich über gesund bis zu hart">
+
+  <div class="gs-bar-row">
+    <div class="gs-zone gs-zone-weich">
+      <div class="gs-zone-label">Zu weich</div>
+      <div class="gs-zone-sub">Alles mitmachen</div>
+    </div>
+    <div class="gs-arrow">›</div>
+    <div class="gs-zone gs-zone-mitte">
+      <div class="gs-zone-label">Gesunde Zone</div>
+      <div class="gs-zone-sub">Klar · Liebevoll · Konsequent</div>
+    </div>
+    <div class="gs-arrow">‹</div>
+    <div class="gs-zone gs-zone-hart">
+      <div class="gs-zone-label">Zu hart</div>
+      <div class="gs-zone-sub">Ultimaten stellen</div>
+    </div>
+  </div>
+
+  <div class="gs-examples">
+    <div class="gs-example ex-weich">
+      «Ich mache alles, damit kein Streit entsteht.»
+    </div>
+    <div class="gs-example ex-mitte-l">
+      «Ich liebe dich, und ich brauche heute Abend Ruhe.»
+    </div>
+    <div class="gs-example ex-mitte-r">
+      «Medikamente sind deine Verantwortung. Ich erinnere dich gern.»
+    </div>
+    <div class="gs-example ex-hart">
+      «Wenn du nicht zum Arzt gehst, gehe ich für immer.»
+    </div>
+  </div>
+
+  <div class="gs-note">
+    Die meisten Angehörigen pendeln zwischen zu weich und zu hart.<br>
+    Die Mitte braucht Übung — und ist erlernbar.
+  </div>
+
 </div>
 <div class="boundary-examples">
 <div class="boundary-row header-row">
