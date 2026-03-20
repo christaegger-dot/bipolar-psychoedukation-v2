@@ -4551,3 +4551,18 @@ details[open] .glossar-def {
   .mini-guide + .mini-guide{ margin-top:0.6rem}
   .mg-header{ min-height:52px;padding:0.8rem 1rem}
 }
+
+/* ── Inline-Hinweis-Boxen (Behandlung, Notfall, Beratung) ── */
+.behandlung-box{
+  margin:2rem 0;padding:1.5rem;border-radius:var(--radius);border-left:4px solid var(--box-accent,var(--m1))
+}
+.behandlung-box h3{
+  font-family:'Lora', Georgia, serif;font-size:var(--fs-lg);margin-bottom:0.8rem;color:var(--box-accent,var(--m1))
+}
+.source-note{
+  font-size:var(--fs-sm);color:var(--muted);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(74,107,138,0.2)
+}
+.inline-hinweis{
+  margin:1.5rem 0;padding:1rem 1.2rem;border-left:4px solid var(--box-accent,var(--m1));border-radius:var(--radius)
+}
+.inline-hinweis p{ margin:0;font-size:var(--fs-sm);line-height:1.6}

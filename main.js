@@ -21,6 +21,34 @@
    [INIT]        DOMContentLoaded-Initialisierung
    ═══════════════════════════════════════════════════════════ */
 
+// ── INIT: Service Worker + Hash-Routing (ehemals init.js) ──
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(function(e) { console.warn('SW:', e); });
+}
+
+if (location.hash) {
+  var target = document.querySelector(location.hash);
+  if (target) {
+    if (target.tagName === 'DETAILS') { target.open = true; }
+    var parent = target.closest ? target.closest('details') : null;
+    if (parent) { parent.open = true; }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+(function() {
+  var h = window.location.hash;
+  var m = h && h.match(/^#m(\d)$/);
+  if (m) { window.location.replace('/modul/' + m[1] + '/'); return; }
+  var ms = h && h.match(/^#(m\d-.+)$/);
+  if (ms) {
+    var num = ms[1].charAt(1);
+    var anchor = ms[1].substring(3);
+    window.location.replace('/modul/' + num + '/#' + anchor);
+  }
+})();
+
 /* Escape HTML to prevent XSS when inserting dynamic text via innerHTML */
 function escHtml(str) {
   if (str == null) return '';
@@ -725,35 +753,25 @@ function filterHandouts(category) {
   });
 }
 
-// FAQ-Akkordeon
-function toggleFaq(btn) {
-  var item = btn.closest('.faq-item');
+// Generisches Akkordeon (FAQ, Glossar, Mini-Guide)
+// containerSel = '.faq-item' | '.glossar-item' | '.mini-guide'
+// triggerSel   = '.faq-q'   | '.glossar-term'  | '.mg-header'
+function toggleAccordion(btn, containerSel, triggerSel) {
+  var item = btn.closest(containerSel);
   if (!item) return;
   var wasOpen = item.classList.contains('open');
-  item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i) {
+  item.parentElement.querySelectorAll(containerSel + '.open').forEach(function(i) {
     i.classList.remove('open');
-    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    i.querySelector(triggerSel).setAttribute('aria-expanded', 'false');
   });
   if (!wasOpen) {
     item.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
 }
-
-// Glossar-Akkordeon
-function toggleGlossar(btn) {
-  var item = btn.closest('.glossar-item');
-  if (!item) return;
-  var wasOpen = item.classList.contains('open');
-  item.parentElement.querySelectorAll('.glossar-item.open').forEach(function(i) {
-    i.classList.remove('open');
-    i.querySelector('.glossar-term').setAttribute('aria-expanded', 'false');
-  });
-  if (!wasOpen) {
-    item.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-  }
-}
+function toggleFaq(btn)     { toggleAccordion(btn, '.faq-item', '.faq-q'); }
+function toggleGlossar(btn) { toggleAccordion(btn, '.glossar-item', '.glossar-term'); }
+function toggleMG(btn)      { toggleAccordion(btn, '.mini-guide', '.mg-header'); }
 
 // Ressourcen-Seite: Glossar + FAQ Section Toggles
 document.querySelectorAll('.res-glossar-toggle, .res-faq-toggle').forEach(function(btn) {
@@ -764,21 +782,6 @@ document.querySelectorAll('.res-glossar-toggle, .res-faq-toggle').forEach(functi
     target.hidden = expanded;
   });
 });
-
-// Notfall Mini-Guide Akkordeon
-function toggleMG(btn) {
-  var guide = btn.closest('.mini-guide');
-  if (!guide) return;
-  var wasOpen = guide.classList.contains('open');
-  guide.parentElement.querySelectorAll('.mini-guide.open').forEach(function(g) {
-    g.classList.remove('open');
-    g.querySelector('.mg-header').setAttribute('aria-expanded', 'false');
-  });
-  if (!wasOpen) {
-    guide.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-  }
-}
 
 // Auto-collapse long lists to reduce cognitive load
 // Shows first 3 items and hides the rest behind a "Mehr anzeigen" button

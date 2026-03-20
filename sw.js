@@ -3,7 +3,6 @@ const CORE_ASSETS = [
   '/',
   '/shared.css?v=0b41167',
   '/main.js?v=0b41167',
-  '/init.js?v=0b41167',
   '/search.js?v=0b41167',
   '/search-index.js?v=0b41167',
   '/fonts/lora-v37-latin-regular.woff2',
