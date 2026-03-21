@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1200" width="850" height="1200" font-family="'Helvetica Neue', 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <!-- Arrow marker (arrow_color: #3A7A8A) -->
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3A7A8A"/>
+    </marker>
+    <!-- Soft shadow (stdDeviation:2, opacity:0.08, offset_y:1) -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== BACKGROUND (pure white #FFFFFF) ===== -->
+
+  <rect width="850" height="1200" fill="#FFFFFF"/>
+
+  <!-- ===== CONTENT 1: HEADER ===== -->
+
+  <!-- typography.header: size 10.5, weight 600, fill #3A7A8A, spacing 1.2, uppercase -->
+
+<text x="42" y="32" font-size="10.5" font-weight="600" fill="#3A7A8A" letter-spacing="1.2">PSYCHIATRISCHE UNIVERSITÄTSKLINIK ZÜRICH · FACHSTELLE ANGEHÖRIGENARBEIT</text>
+
+  <!-- ===== CONTENT 2: TITLE ===== -->
+
+  <!-- typography.title: size 38, weight 700, fill #1A3A4A, spacing -0.5 -->
+
+<text x="42" y="82" font-size="38" font-weight="700" fill="#1A3A4A" letter-spacing="-0.5">Behandlung — was hilft</text>
+
+  <!-- ===== CONTENT 3: SUBTITLE + ACCENT LINE ===== -->
+
+  <!-- typography.subtitle: size 19, weight 400, fill #5A8A8A -->
+
+<text x="42" y="115" font-size="19" font-weight="400" fill="#5A8A8A">Ein realistischer Überblick für Angehörige</text>
+
+  <!-- accent line: teal stroke, left-aligned, width 98 -->
+
+  <line x1="42" y1="132" x2="140" y2="132" stroke="#6BAFBF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- ===== CONTENT 4+5: DIAGRAM (Hub & Spoke, N=4) ===== -->
+
+  <!-- === TOP NODE: Stimmungsstabilisierer (grün / Schutzfaktor) === -->
+
+  <circle cx="425" cy="244" r="88" fill="#D7EDDF" stroke="#7BBF8E" stroke-width="2" filter="url(#shadow)"/>
+  <text x="425" y="226" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">Stimmungs-</text>
+  <text x="425" y="246" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">stabilisierer</text>
+  <text x="425" y="272" text-anchor="middle" font-size="12.5" fill="#3A6A4A">Lithium, Valproat,</text>
+  <text x="425" y="288" text-anchor="middle" font-size="12.5" fill="#3A6A4A">Lamotrigin</text>
+
+  <!-- CALLOUT: Lebenslang -->
+
+  <rect x="548" y="208" rx="8" ry="8" width="148" height="56" fill="#FFFFFF" stroke="#7BBF8E" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="622" y="232" text-anchor="middle" font-size="15" font-weight="700" fill="#1A3A4A">Lebenslang</text>
+  <text x="622" y="252" text-anchor="middle" font-size="11.5" fill="#3A6A4A">meist dauerhaft nötig</text>
+  <line x1="548" y1="236" x2="513" y2="244" stroke="#7BBF8E" stroke-width="1.2"/>
+
+  <!-- ARROW: Stimmungsstabilisierer → Episoden -->
+
+  <line x1="425" y1="334" x2="425" y2="380" stroke="#3A7A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- === CENTER NODE: Episoden (coral / Herausforderung) === -->
+
+  <circle cx="425" cy="491" r="108" fill="#F5DCD5" stroke="#E8A99A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="425" y="473" text-anchor="middle" font-size="20" font-weight="700" fill="#1A3A4A">Episoden</text>
+  <text x="425" y="499" text-anchor="middle" font-size="13" fill="#6A4A3A">können auftreten —</text>
+  <text x="425" y="517" text-anchor="middle" font-size="13" fill="#6A4A3A">seltener und milder</text>
+
+  <!-- === LEFT NODE: Realistische Erwartungen (teal / Kontext) === -->
+
+  <circle cx="149" cy="491" r="98" fill="#D3E8EE" stroke="#6BAFBF" stroke-width="2" filter="url(#shadow)"/>
+  <text x="149" y="469" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">Realistische</text>
+  <text x="149" y="489" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">Erwartungen</text>
+  <text x="149" y="515" text-anchor="middle" font-size="12.5" fill="#2A6A7A">kein Versprechen auf</text>
+  <text x="149" y="531" text-anchor="middle" font-size="12.5" fill="#2A6A7A">Episodenfreiheit</text>
+
+  <!-- ARROW: Realistische Erwartungen → Episoden -->
+
+  <line x1="249" y1="491" x2="314" y2="491" stroke="#3A7A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- === RIGHT NODE: Psychotherapie (grün / Schutzfaktor) === -->
+
+  <circle cx="701" cy="491" r="98" fill="#D7EDDF" stroke="#7BBF8E" stroke-width="2" filter="url(#shadow)"/>
+  <text x="701" y="476" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">Psychotherapie</text>
+  <text x="701" y="502" text-anchor="middle" font-size="12.5" fill="#3A6A4A">KVT, IPSRT —</text>
+  <text x="701" y="518" text-anchor="middle" font-size="12.5" fill="#3A6A4A">evidenzbasiert</text>
+
+  <!-- ARROW: Episoden → Psychotherapie -->
+
+  <line x1="536" y1="491" x2="600" y2="491" stroke="#3A7A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- === BOTTOM NODE: Psychoedukation (grün / Schutzfaktor) === -->
+
+  <circle cx="425" cy="730" r="98" fill="#D7EDDF" stroke="#7BBF8E" stroke-width="2" filter="url(#shadow)"/>
+  <text x="425" y="714" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1A3A4A">Psychoedukation</text>
+  <text x="425" y="740" text-anchor="middle" font-size="12.5" fill="#3A6A4A">senkt Rückfallrisiko</text>
+  <text x="425" y="756" text-anchor="middle" font-size="12.5" fill="#3A6A4A">nachweislich</text>
+
+  <!-- ARROW: Episoden → Psychoedukation -->
+
+  <line x1="425" y1="601" x2="425" y2="629" stroke="#3A7A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== CONTENT 6: LEGENDE ===== -->
+
+<text x="42" y="860" font-size="12" font-weight="600" fill="#5A6A6A">Legende</text>
+
+  <rect x="42" y="872" rx="3" ry="3" width="20" height="14" fill="#F5DCD5" stroke="#E8A99A" stroke-width="1"/>
+  <text x="70" y="884" font-size="12" fill="#1A3A4A">Herausforderung</text>
+
+  <rect x="200" y="872" rx="3" ry="3" width="20" height="14" fill="#D3E8EE" stroke="#6BAFBF" stroke-width="1"/>
+  <text x="228" y="884" font-size="12" fill="#1A3A4A">Kontext</text>
+
+  <rect x="320" y="872" rx="3" ry="3" width="20" height="14" fill="#D7EDDF" stroke="#7BBF8E" stroke-width="1"/>
+  <text x="348" y="884" font-size="12" fill="#1A3A4A">Schutzfaktor</text>
+
+  <!-- ===== CONTENT 7: TEXTMODULE ===== -->
+
+  <line x1="42" y1="910" x2="808" y2="910" stroke="#D8D8D8" stroke-width="1"/>
+
+<text x="42" y="940" font-size="14.5" font-weight="700" fill="#2B6B7F">Kurz erklärt</text>
+
+  <text font-size="11.5" fill="#333333">
+    <tspan x="42" y="964">Bipolare Störung wird mit Medikamenten</tspan>
+    <tspan x="42" dy="17">und Therapie behandelt — aber nicht geheilt.</tspan>
+    <tspan x="42" dy="17">Die verschiedenen Behandlungsansätze wirken</tspan>
+    <tspan x="42" dy="17">zusammen und ergänzen sich gegenseitig.</tspan>
+    <tspan x="42" dy="17">Medikamente dämpfen die biologische</tspan>
+    <tspan x="42" dy="17">Verletzlichkeit für neue Krisen.</tspan>
+    <tspan x="42" dy="17">Therapie und Wissen stärken den Umgang</tspan>
+    <tspan x="42" dy="17">mit der Erkrankung im Alltag.</tspan>
+  </text>
+
+  <line x1="296" y1="925" x2="296" y2="1108" stroke="#D8D8D8" stroke-width="1"/>
+
+<text x="316" y="940" font-size="14.5" font-weight="700" fill="#2B6B7F">Wichtig zu wissen</text>
+<text font-size="11.5" fill="#333333">
+<tspan x="316" y="964">Auch unter optimaler Behandlung können</tspan>
+<tspan x="316" dy="17">Krisen auftreten — seltener und milder.</tspan>
+<tspan x="316" dy="17">Die meisten Betroffenen brauchen</tspan>
+<tspan x="316" dy="17">lebenslange Medikation für ihre Stabilität.</tspan>
+<tspan x="316" dy="17">Absetzversuche ohne ärztliche Begleitung</tspan>
+<tspan x="316" dy="17">enden häufig in Rückfällen.</tspan>
+<tspan x="316" dy="17">Fortschritt heisst: weniger Krisen,</tspan>
+<tspan x="316" dy="17">nicht null Krisen.</tspan>
+</text>
+
+  <line x1="562" y1="925" x2="562" y2="1108" stroke="#D8D8D8" stroke-width="1"/>
+
+<text x="582" y="940" font-size="14.5" font-weight="700" fill="#2B6B7F">Zum Nachdenken</text>
+<text font-size="11.5" fill="#333333" font-style="italic">
+<tspan x="582" y="964">Welche Erwartung an die Behandlung</tspan>
+<tspan x="582" dy="17">haben Sie bisher gehabt — und was</tspan>
+<tspan x="582" dy="17">davon ist realistisch?</tspan>
+<tspan x="582" dy="34">Was würde sich für Sie verändern,</tspan>
+<tspan x="582" dy="17">wenn Sie Fortschritt nicht an</tspan>
+<tspan x="582" dy="17">Episodenfreiheit messen?</tspan>
+</text>
+
+  <!-- ===== CONTENT 8: FOOTER ===== -->
+
+  <line x1="42" y1="1120" x2="808" y2="1120" stroke="#D8D8D8" stroke-width="0.5"/>
+  <text x="42" y="1145" font-size="9.5" fill="#999999">Goodwin &amp; Jamison (zweitausendsieben) · Miklowitz (zweitausendacht)</text>
+
+<text transform="translate(828, 1120) rotate(-90)" font-size="8.5" fill="#AAAAAA">Fachstelle Angehörigenarbeit · PUK Zürich · C. Egger · zweitausendsechsundzwanzig</text>
+</svg>
