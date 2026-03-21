@@ -5222,6 +5222,21 @@ details[open] .glossar-def {
   font-weight: 400;
 }
 
+/* Infographic figures: einheitlich */
+.infographic-wrap {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.infographic-wrap img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.infographic-wrap .viz-source {
+  margin-top: 0.5rem;
+}
+
 /* Viz-Source Captions: einheitlich */
 .viz-source {
   font-size: 0.72rem;
