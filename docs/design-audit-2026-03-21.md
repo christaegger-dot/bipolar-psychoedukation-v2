@@ -170,7 +170,7 @@ Probleme:
 |---|---|---|---|
 | 6 | ~~2 neue `--fs-*` Variablen + Migration (89 Stellen, 78%→95%)~~ | done | CSS |
 | 7 | ~~`border-radius` auf 3 Variablen standardisiert (sm/default/lg, 101 Stellen)~~ | done | CSS |
-| 8 | 38 Box-Typen auf 7 Grund-Mixins reduzieren | gross | CSS + HTML |
+| 8 | ~~36 Box-Typen auf 7 Grundtypen konsolidiert (26 Klassen, .reflexion ausgenommen)~~ | done | CSS |
 | 9 | ~~SVG-Farben auf CSS-Variablen migriert (66 Ersetzungen, 6 Dateien)~~ | done | HTML |
 
 ### P3 -- Feinschliff (spaeter)
