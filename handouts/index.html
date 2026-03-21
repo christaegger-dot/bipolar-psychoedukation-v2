@@ -16,7 +16,7 @@
 <meta content="https://bipolare-erkrankung-angehoerige.netlify.app/handouts/" property="og:url"/>
 <meta content="de_CH" property="og:locale"/>
 <meta content="PUK Zürich – Angehörigenarbeit" property="og:site_name"/>
-<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🤝&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -84,16 +84,16 @@
     </a>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche"><span class="icon-search" aria-hidden="true">⌕</span></button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen"><span class="icon-bookmark" aria-hidden="true">◈</span></button>
 <div class="bookmark-panel" id="bookmark-panel">
-<div class="bp-title">🔖 Lesezeichen</div>
+<div class="bp-title"><span class="icon-bookmark" aria-hidden="true">◈</span> Lesezeichen</div>
 <div id="bookmark-list">Lesezeichen werden hier angezeigt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht"><span class="icon-settings" aria-hidden="true">◎</span></button>
 <div class="settings-panel" id="settings-panel">
 <button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus"> <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" data-action="toggleNav" aria-expanded="false" aria-label="Menü öffnen" title="Menü">
@@ -108,20 +108,20 @@
 <div class="subpage-content">
 <div class="breadcrumb"><a href="/">← Zurück zur Startseite</a></div>
 <div class="text-version-note">
-<p>📝 <strong>Barrierefreie Textversionen</strong> — Alle Infografiken sind auch als <a href="#text-versions">reine Textversion (PDF)</a> verfügbar.</p>
+<p><span class="doc-icon" aria-hidden="true">↓</span> <strong>Barrierefreie Textversionen</strong> — Alle Infografiken sind auch als <a href="#text-versions">reine Textversion (PDF)</a> verfügbar.</p>
 </div>
 
 <div class="filter-bar" style="margin:1rem 0 1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
 <span class="subtext">Filtern:</span>
 <button class="filter-chip active" data-filter="alle" data-action="filterHandouts" data-param="alle">Alle</button>
-<button class="filter-chip" data-filter="krise" data-action="filterHandouts" data-param="krise">🆘 Krise & Notfall</button>
-<button class="filter-chip" data-filter="kommunikation" data-action="filterHandouts" data-param="kommunikation">🗣 Kommunikation</button>
-<button class="filter-chip" data-filter="selbstfuersorge" data-action="filterHandouts" data-param="selbstfuersorge">🛡 Selbstfürsorge</button>
-<button class="filter-chip" data-filter="belastung" data-action="filterHandouts" data-param="belastung">📊 Belastung verstehen</button>
+<button class="filter-chip" data-filter="krise" data-action="filterHandouts" data-param="krise"><span class="situation-icon situation-sos" aria-hidden="true">SOS</span> Krise & Notfall</button>
+<button class="filter-chip" data-filter="kommunikation" data-action="filterHandouts" data-param="kommunikation"> Kommunikation</button>
+<button class="filter-chip" data-filter="selbstfuersorge" data-action="filterHandouts" data-param="selbstfuersorge"> Selbstfürsorge</button>
+<button class="filter-chip" data-filter="belastung" data-action="filterHandouts" data-param="belastung"> Belastung verstehen</button>
 </div>
 
 <div class="section-group" data-module="download">
-<h2>📥 Vorlagen &amp; Hilfsmittel</h2>
+<h2><span class="doc-icon" aria-hidden="true">↓</span> Vorlagen &amp; Hilfsmittel</h2>
 <div class="card-grid">
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="krise" data-module="download" href="/downloads/krisenplan-vorlage-bipolare-stoerung-puk-zuerich.pdf">
@@ -166,7 +166,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/a8_warnsignale.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/a8_warnsignale.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -182,7 +182,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b1_18_belastungen.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b1_18_belastungen.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m2" href="/handouts/b9_depression_partner.pdf">
@@ -193,7 +193,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b9_depression_partner.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b9_depression_partner.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -209,7 +209,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/a4_ambiguous_loss.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/a4_ambiguous_loss.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="belastung" data-module="m3" href="/handouts/b10_trennung_scheidung.pdf">
@@ -220,7 +220,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b10_trennung_scheidung.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b10_trennung_scheidung.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -236,7 +236,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b2_erosion_solidaritaet.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b2_erosion_solidaritaet.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="belastung" data-module="m4" href="/handouts/b3_kritische_zeitpunkte.pdf">
@@ -247,7 +247,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b3_kritische_zeitpunkte.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b3_kritische_zeitpunkte.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="belastung" data-module="m4" href="/handouts/b4_mechanismen_erosion.pdf">
@@ -258,7 +258,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b4_mechanismen_erosion.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b4_mechanismen_erosion.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="belastung" data-module="m4" href="/handouts/b6_geschlechtsspezifisch.pdf">
@@ -269,7 +269,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b6_geschlechtsspezifisch.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b6_geschlechtsspezifisch.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -285,7 +285,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/a3_ambivalente_loyalitaet.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/a3_ambivalente_loyalitaet.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m5" href="/handouts/b5_loyalitaetskonflikte.pdf">
@@ -296,7 +296,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b5_loyalitaetskonflikte.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b5_loyalitaetskonflikte.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m5" href="/handouts/expressed_emotions.pdf">
@@ -307,7 +307,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/expressed_emotions.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/expressed_emotions.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="belastung" data-module="m5" href="/handouts/a5_affiliate_stigma.pdf">
@@ -318,7 +318,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/a5_affiliate_stigma.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/a5_affiliate_stigma.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -334,7 +334,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c1_krisenplan.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c1_krisenplan.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m6" href="/handouts/c6_selbstfuersorge.pdf">
@@ -345,7 +345,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c6_selbstfuersorge.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c6_selbstfuersorge.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m6" href="/handouts/grenzsetzung.pdf">
@@ -356,7 +356,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/grenzsetzung.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/grenzsetzung.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="krise" data-module="m6" href="/handouts/c2_suizidgedanken.pdf">
@@ -367,7 +367,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c2_suizidgedanken.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c2_suizidgedanken.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="krise" data-module="m6" href="/handouts/c3_psychose_wahn.pdf">
@@ -378,7 +378,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c3_psychose_wahn.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c3_psychose_wahn.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="krise" data-module="m6" href="/handouts/c4_manie.pdf">
@@ -389,7 +389,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c4_manie.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c4_manie.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="krise" data-module="m6" href="/handouts/c5_depression.pdf">
@@ -400,7 +400,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/c5_depression.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/c5_depression.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m6" href="/handouts/b7_behandlung_ambivalenz.pdf">
@@ -411,7 +411,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/b7_behandlung_ambivalenz.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/b7_behandlung_ambivalenz.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -427,7 +427,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/transformationsreise.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/transformationsreise.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="kommunikation" data-module="m7" href="/handouts/trialog.pdf">
@@ -438,7 +438,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/trialog.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/trialog.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 <div class="card-wrap">
 <a class="pdf-card has-thumb" data-category="selbstfuersorge" data-module="m7" href="/handouts/d4_solidaritaet_wellen.pdf">
@@ -449,7 +449,7 @@
 <span class="card-badge">PDF · 1 Seite</span>
 </div>
 </a>
-<a class="text-version-link" href="/handouts-text/d4_solidaritaet_wellen.pdf" title="Barrierefreie Textversion herunterladen">📄 Textversion</a>
+<a class="text-version-link" href="/handouts-text/d4_solidaritaet_wellen.pdf" title="Barrierefreie Textversion herunterladen"><span class="doc-icon" aria-hidden="true">↓</span> Textversion</a>
 </div>
 </div>
 </div>
@@ -460,172 +460,172 @@
 </div>
 <!-- REDAKTIONELL PRÜFEN: Textversions-PDFs in /handouts-text/ sind nur 3-4 KB gross. Stichprobenartig prüfen ob Inhalte vollständig sind oder nur Platzhalter. -->
 <div id="text-versions" class="section-group" style="margin-top:2.5rem">
-<h2 class="section-intro">📝 Barrierefreie Textversionen</h2>
+<h2 class="section-intro"><span class="doc-icon" aria-hidden="true">↓</span> Barrierefreie Textversionen</h2>
 <p class="text-sm-muted-mb">Alle Infografiken als reine Text-PDFs — optimiert für Screen-Reader und langsame Verbindungen.</p>
 <div class="card-grid">
 <a class="pdf-card" href="/handouts-text/a3_ambivalente_loyalitaet.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Ambivalente Loyalität</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/a4_ambiguous_loss.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Ambiguous Loss</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/a5_affiliate_stigma.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Affiliate Stigma</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/a8_warnsignale.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Warnsignale erkennen</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b10_trennung_scheidung.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Trennung & Scheidung</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b1_18_belastungen.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>18 Belastungen</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b2_erosion_solidaritaet.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Erosion der Solidarität</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b3_kritische_zeitpunkte.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Kritische Zeitpunkte</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b4_mechanismen_erosion.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Mechanismen der Erosion</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b5_loyalitaetskonflikte.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Loyalitätskonflikte</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b6_geschlechtsspezifisch.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Geschlechtsspezifisch</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b7_behandlung_ambivalenz.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Behandlungsambivalenz</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/b9_depression_partner.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Depression beim Partner</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c1_krisenplan.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Krisenplan</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c2_suizidgedanken.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Suizidgedanken</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c3_psychose_wahn.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Psychose & Wahn</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c4_manie.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Manie</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c5_depression.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Depression</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/c6_selbstfuersorge.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Selbstfürsorge</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/d4_solidaritaet_wellen.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Solidarität in Wellen</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/expressed_emotions.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Expressed Emotions</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/grenzsetzung.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Grenzsetzung</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/transformationsreise.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Transformationsreise</h3>
 <p>Textversion · barrierefrei</p>
 </div>
 </a>
 <a class="pdf-card" href="/handouts-text/trialog.pdf" target="_blank" rel="noopener noreferrer">
-<span class="card-icon">📝</span>
+<span class="card-icon"><span class="doc-icon" aria-hidden="true">↓</span></span>
 <div class="card-body">
 <h3>Trialog</h3>
 <p>Textversion · barrierefrei</p>
@@ -674,8 +674,12 @@
 <!-- Asset-ID labels for QA -->
 
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
-  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-icon"><span class="situation-icon situation-sos" aria-hidden="true">SOS</span></span>
   <span class="notfall-fab-label">Hilfe</span>
 </a>
+<!-- PHASE 4: Quick-Exit-Button -->
+<button class="quick-exit-btn" id="quick-exit-btn" onclick="window.location.replace('https://www.srf.ch/news');" title="Seite schnell verlassen" aria-label="Seite verlassen">
+  <span aria-hidden="true">✕</span> Verlassen
+</button>
 </body>
 </html>

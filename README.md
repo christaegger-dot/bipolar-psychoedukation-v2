@@ -70,3 +70,47 @@ Lenggstrasse 31, 8032 Zürich
 ## Lizenz
 
 © 2026 Psychiatrische Universitätsklinik Zürich. Alle Rechte vorbehalten.
+
+---
+
+## Changelog v2 (Manus-Optimierung, März 2026)
+
+### Phase 1 — Quellenangaben & Wissenschaftliche Integrität
+- Einheitliches APA-Format in allen 8 Modulen
+- Aufklappbare Quellen-Akkordeons am Ende jedes Moduls
+- Viz-Captions direkt unter alle Visualisierungen
+- Modul 8 mit aktuellen Evidenz-Quellen ergänzt (inkl. Chiba 2025)
+
+### Phase 2 — Visualisierungen Mobile-First
+- Alle hardcodierten `width`-Attribute aus SVG-Tags entfernt (responsive)
+- Direct Labeling beim Wellen-Chart (Modul 7)
+- Y-Achsen-Beschriftung beim Vier-Dimensionen-Chart (Modul 3)
+- Hoffnungs-Anker bei Solidaritätserosions-Chart (Modul 3)
+- Alle SVG-Farben auf CSS-Variablen umgestellt
+
+### Phase 3 — Inhaltliche Ergänzungen
+- **Modul 1:** Toxische Hoffnung (Ambiguous Loss)
+- **Modul 4:** Ungelebte Zeit, Parentifizierung
+- **Modul 5:** Fluchtgedanken validieren
+- **Modul 6:** Finanz-Erste-Hilfe (Manie-Schutz), Paranoia-Leitfaden
+- **Modul 7:** «Tag danach» — Nachkrise der Angehörigen
+- **Modul 8:** System-Wut validieren
+- **Notfall-Seite:** Grauzone-Triage
+
+### Phase 4 — Homepage-Interaktivität & globale UX-Features
+- Animierter Fortschrittsbalken (0–8 Module)
+- Personalisierter Willkommen-zurück-Banner
+- Modul-Karten mit Completed-State
+- Quick-Exit-Button (diskret, transparent)
+- 29 Glossar-Tooltips für Fachbegriffe
+- Krisenplan-Lesezeichen (localStorage)
+
+### Design-Review (P0/P1/P2)
+- 421 Emojis durch professionelle Symbole ersetzt
+- Weissraum-Rhythmus verbessert
+- Typografie-Hierarchie geschärft
+- Karten-Ästhetik vereinheitlicht
+- Neue WCAG-konforme Modul-Farbpalette
+- Dark Mode Bug (`--white`) behoben
+- iOS Safe Area ergänzt
+- Service Worker Cache v21

@@ -15,7 +15,7 @@
 <meta content="https://bipolare-erkrankung-angehoerige.netlify.app/ressourcen/" property="og:url"/>
 <meta content="de_CH" property="og:locale"/>
 <meta content="PUK Zürich – Angehörigenarbeit" property="og:site_name"/>
-<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🤝&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -83,16 +83,16 @@
     </a>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche"><span class="icon-search" aria-hidden="true">⌕</span></button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen"><span class="icon-bookmark" aria-hidden="true">◈</span></button>
 <div class="bookmark-panel" id="bookmark-panel">
-<div class="bp-title">🔖 Lesezeichen</div>
+<div class="bp-title"><span class="icon-bookmark" aria-hidden="true">◈</span> Lesezeichen</div>
 <div id="bookmark-list">Lesezeichen werden hier angezeigt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht"><span class="icon-settings" aria-hidden="true">◎</span></button>
 <div class="settings-panel" id="settings-panel">
 <button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus"> <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" data-action="toggleNav" aria-expanded="false" aria-label="Menü öffnen" title="Menü">
@@ -397,6 +397,8 @@ Häufige Fragen (10 Antworten)
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
+<a href="/impressum/#datenschutz" class="link-inherit-u">Datenschutz</a>
+<a href="/impressum/#barrierefreiheit" class="link-inherit-u">Barrierefreiheit</a>
 </div>
 </footer>
 
@@ -414,8 +416,12 @@ Häufige Fragen (10 Antworten)
 </div>
 </div>
 <a href="/notfall/" class="notfall-fab" aria-label="Notfall &amp; Krisenhilfe">
-  <span class="notfall-fab-icon">🆘</span>
+  <span class="notfall-fab-icon"><span class="situation-icon situation-sos" aria-hidden="true">SOS</span></span>
   <span class="notfall-fab-label">Hilfe</span>
 </a>
+<!-- PHASE 4: Quick-Exit-Button -->
+<button class="quick-exit-btn" id="quick-exit-btn" onclick="window.location.replace('https://www.srf.ch/news');" title="Seite schnell verlassen" aria-label="Seite verlassen">
+  <span aria-hidden="true">✕</span> Verlassen
+</button>
 </body>
 </html>

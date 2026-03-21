@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://bipolare-erkrankung-angehoerige.netlify.app/images/og-notfall.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lora-v37-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/source-sans-3-v19-latin-600.woff2" as="font" type="font/woff2" crossorigin>
@@ -82,16 +82,16 @@
     </a>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche">🔍</button>
-<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen">🔖</button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche"><span class="icon-search" aria-hidden="true">⌕</span></button>
+<button class="nav-bookmark" id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" aria-label="Lesezeichen" title="Lesezeichen"><span class="icon-bookmark" aria-hidden="true">◈</span></button>
 <div class="bookmark-panel" id="bookmark-panel">
-<div class="bp-title">🔖 Lesezeichen</div>
+<div class="bp-title"><span class="icon-bookmark" aria-hidden="true">◈</span> Lesezeichen</div>
 <div id="bookmark-list">Lesezeichen werden hier angezeigt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht">⚙️</button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht"><span class="icon-settings" aria-hidden="true">◎</span></button>
 <div class="settings-panel" id="settings-panel">
 <button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
-<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus">📖 <span id="rm-state">Lesen</span></button>
+<button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus"> <span id="rm-state">Lesen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" data-action="toggleNav" aria-expanded="false" aria-label="Menü öffnen" title="Menü">
@@ -179,94 +179,94 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 
 <div class="mini-guide open">
 <button class="mg-header" aria-expanded="true" aria-controls="mg-manie" data-action="toggleMG">
-<span class="mg-icon">⚡</span>
+<span class="mg-icon"><span class="situation-icon" aria-hidden="true">!</span></span>
 <span>Manie — Ihr*e Partner*in ist euphorisch, schläft nicht, ist überaktiv</span>
 <span class="mg-arrow">›</span>
 </button>
 <div class="mg-body" id="mg-manie"><div class="mg-body-inner">
 <ul>
-<li data-icon="👁">Beobachten Sie: Schläft die Person seit 2+ Nächten kaum? Gibt sie unkontrolliert Geld aus? Ist sie ungewöhnlich reizbar oder grandios?</li>
-<li data-icon="🗣">Sprechen Sie ruhig und kurz: «Mir fällt auf, dass du seit drei Nächten kaum schläfst. Ich mache mir Sorgen.»</li>
-<li data-icon="📋">Krisenplan aktivieren — wenn vorhanden. Wenn nicht: Behandlungsteam informieren.</li>
-<li data-icon="🔒">Schützen Sie Finanzen: Konten, Kreditkarten, Vollmachten prüfen.</li>
-<li data-icon="🚗">Fahren lassen? Nur wenn die Person sicher fahren kann. Im Zweifel: Nein.</li>
-<li data-icon="📞">Rufen Sie das Behandlungsteam an — auch ohne Einwilligung der Person. Sie informieren, Sie entscheiden nicht.</li>
+<li data-icon="">Beobachten Sie: Schläft die Person seit 2+ Nächten kaum? Gibt sie unkontrolliert Geld aus? Ist sie ungewöhnlich reizbar oder grandios?</li>
+<li data-icon="">Sprechen Sie ruhig und kurz: «Mir fällt auf, dass du seit drei Nächten kaum schläfst. Ich mache mir Sorgen.»</li>
+<li data-icon="">Krisenplan aktivieren — wenn vorhanden. Wenn nicht: Behandlungsteam informieren.</li>
+<li data-icon="">Schützen Sie Finanzen: Konten, Kreditkarten, Vollmachten prüfen.</li>
+<li data-icon="">Fahren lassen? Nur wenn die Person sicher fahren kann. Im Zweifel: Nein.</li>
+<li data-icon="">Rufen Sie das Behandlungsteam an — auch ohne Einwilligung der Person. Sie informieren, Sie entscheiden nicht.</li>
 </ul>
 <div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Ruhig bleiben. Kurze Sätze. Nicht argumentieren. Sicherheit priorisieren.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>«Du bist manisch!» Diskutieren. Ultimaten stellen. Allein lösen wollen.</div>
+<div class="mg-do"><strong><span class="check-icon" aria-hidden="true">✓</span> Hilfreich</strong>Ruhig bleiben. Kurze Sätze. Nicht argumentieren. Sicherheit priorisieren.</div>
+<div class="mg-dont"><strong><span class="cross-icon" aria-hidden="true">✗</span> Vermeiden</strong>«Du bist manisch!» Diskutieren. Ultimaten stellen. Allein lösen wollen.</div>
 </div>
-<div class="mg-important">⚠️ Bei akuter Selbst- oder Fremdgefährdung: <a href="tel:144" class="text-danger-dk">144</a> oder <a href="tel:117" class="text-danger-dk">117</a> rufen.</div>
+<div class="mg-important"><span class="warn-icon" aria-hidden="true">!</span> Bei akuter Selbst- oder Fremdgefährdung: <a href="tel:144" class="text-danger-dk">144</a> oder <a href="tel:117" class="text-danger-dk">117</a> rufen.</div>
 
-<a class="mg-handout" href="/handouts/c4_manie.pdf" download>📄 Handout: Umgang mit Manie (PDF)</a>
+<a class="mg-handout" href="/handouts/c4_manie.pdf" download><span class="doc-icon" aria-hidden="true">↓</span> Handout: Umgang mit Manie (PDF)</a>
 </div></div>
 </div>
 
 <div class="mini-guide">
 <button class="mg-header" aria-expanded="false" aria-controls="mg-depression" data-action="toggleMG">
-<span class="mg-icon">🌧</span>
+<span class="mg-icon"><span class="situation-icon" aria-hidden="true">–</span></span>
 <span>Depression — Rückzug, Antriebslosigkeit, Hoffnungslosigkeit</span>
 <span class="mg-arrow">›</span>
 </button>
 <div class="mg-body" id="mg-depression"><div class="mg-body-inner">
 <ul>
-<li data-icon="👁">Achten Sie auf: anhaltende Traurigkeit, Rückzug, Schlafveränderungen, Appetitlosigkeit, Aussagen wie «Es hat keinen Sinn».</li>
-<li data-icon="🤝">Anwesenheit ist wichtiger als Worte. Sitzen Sie daneben. Fragen Sie: «Was brauchst du gerade?»</li>
-<li data-icon="🚫">Vermeiden Sie Aufmunterungsversuche wie «Reiss dich zusammen» oder «Anderen geht es schlechter». Das verstärkt Scham.</li>
-<li data-icon="🏥">Ermutigen Sie zur Kontaktaufnahme mit dem Behandlungsteam — bieten Sie an, gemeinsam anzurufen.</li>
-<li data-icon="💊">Medikamenten-Einnahme sanft begleiten: «Ich erinnere dich gern» statt «Hast du schon wieder vergessen?»</li>
-<li data-icon="🛡">Schützen Sie sich selbst: Depressive Phasen sind für Angehörige oft belastender als Manien — Ihre eigene Stimmung kann mitsinken.</li>
+<li data-icon="">Achten Sie auf: anhaltende Traurigkeit, Rückzug, Schlafveränderungen, Appetitlosigkeit, Aussagen wie «Es hat keinen Sinn».</li>
+<li data-icon="">Anwesenheit ist wichtiger als Worte. Sitzen Sie daneben. Fragen Sie: «Was brauchst du gerade?»</li>
+<li data-icon="">Vermeiden Sie Aufmunterungsversuche wie «Reiss dich zusammen» oder «Anderen geht es schlechter». Das verstärkt Scham.</li>
+<li data-icon="">Ermutigen Sie zur Kontaktaufnahme mit dem Behandlungsteam — bieten Sie an, gemeinsam anzurufen.</li>
+<li data-icon="<span class="content-icon" aria-hidden="true">Rx</span>">Medikamenten-Einnahme sanft begleiten: «Ich erinnere dich gern» statt «Hast du schon wieder vergessen?»</li>
+<li data-icon="">Schützen Sie sich selbst: Depressive Phasen sind für Angehörige oft belastender als Manien — Ihre eigene Stimmung kann mitsinken.</li>
 </ul>
 <div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Da sein. Geduld. Alltag aufrechterhalten. Eigene Grenzen wahren.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>Ratschläge. Vergleiche. «Ich weiss wie du dich fühlst.» Schuldgefühle machen.</div>
+<div class="mg-do"><strong><span class="check-icon" aria-hidden="true">✓</span> Hilfreich</strong>Da sein. Geduld. Alltag aufrechterhalten. Eigene Grenzen wahren.</div>
+<div class="mg-dont"><strong><span class="cross-icon" aria-hidden="true">✗</span> Vermeiden</strong>Ratschläge. Vergleiche. «Ich weiss wie du dich fühlst.» Schuldgefühle machen.</div>
 </div>
-<div class="mg-important">⚠️ Bei Suizidgedanken: direkt fragen (siehe nächster Guide) + <a href="tel:+41800336655" class="text-danger-dk">0800 33 66 55</a></div>
-<a class="mg-handout" href="/handouts/c5_depression.pdf" download>📄 Handout: Umgang mit Depression (PDF)</a>
+<div class="mg-important"><span class="warn-icon" aria-hidden="true">!</span> Bei Suizidgedanken: direkt fragen (siehe nächster Guide) + <a href="tel:+41800336655" class="text-danger-dk">0800 33 66 55</a></div>
+<a class="mg-handout" href="/handouts/c5_depression.pdf" download><span class="doc-icon" aria-hidden="true">↓</span> Handout: Umgang mit Depression (PDF)</a>
 </div></div>
 </div>
 
 <div class="mini-guide">
 <button class="mg-header" aria-expanded="false" aria-controls="mg-psychose" data-action="toggleMG">
-<span class="mg-icon">🌀</span>
+<span class="mg-icon"><span class="situation-icon" aria-hidden="true">◉</span></span>
 <span>Psychose / Wahn — Die Person glaubt Dinge, die nicht real sind</span>
 <span class="mg-arrow">›</span>
 </button>
 <div class="mg-body" id="mg-psychose"><div class="mg-body-inner">
 <ul>
-<li data-icon="🧠">Verstehen Sie: Wahnideen fühlen sich für die Person absolut real an. Argumentieren hilft nicht — es verstärkt den Konflikt.</li>
-<li data-icon="🗣">Sprechen Sie ruhig, langsam, in kurzen Sätzen. Nicht widersprechen, aber auch nicht bestätigen: «Ich verstehe, dass du das so siehst. Ich sehe es anders.»</li>
-<li data-icon="🏠">Sorgen Sie für eine reizarme Umgebung: wenig Licht, wenig Lärm, wenig Besucher.</li>
-<li data-icon="⛔">Nicht provozieren, nicht konfrontieren, nicht ironisch sein. Das kann Angst oder Aggression auslösen.</li>
-<li data-icon="📞">Behandlungsteam sofort informieren. Psychotische Episoden erfordern fast immer professionelle Intervention.</li>
-<li data-icon="🚪">Sichern Sie sich selbst ab: Fluchtweg offenhalten, nicht einschliessen lassen, Kinder in Sicherheit bringen.</li>
+<li data-icon="<span class="content-icon" aria-hidden="true">◈</span>">Verstehen Sie: Wahnideen fühlen sich für die Person absolut real an. Argumentieren hilft nicht — es verstärkt den Konflikt.</li>
+<li data-icon="">Sprechen Sie ruhig, langsam, in kurzen Sätzen. Nicht widersprechen, aber auch nicht bestätigen: «Ich verstehe, dass du das so siehst. Ich sehe es anders.»</li>
+<li data-icon="">Sorgen Sie für eine reizarme Umgebung: wenig Licht, wenig Lärm, wenig Besucher.</li>
+<li data-icon="">Nicht provozieren, nicht konfrontieren, nicht ironisch sein. Das kann Angst oder Aggression auslösen.</li>
+<li data-icon="">Behandlungsteam sofort informieren. Psychotische Episoden erfordern fast immer professionelle Intervention.</li>
+<li data-icon="">Sichern Sie sich selbst ab: Fluchtweg offenhalten, nicht einschliessen lassen, Kinder in Sicherheit bringen.</li>
 </ul>
 <div class="mg-do-dont">
-<div class="mg-do"><strong>✅ Hilfreich</strong>Ruhe. Einfache Sprache. Sicherheit. Professionelle Hilfe holen.</div>
-<div class="mg-dont"><strong>❌ Vermeiden</strong>«Das bildest du dir ein!» Diskutieren. Allein managen. Panik.</div>
+<div class="mg-do"><strong><span class="check-icon" aria-hidden="true">✓</span> Hilfreich</strong>Ruhe. Einfache Sprache. Sicherheit. Professionelle Hilfe holen.</div>
+<div class="mg-dont"><strong><span class="cross-icon" aria-hidden="true">✗</span> Vermeiden</strong>«Das bildest du dir ein!» Diskutieren. Allein managen. Panik.</div>
 </div>
-<div class="mg-important">⚠️ Bei Bedrohung oder Gewalt: sofort <a href="tel:117" class="text-danger-dk">117</a> (Polizei) rufen. Ihre Sicherheit geht vor.</div>
-<a class="mg-handout" href="/handouts/c3_psychose_wahn.pdf" download>📄 Handout: Umgang mit Psychose und Wahn (PDF)</a>
+<div class="mg-important"><span class="warn-icon" aria-hidden="true">!</span> Bei Bedrohung oder Gewalt: sofort <a href="tel:117" class="text-danger-dk">117</a> (Polizei) rufen. Ihre Sicherheit geht vor.</div>
+<a class="mg-handout" href="/handouts/c3_psychose_wahn.pdf" download><span class="doc-icon" aria-hidden="true">↓</span> Handout: Umgang mit Psychose und Wahn (PDF)</a>
 </div></div>
 </div>
 
 <div class="mini-guide">
 <button class="mg-header" aria-expanded="false" aria-controls="mg-suizid" data-action="toggleMG">
-<span class="mg-icon">🆘</span>
+<span class="mg-icon"><span class="situation-icon situation-sos" aria-hidden="true">SOS</span></span>
 <span>Suizidgedanken — Die Person spricht davon, sich etwas anzutun</span>
 <span class="mg-arrow">›</span>
 </button>
 <div class="mg-body" id="mg-suizid"><div class="mg-body-inner">
 <ul>
-<li data-icon="❗">Nehmen Sie jede Äusserung ernst. Auch indirekte Hinweise: «Es wäre besser, wenn ich nicht mehr da wäre», «Ihr wärt ohne mich besser dran.»</li>
-<li data-icon="🗣">Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» — Diese Frage löst Suizidgedanken nicht aus. Sie gibt Raum.</li>
-<li data-icon="👂">Hören Sie zu. Nicht bewerten. Nicht bagatellisieren. Nicht sagen: «Das wird schon.»</li>
-<li data-icon="📞">Rufen Sie jetzt an: <a href="tel:+41800336655" class="text-danger-dk">0800 33 66 55</a> (Psychiatrischer Notfalldienst, 24/7, kostenlos)</li>
-<li data-icon="🔒">Sichern Sie die Umgebung: Medikamente, scharfe Gegenstände, Alkohol wenn möglich ausser Reichweite bringen.</li>
-<li data-icon="🤝">Bleiben Sie bei der Person, bis professionelle Hilfe eintrifft. Lassen Sie sie nicht allein.</li>
+<li data-icon="<span class="warn-icon" aria-hidden="true">!</span>">Nehmen Sie jede Äusserung ernst. Auch indirekte Hinweise: «Es wäre besser, wenn ich nicht mehr da wäre», «Ihr wärt ohne mich besser dran.»</li>
+<li data-icon="">Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» — Diese Frage löst Suizidgedanken nicht aus. Sie gibt Raum.</li>
+<li data-icon="">Hören Sie zu. Nicht bewerten. Nicht bagatellisieren. Nicht sagen: «Das wird schon.»</li>
+<li data-icon="">Rufen Sie jetzt an: <a href="tel:+41800336655" class="text-danger-dk">0800 33 66 55</a> (Psychiatrischer Notfalldienst, 24/7, kostenlos)</li>
+<li data-icon="">Sichern Sie die Umgebung: Medikamente, scharfe Gegenstände, Alkohol wenn möglich ausser Reichweite bringen.</li>
+<li data-icon="">Bleiben Sie bei der Person, bis professionelle Hilfe eintrifft. Lassen Sie sie nicht allein.</li>
 </ul>
-<div class="mg-important">⚠️ Bei akuter Suizidgefahr (konkreter Plan, Mittel vorhanden): sofort <a href="tel:144" class="text-danger-dk">144</a> (Sanität) rufen. Nicht allein bewältigen.</div>
-<a class="mg-handout" href="/handouts/c2_suizidgedanken.pdf" download>📄 Handout: Umgang mit Suizidgedanken (PDF)</a>
+<div class="mg-important"><span class="warn-icon" aria-hidden="true">!</span> Bei akuter Suizidgefahr (konkreter Plan, Mittel vorhanden): sofort <a href="tel:144" class="text-danger-dk">144</a> (Sanität) rufen. Nicht allein bewältigen.</div>
+<a class="mg-handout" href="/handouts/c2_suizidgedanken.pdf" download><span class="doc-icon" aria-hidden="true">↓</span> Handout: Umgang mit Suizidgedanken (PDF)</a>
 </div></div>
 </div>
 </div><!-- /.notfall-content -->
@@ -279,6 +279,34 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 <a href="/" class="text-m1">→ Module (Psychoedukation)</a>
 </div></div>
 </main>
+
+
+<section class="notfall-section" id="grauzone-triage">
+  <h2>Die Grauzone: Wann ist es wirklich ein Notfall?</h2>
+  <p>Nicht jede Krise ist ein psychiatrischer Notfall. Aber nicht jede Situation, die sich «nicht so schlimm» anfühlt, ist es auch. Angehörige stehen oft vor der schwierigsten Frage: <strong>Jetzt handeln — oder noch warten?</strong></p>
+  <div class="info-box warn-box">
+    <div class="ib-title">Die Grauzone: Drei typische Situationen</div>
+    <div class="kp-grid" style="grid-template-columns: 1fr; gap: 1rem; margin-top: 0.75rem;">
+      <div class="kp-card" style="border-left: 4px solid var(--ampel-gelb, #e6a817);">
+        <div class="kp-card-title">Situation 1: «Es könnte schlimmer werden»</div>
+        <p>Ihr Angehöriger zeigt frühe Warnsignale (weniger Schlaf, Reizbarkeit, Grössenideen), ist aber noch «funktionsfähig». <strong>Empfehlung:</strong> Jetzt handeln — Behandlungsteam kontaktieren, Krisenplan aktivieren. Früh intervenieren ist fast immer besser als warten.</p>
+      </div>
+      <div class="kp-card" style="border-left: 4px solid var(--ampel-gelb, #e6a817);">
+        <div class="kp-card-title">Situation 2: «Er/sie sagt, es ist nichts»</div>
+        <p>Ihr Angehöriger verneint, dass etwas nicht stimmt. Sie sehen es aber. <strong>Empfehlung:</strong> Vertrauen Sie Ihrer Wahrnehmung. Sie kennen die Person. Kontaktieren Sie das Behandlungsteam auch ohne Einwilligung der erkrankten Person — Fachpersonen können dann entscheiden.</p>
+      </div>
+      <div class="kp-card" style="border-left: 4px solid var(--ampel-rot, #c0392b);">
+        <div class="kp-card-title">Situation 3: «Ich weiss nicht, ob es ernst gemeint ist»</div>
+        <p>Ihr Angehöriger äussert Suizidgedanken, aber «nur so» oder «als Witz». <strong>Empfehlung:</strong> Immer ernst nehmen. Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Das erhöht das Risiko nicht — es öffnet den Raum. Dann sofort Fachpersonen einbeziehen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="info-box success-box">
+    <div class="ib-title">Faustregel: Lieber einmal zu viel anrufen</div>
+    <p>Das Behandlungsteam, die psychiatrische Notaufnahme oder die Krisenhotline sind dafür da, Ihnen zu helfen, die Situation einzuschätzen. Sie müssen diese Entscheidung nicht alleine treffen. Ein Anruf, der sich im Nachhinein als «unnötig» herausstellt, ist kein Fehler — er ist Fürsorge.</p>
+  </div>
+  <p class="viz-source">Quellen: Suizidprävention Schweiz (ipsilon.ch); PUK Zürich Kriseninterventionsleitfaden; Joiner (2005)</p>
+</section>
 
 <footer>
 <div class="footer-inner">
@@ -305,13 +333,15 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 <span>© 2026 Psychiatrische Universitätsklinik Zürich</span>
 <span>Diese Inhalte ersetzen keine professionelle Beratung.</span>
 <a href="/impressum/" class="link-inherit-u">Impressum</a>
+<a href="/impressum/#datenschutz" class="link-inherit-u">Datenschutz</a>
+<a href="/impressum/#barrierefreiheit" class="link-inherit-u">Barrierefreiheit</a>
 </div>
 </footer>
 
 <div class="search-overlay" id="search-overlay" data-action="closeSearchOverlay">
 <div class="search-box">
 <div class="search-input-wrap">
-<span class="section-num">🔎</span>
+<span class="section-num"></span>
 <input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche — z.B. Krisenplan, Trennung, Suizid…" type="text"/>
 <button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
 </div>
@@ -323,5 +353,9 @@ Sie sind nicht allein. Es ist richtig, dass Sie hier sind. Lesen Sie nur den Abs
 
 <script src="/main.js?v=0b41167" defer></script>
 <script src="/search.js?v=0b41167" defer></script>
+<!-- PHASE 4: Quick-Exit-Button -->
+<button class="quick-exit-btn" id="quick-exit-btn" onclick="window.location.replace('https://www.srf.ch/news');" title="Seite schnell verlassen" aria-label="Seite verlassen">
+  <span aria-hidden="true">✕</span> Verlassen
+</button>
 </body>
 </html>

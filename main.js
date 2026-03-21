@@ -116,7 +116,8 @@ var ACTION_MAP = {
   // Multi-param
   scSelect: function(el) { scSelect(el, Number(el.dataset.q), el.dataset.val); },
   giveFeedback: function(el) { giveFeedback(el, el.dataset.param, el.dataset.val); },
-  waSelect: function(el) { waSelect(el, el.dataset.param); }
+  waSelect: function(el) { waSelect(el, el.dataset.param); },
+  waCheck: function(el) { waCheck(el); }
 };
 
 // Click delegation
@@ -498,6 +499,31 @@ function waSelect(btn, qId) {
     fbEl.textContent = fbText;
     fbEl.classList.add('show', isCorrect ? 'correct' : 'wrong');
     announceStatus((isCorrect ? 'Richtig: ' : 'Falsch: ') + fbText);
+  }
+}
+
+/* waCheck: Einfacher Wissens-Anker ohne ID-System (Modul 7) */
+function waCheck(btn) {
+  var wrap = btn.closest('.wissens-anker');
+  if (!wrap) return;
+  var opts = wrap.querySelectorAll('.wa-opt');
+  var isCorrect = btn.dataset.correct === 'true';
+  opts.forEach(function(b) {
+    b.disabled = true;
+    b.classList.add('disabled');
+    if (b.dataset.correct === 'true') {
+      b.classList.add('correct');
+    } else if (b === btn && !isCorrect) {
+      b.classList.add('wrong');
+    }
+  });
+  var fbEl = wrap.querySelector('.wa-feedback');
+  if (fbEl) {
+    fbEl.textContent = isCorrect
+      ? 'Richtig — Resilienz ist ein Prozess, der durch soziale Unterstützung, Selbstmitgefühl und konkretes Handeln aktiv gefördert wird.'
+      : 'Nicht ganz — die Antwort ist: Soziale Unterstützung, Selbstmitgefühl und konkretes Handeln.';
+    fbEl.classList.add('show', isCorrect ? 'correct' : 'wrong');
+    announceStatus((isCorrect ? 'Richtig: ' : 'Falsch: ') + fbEl.textContent);
   }
 }
 
@@ -1349,3 +1375,191 @@ if (document.querySelector('.asset-meta')) {
 })();
 
 }
+
+
+// ═══════════════════════════════════════════════════════
+// PHASE 4: Homepage-Interaktivität & UX-Features
+// ═══════════════════════════════════════════════════════
+
+// --- Fortschritts-Widget & Willkommen-zurück-Banner ---
+function initProgressWidget() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  
+  var modules = ['m1','m2','m3','m4','m5','m6','m7','m8'];
+  var readCount = 0;
+  var nextUnread = null;
+  
+  try {
+    modules.forEach(function(m, i) {
+      if (localStorage.getItem('bipolar_read_' + m)) {
+        readCount++;
+      } else if (!nextUnread) {
+        nextUnread = '/modul/' + (i+1) + '/';
+      }
+    });
+  } catch(e) {}
+  
+  // Fortschritts-Widget anzeigen (immer, auch bei 0)
+  var widget = document.getElementById('progress-widget');
+  if (widget) {
+    widget.style.display = 'flex';
+    var bar = document.getElementById('pw-bar');
+    var count = document.getElementById('pw-count');
+    var cta = document.getElementById('pw-cta');
+    var progressbar = document.getElementById('pw-progressbar');
+    
+    if (bar) {
+      setTimeout(function() {
+        bar.style.width = (readCount / 8 * 100) + '%';
+      }, 200);
+    }
+    if (count) count.textContent = readCount + ' / 8 Modulen gelesen';
+    if (progressbar) progressbar.setAttribute('aria-valuenow', readCount);
+    
+    if (cta) {
+      if (readCount === 0) {
+        cta.textContent = 'Jetzt starten →';
+        cta.href = '/modul/1/';
+      } else if (readCount === 8) {
+        cta.textContent = '✓ Alle gelesen';
+        cta.href = '/handouts/';
+        cta.style.color = 'var(--m7)';
+      } else if (nextUnread) {
+        cta.textContent = 'Weiter →';
+        cta.href = nextUnread;
+      }
+    }
+  }
+  
+  // Willkommen-zurück-Banner (nur wenn mind. 1 Modul gelesen)
+  if (readCount > 0) {
+    var banner = document.getElementById('welcome-back-banner');
+    var text = document.getElementById('wb-text');
+    if (banner && text) {
+      var messages = [
+        'Willkommen zurück. Sie haben bereits <strong>' + readCount + ' von 8 Modulen</strong> gelesen.',
+        'Schön, dass Sie wieder da sind. <strong>' + readCount + ' Module</strong> bereits abgeschlossen.',
+        'Herzlich willkommen zurück — <strong>' + (8 - readCount) + ' Module</strong> warten noch auf Sie.'
+      ];
+      var msg = messages[readCount % messages.length];
+      if (readCount === 8) {
+        msg = '🎉 Sie haben alle 8 Module gelesen. <strong>Herzlichen Glückwunsch</strong> — und danke für Ihr Engagement.';
+      }
+      text.innerHTML = msg;
+      banner.style.display = 'flex';
+    }
+  }
+  
+  // Modul-Karten visuell als gelesen markieren
+  document.querySelectorAll('.mc-link').forEach(function(card) {
+    var mod = card.dataset.module;
+    if (!mod) return;
+    try {
+      if (localStorage.getItem('bipolar_read_' + mod)) {
+        card.classList.add('is-read');
+        // Altes read-badge ausblenden
+        var oldBadge = card.querySelector('.read-badge');
+        if (oldBadge) oldBadge.style.display = 'none';
+      }
+    } catch(e) {}
+  });
+}
+
+// --- Recognition-Karten Rotation (sanfte Animation) ---
+function initRecognitionRotation() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  var cards = document.querySelectorAll('.rec-card');
+  if (cards.length < 2) return;
+  
+  // Auf Mobile: alle sichtbar lassen (kein Platzproblem)
+  if (window.innerWidth < 768) return;
+  
+  var current = 0;
+  
+  // Initial: alle ausblenden ausser erste
+  cards.forEach(function(c, i) {
+    if (i === 0) {
+      c.classList.add('rec-visible');
+    } else {
+      c.classList.add('rec-hidden');
+    }
+  });
+  
+  // Alle 4 Sekunden rotieren
+  setInterval(function() {
+    cards[current].classList.remove('rec-visible');
+    cards[current].classList.add('rec-hidden');
+    current = (current + 1) % cards.length;
+    cards[current].classList.remove('rec-hidden');
+    cards[current].classList.add('rec-visible');
+  }, 4000);
+}
+
+// --- Glossar-Tooltips: Touch-Support ---
+function initGlossarTooltips() {
+  document.querySelectorAll('.glossar-term').forEach(function(term) {
+    term.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = term.classList.contains('tip-open');
+      // Alle anderen schliessen
+      document.querySelectorAll('.glossar-term.tip-open').forEach(function(t) {
+        t.classList.remove('tip-open');
+      });
+      if (!isOpen) term.classList.add('tip-open');
+    });
+  });
+  // Klick ausserhalb schliesst alle
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.glossar-term.tip-open').forEach(function(t) {
+      t.classList.remove('tip-open');
+    });
+  });
+}
+
+// --- Krisenplan-Lesezeichen ---
+function bookmarkKrisenplan() {
+  try {
+    var bookmarks = JSON.parse(localStorage.getItem('bipolar-bookmarks') || '{}');
+    var key = 'krisenplan-m6';
+    var btn = document.getElementById('kp-bookmark-btn');
+    
+    if (bookmarks[key]) {
+      // Bereits gesetzt: entfernen
+      delete bookmarks[key];
+      localStorage.setItem('bipolar-bookmarks', JSON.stringify(bookmarks));
+      if (btn) {
+        btn.classList.remove('bookmarked');
+        btn.textContent = '🔖 Krisenplan als Lesezeichen speichern';
+      }
+    } else {
+      // Setzen
+      bookmarks[key] = { url: '/modul/6/#krisenplan', title: 'Krisenplan', date: new Date().toLocaleDateString('de-CH') };
+      localStorage.setItem('bipolar-bookmarks', JSON.stringify(bookmarks));
+      if (btn) {
+        btn.classList.add('bookmarked');
+        btn.innerHTML = '✓ Krisenplan gespeichert';
+      }
+    }
+  } catch(e) {}
+}
+
+// --- Krisenplan-Lesezeichen-Status beim Laden wiederherstellen ---
+function restoreKrisenplanBookmark() {
+  var btn = document.getElementById('kp-bookmark-btn');
+  if (!btn) return;
+  try {
+    var bookmarks = JSON.parse(localStorage.getItem('bipolar-bookmarks') || '{}');
+    if (bookmarks['krisenplan-m6']) {
+      btn.classList.add('bookmarked');
+      btn.innerHTML = '✓ Krisenplan gespeichert';
+    }
+  } catch(e) {}
+}
+
+// Init-Aufrufe beim DOMContentLoaded ergänzen
+document.addEventListener('DOMContentLoaded', function() {
+  initProgressWidget();
+  initRecognitionRotation();
+  initGlossarTooltips();
+  restoreKrisenplanBookmark();
+});
