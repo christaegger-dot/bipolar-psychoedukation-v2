@@ -271,7 +271,26 @@ transition:background 0.15s;
 white-space:nowrap;
 width:100%;
 text-align:left}
-.settings-panel #readmode-toggle{ border-bottom: none}
+.settings-panel #readmode-toggle{ border-bottom: 1px solid var(--bg2)}
+.settings-panel #nav-bookmark{
+background:none;
+border:none;
+border-bottom:none;
+padding:0.5rem 1rem;
+font-size:var(--fs-sm);
+font-weight:600;
+cursor:pointer;
+color:var(--muted);
+display:flex;
+align-items:center;
+gap:0.4rem;
+font-family:inherit;
+transition:background 0.15s;
+white-space:nowrap;
+width:100%;
+text-align:left}
+.settings-panel #nav-bookmark:hover{ background: var(--bg2);color: var(--text)}
+.settings-panel #nav-bookmark.has-bookmarks{ color: var(--text)}
 .settings-panel #font-toggle:hover,
 .settings-panel #readmode-toggle:hover{ background: var(--bg2);color: var(--text)}
 @media (max-width: 768px){
