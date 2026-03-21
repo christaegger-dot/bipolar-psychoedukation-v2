@@ -2,3 +2,4 @@ __pycache__/
 *.zip
 _dev/
 breitenoptimierung.diff
+node_modules/
