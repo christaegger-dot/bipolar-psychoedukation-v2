@@ -414,7 +414,7 @@ line-height:1.6;
 text-align:left;
 opacity:0.85}.hope-banner strong{ color: var(--m7);font-size:var(--fs-sm)}.cta-btn.m1{ background: var(--m1);color: white}.cta-btn.m3{ background: var(--m3);color: white}.cta-btn.m4{ background: var(--m4);color: white}.cta-btn.m5{ background: var(--m5);color: white}.cta-btn.m6{ background: var(--m6);color: white}.cta-btn.m7{ background: var(--m7);color: white}.cta-btn.m8{ background: var(--m8);color: white}.cta-btn.m2{ background: var(--m2);color: white}
 .module{ max-width:1060px;margin:0 auto 0;padding:0 1.5rem}
-.module-card{ background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform 0.2s ease, box-shadow 0.2s ease}
+.module-card{ background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform 0.15s ease, box-shadow 0.2s ease}
 .module-header{
 padding:var(--sp-lg) 1.5rem 1.5rem;
 border-bottom:1px solid var(--bg2);
@@ -2138,7 +2138,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
  .page-dots, .pd-track{ display: none !important}
  a{ color: black !important;text-decoration: underline}
  a[href]::after{ content: " (" attr(href) ")";font-size: 0.75em;color: #666}
- a[href^="/"]::after{ content: " (bipolare-erkrankung-angehoerige.netlify.app" attr(href) ")"}
+ a[href^="/"]::after{ content: " (bipolar-psychoedukation-v2.netlify.app" attr(href) ")"}
  a[href^="#"]::after{ content: ""}
 footer{ background:white;color:black;border-top:1px solid #ccc}
 footer a{ color:black}
@@ -3374,7 +3374,7 @@ background:var(--white);
 border-radius:var(--radius);
 padding:1.2rem var(--sp-md);
 box-shadow:var(--shadow-md);
-transition:box-shadow 0.2s, transform 0.2s;
+transition:box-shadow 0.2s, transform 0.15s;
 border-left:3px solid var(--module-color, var(--border))}
 .mc-link:hover{ box-shadow:var(--shadow-lg);transform:translateY(-2px)}
 .mc-title{ font-family:'Lora', Georgia, serif;font-size:var(--fs-base);margin:0 0 0.25rem;color:var(--text)}
@@ -4580,8 +4580,6 @@ details[open] .glossar-def {
 .mc-link,.rec-card,.sh-card,.nn-card,.res-card,.res-urgent-card,.comm-card,.manie-komm-card{
   border-radius:var(--radius)}
 
-/* P1.5 — Consistent card shadows (superseded by Fix 8 box consolidation) */
-
 /* P1.6 — Ressourcen section spacing */
 .res-section-divider{
   width:60px;height:2px;background:var(--border);margin:2rem 0 1.5rem;border-radius:2px}
@@ -5288,17 +5286,7 @@ details[open] .glossar-def {
    P2-FEINSCHLIFF: Karten-Ästhetik, Farbberuhigung, Typografie
    ============================================================ */
 
-/* Modul-Karten: subtilerer linker Border, weniger Schatten */
-.mc-link {
-  border-left-width: 3px;
-  box-shadow: 0 1px 3px rgba(40,36,32,0.05);
-  transition: box-shadow 0.2s, border-left-color 0.2s;
-}
-
-.mc-link:hover {
-  box-shadow: 0 3px 12px rgba(40,36,32,0.1);
-  transform: none; /* kein Hüpfen — ruhigere Interaktion */
-}
+/* Modul-Karten: styling now handled by Fix 8 box consolidation (Interactive-Card) */
 
 /* Modul-Badge: etwas dezenter */
 .mc-badge {
