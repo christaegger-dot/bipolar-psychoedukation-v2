@@ -161,14 +161,14 @@ Probleme:
 | 1 | ~~Emojis entfernen (4 Stellen)~~ | done | 2 |
 | 2 | ~~Toolbar konsolidieren (6 → 2)~~ | done | 13 + CSS |
 | 3 | ~~H2-Schriftgroesse erhoehen~~ | done | CSS |
-| 4 | H1-Schriftgroesse erhoehen (1.7 → 1.9rem) | klein | CSS |
-| 5 | `#fff` → `var(--white)` (7 Stellen) | klein | CSS |
+| 4 | ~~H1-Schriftgroesse erhoehen (1.7 → 1.9rem)~~ | done | CSS |
+| 5 | ~~`#fff` → `var(--white)` (3 Fallbacks)~~ | done | CSS |
 
 ### P2 -- Konsistenz (mittel)
 
 | # | Fix | Aufwand | Dateien |
 |---|---|---|---|
-| 6 | 3 neue `--fs-*` Variablen + Migration der 83 hardcoded sizes | mittel | CSS |
+| 6 | ~~2 neue `--fs-*` Variablen + Migration (89 Stellen, 78%→95%)~~ | done | CSS |
 | 7 | `border-radius` auf 2 Werte standardisieren: `var(--radius)` + `var(--radius-lg)` | mittel | CSS |
 | 8 | 38 Box-Typen auf 7 Grund-Mixins reduzieren | gross | CSS + HTML |
 | 9 | SVG-Farben auf CSS-Variablen migrieren | mittel | HTML |
