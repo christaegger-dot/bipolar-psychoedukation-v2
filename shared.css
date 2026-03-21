@@ -93,6 +93,8 @@ scroll-padding-top:calc(var(--sticky-nav-h) + 8px);
 --shadow-sm:0 1px 4px rgba(0,0,0,0.05);
 --shadow-md:0 2px 8px rgba(0,0,0,0.05);
 --shadow-lg:0 4px 14px rgba(0,0,0,0.12);
+--shadow-raised:0 3px 12px rgba(0,0,0,0.2);
+--border-subtle:1px solid rgba(0,0,0,0.07);
 --fs-xs:0.75rem;
 --fs-sm:0.9rem;
 --fs-base:1rem;
@@ -1695,7 +1697,7 @@ font-size:var(--fs-sm);
 color:var(--muted);
 font-style:italic;
 line-height:1.5;
-border-top:1px solid rgba(0,0,0,0.07);
+border-top:var(--border-subtle);
 padding-top:0.5rem}
 .ambivalence-note{
 background:var(--bg);
@@ -1707,7 +1709,7 @@ line-height:1.7;
 margin-bottom:1rem}
 .do-dont-grid{ display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;font-size:var(--fs-sm);line-height:1.6}
 .kk-grid{ display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;aspect-ratio:1.15}
-.sl-grid{ display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#fff;border-left:1.5px solid var(--border);border-right:1.5px solid var(--border)}
+.sl-grid{ display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:var(--white);border-left:1.5px solid var(--border);border-right:1.5px solid var(--border)}
 .sl-grid .sl-pillar:nth-child(5){ grid-column:1 / -1;max-width:calc(50% - 4px);justify-self:center}
 @media (max-width: 600px){
  .module{ padding: 0 1rem}
@@ -1950,7 +1952,7 @@ font-size:var(--fs-lg);
 display:flex;
  align-items: center;
 justify-content:center;
-box-shadow:0 3px 12px rgba(0,0,0,0.2);
+box-shadow:var(--shadow-raised);
 opacity:0;
 transform:translateY(10px);
 transition:opacity 0.25s, transform 0.25s, background 0.2s;
@@ -2085,7 +2087,7 @@ display:flex;
 gap:0.4rem;
 font-family:inherit;
 transition:background 0.15s;
-white-space:nowrap}#readmode-toggle{ border-bottom: none}#font-toggle:hover, #readmode-toggle:hover{ background: var(--bg2);color: var(--text)}body.large-text{ font-size: 18px;--fs-base: 1.05rem;--fs-sm: 0.95rem;--fs-xs: 0.85rem}body.large-text .m-intro{ font-size: var(--fs-lg)}body.large-text .m-subtext{ font-size: var(--fs-base)}body.large-text .sym-betroffene, body.large-text .sym-partner{ font-size: var(--fs-base)}
+white-space:nowrap}#readmode-toggle{ border-bottom: none}#font-toggle:hover, #readmode-toggle:hover{ background: var(--bg2);color: var(--text)}body.large-text{ font-size: 1.125rem;--fs-base: 1.05rem;--fs-sm: 0.95rem;--fs-xs: 0.85rem}body.large-text .m-intro{ font-size: var(--fs-lg)}body.large-text .m-subtext{ font-size: var(--fs-base)}body.large-text .sym-betroffene, body.large-text .sym-partner{ font-size: var(--fs-base)}
 body.readmode .pole-toggle-wrap,
 body.readmode .phase-model-wrap,
 body.readmode .slider-examples,
@@ -2181,7 +2183,7 @@ cursor:pointer;
 z-index:150;
 border:none;
 font-family:inherit;
-box-shadow:0 3px 12px rgba(0,0,0,0.2);
+box-shadow:var(--shadow-raised);
 max-width:220px;
 text-align:left;
 line-height:1.4}#continue-reading:hover{ background: var(--m6)}
@@ -2385,7 +2387,7 @@ z-index:220;
 pointer-events:none;
 font-style:normal;
 font-weight:400;
-box-shadow:0 4px 16px rgba(0,0,0,0.2); overflow-wrap:break-word; hyphens:auto}
+box-shadow:var(--shadow-raised); overflow-wrap:break-word; hyphens:auto}
 .tt-box::after{
 content:'';
 position:absolute;
@@ -2794,6 +2796,8 @@ margin-bottom:0.5rem}
 --shadow-sm:0 1px 4px rgba(0,0,0,0.15);
 --shadow-md:0 2px 8px rgba(0,0,0,0.2);
 --shadow-lg:0 4px 14px rgba(0,0,0,0.3);
+--shadow-raised:0 3px 12px rgba(0,0,0,0.4);
+--border-subtle:1px solid rgba(255,255,255,0.07);
 --danger-light:#3a1818;
 --manie-bg:#3a2218;
 --warn-light:#2a2418;
@@ -3909,7 +3913,7 @@ details[open] .glossar-def {
 /* Handouts: PDF-Lightbox (#pdf-lightbox, .pdf-lb-*) */
 /* ═══════════════════════════════════════════════════════ */
 #pdf-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;background:rgba(0,0,0,0.82)}
-.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:var(--white);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
 .pdf-lb-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);flex-shrink:0}
 .pdf-lb-dl{display:inline-flex;align-items:center;gap:0.4rem;color:var(--text);font-weight:600;font-size:0.85rem;text-decoration:none;transition:color 0.2s}
 .pdf-lb-dl:hover{color:var(--m6)}
@@ -3989,7 +3993,7 @@ details[open] .glossar-def {
   line-height:1.55;
   color:var(--muted);
   font-style:italic;
-  border-top:1px solid rgba(0,0,0,0.07);
+  border-top:var(--border-subtle);
   padding-top:0.5rem;
   margin-top:auto;
   display:flex;
@@ -5381,10 +5385,10 @@ details[open] .glossar-def {
 /* Dark Mode: Karten-Schatten anpassen */
 @media (prefers-color-scheme: dark) {
   .mc-link {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-sm);
   }
   .mc-link:hover {
-    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-raised);
   }
   .quote-card {
     border-color: rgba(255,255,255,0.1);
