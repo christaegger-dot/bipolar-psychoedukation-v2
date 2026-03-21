@@ -177,7 +177,7 @@ Probleme:
 
 | # | Fix | Aufwand | Dateien |
 |---|---|---|---|
-| 10 | Hardcoded Farben deduplizieren (157 → ~40) | gross | CSS |
-| 11 | SVG-Template-Standard + Accessibility-Audit | mittel | HTML |
-| 12 | Pixel/pt-Einheiten eliminieren (5 Stellen) | klein | CSS |
-| 13 | Shadow-Farben als Variablen | klein | CSS |
+| 10 | ~~Hardcoded Farben deduplizieren~~ — keine echten Duplikate mehr (3+ Vorkommen sind Print/#ccc oder kontextuell) | done | — |
+| 11 | ~~SVG Style Guide erstellt (docs/svg-style-guide.md)~~ | done | docs |
+| 12 | ~~Pixel/pt-Einheiten eliminiert (5 Stellen → rem/var)~~ | done | CSS |
+| 13 | ~~Shadow-Farben~~ — uebersprungen (Shadows unterscheiden sich in Geometrie, nicht Farbe; keine echten Duplikate) | done | — |
