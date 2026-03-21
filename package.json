@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:search": "node scripts/build-search-index.js",
+    "check:search": "node scripts/build-search-index.js --check"
   },
   "repository": {
     "type": "git",
