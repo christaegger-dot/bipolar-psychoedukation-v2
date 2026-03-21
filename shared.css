@@ -1707,7 +1707,7 @@ line-height:1.7;
 margin-bottom:1rem}
 .do-dont-grid{ display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;font-size:var(--fs-sm);line-height:1.6}
 .kk-grid{ display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;aspect-ratio:1.15}
-.sl-grid{ display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#fff;border-left:1.5px solid var(--border);border-right:1.5px solid var(--border)}
+.sl-grid{ display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:var(--white);border-left:1.5px solid var(--border);border-right:1.5px solid var(--border)}
 .sl-grid .sl-pillar:nth-child(5){ grid-column:1 / -1;max-width:calc(50% - 4px);justify-self:center}
 @media (max-width: 600px){
  .module{ padding: 0 1rem}
@@ -3909,7 +3909,7 @@ details[open] .glossar-def {
 /* Handouts: PDF-Lightbox (#pdf-lightbox, .pdf-lb-*) */
 /* ═══════════════════════════════════════════════════════ */
 #pdf-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;background:rgba(0,0,0,0.82)}
-.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+.pdf-lb-panel{position:relative;width:100%;max-width:820px;height:90vh;background:var(--white);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
 .pdf-lb-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);flex-shrink:0}
 .pdf-lb-dl{display:inline-flex;align-items:center;gap:0.4rem;color:var(--text);font-weight:600;font-size:0.85rem;text-decoration:none;transition:color 0.2s}
 .pdf-lb-dl:hover{color:var(--m6)}
