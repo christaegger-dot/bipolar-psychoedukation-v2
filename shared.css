@@ -2133,7 +2133,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
  .module-card{ box-shadow: none;border: 1px solid #ccc;break-inside: avoid}
  .pole-panel, .phase-content, .slide-wrap{ display: block !important}
  .hidden{ display: block !important}
- body{ font-size: 11pt;background: white;color: black;line-height: 1.5}
+ body{ font-size: var(--fs-sm);background: white;color: black;line-height: 1.5}
  .hero, .subpage-hero, .module-top{ padding: 0.5rem 0;background: none}
  .page-dots, .pd-track{ display: none !important}
  a{ color: black !important;text-decoration: underline}
@@ -4755,13 +4755,13 @@ details[open] .glossar-def {
   .viz-svg text,
   .wave-chart text,
   .burden-accumulation-svg text{
-    font-size: 15px
+    font-size: var(--fs-sm)
   }
   /* Titel im SVG etwas grösser */
   .viz-svg text[font-weight="600"],
   .wave-chart text[font-weight="600"],
   .burden-accumulation-svg text[font-weight="600"]{
-    font-size: 17px
+    font-size: var(--fs-lg)
   }
   /* Legenden-Text besser lesbar */
   .wave-caption{
@@ -4774,12 +4774,12 @@ details[open] .glossar-def {
   .viz-svg text,
   .wave-chart text,
   .burden-accumulation-svg text{
-    font-size: 13px
+    font-size: 0.8125rem
   }
   .viz-svg text[font-weight="600"],
   .wave-chart text[font-weight="600"],
   .burden-accumulation-svg text[font-weight="600"]{
-    font-size: 15px
+    font-size: var(--fs-sm)
   }
 }
 
