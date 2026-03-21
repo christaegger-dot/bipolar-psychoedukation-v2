@@ -2138,7 +2138,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
  .page-dots, .pd-track{ display: none !important}
  a{ color: black !important;text-decoration: underline}
  a[href]::after{ content: " (" attr(href) ")";font-size: 0.75em;color: #666}
- a[href^="/"]::after{ content: " (bipolare-erkrankung-angehoerige.netlify.app" attr(href) ")"}
+ a[href^="/"]::after{ content: " (bipolar-psychoedukation-v2.netlify.app" attr(href) ")"}
  a[href^="#"]::after{ content: ""}
 footer{ background:white;color:black;border-top:1px solid #ccc}
 footer a{ color:black}

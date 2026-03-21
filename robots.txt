@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bipolare-erkrankung-angehoerige.netlify.app/sitemap.xml
+Sitemap: https://bipolar-psychoedukation-v2.netlify.app/sitemap.xml
