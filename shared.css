@@ -350,7 +350,7 @@ border:none;
 cursor:pointer}.nav-btn:hover{ background: var(--bg2);color: var(--text)}.nav-divider{ height:1px;background:var(--border);margin:0.4rem 0.5rem}.nav-btn .nb-dot{ width: 8px;height: 8px;border-radius: 50%;flex-shrink: 0}
 
 /* [ICONS] SVG icon system — replaces Unicode UI symbols ──── */
-.icon-search,.icon-bookmark,.icon-settings,.check-icon,.cross-icon{
+.icon-search,.icon-bookmark,.icon-settings,.check-icon,.cross-icon,.quick-exit-btn > span[aria-hidden]{
 display:inline-block;
 width:1em;height:1em;
 overflow:hidden;text-indent:-9999px;
@@ -373,14 +373,11 @@ mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vie
 .cross-icon{
 -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6'/%3E%3Cline x1='5.5' y1='5.5' x2='10.5' y2='10.5'/%3E%3Cline x1='10.5' y1='5.5' x2='5.5' y2='10.5'/%3E%3C/svg%3E");
 mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6'/%3E%3Cline x1='5.5' y1='5.5' x2='10.5' y2='10.5'/%3E%3Cline x1='10.5' y1='5.5' x2='5.5' y2='10.5'/%3E%3C/svg%3E")}
-.search-close{--icon-close:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cline x1='4' y1='4' x2='12' y2='12'/%3E%3Cline x1='12' y1='4' x2='4' y2='12'/%3E%3C/svg%3E");
-font-size:0 !important;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.search-close,.quick-exit-btn > span[aria-hidden]{--icon-close:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cline x1='4' y1='4' x2='12' y2='12'/%3E%3Cline x1='12' y1='4' x2='4' y2='12'/%3E%3C/svg%3E");
+-webkit-mask-image:var(--icon-close);mask-image:var(--icon-close)}
+.search-close{font-size:0 !important;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
 .search-close::before{content:'';display:block;width:18px;height:18px;background:currentColor;
 -webkit-mask:var(--icon-close) center/contain no-repeat;mask:var(--icon-close) center/contain no-repeat}
-.quick-exit-btn > span[aria-hidden]{
-display:inline-block;width:1em;height:1em;overflow:hidden;text-indent:-9999px;vertical-align:-0.125em;background:currentColor;
--webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cline x1='4' y1='4' x2='12' y2='12'/%3E%3Cline x1='12' y1='4' x2='4' y2='12'/%3E%3C/svg%3E") center/contain no-repeat;
-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cline x1='4' y1='4' x2='12' y2='12'/%3E%3Cline x1='12' y1='4' x2='4' y2='12'/%3E%3C/svg%3E") center/contain no-repeat}
 
 /* [HERO] ──────────────────────────────────────────────────── */
 .hero{
@@ -2813,6 +2810,7 @@ line-height:1.3}
 width:100%;
 height:auto;
 display:block;
+font-family:'Source Sans 3',sans-serif;
 border-radius:var(--radius);
 background:var(--white);
 border:1px solid var(--border);
