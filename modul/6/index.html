@@ -114,16 +114,16 @@
     </a>
 </div>
 <div class="nav-controls">
-<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche"><span class="icon-search" aria-hidden="true">⌕</span></button>
+<button class="nav-btn" data-action="openSearch" title="Suche (Ctrl+K)" aria-label="Suche"><span class="icon-search" aria-hidden="true"></span></button>
 <div class="bookmark-panel" id="bookmark-panel">
-<div class="bp-title"><span class="icon-bookmark" aria-hidden="true">◈</span> Lesezeichen</div>
+<div class="bp-title"><span class="icon-bookmark" aria-hidden="true"></span> Lesezeichen</div>
 <div id="bookmark-list">Lesezeichen werden hier angezeigt.</div>
 </div>
-<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht"><span class="icon-settings" aria-hidden="true">◎</span></button>
+<button class="nav-btn" id="settings-toggle" data-action="toggleSettings" aria-expanded="false" title="Ansicht" aria-label="Ansicht"><span class="icon-settings" aria-hidden="true"></span></button>
 <div class="settings-panel" id="settings-panel">
 <button id="font-toggle" data-action="toggleFont" title="Schriftgrösse">A <span id="font-state">A+</span></button>
 <button id="readmode-toggle" data-action="toggleReadmode" title="Lesemodus"> <span id="rm-state">Lesen</span></button>
-<button id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" title="Lesezeichen"><span class="icon-bookmark" aria-hidden="true">◈</span> <span>Lesezeichen</span></button>
+<button id="nav-bookmark" data-action="toggleBookmarks" aria-expanded="false" title="Lesezeichen"><span class="icon-bookmark" aria-hidden="true"></span> <span>Lesezeichen</span></button>
 </div>
 </div>
 <button class="hamburger" id="hamburger" data-action="toggleNav" aria-expanded="false" aria-label="Menü öffnen" title="Menü">
@@ -469,8 +469,8 @@
 </div>
 <div class="boundary-examples">
 <div class="boundary-row header-row">
-<div class="boundary-col bad-col"><span class="cross-icon" aria-hidden="true">✗</span> Statt so…</div>
-<div class="boundary-col good-col">✓ Besser so</div>
+<div class="boundary-col bad-col"><span class="cross-icon" aria-hidden="true"></span> Statt so…</div>
+<div class="boundary-col good-col"><span class="check-icon" aria-hidden="true"></span> Besser so</div>
 </div>
 <div class="boundary-row wrap">
 <div class="boundary-col bad-col">
@@ -650,19 +650,19 @@
 <div class="refusal-col-title">Was Sie tun können</div>
 <div class="refusal-actions">
 <div class="refusal-action do">
-<span class="ra-label">✓ Hilfreich</span>
+<span class="ra-label"><span class="check-icon" aria-hidden="true"></span> Hilfreich</span>
 <div>In stabilen Phasen ruhig und konkret über Behandlung sprechen — nicht im Streit</div>
 </div>
 <div class="refusal-action do">
-<span class="ra-label">✓ Hilfreich</span>
+<span class="ra-label"><span class="check-icon" aria-hidden="true"></span> Hilfreich</span>
 <div>Sorgen als Ich-Botschaft formulieren: «Ich mache mir Sorgen, wenn ich sehe, dass du nicht schläfst.»</div>
 </div>
 <div class="refusal-action do">
-<span class="ra-label">✓ Hilfreich</span>
+<span class="ra-label"><span class="check-icon" aria-hidden="true"></span> Hilfreich</span>
 <div>Behandlungsteam kontaktieren — auch ohne Zustimmung des Partners möglich</div>
 </div>
 <div class="refusal-action dont">
-<span class="ra-label">✗ Nicht hilfreich</span>
+<span class="ra-label"><span class="cross-icon" aria-hidden="true"></span> Nicht hilfreich</span>
 <div>Medikamente heimlich verabreichen oder Entscheidungen erzwingen</div>
 </div>
 </div>
@@ -714,7 +714,7 @@
 <div class="viz-source">Basierend auf: Miklowitz (2010); Colom &amp; Vieta (2006) — Ampel-System zur Krisenfrüherkennung und -prävention</div>
 <h3 class="section-title-sm">Merken Sie sich</h3>
 <div class="m-insight" style="background:var(--m6-light)">
-<div class="insight-icon">✓</div>
+<div class="insight-icon" aria-hidden="true"></div>
 <div>
 	<strong>Ein Krisenplan gibt Handlungssicherheit</strong> — erstellt in stabilen Zeiten, genutzt im Notfall. Wer vorbereitet ist, muss in der Krise nicht mehr denken, sondern nur noch handeln.<br/><br/>
 	<strong>Selbstfürsorge ist kein Luxus</strong> — sie ist ein Recht, unabhängig von Ihrer Rolle als Angehörige*r. Nur wer auf sich achtet, kann langfristig für andere da sein.<br/><br/>
@@ -767,7 +767,7 @@
 <section class="mod-section" id="finanz-erste-hilfe">
   <h2>Finanzielle Erste Hilfe bei manischen Episoden</h2>
 <button class="kp-bookmark-btn" id="kp-bookmark-btn" onclick="bookmarkKrisenplan()" aria-label="Krisenplan als Lesezeichen speichern">
-  <span class="icon-bookmark" aria-hidden="true">◈</span> Krisenplan als Lesezeichen speichern
+  <span class="icon-bookmark" aria-hidden="true"></span> Krisenplan als Lesezeichen speichern
 </button>
 
   <p>Manische Episoden können in kurzer Zeit zu erheblichen finanziellen Schäden führen: Spontankäufe, Investitionen, Schenkungen, Vertragsabschlüsse. Viele Angehörige wissen nicht, was sie rechtlich und praktisch tun können — und handeln deshalb zu spät oder gar nicht.</p>
@@ -906,7 +906,7 @@
 <div class="search-input-wrap">
 <span class="section-num"></span>
 <input aria-label="Suchbegriff eingeben" autocomplete="off" id="search-input" placeholder="Suche — z.B. Krisenplan, Trennung, Suizid…" type="text"/>
-<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch">✕</button>
+<button aria-label="Suche schliessen" class="search-close" data-action="closeSearch"></button>
 </div>
 <div class="search-results" id="search-results">
 <div class="sr-hint">Geben Sie einen Begriff ein — z.B. «Krisenplan», «Trennung» oder «Suizid»</div>
@@ -919,7 +919,7 @@
 </a>
 <!-- PHASE 4: Quick-Exit-Button -->
 <button class="quick-exit-btn" id="quick-exit-btn" onclick="window.location.replace('https://www.srf.ch/news');" title="Seite schnell verlassen" aria-label="Seite verlassen">
-  <span aria-hidden="true">✕</span> Verlassen
+  <span aria-hidden="true"></span> Verlassen
 </button>
 </body>
 </html>
