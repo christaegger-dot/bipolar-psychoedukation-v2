@@ -954,6 +954,10 @@ margin-bottom:1.5rem}.mkn-icon{ font-size: var(--fs-h3);flex-shrink: 0;margin-to
 .komm-panel-label{ font-size:var(--fs-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
 .komm-panel-danger .komm-panel-label{ color:var(--danger)}
 .komm-panel-success .komm-panel-label{ color:var(--m6)}
+.danger-alert{ margin:1.5rem 0;padding:1rem 1.2rem;background:var(--danger-light);border-left:4px solid var(--danger);border-radius:var(--radius)}
+.danger-alert p{ margin:0;font-size:var(--fs-sm);line-height:1.6}
+.danger-alert strong{ color:var(--danger)}
+.danger-alert a{ color:var(--danger-dark);font-weight:700}
 .trialog-grid{ display:grid;grid-template-columns:repeat(3, 1fr);gap:0.75rem;margin-bottom:1.2rem}
 @media (max-width: 540px){
  .manie-komm-card{ flex-direction: column;gap: 0.5rem}
