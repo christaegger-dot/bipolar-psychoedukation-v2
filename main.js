@@ -1066,6 +1066,8 @@ if (document.querySelector('.hv-wrap')) {
   // Keyboard support
   stations.forEach(function(s) {
   });
+  // Auto-open first station so panel is not empty
+  hvToggle('beobachten');
 })();
 
 }
@@ -1147,6 +1149,8 @@ if (document.querySelector('.kk-wrap')) {
       '<p class="kk-effect"><strong>Wirkung:</strong> ' + escHtml(d.effect) + '</p>' +
       '<p class="kk-why">💡 ' + escHtml(d.why) + '</p>';
   };
+  // Auto-open first quadrant so panel is not empty
+  kkToggle('topLeft');
 })();
 
 }
@@ -1230,6 +1234,8 @@ if (document.querySelector('.sc-wrap')) {
       '<p class="sc-d-title" style="color:' + d.color + '">' + escHtml(d.title) + '</p>' +
       '<ul class="sc-d-list">' + list + '</ul>';
   };
+  // Auto-open first axis so panel is not empty
+  scToggle('koerper');
 })();
 }
 
@@ -1317,6 +1323,8 @@ if (document.querySelector('.sl-wrap')) {
       '<div class="sl-d-concrete" style="border-left-color:' + escHtml(d.signBorder) + '">' + d.concrete + '</div>';
     panel.scrollIntoView({behavior:'smooth',block:'nearest'});
   };
+  // Auto-open first pillar so panel is not empty
+  slToggle('sol01');
 })();
 
 }
@@ -1645,4 +1653,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initRecognitionRotation();
   initGlossarTooltips();
   restoreKrisenplanBookmark();
+  // Auto-open first EE station so panel is not empty
+  if (document.querySelector('.ee-station')) { highlightEE(1); }
 });
