@@ -402,6 +402,7 @@ margin-bottom:0.8rem}
 font-family:'Lora', Georgia, serif;
 font-size:clamp(1.9rem, 5vw, 2.9rem);
 line-height:1.15;
+letter-spacing:-0.02em;
 margin-bottom:1rem}.hero h1 em{ font-style: italic;color: var(--muted);font-weight: 400}
 .hero-lead{
  animation: fadeInUp 0.7s 0.12s ease both;
@@ -462,6 +463,7 @@ line-height:1.2;
 margin-bottom:0.25rem}
 .module-header-text .module-subtitle{
 font-size:var(--fs-base);
+font-weight:400;
 color:var(--muted)}.module-body{ padding: var(--sp-lg) 1.5rem 2.5rem;overflow-wrap:break-word}
 .placeholder{
 background:var(--bg);
@@ -676,7 +678,7 @@ margin-bottom:0.5rem}
 border-radius:var(--radius);
 padding:1rem var(--sp-md);
 font-style:italic;
-font-size:var(--fs-base);
+font-size:var(--fs-lg);
 line-height:1.6;
 margin-bottom:1.5rem;
 color:var(--text);
