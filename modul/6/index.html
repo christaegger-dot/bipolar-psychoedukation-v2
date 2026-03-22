@@ -232,32 +232,7 @@
 <p class="m-subtext" style="margin-top:0.4rem">Wenn Sie ausbrennen, verliert Ihr Partner seine wichtigste Stütze. Aber noch wichtiger: Ihre eigene Gesundheit hat einen Wert — unabhängig von Ihrer Rolle als Angehörige*r. Selbstfürsorge ist kein Mittel zum Zweck. Sie ist ein Recht.</p>
 </div>
 </div>
-<div class="selfcare-grid">
-<div class="selfcare-col">
-<div class="selfcare-col-header" style="background:var(--m1-light);color:var(--m1)"> Körper</div>
-<div class="selfcare-item">Eigenen Schlafrhythmus beibehalten — auch wenn der Partner wach ist</div>
-<div class="selfcare-item">Regelmässige Bewegung — auch kurze Spaziergänge zählen</div>
-<div class="selfcare-item">Regelmässige Mahlzeiten, auch in Krisenzeiten</div>
-<div class="selfcare-item">Eigene Arztbesuche nicht vernachlässigen</div>
-</div>
-<div class="selfcare-col">
-<div class="selfcare-col-header" style="background:var(--m7-light);color:var(--m7)"> Seele</div>
-<div class="selfcare-item">Eigene Hobbys pflegen — Aktivitäten ohne Erkrankungsbezug</div>
-<div class="selfcare-item">Freundschaften bewusst aufrechterhalten</div>
-<div class="selfcare-item">Eigene Gefühle im Tagebuch reflektieren</div>
-<div class="selfcare-item">Psychologische Unterstützung — kein Zeichen von Schwäche</div>
-</div>
-<div class="selfcare-col">
-<div class="selfcare-col-header" style="background:var(--m4-light);color:var(--m4)"> Beziehung</div>
-<div class="selfcare-item">Gemeinsame Rituale schaffen — Kaffee, Spaziergang, Routinen</div>
-<div class="selfcare-item">Krisenplan in stabilen Phasen gemeinsam erstellen</div>
-<div class="selfcare-item">Paartherapie als professionelle Begleitung nutzen</div>
-<div class="selfcare-item">Bewusste Momente schaffen, die nicht von der Erkrankung bestimmt sind</div>
-</div>
-</div>
-<div class="selfcare-rule">
-<strong>Faustregel:</strong> Wenn Sie merken, dass Ihr ganzes Leben nur noch um die Erkrankung kreist, ist es Zeit, bewusst gegenzusteuern. Das ist kein Egoismus — es ist Voraussetzung dafür, langfristig da zu sein.
-</div>
+<div class="sc-wrap" role="region" aria-label="Selbstfürsorge-Kompass: Vier Achsen der Selbstfürsorge">
 <figure class="infographic-wrap">
 <svg class="viz-svg" role="img" aria-label="Selbstfürsorge-Kompass: Erschöpfung im Zentrum, vier Achsen der Selbstfürsorge" viewBox="-15 0 450 420" width="100%" xmlns="http://www.w3.org/2000/svg">
 <circle cx="210" cy="210" r="195" fill="var(--m6-light)" opacity="0.3" stroke="var(--m6)" stroke-width="1"/>
@@ -267,26 +242,45 @@
 <text x="210" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Erschöpfung</text>
 <text x="210" y="224" text-anchor="middle" font-size="10" fill="var(--muted)">ohne Gegensteuer</text>
 <text x="210" y="236" text-anchor="middle" font-size="10" fill="var(--muted)">wird sie chronisch</text>
-<circle cx="210" cy="60" r="6" fill="var(--m6)" opacity="0.7"/>
-<text x="210" y="38" text-anchor="middle" font-size="15" font-weight="600" fill="var(--m6)">Grundbedürfnisse</text>
+<g class="sc-node" data-action="scToggle" data-param="koerper" tabindex="0" role="button" aria-label="Grundbedürfnisse: Schlaf, Bewegung, Ernährung" aria-expanded="false" aria-controls="sc-detail" style="cursor:pointer">
+<circle cx="210" cy="60" r="18" fill="var(--m6-light)" stroke="var(--m6)" stroke-width="2" opacity="0.8"/>
+<circle cx="210" cy="60" r="6" fill="var(--m6)"/>
+<text x="210" y="32" text-anchor="middle" font-size="15" font-weight="600" fill="var(--m6)">Grundbedürfnisse</text>
 <text x="210" y="90" text-anchor="middle" font-size="13" fill="var(--text)">Schlaf · Bewegung · Ernährung</text>
-<circle cx="360" cy="210" r="6" fill="var(--m6)" opacity="0.7"/>
+</g>
+<g class="sc-node" data-action="scToggle" data-param="grenzen" tabindex="0" role="button" aria-label="Grenzen: Nein sagen ohne Schuld" aria-expanded="false" aria-controls="sc-detail" style="cursor:pointer">
+<circle cx="360" cy="210" r="18" fill="var(--m6-light)" stroke="var(--m6)" stroke-width="2" opacity="0.8"/>
+<circle cx="360" cy="210" r="6" fill="var(--m6)"/>
 <text x="375" y="196" text-anchor="start" font-size="15" font-weight="600" fill="var(--m6)">Grenzen</text>
 <text x="290" y="244" text-anchor="middle" font-size="13" fill="var(--text)">Nein sagen</text>
 <text x="290" y="260" text-anchor="middle" font-size="13" fill="var(--text)">ohne Schuld</text>
-<circle cx="210" cy="360" r="6" fill="var(--m6)" opacity="0.7"/>
+</g>
+<g class="sc-node" data-action="scToggle" data-param="verbindung" tabindex="0" role="button" aria-label="Verbindung: Freundschaften und Austausch" aria-expanded="false" aria-controls="sc-detail" style="cursor:pointer">
+<circle cx="210" cy="360" r="18" fill="var(--m6-light)" stroke="var(--m6)" stroke-width="2" opacity="0.8"/>
+<circle cx="210" cy="360" r="6" fill="var(--m6)"/>
 <text x="210" y="395" text-anchor="middle" font-size="15" font-weight="600" fill="var(--m6)">Verbindung</text>
 <text x="210" y="340" text-anchor="middle" font-size="13" fill="var(--text)">Freundschaften · Austausch</text>
-<circle cx="60" cy="210" r="6" fill="var(--m6)" opacity="0.7"/>
+</g>
+<g class="sc-node" data-action="scToggle" data-param="ressourcen" tabindex="0" role="button" aria-label="Ressourcen: Eigene Therapie, Krisenplan, Identität" aria-expanded="false" aria-controls="sc-detail" style="cursor:pointer">
+<circle cx="60" cy="210" r="18" fill="var(--m6-light)" stroke="var(--m6)" stroke-width="2" opacity="0.8"/>
+<circle cx="60" cy="210" r="6" fill="var(--m6)"/>
 <text x="45" y="196" text-anchor="end" font-size="15" font-weight="600" fill="var(--m6)">Ressourcen</text>
 <text x="130" y="244" text-anchor="middle" font-size="13" fill="var(--text)">Eigene Therapie</text>
 <text x="130" y="260" text-anchor="middle" font-size="13" fill="var(--text)">Krisenplan · Identität</text>
-<text x="210" y="416" text-anchor="middle" font-size="12" font-style="italic" fill="var(--muted)">Kein Zeichen von Schwäche — sondern von Stärke</text>
+</g>
+<text x="210" y="416" text-anchor="middle" font-size="12" font-style="italic" fill="var(--muted)">Wählen Sie eine Achse für konkrete Tipps</text>
 </svg>
   <figcaption class="viz-source">
     Basierend auf: Perlick et al. (2007); Reinares et al. (2016) — Selbstfürsorge als Voraussetzung für langfristige Unterstützung
   </figcaption>
 </figure>
+<div class="sc-detail" id="sc-detail" aria-live="polite">
+<div class="sc-empty">
+<p class="text-sm-muted">Wählen Sie eine Achse im Kompass.</p>
+<p class="text-xs-muted">Wenn Ihr ganzes Leben nur noch um die Erkrankung kreist, ist es Zeit, bewusst gegenzusteuern.</p>
+</div>
+</div>
+</div>
 </div>
 </details>
 

@@ -109,6 +109,7 @@ var ACTION_MAP = {
   hvToggle: function(el) { hvToggle(el.dataset.param); },
   kkToggle: function(el) { kkToggle(el.dataset.param); },
   slToggle: function(el) { slToggle(el.dataset.param); },
+  scToggle: function(el) { scToggle(el.dataset.param); },
   filterHandouts: function(el) { filterHandouts(el.dataset.param); },
   shareSection: function(el) { shareSection(el.dataset.param, el); },
   copyNum: function(el) { copyNum(el.dataset.param, el); },
@@ -1148,6 +1149,88 @@ if (document.querySelector('.kk-wrap')) {
   };
 })();
 
+}
+
+// ═══════════════════════════════════════════════════════
+// Modul 6: Selbstfürsorge-Kompass (scToggle)
+// ═══════════════════════════════════════════════════════
+if (document.querySelector('.sc-wrap')) {
+(function(){
+  var data = {
+    koerper: {
+      title: "Grundbedürfnisse — Körper",
+      color: "var(--m1)", bg: "var(--m1-light)", border: "var(--m1)",
+      items: [
+        "Eigenen Schlafrhythmus beibehalten — auch wenn der Partner wach ist",
+        "Regelmässige Bewegung — auch kurze Spaziergänge zählen",
+        "Regelmässige Mahlzeiten, auch in Krisenzeiten",
+        "Eigene Arztbesuche nicht vernachlässigen"
+      ]
+    },
+    grenzen: {
+      title: "Grenzen — Nein sagen ohne Schuld",
+      color: "var(--m6)", bg: "var(--m6-light)", border: "var(--m6)",
+      items: [
+        "Aufgaben zurückgeben, die nicht Ihre sind",
+        "Klare Zeiten für sich selbst einfordern",
+        "Nicht jede Stimmungsschwankung auffangen müssen",
+        "«Ich kann das gerade nicht» ist ein vollständiger Satz"
+      ]
+    },
+    verbindung: {
+      title: "Verbindung — Nicht in die Isolation gehen",
+      color: "var(--m7)", bg: "var(--m7-light)", border: "var(--m7)",
+      items: [
+        "Freundschaften bewusst aufrechterhalten",
+        "Selbsthilfegruppe oder Angehörigen-Treff besuchen",
+        "Mindestens eine Vertrauensperson haben",
+        "Gemeinsame Rituale pflegen — Kaffee, Spaziergang, Routinen"
+      ]
+    },
+    ressourcen: {
+      title: "Ressourcen — Eigene Stabilität aufbauen",
+      color: "var(--m4)", bg: "var(--m4-light)", border: "var(--m4)",
+      items: [
+        "Eigene Therapie oder psychologische Unterstützung",
+        "Krisenplan in stabilen Phasen gemeinsam erstellen",
+        "Eigene Hobbys pflegen — Aktivitäten ohne Erkrankungsbezug",
+        "Eigene Identität bewahren — Sie sind mehr als eine Betreuer*in"
+      ]
+    }
+  };
+  var active = null;
+  var nodes = document.querySelectorAll('.sc-node');
+  var panel = document.getElementById('sc-detail');
+  window.scToggle = function(id) {
+    if (active === id) { active = null; } else { active = id; }
+    nodes.forEach(function(n) {
+      var nId = n.getAttribute('data-param');
+      if (nId === active) {
+        n.classList.add('active');
+        n.setAttribute('aria-expanded', 'true');
+      } else {
+        n.classList.remove('active');
+        n.setAttribute('aria-expanded', 'false');
+      }
+    });
+    if (!active) {
+      panel.style.background = '';
+      panel.style.borderColor = '';
+      panel.innerHTML =
+        '<div class="sc-empty">' +
+        '<p class="text-sm-muted">Wählen Sie eine Achse im Kompass.</p>' +
+        '<p class="text-xs-muted">Wenn Ihr ganzes Leben nur noch um die Erkrankung kreist, ist es Zeit, bewusst gegenzusteuern.</p></div>';
+      return;
+    }
+    var d = data[active];
+    var list = d.items.map(function(item) { return '<li>' + escHtml(item) + '</li>'; }).join('');
+    panel.style.background = d.bg;
+    panel.style.borderColor = d.border;
+    panel.innerHTML =
+      '<p class="sc-d-title" style="color:' + d.color + '">' + escHtml(d.title) + '</p>' +
+      '<ul class="sc-d-list">' + list + '</ul>';
+  };
+})();
 }
 
 // ═══════════════════════════════════════════════════════

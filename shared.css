@@ -992,6 +992,16 @@ font-size:var(--fs-sm);
 line-height:1.6;
 margin-bottom:1.5rem;
 border:1px solid var(--border)}
+/* Selfcare Compass: interactive */
+.sc-wrap{max-width:520px;margin:0 auto}
+.sc-node circle:first-child{transition:opacity 0.2s, r 0.2s}
+.sc-node:hover circle:first-child,.sc-node:focus circle:first-child{opacity:1}
+.sc-node.active circle:first-child{opacity:1;r:22}
+.sc-detail{min-height:80px;border-radius:var(--radius);border:1px solid var(--border);padding:1rem 1.2rem;margin-top:0.5rem;transition:background 0.2s,border-color 0.2s}
+.sc-d-title{font-size:var(--fs-base);font-weight:700;margin:0 0 0.5rem}
+.sc-d-list{margin:0;padding-left:1.2rem;font-size:var(--fs-sm);line-height:1.6;color:var(--text)}
+.sc-d-list li{margin-bottom:0.3rem}
+.sc-empty{text-align:center;padding:0.5rem 0}
 .boundary-examples{
 background:var(--white);
 border-radius:var(--radius);
