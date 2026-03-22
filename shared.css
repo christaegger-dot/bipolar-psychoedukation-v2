@@ -3864,7 +3864,7 @@ details[open] .glossar-def {
 /* Roof bar */
 .sl-roof{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:var(--bg2);border-left:1.5px solid var(--border);border-right:1.5px solid var(--border)}
 .sl-roof span{font-size:var(--fs-sm);font-weight:600;color:var(--muted);letter-spacing:.01em}
-.sl-pillar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--radius);border:1.5px solid;cursor:pointer;transition:all .2s ease;-webkit-tap-highlight-color:transparent;text-align:left;background:var(--white);width:100%}
+.sl-pillar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--radius);border:1.5px solid;cursor:pointer;transition:all .2s ease;-webkit-tap-highlight-color:transparent;text-align:left;background:var(--white);width:100%;max-width:100%;min-width:0;overflow:hidden}
 .sl-pillar:focus-visible{outline:2px solid var(--text);outline-offset:2px;border-radius:var(--radius)}
 .sl-pillar:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .sl-pillar.active{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
