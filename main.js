@@ -1025,7 +1025,7 @@ if (document.querySelector('.kk-wrap')) {
   var data = {
     topLeft: {
       marker: "❌", verdict: "Grösster Schaden",
-      color: "#c0392b", bg: "#fdf0ed", bgActive: "#fbe3dd", border: "#e6b8af",
+      color: "#a03020", bg: "#fdf0ed", bgActive: "#fbe3dd", border: "#e6b8af",
       situation: "Ihr Partner hat seit Tagen nicht geschlafen und gibt unkontrolliert Geld aus.",
       says: "«Du bist total verantwortungslos! Du ruinierst uns!»",
       effect: "Eskalation. Ihr Partner fühlt sich angegriffen, reagiert mit Abwehr oder Gegenangriff. Die Manie verstärkt die Reaktion.",
