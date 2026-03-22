@@ -116,9 +116,7 @@ var ACTION_MAP = {
 
   // Multi-param
   scSelect: function(el) { scSelect(el, Number(el.dataset.q), el.dataset.val); },
-  giveFeedback: function(el) { giveFeedback(el, el.dataset.param, el.dataset.val); },
-  waSelect: function(el) { waSelect(el, el.dataset.param); },
-  waCheck: function(el) { waCheck(el); }
+  giveFeedback: function(el) { giveFeedback(el, el.dataset.param, el.dataset.val); }
 };
 
 // Click delegation
@@ -475,59 +473,6 @@ document.addEventListener('click', function(e) {
 });
 
 // #19 Feedback
-// #19b Wissens-Anker Quiz
-function waSelect(btn, qId) {
-  var wrap = document.getElementById('wa-' + qId);
-  if (!wrap) return;
-  var opts = wrap.querySelectorAll('.wa-opt');
-  var isCorrect = btn.dataset.correct === 'true';
-  var fbText = btn.dataset.fb || '';
-  // Disable all buttons
-  opts.forEach(function(b) {
-    b.disabled = true;
-    b.style.pointerEvents = 'none';
-    if (b.dataset.correct === 'true') {
-      b.classList.add('correct');
-    } else if (b === btn && !isCorrect) {
-      b.classList.add('wrong');
-    } else {
-      b.style.opacity = '0.4';
-    }
-  });
-  // Show feedback
-  var fbEl = wrap.querySelector('.wa-feedback');
-  if (fbEl) {
-    fbEl.textContent = fbText;
-    fbEl.classList.add('show', isCorrect ? 'correct' : 'wrong');
-    announceStatus((isCorrect ? 'Richtig: ' : 'Falsch: ') + fbText);
-  }
-}
-
-/* waCheck: Einfacher Wissens-Anker ohne ID-System (Modul 7) */
-function waCheck(btn) {
-  var wrap = btn.closest('.wissens-anker');
-  if (!wrap) return;
-  var opts = wrap.querySelectorAll('.wa-opt');
-  var isCorrect = btn.dataset.correct === 'true';
-  opts.forEach(function(b) {
-    b.disabled = true;
-    b.classList.add('disabled');
-    if (b.dataset.correct === 'true') {
-      b.classList.add('correct');
-    } else if (b === btn && !isCorrect) {
-      b.classList.add('wrong');
-    }
-  });
-  var fbEl = wrap.querySelector('.wa-feedback');
-  if (fbEl) {
-    fbEl.textContent = isCorrect
-      ? 'Richtig — Resilienz ist ein Prozess, der durch soziale Unterstützung, Selbstmitgefühl und konkretes Handeln aktiv gefördert wird.'
-      : 'Nicht ganz — die Antwort ist: Soziale Unterstützung, Selbstmitgefühl und konkretes Handeln.';
-    fbEl.classList.add('show', isCorrect ? 'correct' : 'wrong');
-    announceStatus((isCorrect ? 'Richtig: ' : 'Falsch: ') + fbEl.textContent);
-  }
-}
-
 function giveFeedback(btn, module, val) {
   var wrap = btn.closest('.module-feedback');
   wrap.querySelectorAll('.feedback-btn').forEach(function(b) { b.disabled = true; b.style.opacity = '0.4'; });

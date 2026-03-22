@@ -2153,7 +2153,7 @@ opacity:0.85}body.readmode .pole-panel{ display: block}body.readmode .phase-cont
  #view-controls, #continue-reading, .bookmark-panel, .settings-panel,
  .nav-bookmark, .search-overlay, .hamburger,
  .prev-next-nav, .module-end-next .men-link,
- .wissens-anker, .section-wave, .module-toc,
+ .section-wave, .module-toc,
  .module{ break-inside: avoid;margin-bottom: 1.5rem;padding: 0}
  .module-card{ box-shadow: none;border: 1px solid #ccc;break-inside: avoid}
  .pole-panel, .phase-content, .slide-wrap{ display: block !important}
@@ -2891,12 +2891,6 @@ margin-bottom:0.5rem}
  .search-input{ background: var(--bg2);color: var(--text);border-color: var(--border)}
  .module-end-next{ background: var(--bg2)}
  .men-link:hover{ color: var(--white)}
- .wissens-anker{ background: var(--bg2)}
- .wa-opt{ background: var(--bg);border-color: var(--border);color: var(--text)}
- .wa-opt.correct{ background: var(--success);color: #e8f5e8;border-color: var(--success)}
- .wa-opt.wrong{ background: var(--danger-bg);color: #f0c0c0;border-color: var(--danger)}
- .wa-feedback.correct{ background: var(--success);color: #e8f5e8}
- .wa-feedback.wrong{ background: var(--danger-bg);color: #f0c0c0}
  .section-wave{ color: var(--border)}
 footer{ background:var(--bg);color:var(--text);border-top-color:var(--border)}
 footer a{ color:var(--muted)}
@@ -3092,55 +3086,7 @@ line-height:1.7}
 font-size:var(--fs-sm);
 margin-bottom:0.4rem;
 color:var(--text)}
-/* Wissens-Anker */
-.wissens-anker{
-background:var(--bg2);
-border-radius:var(--radius);
-padding:1.2rem 1.4rem;
-margin:2rem 0;
-border-left:4px solid var(--module-color, var(--m1))}
-.wa-title{
-font-family:'Lora', Georgia, serif;
-font-size:var(--fs-base);
-font-weight:600;
-color:var(--module-color, var(--m1));
-margin-bottom:0.8rem}.wa-q{ margin-bottom: 1rem}
-.wa-q p{ font-size:var(--fs-base);font-weight:600;margin-bottom:0.4rem}
-.wa-opts{ display:flex;flex-wrap:wrap;gap:0.4rem}
-.wa-opt{
-font-size:var(--fs-sm);
-padding:0.4rem 0.8rem;
-border:1.5px solid var(--border);
-border-radius:6px;
-background:var(--white);
-cursor:pointer;
-transition:border-color 0.2s, background 0.2s;
-font-family:inherit;
-color:var(--text)}.wa-opt:hover{ border-color: var(--module-color, var(--m1))}
-.wa-opt.correct{ background:var(--success-light);border-color:var(--success);color:var(--success)}
-.wa-opt.wrong{ background:var(--danger-light);border-color:var(--danger);color:var(--danger-dark)}
-.wa-opt.disabled{ opacity:0.5;pointer-events:none}
-.wa-feedback{
-font-size:var(--fs-sm);
-margin-top:0.4rem;
-padding:0.4rem 0.5rem;
-border-radius:5px;
-display:none}.wa-feedback.show{ display: block;animation: fadeInDown 0.3s ease}
-.wa-feedback.correct{ background:var(--success-light);color:var(--success)}
-.wa-feedback.wrong{ background:var(--danger-light);color:var(--danger-dark)}
-.wa-question{
-font-size:var(--fs-base);
-font-weight:600;
-margin-bottom:0.8rem;
 color:var(--text)}
-.wa-options{
-display:flex;
-flex-direction:column;
-gap:0.4rem;
-margin-bottom:0.8rem}
-.wa-source{
-font-size:var(--fs-xs);
-color:var(--muted);
 margin-top:0.6rem;
 font-style:italic}
 .nav-logo-text{ font-family:'Lora', Georgia, serif;font-size:var(--fs-base);font-weight:600;color:inherit}
@@ -5218,8 +5164,7 @@ details[open] .glossar-def {
 .m-insight,
 .acc-item,
 .quote-card,
-.reflexion,
-.wissens-anker {
+.reflexion {
   border-radius: var(--radius-sm);
   box-shadow: 0 1px 4px rgba(40,36,32,0.06);
 }
@@ -5251,7 +5196,6 @@ details[open] .glossar-def {
 /* Buttons: einheitliche Formensprache (kein pill-shape für sekundäre Buttons) */
 .btn-secondary,
 .module-end-next a,
-.wa-btn,
 .feedback-yes,
 .feedback-no {
   border-radius: 4px;
@@ -5398,8 +5342,7 @@ margin-top:1.5rem}}
 
 /* CTA-Buttons: einheitliche Formensprache */
 .cta-btn,
-.module-end-next a,
-.wa-btn {
+.module-end-next a {
   border-radius: 4px;
   font-weight: 600;
   letter-spacing: 0.02em;
