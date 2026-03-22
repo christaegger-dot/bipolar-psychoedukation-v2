@@ -236,11 +236,42 @@
 </div>
 
 <figure class="infographic-wrap">
-  <img
-    src="/img/eisberg-angehoerige.png"
-    alt="Eisberg-Modell: Sichtbare (~20%) und unsichtbare (~80%) Belastung von Angehörigen. Sichtbar: Erschöpft wirken, Termine begleiten, Sorgen äussern. Unsichtbar: Hypervigilanz, Schlafstörungen, Schuldgefühle, Einsamkeit, Angst vor Rückfall, Trauer, Ambivalenz."
-    loading="lazy"
-  />
+<svg class="viz-svg" role="img" aria-label="Eisberg-Modell: Sichtbare (~20%) und unsichtbare (~80%) Belastung von Angehörigen" viewBox="0 0 600 520" width="100%" xmlns="http://www.w3.org/2000/svg">
+<!-- Wasser-Hintergrund -->
+<rect x="0" y="170" width="600" height="350" rx="0" fill="var(--bg2)" opacity="0.6"/>
+
+<!-- Eisberg: sichtbarer Gipfel (über Wasser) -->
+<path d="M230 170 L300 40 L370 170 Z" fill="var(--m2-light)" stroke="var(--m2)" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- Eisberg: unsichtbarer Körper (unter Wasser) -->
+<path d="M230 170 L160 420 L200 460 L400 460 L440 420 L370 170 Z" fill="var(--m2)" opacity="0.35" stroke="var(--m2)" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- Wasserlinie (gestrichelt) -->
+<line x1="40" y1="170" x2="600" y2="170" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+<!-- Titel -->
+<text x="300" y="24" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="18" font-weight="600" fill="var(--text)">Belastung von Angehörigen</text>
+
+<!-- Sichtbar-Label links -->
+<text x="56" y="158" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="600" fill="var(--m2)">~20 % sichtbar</text>
+
+<!-- Unsichtbar-Label links -->
+<text x="56" y="195" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="600" fill="var(--m2)">~80 % unsichtbar</text>
+
+<!-- Sichtbare Items (über Wasser) -->
+<text x="300" y="95" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Erschöpft wirken</text>
+<text x="300" y="118" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Termine begleiten</text>
+<text x="300" y="141" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Sorgen äussern</text>
+
+<!-- Unsichtbare Items (unter Wasser) -->
+<text x="300" y="225" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="600" fill="var(--text)">Hypervigilanz</text>
+<text x="300" y="260" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Schlafstörungen</text>
+<text x="300" y="293" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Schuldgefühle</text>
+<text x="300" y="326" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Einsamkeit</text>
+<text x="300" y="359" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Angst vor Rückfall</text>
+<text x="300" y="392" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Trauer</text>
+<text x="300" y="425" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="var(--text)">Ambivalenz</text>
+</svg>
   <figcaption class="viz-source">
     Basierend auf: Maurin &amp; Boyd (1990); Rüsch et al. (2013) — Sichtbare vs. unsichtbare Belastungsanteile bei Angehörigen
   </figcaption>
