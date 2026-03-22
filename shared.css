@@ -1905,23 +1905,6 @@ font-style:italic;
 max-width:380px;
 margin:0 auto;
 line-height:1.5}
-.oxygen-banner{
-display:flex;
-gap:1.2rem;
- align-items: center;
-background:var(--m6-light);
-border-left:4px solid var(--m6);
-border-radius:var(--radius);
-padding:var(--sp-md) 1.4rem;
-font-size:var(--fs-base);
-line-height:1.65;
-margin-bottom:1.5rem}.oxygen-illustration{ flex-shrink: 0}.oxygen-svg{ width: 120px;height: 90px;display: block}.oxygen-text{ flex: 1}
-.oxygen-quote{ font-style:italic;color:var(--text);margin-bottom:0.4rem;line-height:1.6}
-.oxygen-sub{ font-size:var(--fs-sm);color:var(--muted);opacity:0.9}
-@media (max-width: 480px){
- .oxygen-banner{ flex-direction: column}
- .oxygen-svg{ width: 120px;height: 90px}
-}
 .ee-svg-wrap{ display:flex;justify-content:center;margin-bottom:0.8rem}
 .ee-flow-svg{
 width:100%;
@@ -2876,7 +2859,6 @@ margin-bottom:0.5rem}
  .burden-accumulation-svg,
  .glasswand-svg,
  .ee-flow-svg,
- .oxygen-svg,
  .wave-chart-wrap,
  .burden-accumulation-wrap,
  .glasswand-wrap,
