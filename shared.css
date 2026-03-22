@@ -1274,7 +1274,7 @@ padding:0.5rem 1.2rem 0.8rem;
 border-top:1px solid var(--bg2);
 background:var(--bg);
 font-style:italic;
-opacity:0.75;
+
 position:relative;
 z-index:1}.ptg-wrap{ margin-bottom: 1.5rem}
 .ptg-quote-wrap{ text-align:center;margin-bottom:1.2rem}
@@ -2030,7 +2030,7 @@ letter-spacing:0.07em}
 color:#2a5a3e;
 text-decoration:none;
 font-weight:600;
-transition:opacity 0.15s}.m5-toc-links a:hover{ opacity: 1;text-decoration: underline}
+transition:color 0.15s}.m5-toc-links a:hover{ text-decoration: underline}
 .pole-toggle-wrap .keyboard-hint{
 text-align:right;
 font-size:var(--fs-xs);
@@ -3349,7 +3349,7 @@ letter-spacing:0.04em}
 font-size:var(--fs-xs);
 color:#5a5048;
 font-style:italic;
-opacity:0.8;
+
 line-height:1.5;
 margin-top:0.4rem;
 display:block}.link-plain{ text-decoration: none;color: inherit}
