@@ -1018,7 +1018,7 @@ if (document.querySelector('.hv-wrap')) {
 }
 
 // ═══════════════════════════════════════════════════════
-// Modul 5: Kommunikationsquadrant (kkToggle)
+// Modul 6: Kommunikationsquadrant (kkToggle)
 // ═══════════════════════════════════════════════════════
 if (document.querySelector('.kk-wrap')) {
 (function(){
