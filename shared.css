@@ -3875,10 +3875,20 @@ details[open] .glossar-def {
 .kk-q[data-id="bottomRight"]{background:var(--m6-light);border-color:var(--m6)}
 .kk-q[data-id="bottomRight"] .kk-label{color:var(--success)}
 .kk-q[data-id="bottomRight"].active{background:var(--success-light);border-color:var(--success)}
+.kk-mobile-ctx{display:none}
 @media (max-width: 768px){
 .kk-wrap{max-width:none}
 .kk-q .kk-label{font-size:var(--fs-2xs)}
 .kk-q .kk-sub{font-size:.62rem}
+}
+@media (max-width: 600px){
+.kk-grid{grid-template-columns:1fr;gap:var(--sp-sm)}
+.kk-q{min-height:56px;padding:var(--sp-sm) var(--sp-md);flex-direction:row;align-items:center;gap:var(--sp-sm)}
+.kk-q .kk-label{font-size:var(--fs-sm);text-align:left}
+.kk-q .kk-sub{font-size:var(--fs-xs);text-align:left}
+.kk-axis-top,.kk-axis-bottom,.kk-side{display:none}
+.kk-main{display:block}
+.kk-mobile-ctx{display:block;font-size:var(--fs-2xs);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;opacity:0.7;order:-1}
 }
 
 /* ═══════════════════════════════════════════════════════ */
@@ -5275,6 +5285,25 @@ details[open] .glossar-def {
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 400;
+}
+
+/* Behandlung-Hub: responsive HTML component (Modul 1) */
+.behandlung-hub{max-width:540px;margin:1.5rem auto;text-align:center}
+.bh-center{background:var(--m1-light);border:2px solid var(--m1);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:0}
+.bh-center-label{display:block;font-size:var(--fs-h3);font-weight:700;color:var(--text)}
+.bh-center-sub{display:block;font-size:var(--fs-sm);color:var(--muted);margin-top:0.2rem}
+.bh-arrows{height:24px;margin:0 auto;max-width:100%}
+.bh-arrows svg{width:100%;height:24px}
+.bh-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm)}
+.bh-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.3rem;text-align:center}
+.bh-icon{font-size:var(--fs-h3);color:var(--m1);line-height:1}
+.bh-card-title{font-size:var(--fs-sm);color:var(--text)}
+.bh-card-detail{font-size:var(--fs-2xs);color:var(--muted)}
+.bh-card-note{font-size:var(--fs-2xs);color:var(--m1);font-style:italic;margin-top:auto}
+.bh-footer{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.8rem 1rem;margin-top:var(--sp-sm);font-size:var(--fs-sm);color:var(--text);text-align:center}
+@media(max-width:480px){
+.bh-cards{grid-template-columns:1fr}
+.bh-arrows{display:none}
 }
 
 /* Infographic figures: einheitlich */
